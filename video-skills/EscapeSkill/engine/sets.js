@@ -173,6 +173,136 @@ const SETS = {
     return { svg: s, floorY: 1020, lights: [{ x: 960, y: 400, r: 620, a: .8 }, { x: 1530, y: 280, r: 380, a: .7 }, { x: 960, y: 800, r: 900, a: .3 }], glows: [{ x: 960, y: 400, r: 500, c: o.screen || '#5a8aff', a: .3 }], cones: [] };
   }
 };
+
+/* ---------------- prison sets (EscapeSkill) ---------------- */
+function bricks(x0, y0, x1, y1, bw, bh, col, w) { let s = ''; for (let y = y0, r = 0; y < y1; y += bh, r++) { s += sL(x0, y, x1, y, w || 3, col); for (let x = x0 + (r % 2 ? bw / 2 : 0); x < x1; x += bw) s += sL(x, y, x, Math.min(y + bh, y1), w || 3, col); } return s; }
+function razor(x0, x1, y, n) { let s = ''; const st = (x1 - x0) / n; for (let i = 0; i < n; i++) { const x = x0 + i * st + st / 2; s += `<ellipse cx="${x.toFixed(0)}" cy="${y}" rx="${(st * .62).toFixed(0)}" ry="22" fill="none" stroke="#B9BEC8" stroke-width="4"/><ellipse cx="${x.toFixed(0)}" cy="${y}" rx="${(st * .62).toFixed(0)}" ry="22" fill="none" stroke="${SINK}" stroke-width="1.5" opacity=".7"/>` } return s; }
+function cellBars(x0, x1, y0, y1, gap, w) { let s = ''; for (let x = x0; x <= x1; x += gap) s += sL(x, y0, x, y1, w || 10, '#3a3f4a') + sL(x - 2, y0, x - 2, y1, 2.5, '#8a92a3'); return s; }
+function guardTower(x, base, top) { // guard tower: legs, cabin with lit windows, roof; returns svg + searchlight head
+  let s = sL(x - 70, base, x - 50, top + 130, 10) + sL(x + 70, base, x + 50, top + 130, 10) + sL(x - 64, base - 60, x + 64, top + 160, 5) + sL(x + 64, base - 60, x - 64, top + 160, 5);
+  s += sR(x - 95, top + 50, 190, 90, '#55606e', { sw: 6 }) + sR(x - 80, top + 64, 70, 42, '#F7D88A', { sw: 4 }) + sR(x + 10, top + 64, 70, 42, '#F7D88A', { sw: 4 });
+  s += sP(`M${x - 120} ${top + 52} L${x} ${top} L${x + 120} ${top + 52} Z`, '#3a414e', { sw: 6 }) + sR(x - 105, top + 136, 210, 14, '#3a414e', { sw: 5 });
+  s += sC(x - 112, top + 98, 18, '#F4F0D6', { sw: 5 });
+  return { svg: s, head: [x - 112, top + 98] };
+}
+Object.assign(SETS, {
+  cell(o) {
+    let s = sR(0, 0, 1920, 1080, '#5d6b78', { sw: 0 }) + bricks(0, 0, 1920, 760, 160, 64, '#4c5864', 3);
+    s += sR(0, 760, 1920, 320, '#4a4f58', { sw: 0 }) + sL(0, 760, 1920, 760, 6);
+    for (let i = 0; i < 12; i++) s += sL(i * 170, 760, i * 170 - 140 + i * 24, 1080, 3, '#3c4048');
+    s += `<ellipse cx="1180" cy="900" rx="120" ry="18" fill="#3e434c"/><ellipse cx="560" cy="1010" rx="90" ry="14" fill="#3e434c"/>`;
+    // high barred window with the night sky
+    s += sR(1140, 120, 300, 200, '#0d1230', { sw: 8 }) + `<clipPath id="cellw"><rect x="1144" y="124" width="292" height="192"/></clipPath><g clip-path="url(#cellw)">${sky(o.time === 'day' ? 'day' : 'night', 320)}${o.time === 'day' ? '' : stars(14, 12, 300) + moon(1360, 190, 34)}</g>`;
+    s += cellBars(1180, 1400, 120, 320, 55, 9) + sL(1140, 220, 1440, 220, 8, '#3a3f4a') + sR(1126, 316, 328, 18, '#6c7684');
+    // bunk bed (left)
+    s += sR(170, 330, 22, 520, '#6c7482', { sw: 5 }) + sR(740, 330, 22, 520, '#6c7482', { sw: 5 });
+    s += sR(180, 430, 570, 26, '#7c8492') + sR(186, 396, 556, 36, '#5f7a5c', { r: 10 }) + sR(200, 372, 120, 34, '#e8e2cc', { r: 12 });
+    s += sR(180, 700, 570, 26, '#7c8492') + sR(186, 664, 556, 38, '#6b5a7a', { r: 10 }) + sR(200, 640, 120, 34, '#e8e2cc', { r: 12 });
+    for (let i = 0; i < 5; i++) s += sL(700, 460 + i * 48, 740, 460 + i * 48, 5);
+    // steel toilet + sink (right of centre)
+    s += sR(1520, 560, 160, 120, '#a9b0bc', { r: 10 }) + sR(1556, 572, 88, 30, '#6c7482', { r: 8 }) + sL(1600, 560, 1600, 534, 7) + sL(1600, 534, 1624, 534, 7);
+    s += sR(1540, 680, 120, 120, '#a9b0bc', { r: 12 }) + `<ellipse cx="1600" cy="680" rx="72" ry="20" fill="#c9ced8" stroke="${SINK}" stroke-width="5"/>`;
+    // cell door bars (right edge) with the lit corridor behind
+    s += sR(1760, 0, 160, 860, '#8a95a2', { sw: 0 }) + `<rect x="1760" y="0" width="160" height="860" fill="#F7D88A" opacity=".18"/>` + cellBars(1770, 1910, 0, 860, 34, 10) + sL(1760, 120, 1920, 120, 10, '#3a3f4a') + sL(1760, 640, 1920, 640, 10, '#3a3f4a') + sL(1760, 0, 1760, 860, 8);
+    if (o.tally !== false) for (let g = 0; g < 3; g++) { const gx = 860 + g * 70; for (let i = 0; i < 4; i++) s += sL(gx + i * 11, 420, gx + i * 11, 470, 3, '#2a2f38'); s += sL(gx - 6, 462, gx + 42, 428, 3, '#2a2f38'); }
+    if (o.hole) s += `<path d="M1180 760 L1186 660 L1214 618 L1262 602 L1312 622 L1338 668 L1342 760 Z" fill="#0b0b10" stroke="${SINK}" stroke-width="6" stroke-linejoin="round"/>` + [[1170, 772, 16], [1200, 786, 12], [1354, 776, 14], [1384, 790, 10], [1330, 796, 9]].map(([x, y, r]) => sC(x, y, r, '#77808c', { sw: 4 })).join('') + sR(1376, 744, 60, 10, '#c9ced8', { r: 4, sw: 3 }) + sC(1440, 749, 11, '#c9ced8', { sw: 3 });
+    if (o.lamp) s += sL(960, 0, 960, 70, 5) + sP('M920 70 L1000 70 L990 110 L930 110 Z', '#6c7482', { sw: 5 }) + sC(960, 118, 16, '#F7D88A', { sw: 4 });
+    const L = [{ x: 1290, y: 620, r: 520, a: .75 }, { x: 1850, y: 560, r: 400, a: .75 }, { x: 960, y: 720, r: 1000, a: .2 }];
+    if (o.lamp) L.push({ x: 960, y: 500, r: 620, a: .85 });
+    return { svg: s, floorY: 1000, lights: L, glows: [{ x: 1290, y: 220, r: 260, c: '#CFD8FF', a: .3 }, { x: 1840, y: 400, r: 300, c: '#FFD27A', a: .22 }].concat(o.lamp ? [{ x: 960, y: 118, r: 220, c: '#FFD27A', a: .45 }] : []), cones: [{ x: 1290, y: 320, w0: 260, w1: 560, len: 640, lean: -300, a: .16, c: '#CFD8FF' }] };
+  },
+  cellblock(o) {
+    let s = sR(0, 0, 1920, 1080, '#56606c', { sw: 0 }); const r = sRng(77), gl = [];
+    const tierCells = (y0, y1) => { let q = ''; for (let i = 0; i < 7; i++) { const x = 30 + i * 270, lit = r() < .35; q += sR(x, y0, 230, y1 - y0, lit ? '#3a3524' : '#1b1f28', { sw: 6 }); if (lit) { q += `<rect x="${x + 6}" y="${y0 + 6}" width="218" height="${y1 - y0 - 12}" fill="#F7D88A" opacity=".22"/>`; gl.push({ x: x + 115, y: (y0 + y1) / 2, r: 160, c: '#FFD27A', a: .12 }) } q += cellBars(x + 18, x + 212, y0, y1, 32, 8) + sL(x, y0 + 30, x + 230, y0 + 30, 7, '#3a3f4a'); } return q; };
+    s += tierCells(110, 370) + tierCells(450, 760);
+    // walkway + railing (upper tier)
+    s += sR(0, 370, 1920, 44, '#6a7380', { sw: 6 }) + sT(960, 404, o.block || 'C BLOCK', 30, '#F4EFE2', { cls: 'sans' });
+    s += sL(0, 300, 1920, 300, 7, '#3a3f4a'); for (let i = 0; i < 25; i++) s += sL(i * 80, 300, i * 80, 370, 4, '#3a3f4a');
+    // stairs (right) up to the walkway
+    s += sP('M1460 760 L1760 414 L1800 414 L1500 760 Z', '#6a7380', { sw: 5 }); for (let i = 1; i < 9; i++) { const k = i / 9; s += sL(1460 + 300 * k, 760 - 346 * k, 1500 + 300 * k, 760 - 346 * k, 5); }
+    s += sL(1440, 700, 1740, 354, 5, '#3a3f4a');
+    // floor
+    s += sR(0, 760, 1920, 320, '#5a616e', { sw: 0 }) + sL(0, 760, 1920, 760, 6); for (let i = 0; i < 8; i++) s += `<rect x="${i * 260}" y="${800 + (i % 3) * 70}" width="140" height="8" fill="#fff" opacity=".07"/>`;
+    s += sL(0, 880, 1920, 880, 4, '#c9a24a');
+    // hanging lamps
+    [480, 960, 1440].forEach(x => s += sL(x, 0, x, 40, 4) + sP(`M${x - 60} 70 L${x + 60} 70 L${x + 30} 40 L${x - 30} 40 Z`, '#6c7482', { sw: 5 }) + sC(x, 74, 10, '#F7D88A', { sw: 3 }));
+    return { svg: s, floorY: 1010, lights: [480, 960, 1440].map(x => ({ x, y: 560, r: 480, a: .8 })).concat([{ x: 960, y: 900, r: 1000, a: .3 }]), glows: [480, 960, 1440].map(x => ({ x, y: 80, r: 220, c: '#FFD27A', a: .35 })).concat(gl), cones: [480, 960, 1440].map(x => ({ x, y: 72, w0: 110, w1: 520, len: 800, lean: 0, a: .12, c: '#FFD27A' })) };
+  },
+  yard(o) {
+    const t = o.time || 'day'; let s = sky(t === 'red' ? 'red' : t, 700) + (t === 'night' ? stars(23, 50, 300) + moon(260, 150, 48) : '');
+    // main building behind the fence
+    s += sR(-20, 380, 1300, 300, '#8a8f99', { sw: 6 }); for (let j = 0; j < 3; j++) for (let i = 0; i < 16; i++) s += sR(30 + i * 78, 410 + j * 80, 30, 46, t === 'day' ? '#2a2f38' : (sRng(i * 7 + j)() < .4 ? '#F7D88A' : '#2a2f38'), { sw: 3 });
+    const tw = guardTower(1580, 700, 150); s += tw.svg;
+    s += sR(0, 680, 1920, 400, t === 'day' ? '#a89878' : '#5a5040', { sw: 0 }) + sL(0, 680, 1920, 680, 5);
+    // chain-link fence + razor wire
+    let mesh = ''; for (let x = -400; x < 2000; x += 34) mesh += `<line x1="${x}" y1="470" x2="${x + 290}" y2="760" stroke="#c9ced8" stroke-width="2" opacity=".55"/><line x1="${x + 290}" y1="470" x2="${x}" y2="760" stroke="#c9ced8" stroke-width="2" opacity=".55"/>`;
+    s += `<clipPath id="yardf"><rect x="0" y="470" width="1920" height="290"/></clipPath><g clip-path="url(#yardf)">${mesh}</g>` + sL(0, 470, 1920, 470, 6, '#6c7482') + sL(0, 760, 1920, 760, 6, '#6c7482');
+    for (let i = 0; i <= 8; i++) s += sR(i * 240 - 8, 440, 16, 330, '#6c7482', { sw: 4 });
+    s += razor(0, 1920, 450, 26);
+    // court lines, hoop, bench + weights
+    s += `<path d="M120 1080 L360 800 L1000 800" fill="none" stroke="#fff" stroke-width="6" opacity=".45"/>`;
+    s += sR(250, 520, 16, 300, '#3a3f4a', { sw: 4 }) + sR(180, 470, 150, 96, '#F4EFE2', { sw: 5 }) + sR(226, 506, 58, 40, 'none', { sw: 4 }) + `<ellipse cx="258" cy="572" rx="40" ry="9" fill="none" stroke="#d9572e" stroke-width="6"/>`;
+    s += sR(1180, 860, 300, 26, '#7a5236', { sw: 5 }) + sR(1200, 886, 16, 60, '#3a3f4a', { sw: 4 }) + sR(1444, 886, 16, 60, '#3a3f4a', { sw: 4 });
+    s += sL(1140, 830, 1520, 830, 8) + sC(1150, 830, 30, '#2a2f38') + sC(1510, 830, 30, '#2a2f38');
+    // floodlight poles
+    [[100, 'r'], [1860, 'l']].forEach(([x]) => s += sR(x - 8, 220, 16, 480, '#3a3f4a', { sw: 4 }) + sR(x - 50, 196, 100, 40, '#6c7482', { sw: 5 }) + sC(x - 24, 216, 12, '#F7D88A', { sw: 3 }) + sC(x + 24, 216, 12, '#F7D88A', { sw: 3 }));
+    const night = t !== 'day';
+    return { svg: s, floorY: 1010, lights: night ? [{ x: 300, y: 820, r: 700, a: .85 }, { x: 1660, y: 820, r: 700, a: .85 }, { x: 960, y: 900, r: 1100, a: .25 }, { x: tw.head[0], y: tw.head[1], r: 120, a: .9 }] : [], glows: night ? [{ x: 100, y: 216, r: 220, c: '#FFF2C0', a: .4 }, { x: 1860, y: 216, r: 220, c: '#FFF2C0', a: .4 }, { x: 1580, y: 235, r: 200, c: '#FFD27A', a: .3 }] : [], cones: night ? [{ x: 100, y: 230, w0: 80, w1: 700, len: 780, lean: 300, a: .16, c: '#FFF2C0' }, { x: 1860, y: 230, w0: 80, w1: 700, len: 780, lean: -300, a: .16, c: '#FFF2C0' }] : [] };
+  },
+  wall(o) {
+    const t = o.time || 'night'; let s = sky(t === 'day' ? 'day' : t === 'red' ? 'red' : 'night', 360) + (t === 'day' ? '' : stars(31, 60, 300) + moon(300, 130, 50));
+    s += sR(-10, 300, 1940, 540, '#7a7468', { sw: 6 }) + bricks(-10, 300, 1930, 840, 220, 90, '#5e594f', 4);
+    for (let i = 0; i < 9; i++) s += `<path d="M${120 + i * 210} ${330 + (i % 3) * 120} q14 40 0 80" fill="none" stroke="#4c4a3f" stroke-width="5" opacity=".6"/>`;
+    s += sR(-10, 290, 1940, 24, '#8e887a', { sw: 5 }) + razor(0, 1920, 272, 30);
+    const tw = guardTower(1560, 300, 40); s += tw.svg;
+    if (o.rope) s += `<path d="M${o.rope} 300 q16 120 -4 240 q-18 120 6 270" fill="none" stroke="#c9a46a" stroke-width="9" stroke-linecap="round"/>` + sC(o.rope, 300, 12, '#6c7482', { sw: 4 });
+    s += sR(0, 840, 1920, 240, '#2e3a2c', { sw: 0 }) + sL(0, 840, 1920, 840, 6);
+    for (let i = 0; i < 40; i++) s += sL(i * 50 + 10, 846, i * 50 + 18, 822 + (i % 3) * 6, 4, '#3f5a3a');
+    const sw = o.sweep == null ? 360 : o.sweep, sp = o.sweepSpeed || .6, gx = o.spotX || 820;
+    return { svg: s, floorY: 1010, lights: [{ x: gx, y: 920, r: 300, a: .95, sweep: sw, speed: sp }, { x: tw.head[0], y: tw.head[1], r: 140, a: .9 }, { x: 1560, y: 140, r: 260, a: .6 }, { x: 960, y: 800, r: 1200, a: .15 }], glows: [{ x: tw.head[0], y: tw.head[1], r: 160, c: '#FFF8D8', a: .5 }, { x: 1560, y: 120, r: 200, c: '#FFD27A', a: .25 }], cones: [{ x: tw.head[0], y: tw.head[1], w0: 30, w1: 420, len: 920 - tw.head[1], lean: gx - tw.head[0], a: .26, c: '#FFF8D8', sweep: sw, speed: sp }] };
+  },
+  tunnel(o) {
+    if (!o.ambient) o.ambient = '#3b2b30';
+    let s = sR(0, 0, 1920, 1080, '#6b4a32', { sw: 0 }); const r = sRng(91);
+    for (let i = 0; i < 4; i++) s += `<path d="M0 ${60 + i * 80} Q480 ${40 + i * 80 + (i % 2) * 30} 960 ${70 + i * 80} T1920 ${60 + i * 80}" fill="none" stroke="#5a3e28" stroke-width="10" opacity=".7"/>`;
+    for (let i = 0; i < 26; i++) s += `<ellipse cx="${(r() * 1920).toFixed(0)}" cy="${(r() * 320).toFixed(0)}" rx="${(14 + r() * 30).toFixed(0)}" ry="${(10 + r() * 16).toFixed(0)}" fill="#8a7a6a" stroke="${SINK}" stroke-width="4"/>`;
+    s += `<path d="M-20 380 Q300 352 620 376 T1240 368 T1940 380 L1940 960 L-20 960 Z" fill="#4a3322" stroke="${SINK}" stroke-width="7"/>`;
+    for (let i = 0; i < 14; i++) s += sL(i * 140, 420 + (i % 3) * 140, i * 140 + 60, 440 + (i % 3) * 140, 4, '#3a2618');
+    for (let i = 0; i < 9; i++) { const x = 80 + r() * 1760; s += `<path d="M${x.toFixed(0)} 370 q-8 40 4 70 q10 30 -4 60" fill="none" stroke="#3a2618" stroke-width="5" stroke-linecap="round"/>`; }
+    s += sR(0, 960, 1920, 120, '#3a2818', { sw: 0 }) + sL(0, 960, 1920, 960, 6);
+    [180, 820, 1460].forEach(x => s += sR(x, 380, 34, 580, '#9a6a3c', { sw: 6 }) + sR(x + 300, 380, 34, 580, '#9a6a3c', { sw: 6 }) + sR(x - 20, 370, 374, 36, '#8a5a30', { sw: 6 }));
+    if (o.rails !== false) s += sL(0, 1000, 1920, 1000, 7, '#8a92a3') + sL(0, 1040, 1920, 1040, 7, '#8a92a3');
+    const lx = o.lampX || 1000; s += sL(lx, 406, lx, 456, 4) + sR(lx - 22, 456, 44, 60, '#d9b66a', { r: 8, sw: 5 }) + sC(lx, 486, 14, '#FFE9A8', { sw: 3 });
+    if (o.end) s += `<path d="M1700 380 Q1820 520 1760 700 Q1700 880 1800 960 L1940 960 L1940 380 Z" fill="#6b4a32" stroke="${SINK}" stroke-width="7"/>` + sL(1600, 940, 1690, 820, 8, '#9a6a3c') + sP('M1660 800 L1730 830 L1700 850 Z', '#a9b0bc', { sw: 4 });
+    return { svg: s, floorY: 990, lights: [{ x: lx, y: 600, r: 620, a: .95 }, { x: lx, y: 900, r: 420, a: .5 }], glows: [{ x: lx, y: 486, r: 280, c: '#FFC060', a: .45 }], cones: [] };
+  },
+  sewer(o) {
+    if (!o.ambient) o.ambient = '#24403c';
+    let s = sR(0, 0, 1920, 1080, '#5a4038', { sw: 0 }) + bricks(0, 0, 1920, 860, 120, 50, '#46302a', 3);
+    [[760, '#3a2a26'], [600, '#2c201e'], [440, '#1e1614'], [280, '#120c0c']].forEach(([w, c]) => s += sP(`M${960 - w} 860 L${960 - w} ${560 - w * .35} Q960 ${80 + (760 - w) * .5} ${960 + w} ${560 - w * .35} L${960 + w} 860 Z`, c, { sw: 6 }));
+    s += sR(0, 800, 1920, 60, '#6a5048', { sw: 5 }) + sR(0, 860, 1920, 220, '#2f4a48', { sw: 0 }) + sL(0, 860, 1920, 860, 6);
+    for (let i = 0; i < 14; i++) s += `<path d="M${i * 140 + 20} ${900 + (i % 4) * 40} q30 -10 60 0" fill="none" stroke="#9fd6c8" stroke-width="4" opacity=".4"/>`;
+    [[220, 560], [1700, 600]].forEach(([x, y]) => s += sC(x, y, 46, '#3a3f4a') + sC(x, y, 30, '#120c0c', { sw: 4 }) + `<path d="M${x} ${y + 30} L${x} 800" stroke="#7aa89a" stroke-width="10" opacity=".5"/>`);
+    // grate overhead with moonlight shaft
+    const gx = o.grateX || 620; s += sR(gx - 70, 0, 140, 40, '#3a3f4a', { sw: 5 }); for (let i = 0; i < 5; i++) s += sL(gx - 56 + i * 28, 0, gx - 56 + i * 28, 40, 5, '#8a92a3');
+    return { svg: s, floorY: 1020, lights: [{ x: gx, y: 700, r: 460, a: .85 }, { x: 960, y: 500, r: 520, a: .35 }, { x: 960, y: 900, r: 900, a: .25 }], glows: [{ x: gx, y: 30, r: 180, c: '#CFE0FF', a: .35 }], cones: [{ x: gx, y: 40, w0: 130, w1: 360, len: 820, lean: 60, a: .2, c: '#CFE0FF' }] };
+  },
+  shore(o) {
+    const t = o.time || 'night'; let s = sky(t === 'day' ? 'day' : t === 'dusk' ? 'dusk' : 'night', 640) + (t === 'night' ? stars(41, 70, 360) + moon(1500, 150, 54) : '');
+    // the island prison far away
+    s += sP('M380 600 Q520 520 700 530 Q900 520 1040 600 Z', '#1d2440', { sw: 4 }) + sR(520, 470, 300, 80, '#2a3150', { sw: 4 }) + sR(600, 430, 120, 44, '#2a3150', { sw: 4 }) + sR(880, 380, 26, 190, '#2a3150', { sw: 4 }) + sC(893, 376, 14, '#F7D88A', { sw: 3 });
+    for (let i = 0; i < 8; i++) s += `<rect x="${540 + i * 34}" y="496" width="14" height="18" fill="#F7D88A" opacity="${i % 3 ? .9 : .2}"/>`;
+    s += sR(0, 600, 1920, 300, t === 'day' ? '#3a6a8a' : '#13203a', { sw: 0 }) + sL(0, 600, 1920, 600, 4);
+    for (let i = 0; i < 24; i++) s += `<rect x="${(i * 83) % 1900}" y="${620 + (i % 6) * 44}" width="${50 + (i % 4) * 30}" height="5" fill="#CFD8FF" opacity=".25"/>`;
+    if (t === 'night') for (let i = 0; i < 6; i++) s += `<rect x="${1450 + (i % 2) * 20}" y="${630 + i * 40}" width="${120 - i * 12}" height="6" fill="#F4F0D6" opacity="${.5 - i * .06}"/>`;
+    if (o.raft) s += sP('M1100 860 L1420 850 L1440 890 L1110 900 Z', '#9a6a3c', { sw: 5 }) + [0, 1, 2, 3, 4].map(i => sL(1130 + i * 64, 856, 1136 + i * 64, 896, 3, '#5a3e28')).join('') + sL(1300, 860, 1290, 720, 6, '#7a5236') + sP('M1290 724 L1380 790 L1294 820 Z', '#d8d0bc', { sw: 4 });
+    s += sP('M0 900 Q300 870 640 890 T1300 880 T1920 900 L1920 1080 L0 1080 Z', '#2a2620', { sw: 6 });
+    [[160, 920, 70], [420, 960, 50], [1600, 940, 80], [1820, 980, 60]].forEach(([x, y, r]) => s += `<ellipse cx="${x}" cy="${y}" rx="${r}" ry="${r * .55}" fill="#4a4640" stroke="${SINK}" stroke-width="5"/>`);
+    for (let i = 0; i < 18; i++) { const x = 40 + i * 52; s += sL(x, 910, x + (i % 2 ? 8 : -8), 830 + (i % 3) * 20, 4, '#3f5a3a'); }
+    return { svg: s, floorY: 1010, lights: [{ x: 1500, y: 300, r: 600, a: .55 }, { x: 960, y: 900, r: 1000, a: .55 }, { x: 893, y: 376, r: 120, a: .6 }], glows: [{ x: 1500, y: 150, r: 300, c: '#CFD8FF', a: .25 }, { x: 893, y: 376, r: 160, c: '#FFD27A', a: .4 }], cones: [] };
+  }
+});
+
 function setSVG(o, t) { const f = SETS[o.kind]; return f ? f(o, t) : { svg: sR(0, 0, 1920, 1080, '#333', { sw: 0 }), floorY: 1000, lights: [], glows: [], cones: [] } }
 /* darkness with soft holes at the light sources + additive glow + cones: one mood for the whole picture */
 const NIGHT = { night: '#34407f', dusk: '#7a5a8a', day: null, red: '#7a2030' };
@@ -180,7 +310,7 @@ function nightSVG(o, S, t) {
   const time = o.time || 'night', amb = o.ambient || NIGHT[time]; if (!amb || o.lighting === false) return '';
   const fl = 1 + (o.flicker ? .06 * Math.sin(t * 17) : 0); let defs = '', holes = '', gl = '', cn = '';
   (S.lights || []).concat(o.lights || []).forEach((L, i) => {
-    const a = Math.min(1, L.a * fl);
+    const a = Math.min(1, L.a * fl), sx = L.sweep ? L.sweep * Math.sin(t * (L.speed || .6)) : 0; L = Object.assign({}, L, { x: L.x + sx });
     defs += `<radialGradient id="hl${i}"><stop offset="0" stop-color="#000" stop-opacity="${a}"/><stop offset=".55" stop-color="#000" stop-opacity="${(a * .72).toFixed(3)}"/><stop offset="1" stop-color="#000" stop-opacity="0"/></radialGradient>`;
     holes += `<circle cx="${L.x}" cy="${L.y}" r="${L.r}" fill="url(#hl${i})"/>`;
   });
@@ -189,6 +319,7 @@ function nightSVG(o, S, t) {
     gl += `<circle cx="${G.x}" cy="${G.y}" r="${G.r}" fill="url(#gw${i})"/>`;
   });
   (S.cones || []).concat(o.cones || []).forEach((C, i) => {
+    if (C.sweep) C = Object.assign({}, C, { lean: (C.lean || 0) + C.sweep * Math.sin(t * (C.speed || .6)) });
     defs += `<linearGradient id="cn${i}" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="${C.c || '#FFD27A'}" stop-opacity="${C.a}"/><stop offset="1" stop-color="${C.c || '#FFD27A'}" stop-opacity="0"/></linearGradient>`;
     cn += `<path d="M${C.x - C.w0 / 2} ${C.y} L${C.x + C.w0 / 2} ${C.y} L${C.x + (C.lean || 0) + C.w1 / 2} ${C.y + C.len} L${C.x + (C.lean || 0) - C.w1 / 2} ${C.y + C.len} Z" fill="url(#cn${i})"/>`;
   });
