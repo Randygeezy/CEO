@@ -1,0 +1,84 @@
+{
+ "fps": 30,
+ "library": [
+  "custom.js"
+ ],
+ "shots": [
+  {
+   "id": "sea",
+   "duration": 2,
+   "set": {
+    "kind": "ocean"
+   },
+   "layers": [
+    {
+     "kind": "prop",
+     "prop": "shark",
+     "x": 800,
+     "y": 620,
+     "s": 1,
+     "open": true,
+     "z": "under",
+     "kf": [
+      {
+       "t": 2,
+       "x": 1000
+      }
+     ]
+    },
+    {
+     "kind": "prop",
+     "prop": "turtle",
+     "x": 1450,
+     "y": 900,
+     "s": 0.8,
+     "z": "under"
+    },
+    {
+     "kind": "prop",
+     "prop": "jellyfish",
+     "x": 300,
+     "y": 700,
+     "z": "under"
+    }
+   ]
+  },
+  {
+   "id": "custom",
+   "duration": 2,
+   "set": {
+    "kind": "beach"
+   },
+   "chars": [
+    {
+     "creature": "dalmatian",
+     "x": 700,
+     "y": 1000,
+     "mood": "happy",
+     "walk": true
+    },
+    {
+     "creature": "penguin",
+     "x": 1250,
+     "y": 1000,
+     "mood": "grin",
+     "talk": true
+    }
+   ],
+   "layers": [
+    {
+     "kind": "text",
+     "text": "ANY TOPIC",
+     "x": 960,
+     "y": 220,
+     "size": 110,
+     "font": "brush",
+     "color": "#fff",
+     "stroke": "#18161B",
+     "sw": 14,
+     "in": "pop"
+    }
+   ]
+  }
+ ]
+}
