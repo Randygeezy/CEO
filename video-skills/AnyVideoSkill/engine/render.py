@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Paper Billions Animate Video engine renderer: timeline.json -> mp4 (every shot is cached, so a re-run only redraws what changed).
+"""AnyVideo engine renderer (built on the Paper Billions Animate Video engine): timeline.json -> mp4 (every shot is cached, so a re-run only redraws what changed).
 
   python render.py <project>/timeline.json --out <project>/renders/final.mp4 [--draft] [--shots 3-9] [--fps 30]
 
@@ -10,12 +10,23 @@ Paths inside timeline.json (bg, sprite closed/open) are relative to the timeline
 """
 import argparse, array, hashlib, json, math, os, shutil, subprocess, sys
 _here = os.path.dirname(os.path.abspath(__file__))
-ENGINE_HASH = hashlib.sha1(b''.join(open(os.path.join(_here, f), 'rb').read() for f in ('engine.html', 'layers.js', 'puppet.js', 'sets.js') if os.path.exists(os.path.join(_here, f)))).hexdigest()[:10]   # engine edits must invalidate the shot cache
+ENGINE_HASH = hashlib.sha1(b''.join(open(os.path.join(_here, f), 'rb').read() for f in ('engine.html', 'layers.js', 'puppet.js', 'sets.js', 'world.js') if os.path.exists(os.path.join(_here, f)))).hexdigest()[:10]   # engine edits must invalidate the shot cache
 
 from playwright.sync_api import sync_playwright
 
 HERE = os.path.dirname(os.path.abspath(__file__))
 IMG_KEYS = {'bg', 'closed', 'open', 'src'}
+LIB_DIR = os.path.join(os.path.dirname(HERE), 'library')
+
+
+def library_files(tl, base):
+    """every drawing library to load: SKILL/library/*.js (shared, grows over time) + the project's own files in timeline "library":[...]"""
+    fs = sorted(os.path.join(LIB_DIR, f) for f in os.listdir(LIB_DIR) if f.endswith('.js')) if os.path.isdir(LIB_DIR) else []
+    for f in tl.get('library', []):
+        f = f if os.path.isabs(f) else os.path.join(base, f)
+        if not os.path.exists(f): sys.exit(f'MISSING LIBRARY FILE: {f}')
+        fs.append(f)
+    return fs
 
 
 def load_sprite(ref, base):
@@ -60,12 +71,13 @@ def audio_env(path, fps):
     return [min(1.0, v / (m * 0.6 + 1e-9)) for v in env]
 
 
-def render_bucket(items, W, H, fps, env, total):
+def render_bucket(items, W, H, fps, env, total, libs=()):
     with sync_playwright() as p:
         exe = os.environ.get('ESCAPESKILL_CHROMIUM') or None  # optional: use an existing Chromium instead of Playwright's download
         br = p.chromium.launch(executable_path=exe) if exe else p.chromium.launch()
         pg = br.new_page(viewport={'width': 1920, 'height': 1080}, device_scale_factor=(W / 1920))
         pg.goto('file:///' + os.path.join(HERE, 'engine.html').replace('\\', '/').lstrip('/')); pg.wait_for_function('window.__ready===true')
+        for lf in libs: pg.add_script_tag(content=open(lf, encoding='utf-8').read() + f'\n//# sourceURL={os.path.basename(lf)}')
         pg.evaluate('([a,f])=>setEnv(a,f)', [env, fps])
         for si, sh, clip, d, st in sorted(items, key=lambda x: x[0]):
             n = max(2, int(round(d * fps)))
@@ -100,11 +112,12 @@ def main():
     starts = []; t = 0.0
     for sh in shots: starts.append(t); t += float(sh['duration'])
     env = audio_env(voice, fps)
+    libs = library_files(tl, base); LIB_HASH = hashlib.sha1(b''.join(open(f, 'rb').read() for f in libs)).hexdigest()[:10]
     clips = []; todo = []
     for si, sh0 in enumerate(shots):
         if not (lo <= si + 1 <= hi): continue
         sh = absify(dict(sh0, cast=tl.get('cast', {})), base)
-        key = hashlib.sha1((ENGINE_HASH + json.dumps(sh, sort_keys=True) + f'{starts[si]:.3f}{fps}{W}' + (str(os.path.getmtime(voice)) if voice and os.path.exists(voice) else '')).encode()).hexdigest()[:16]
+        key = hashlib.sha1((ENGINE_HASH + LIB_HASH + json.dumps(sh, sort_keys=True) + f'{starts[si]:.3f}{fps}{W}' + (str(os.path.getmtime(voice)) if voice and os.path.exists(voice) else '')).encode()).hexdigest()[:16]
         clip = os.path.join(cache, f'{si+1:03d}_{key}.mp4'); clips.append(clip)
         if os.path.exists(clip): print(f'  shot {si+1:3d}/{len(shots)} cached', flush=True)
         else: todo.append((si, sh, clip, float(sh['duration']), starts[si]))
@@ -113,10 +126,10 @@ def main():
         print(f'  rendering {len(todo)} shots with {jobs} parallel browser(s)', flush=True)
         buckets = [[] for _ in range(jobs)]; load = [0.0] * jobs
         for it in sorted(todo, key=lambda x: -x[3]): k = load.index(min(load)); buckets[k].append(it); load[k] += it[3]
-        if jobs == 1: render_bucket(buckets[0], W, H, fps, env, len(shots))
+        if jobs == 1: render_bucket(buckets[0], W, H, fps, env, len(shots), libs)
         else:
             import multiprocessing as mp
-            ps = [mp.Process(target=render_bucket, args=(bk, W, H, fps, env, len(shots))) for bk in buckets if bk]
+            ps = [mp.Process(target=render_bucket, args=(bk, W, H, fps, env, len(shots), libs)) for bk in buckets if bk]
             [q.start() for q in ps]; [q.join() for q in ps]
             if any(q.exitcode for q in ps): sys.exit('a render worker failed')
     if a.shots:

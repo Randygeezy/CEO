@@ -32,6 +32,7 @@ svg{display:block;width:1920px;height:1080px}
 <script src="layers.js"></script>
 <script src="puppet.js"></script>
 <script src="sets.js"></script>
+<script src="world.js"></script>
 <script>
 const $=id=>document.getElementById(id);
 let SH=null, ENV=[], FPS=30, T0=0, P=[];
@@ -96,6 +97,7 @@ function arm(side,a1,a2){ // side: +1 right (screen +x), -1 left
 function shade(hex,k){const h=hex.replace('#','');const n=parseInt(h.length===3?h.split('').map(x=>x+x).join(''):h,16);const f=v=>Math.max(0,Math.min(255,Math.round(v*(1-k))));return '#'+[(n>>16)&255,(n>>8)&255,n&255].map(f).map(v=>v.toString(16).padStart(2,'0')).join('')}
 function charSVG(c,t,speakOpen){
  if(c.puppet)return puppetSVG(c,t,speakOpen);
+ if(c.creature)return creatureSVG(c,t);
  if(c.sprite){
   const ph=(c.phase||0), tt=t+ph, sp=c.sprite, H=(c.h||560)*(c.s||1), fl=c.flip?-1:1;
   const pose=c.pose||'idle';

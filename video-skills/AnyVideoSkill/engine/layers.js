@@ -193,6 +193,7 @@ function layerBody(l, st, idx, t) {
     for (let i = 0; i < n; i++) { const hh = (H * .45 + r() * H * .55) * sc * ease(c01((lt - (i / n) * ap) / .3)); s += `<rect x="${(i * bw).toFixed(1)}" y="${(-hh).toFixed(1)}" width="${(bw * 1.15).toFixed(1)}" height="${hh.toFixed(1)}" fill="${cols[i % cols.length]}" stroke="#3b4a60" stroke-width="2"/>` }
     return `<g transform="translate(${-W / 2} 0)">${s}</g>`;
   }
+  if (k === 'prop') return propSVG(l, lt);
   if (k === 'cash') return cashSVG(0, 0, 1, l.rows || 2);
   if (k === 'fire') return fireSVG(lt, 0, 0, 1);
   if (k === 'balloon') return balloonSVG(lt, 0, 0, 1);
