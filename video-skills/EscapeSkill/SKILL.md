@@ -32,6 +32,7 @@ This is an interview, not a form. Hard rules:
 1. 8 minutes  2. 10 minutes  3. 12 minutes  4. 15 minutes (or type your own length)
 
 - Each answer is acknowledged in one short line, then the next stage's single question follows. Show "Stage N of 6" in every question. If the user changes an earlier choice, update everything that depends on it.
+- Everything is in English (see Language above).
 
 ## The 6 stages (the route)
 1. **Length** (the menu above). The script gets about 150 spoken words per minute.
