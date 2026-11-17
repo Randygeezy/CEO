@@ -95,7 +95,23 @@ function puppetSVG(c, t, so) {
   g += `<path d="${bodyP}" fill="${dress || sp.suit_d}"/>`;
   g += `<clipPath id="bc${Math.round(c.x)}"><path d="${bodyP}"/></clipPath><g clip-path="url(#bc${Math.round(c.x)})">`;
   g += `<path d="${bodyP}" transform="translate(${-light * 18} -4)" fill="${dress || sp.suit}"/>`;
-  if (!dress) {
+  if (!dress && sp.outfit) { // EscapeSkill outfits: jumpsuit | stripes | guard
+    const num = sp.number || '', patch = (x) => num ? `<rect x="${x}" y="${BT + 72}" width="60" height="30" fill="#F4EFE2" stroke="${PINK}" stroke-width="${lw * .5}"/><text x="${x + 30}" y="${BT + 95}" font-size="20" class="sans" text-anchor="middle" fill="${PINK}">${num}</text>` : '';
+    if (sp.outfit === 'stripes') for (let y = BT - 10; y < BB + 10; y += 36) g += `<rect x="-100" y="${y}" width="200" height="18" fill="${sp.stripe || '#26222b'}" opacity=".9"/>`;
+    if (sp.outfit === 'jumpsuit' || sp.outfit === 'stripes') {
+      g += `<path d="M-30 ${BT - 4} L0 ${BT + 34} L30 ${BT - 4} Z" fill="${sp.shirt}" stroke="${PINK}" stroke-width="${lw * .55}"/>`;
+      if (sp.outfit === 'jumpsuit') g += `<line x1="0" y1="${BT + 34}" x2="0" y2="${BB}" stroke="${PINK}" stroke-width="${lw * .5}" opacity=".6"/><path d="M-60 ${BB - 70} l34 0 M26 ${BB - 70} l34 0" stroke="${PINK}" stroke-width="${lw * .5}" opacity=".5"/>`;
+      g += patch(light > 0 ? 10 : -70);
+    } else if (sp.outfit === 'guard') {
+      g += `<path d="M-14 ${BT + 2} L-32 ${BT + 28} L-4 ${BT + 22} Z M14 ${BT + 2} L32 ${BT + 28} L4 ${BT + 22} Z" fill="${sp.suit_d}" stroke="${PINK}" stroke-width="${lw * .55}" stroke-linejoin="round"/>`;
+      g += `<path d="M-8 ${BT + 22} L8 ${BT + 22} L11 ${BT + 76} L0 ${BT + 88} L-11 ${BT + 76} Z" fill="${sp.tie}" stroke="${PINK}" stroke-width="${lw * .6}"/>`;
+      g += `<path d="M-52 ${BT + 60} l9 18 l20 2 l-15 13 l5 20 l-19 -11 l-19 11 l5 -20 l-15 -13 l20 -2 z" fill="#E8B923" stroke="${PINK}" stroke-width="${lw * .45}"/>`;
+      [-1, 1].forEach(m => g += `<rect x="${m > 0 ? 50 : -78}" y="${BT + 30}" width="28" height="34" rx="6" fill="${sp.patch || '#2a3a6a'}" stroke="${PINK}" stroke-width="${lw * .45}"/>`);
+      g += `<rect x="-90" y="${BB - 52}" width="180" height="20" fill="#1c1b22"/><rect x="-14" y="${BB - 54}" width="28" height="24" fill="#d9b66a" stroke="${PINK}" stroke-width="${lw * .45}"/>`;
+    }
+    g += `<rect x="-84" y="${BB - 34}" width="168" height="40" fill="#000" opacity=".12"/>`;
+  }
+  if (!dress && !sp.outfit) {
     g += `<path d="M-36 ${BT - 4} L0 ${BT + 96} L36 ${BT - 4} Z" fill="${sp.shirt}"/>`;
     if (sp.bowtie) g += `<path d="M0 ${BT + 38} L-26 ${BT + 24} L-26 ${BT + 52} Z M0 ${BT + 38} L26 ${BT + 24} L26 ${BT + 52} Z" fill="${sp.tie}" stroke="${PINK}" stroke-width="${lw * .7}"/>`;
     else g += `<path d="M-10 ${BT + 24} L10 ${BT + 24} L14 ${BT + 84} L0 ${BT + 100} L-14 ${BT + 84} Z" fill="${sp.tie}" stroke="${PINK}" stroke-width="${lw * .7}"/>`;
@@ -122,7 +138,9 @@ function puppetSVG(c, t, so) {
   if (c.rim) g += `<circle cx="${-light * 10}" cy="4" r="${R}" fill="none" stroke="${c.rim}" stroke-width="7" opacity=".7" clip-path="url(#hc${Math.round(c.x)})"/>`;
   g += `<circle r="${R}" fill="none" stroke="${PINK}" stroke-width="${lw}"/>`;
   if (sp.hair !== 'long' && sp.hair !== 'bob') g += ppHair(sp.hair, sp.hair_col, R, face * 14, lw); else g += ppHair('short', sp.hair_col, R, face * 14, lw);
-  if (sp.hat) { const hc = sp.hat_col || '#2E2E38'; g += `<path d="M${-R + 8} -54 C${-R} -${R + 78} ${R} -${R + 78} ${R - 8} -54 Z" fill="${hc}" stroke="${PINK}" stroke-width="${lw}"/><rect x="${-R + 8}" y="-82" width="${2 * R - 16}" height="26" fill="${sp.hat_band || '#7E1C24'}" stroke="${PINK}" stroke-width="${lw * .7}"/><ellipse cx="0" cy="-54" rx="${R + 38}" ry="15" fill="${hc}" stroke="${PINK}" stroke-width="${lw}"/>`; }
+  if (sp.hat === 'cap') { const hc = sp.hat_col || '#1f2a4a'; g += `<path d="M${-R + 4} -46 C${-R - 10} -${R + 60} ${R + 10} -${R + 60} ${R - 4} -46 Z" fill="${hc}" stroke="${PINK}" stroke-width="${lw}"/><rect x="${-R + 4}" y="-66" width="${2 * R - 8}" height="20" fill="${sp.hat_band || '#1c1b22'}" stroke="${PINK}" stroke-width="${lw * .7}"/><path d="M${-R + 10} -46 Q0 -20 ${R - 10} -46 Q${R - 20} -30 0 -26 Q${-R + 20} -30 ${-R + 10} -46 Z" fill="#1c1b22" stroke="${PINK}" stroke-width="${lw * .7}"/><path d="M-12 -${R + 14} l12 -14 l12 14 l-12 10 z" fill="#E8B923" stroke="${PINK}" stroke-width="${lw * .45}"/>`; }
+  else if (sp.hat === 'beanie') { const hc = sp.hat_col || '#3a3f4a'; g += `<path d="M${-R - 2} -24 C${-R - 6} -${R + 50} ${R + 6} -${R + 50} ${R + 2} -24 Z" fill="${hc}" stroke="${PINK}" stroke-width="${lw}"/><rect x="${-R - 4}" y="-40" width="${2 * R + 8}" height="24" rx="10" fill="${shade(hc, .2)}" stroke="${PINK}" stroke-width="${lw * .7}"/>`; }
+  else if (sp.hat) { const hc = sp.hat_col || '#2E2E38'; g += `<path d="M${-R + 8} -54 C${-R} -${R + 78} ${R} -${R + 78} ${R - 8} -54 Z" fill="${hc}" stroke="${PINK}" stroke-width="${lw}"/><rect x="${-R + 8}" y="-82" width="${2 * R - 16}" height="26" fill="${sp.hat_band || '#7E1C24'}" stroke="${PINK}" stroke-width="${lw * .7}"/><ellipse cx="0" cy="-54" rx="${R + 38}" ry="15" fill="${hc}" stroke="${PINK}" stroke-width="${lw}"/>`; }
   // ears + blush + nose (drawn under the features)
   [-1, 1].forEach(m => { if (Math.abs(face) < .85 || (face > 0) === (m < 0)) g += `<ellipse cx="${m * (R - 2)}" cy="6" rx="11" ry="17" fill="${sp.skin_d}" stroke="${PINK}" stroke-width="${lw * .7}" transform="translate(${-face * 4 * m} 0)"/>`; });
   [-1, 1].forEach(m => g += `<ellipse cx="${m * 52 + face * 30}" cy="28" rx="${15 - Math.abs(face) * 4}" ry="9" fill="#E8727A" opacity="${md[4] || c.sweat ? .1 : (c.blush == null ? .32 : c.blush)}"/>`);
