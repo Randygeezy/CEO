@@ -62,7 +62,8 @@ def audio_env(path, fps):
 
 def render_bucket(items, W, H, fps, env, total):
     with sync_playwright() as p:
-        br = p.chromium.launch()
+        exe = os.environ.get('ESCAPESKILL_CHROMIUM') or None  # optional: use an existing Chromium instead of Playwright's download
+        br = p.chromium.launch(executable_path=exe) if exe else p.chromium.launch()
         pg = br.new_page(viewport={'width': 1920, 'height': 1080}, device_scale_factor=(W / 1920))
         pg.goto('file:///' + os.path.join(HERE, 'engine.html').replace('\\', '/').lstrip('/')); pg.wait_for_function('window.__ready===true')
         pg.evaluate('([a,f])=>setEnv(a,f)', [env, fps])
