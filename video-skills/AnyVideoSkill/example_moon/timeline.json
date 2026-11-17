@@ -1,0 +1,351 @@
+{
+ "fps": 30,
+ "cast": {
+  "me": {
+   "skin": "#e8b98f",
+   "suit": "#eef0f4",
+   "shirt": "#eef0f4",
+   "outfit": "astronaut",
+   "hat": "helmet",
+   "hair": "short",
+   "hair_col": "#3a2a1c"
+  }
+ },
+ "shots": [
+  {
+   "id": "wake",
+   "duration": 1.5,
+   "set": {
+    "kind": "moon",
+    "base": true
+   },
+   "chars": [
+    {
+     "puppet": "me",
+     "x": 1000,
+     "y": 1000,
+     "mood": "shock",
+     "pose": "panic"
+    }
+   ],
+   "layers": [
+    {
+     "kind": "text",
+     "text": "DAY 1 / 30",
+     "x": 180,
+     "y": 110,
+     "size": 64,
+     "font": "brush",
+     "color": "#fff",
+     "stroke": "#18161B",
+     "sw": 12,
+     "hud": true
+    },
+    {
+     "kind": "prop",
+     "prop": "flag",
+     "x": 1450,
+     "y": 1000,
+     "text": "?",
+     "z": "under"
+    },
+    {
+     "kind": "prop",
+     "prop": "footprints",
+     "x": 700,
+     "y": 1030,
+     "z": "under"
+    }
+   ]
+  },
+  {
+   "id": "o2",
+   "duration": 2,
+   "set": {
+    "kind": "moon",
+    "earth": true,
+    "earthX": 400
+   },
+   "chars": [
+    {
+     "puppet": "me",
+     "x": 1100,
+     "y": 1000,
+     "mood": "worry",
+     "pose": "think"
+    }
+   ],
+   "layers": [
+    {
+     "kind": "text",
+     "text": "DAY 7 / 30",
+     "x": 180,
+     "y": 110,
+     "size": 64,
+     "font": "brush",
+     "color": "#fff",
+     "stroke": "#18161B",
+     "sw": 12,
+     "hud": true
+    },
+    {
+     "kind": "prop",
+     "prop": "oxygen",
+     "x": 700,
+     "y": 1000,
+     "level": 0.8,
+     "levelTo": 0.4,
+     "dur": 1.5,
+     "z": "under"
+    },
+    {
+     "kind": "prop",
+     "prop": "lander",
+     "x": 1550,
+     "y": 990,
+     "s": 0.8,
+     "z": "under"
+    }
+   ]
+  },
+  {
+   "id": "ship",
+   "duration": 1.5,
+   "set": {
+    "kind": "spaceship",
+    "view": "moon"
+   },
+   "chars": [
+    {
+     "puppet": "me",
+     "x": 900,
+     "y": 1000,
+     "mood": "grin",
+     "pose": "type"
+    }
+   ],
+   "layers": [
+    {
+     "kind": "text",
+     "text": "DAY 19 / 30",
+     "x": 180,
+     "y": 110,
+     "size": 64,
+     "font": "brush",
+     "color": "#fff",
+     "stroke": "#18161B",
+     "sw": 12,
+     "hud": true
+    }
+   ]
+  },
+  {
+   "id": "alarm",
+   "duration": 1.5,
+   "set": {
+    "kind": "spaceship",
+    "view": "mars",
+    "time": "red"
+   },
+   "flicker": true,
+   "chars": [
+    {
+     "puppet": "me",
+     "x": 900,
+     "y": 1000,
+     "mood": "panic",
+     "pose": "panic"
+    }
+   ],
+   "layers": [
+    {
+     "kind": "text",
+     "text": "DAY 23 / 30",
+     "x": 180,
+     "y": 110,
+     "size": 64,
+     "font": "brush",
+     "color": "#fff",
+     "stroke": "#18161B",
+     "sw": 12,
+     "hud": true
+    }
+   ]
+  },
+  {
+   "id": "solar",
+   "duration": 1.5,
+   "set": {
+    "kind": "solar",
+    "highlight": "earth"
+   },
+   "layers": [
+    {
+     "kind": "text",
+     "text": "DAY 26 / 30",
+     "x": 180,
+     "y": 110,
+     "size": 64,
+     "font": "brush",
+     "color": "#fff",
+     "stroke": "#18161B",
+     "sw": 12,
+     "hud": true
+    }
+   ]
+  },
+  {
+   "id": "mars",
+   "duration": 1.5,
+   "set": {
+    "kind": "mars",
+    "rover": true
+   },
+   "chars": [
+    {
+     "puppet": "me",
+     "x": 700,
+     "y": 1000,
+     "mood": "think",
+     "pose": "point"
+    }
+   ],
+   "layers": []
+  },
+  {
+   "id": "orbit",
+   "duration": 1.5,
+   "set": {
+    "kind": "orbit"
+   },
+   "layers": [
+    {
+     "kind": "prop",
+     "prop": "satellite",
+     "x": 600,
+     "y": 500,
+     "z": "under"
+    },
+    {
+     "kind": "prop",
+     "prop": "rocket",
+     "x": 1200,
+     "y": 620,
+     "s": 0.7,
+     "rot": 40,
+     "z": "under"
+    },
+    {
+     "kind": "prop",
+     "prop": "comet",
+     "x": 1500,
+     "y": 300,
+     "z": "under"
+    },
+    {
+     "kind": "prop",
+     "prop": "asteroid",
+     "x": 300,
+     "y": 300,
+     "s": 0.6,
+     "z": "under"
+    },
+    {
+     "kind": "text",
+     "text": "DAY 30 / 30",
+     "x": 180,
+     "y": 110,
+     "size": 64,
+     "font": "brush",
+     "color": "#fff",
+     "stroke": "#18161B",
+     "sw": 12,
+     "hud": true
+    }
+   ]
+  },
+  {
+   "id": "planets",
+   "duration": 1.5,
+   "set": {
+    "kind": "plain",
+    "color": "#0a0d24",
+    "floor": false
+   },
+   "layers": [
+    {
+     "kind": "prop",
+     "prop": "planet",
+     "type": "jupiter",
+     "r": 140,
+     "x": 350,
+     "y": 640,
+     "z": "under"
+    },
+    {
+     "kind": "prop",
+     "prop": "planet",
+     "type": "saturn",
+     "r": 110,
+     "x": 900,
+     "y": 600,
+     "z": "under"
+    },
+    {
+     "kind": "prop",
+     "prop": "planet",
+     "type": "neptune",
+     "r": 90,
+     "x": 1450,
+     "y": 560,
+     "z": "under"
+    },
+    {
+     "kind": "prop",
+     "prop": "planet",
+     "type": "venus",
+     "r": 70,
+     "x": 1750,
+     "y": 560,
+     "z": "under"
+    },
+    {
+     "kind": "prop",
+     "prop": "planet",
+     "type": "mars",
+     "r": 70,
+     "x": 400,
+     "y": 980,
+     "z": "under"
+    },
+    {
+     "kind": "prop",
+     "prop": "planet",
+     "type": "pluto",
+     "r": 40,
+     "x": 800,
+     "y": 960,
+     "z": "under"
+    },
+    {
+     "kind": "prop",
+     "prop": "planet",
+     "type": "uranus",
+     "r": 80,
+     "x": 1200,
+     "y": 1000,
+     "z": "under"
+    },
+    {
+     "kind": "prop",
+     "prop": "planet",
+     "type": "sun",
+     "r": 90,
+     "x": 1650,
+     "y": 1040,
+     "z": "under"
+    }
+   ]
+  }
+ ]
+}
