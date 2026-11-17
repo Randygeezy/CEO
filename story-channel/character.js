@@ -1,15 +1,15 @@
 window.CHARACTER = {
-  "name": "Wren",
+  "name": "Marc",
   "handle": null,
   "watermark": false,
   "skin": "#e0a77e",
   "tall": false,
-  "shirt": { "color": "#6b3fc4", "pattern": "plain", "emblem": "bolt", "emblemColor": "#ffd23f", "tee": null, "text": "", "style": "hoodie" },
-  "pants": { "color": "#2b3a5c", "stripes": true, "stripeColor": "#ffd23f", "shoe": "#e8553d", "sole": "#f2f2f2" },
-  "hair": { "style": "curly", "color": "#2a1a12" },
-  "hat": { "style": "cap", "color": "#e8553d", "logo": "#ffd23f" },
-  "face": { "eyes": "glasses", "blush": true, "freckles": false, "frame": "#1a1a1a" },
+  "shirt": { "color": "#0f6e6a", "pattern": "plain", "emblem": "star", "emblemColor": "#ffb02e", "tee": null, "text": "", "style": "jacket" },
+  "pants": { "color": "#26304a", "stripes": true, "stripeColor": "#ff5a1f", "shoe": "#2a2a2a", "sole": "#ffb02e" },
+  "hair": { "style": "spiky", "color": "#c4281c" },
+  "hat": { "style": "none" },
+  "face": { "eyes": "round", "iris": "#ffb02e", "blush": false, "freckles": false, "brows": "#7a1810" },
   "coat": null,
-  "accessories": ["headphones"],
-  "accessoryColors": { "headphones": "#21b8a6" }
+  "accessories": ["scarf"],
+  "accessoryColors": { "scarf": "#ff5a1f" }
 };
