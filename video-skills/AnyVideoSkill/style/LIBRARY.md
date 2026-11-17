@@ -13,11 +13,12 @@ All coordinates are 1920x1080. Characters and props stand with their bottom cent
 | money / business | `office`, `boardroom`, `trading` (`mood:"red"/"green"`), `vault`, `server`, `capitol`, `map` (`cities:[[x,y]]`) | from Paper Billions |
 | prison / crime | `cell` (`hole`, `lamp`, `tally`), `cellblock` (`block`), `yard`, `wall` (sweeping searchlight `sweep`, `rope`), `tunnel` (`end`, `lampX`), `sewer` (`grateX`), `shore` (`raft`) | from EscapeSkill |
 | nature | `forest`, `savanna`, `jungle`, `desert`, `mountains`, `beach`, `ocean` (underwater), `farm`, `prehistoric` (volcano, ferns) | `time` |
-| science / space | `lab`, `space` (`ground:true` moon surface, `planet:false`, `planetColor`) | |
+| science / space | `lab`, `space` (`ground:true` moon surface, `planet:false`, `planetColor`), `moon` (grey surface, craters, Earth in the sky: `earth:false`, `earthX`, `earthR`, `base:true` dome habitat), `mars` (red rocks, dusty sky, `rover:true`), `solar` (the Sun and all 8 planets in order: `highlight:"earth"`, `labels:false`), `orbit` (a planet's curve below, space above: `planet:"earth"/"mars"/"moon"/"venus"`, `sun:false`), `spaceship` (interior, round window: `view:"earth"/"moon"/"mars"/any planet/"none"`, consoles; `time:"red"` + `flicker` = alarm) | |
 | sport / vehicles | `stadium` (`sport:"soccer"/"football"/"basketball"/"track"`, `team` colour), `racetrack` (`finish:false`), `garage` | |
 
 ## 2. People: `"chars":[{"puppet":"<cast key>", ...}]`
-Cast spec: `skin suit shirt tie bowtie dress hair(bald|slick|short|curly|bob|long|bun|grey) hair_col glasses moustache beard hat(true|"cap"|"beanie") hat_col outfit("jumpsuit"|"stripes"|"guard") number`.
+Cast spec: `skin suit shirt tie bowtie dress hair(bald|slick|short|curly|bob|long|bun|grey) hair_col glasses moustache beard hat(true|"cap"|"beanie"|"helmet") hat_col visor outfit("jumpsuit"|"stripes"|"guard"|"astronaut") number patch`.
+Astronaut = `outfit:"astronaut"` (white suit, chest control box, flag `patch` colour) + `hat:"helmet"` (glass bubble; `visor` tint).
 In a shot: `x y s face mood(neutral happy grin shock panic worry smug sad angry sleep think laugh) pose(idle walk cheer panic clap think point present gesture shrug facepalm hip pocket hold wave push type) talk enter flip cut`.
 Jobs by clothes: athlete = `outfit:"jumpsuit"` in team colour + `number`; scientist/doctor = white `suit` + glasses; chef/farmer/explorer = suit colour + `hat`.
 
@@ -39,7 +40,9 @@ New animal = a spec that starts from the closest preset: `{"base":"dog","color":
 |---|---|
 | `car` | `type: sedan|sports|truck|race`, `color`, `number` (race), `spin` (wheel turns per second) |
 | `tree`, `pine`, `palm`, `bush`, `flower`, `plant` | `color`; bush `berries`; flower `h`; plant `grow` 0-1, `growAt`, `growDur` (grows on screen), `bloom` colour |
-| `rock`, `cloud`, `sun`, `planet` | rock/cloud `color`; planet `r color ring` |
+| `rock`, `cloud`, `sun` | `color` |
+| `planet` | `type: sun|mercury|venus|earth|moon|mars|jupiter|saturn|uranus|neptune|pluto` (each drawn with its own look: Earth's continents turn, Jupiter's bands and red spot, Saturn's ring, Pluto's heart), `r`; without `type`: `color ring` |
+| space | `lander` (moon lander), `rover` (`spin`), `satellite`, `asteroid` (`spin`, `color`), `comet` (`angle`), `flag` (`color`, `text`), `oxygen` (tank meter: `level` 0-1, `levelTo` + `dur` animates it; turns orange then red), `footprints` (`n`) |
 | `ball` | `type: soccer|basket|football|tennis`, `r`, `spin` |
 | `trophy`, `sign`, `house` | trophy `text`; sign `text color`; house `color roof` |
 | `egg`, `bone`, `fossil` | egg `spots crack crackAt`; bone `rot2` |

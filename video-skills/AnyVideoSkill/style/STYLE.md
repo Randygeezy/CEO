@@ -110,6 +110,9 @@ Cards may carry `tin:"flash"`.
 | growth / time passing | `plant` with `growAt` (grows on screen), `calendar` flipping, `time` day → dusk → night across 3 shots |
 | sport moment | `stadium` or `racetrack` set, `ball`/`car` with `kf` + `spin`, `crowd` or `confetti` fx, `shake` on the goal/finish |
 | space / science | `space` or `lab` set, `planet` / `rocket` / `flask` props, `glow`, slow camera push |
+| where are we in space | `solar` set with `highlight`, camera push toward the planet, then cut to its surface set (`moon`, `mars`) or `orbit` |
+| adventure: the clock | fixed `DAY n / 30` `text` badge (`hud:true`) on every shot, a `calendar` flip at each time jump |
+| adventure: running out | `oxygen` prop dropping (`level` → `levelTo`), red at the bottom, `spaceship` with `time:"red"` + `flicker` + `shake` for the alarm |
 
 ## 9. QA checklist (read every contact sheet, frame by frame)
 - Does the picture show what the sentence says at that second? Do numbers on screen equal the script's numbers?

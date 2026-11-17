@@ -1,6 +1,6 @@
 ---
 name: anyvideo
-description: Make a faceless long-form (8-15 min, 16:9) flat 2D cartoon video about ANY topic (animals, dinosaurs, cars, sports, plants, space, science, history, money, crime, what-ifs, top-10 lists, comparisons) from one topic or the user's own script. Claude researches with sources, writes the script, draws every character, animal, prop and place itself in code (with a built-in library of 35 sets, 22 animals/dinosaurs, people with outfits and 25+ props, and draws and SAVES anything missing so the library grows), makes or takes a voiceover checked by speech recognition, renders the animation with music and sound effects, checks every frame and writes the YouTube package (title, description, one thumbnail). Use whenever someone wants an animated explainer/story/what-if/list video on any subject, even from just a topic. Always works in English. Also use when the user writes "anyvideo", "AnyVideo", "Any Topic Animate Video", "robbiskill" for a non-money topic, or "escapeskill" for a non-prison topic.
+description: Make a faceless long-form (8-15 min, 16:9) flat 2D cartoon video about ANY topic or ANY made-up story (animals, dinosaurs, cars, sports, plants, space and the solar system, science, history, money, crime, what-ifs, top-10 lists, comparisons, and fiction like "I woke up on the Moon and had 30 days to get home") from one topic or the user's own script. Claude researches with sources, writes the script, draws every character, animal, prop and place itself in code (with a built-in library of 40 sets, 22 animals/dinosaurs, every planet of the solar system, people with outfits including astronauts and 35+ props, and draws and SAVES anything missing so the library grows), makes or takes a voiceover checked by speech recognition, renders the animation with music and sound effects, checks every frame and writes the YouTube package (title, description, one thumbnail). Use whenever someone wants an animated explainer/story/what-if/list video on any subject, even from just a topic. Always works in English. Also use when the user writes "anyvideo", "AnyVideo", "Any Topic Animate Video", "robbiskill" for a non-money topic, or "escapeskill" for a non-prison topic.
 ---
 
 # AnyVideo: Any Topic Animate Video
@@ -16,7 +16,7 @@ Files you read when needed (not all at once):
 - `style/STYLE.md`: the diorama system, pacing, layer/timeline reference, device library, QA. **Read in full before writing a timeline.**
 - `style/V2-CODE.md`: puppets, outfits, sets and night light in detail, voice.
 - `style/flow-prompts.md`: optional Google Flow prompt templates (written for the money look; swap the subject).
-- Examples: `example/` (money, renders in the self-test), `example_escape/` (all prison sets), `example_any/` (sea life from the library + a project `custom.js` with two new animals).
+- Examples: `example/` (money, renders in the self-test), `example_escape/` (all prison sets), `example_any/` (sea life from the library + a project `custom.js` with two new animals), `example_moon/` (an adventure: astronaut, Moon, spaceship, solar system, Mars, orbit, all planets, day badge and oxygen meter).
 
 ## 0. First use on a computer
 (Do NOT start with this. Your first reply is the Stage 1 question. Run setup quietly after the user answers Stage 1, while you ask Stage 2.)
@@ -38,7 +38,7 @@ This is an interview, not a form. Hard rules:
 
 ## The 7 stages (the route)
 1. **Length** (the menu above). The script gets about 150 spoken words per minute.
-2. **Topic.** Ask: "What is the video about? Give me a topic, paste your own script, or say 'find ideas' and name a subject (cars, dinosaurs, sports, plants...)." Own topic: confirm it in one line. Own script: ask them to paste it, then clean and split it. Find ideas: search the web for that subject and show exactly 10 numbered ideas: title · one-sentence hook · format (see stage 3) · 1-2 source links; prefer angles with a strong question or number that big channels have NOT already done to death; mark a top 3. Ask which number (or ask for 10 more).
+2. **Topic.** Ask: "What is the video about? Give me a topic, a story idea (even made up, like 'I woke up on the Moon with 30 days to get home'), paste your own script, or say 'find ideas' and name a subject (cars, dinosaurs, sports, space...)." Own topic: confirm it in one line. Own script: ask them to paste it, then clean and split it. Find ideas: search the web for that subject and show exactly 10 numbered ideas: title · one-sentence hook · format (see stage 3) · 1-2 source links; prefer angles with a strong question or number that big channels have NOT already done to death; mark a top 3. Ask which number (or ask for 10 more).
 3. **Format.** Ask ONE question with this menu (pre-select nothing; add one line saying which you'd pick for this topic and why):
    1. **True story** (rise, twist, fall or win: companies, crimes, escapes, records, disasters)
    2. **Explainer** (how/why something works: engines, photosynthesis, black holes, insurance)
@@ -46,6 +46,7 @@ This is an interview, not a form. Hard rules:
    4. **Top list** (Top 7/10: fastest cars, deadliest dinosaurs, weirdest plants)
    5. **Versus** (A vs B: lion vs tiger, electric vs petrol)
    6. **Timeline / history** (from the first X to today)
+   7. **Adventure (fiction)** (a made-up story with a hero, a goal, a deadline and real science underneath: stranded on the Moon, lost in the jungle, the last dinosaur)
 4. **Research, script and look.** Research (section 2) and write the script in the format's shape (section 3). Read `style/LIBRARY.md`, then show the script, sources and the diorama plan together (section 4): cast, sets, the rows, and a short **"Will be drawn new"** list for anything not in the library. Ask: "Build it, or what should change?"
 5. **Build and check the look.** Draw anything new first (section 5), then build the puppets/creatures and sets, render ONE test frame per set/hero combination, look at them, fix, and show 3-4 frames; ask "Looks right, continue?".
 6. **Voiceover and build.** Ask ONE question: "Do you want to send your own voice recording, or should I generate the voice?" (1 own recording · 2 generate). Then sync, draft, QA, compare with a reference (section 7), show the draft and ask for changes before the final render.
@@ -54,7 +55,7 @@ No subtitles, no end-card question, NO sound/music question (music and sound eff
 
 ## 1. Content rules (always)
 - **Facts with sources.** Every number, date, record and claim comes from a reliable source (official sites, major news, museums, universities, scientific bodies, filings, respected reference works). Keep the URLs. Mark uncertain or disputed numbers as approximate ("about", "scientists think"). For dinosaurs and prehistory say what is known vs. guessed (colour and sounds are guesses).
-- **What-ifs are labelled speculation:** the premise is fiction, but every fact it leans on is real and sourced.
+- **What-ifs and adventures are labelled as fiction/speculation:** the premise and the plot are invented, but every real fact they lean on (gravity, distances, how long air lasts, how animals behave) is correct and sourced. Say once, early, that it is a story ("Let's imagine...") and put "fictional story" in the description.
 - **Real people, careful words.** Never invent quotes, motives or crimes; say "according to ..." for disputed claims; friendly caricatures only, never insulting. Private living people: first name only or none.
 - **Hard topics** (crime, war, disasters, accidents, animal attacks, disease): tell, don't show. No gore, no blood, no cruelty played for laughs; a typed card or a cut instead. History, never a how-to for crimes, weapons, escaping custody or dangerous stunts. This keeps videos advertiser-friendly.
 - **Kids:** if the video is aimed at children, keep it gentle and tell the user to mark it "Made for kids" on YouTube (this turns off personalised ads and comments).
@@ -72,12 +73,13 @@ Always: a **hook** in the first 20 s (the most surprising fact or number + a que
 - **Top list:** hook (tease number 1) → the rule of the ranking → entries counting DOWN, each: name card + one picture + one number + one surprising fact → honourable mention → number 1 → ending.
 - **Versus:** hook → meet A, meet B → rounds (size, speed, strength, cost...) with a score badge → the twist (where the loser wins) → the verdict with its condition → ending.
 - **Timeline:** hook (today's version) → the first one → milestones with the calendar device → the breakthrough → today → what's next → ending.
+- **Adventure (fiction):** told in first person by the hero ("I") or as a narrator. Hook (the impossible situation + the deadline: "I woke up on the Moon. I had thirty days of air.") → the rules of this world (what's real: gravity, air, distance, sourced) → the goal and the clock ("DAY 1 / 30" badge, a resource meter like oxygen, food or fuel) → 3-5 obstacles that get harder, each solved with a real fact or a clever idea → the darkest moment (the meter almost empty, red light) → the final push → ending (made it, or a twist) → "what would really happen" (1-3 real facts) → CTA. Invent freely, but the science and numbers the story leans on are real and sourced; never present the story as true.
 Voice rules: talk like a person telling a friend, short flowing sentences, numbers spelled as said ("two hundred miles an hour"), one idea per line. A **line = one cut** (3-5 s of speech). A 10 minute video is about 130-180 lines.
 Write `script.json`: `{"title":..., "format":..., "sources":[...], "lines":[{"text":"..."}, ...]}`.
 
 ## 4. Plan: the diorama plan, ONE screen
 Every line gets its own diorama (STYLE.md sections 1-2 and the device library in section 8): ask *what physical object or place is this sentence?* For each line write one row: `line | device | set + time | characters/creatures (who, mood, pose, walk) | props + text/number layers | camera + mood colour`.
-Budget for 10 min (about 150 lines): 8-14 different sets (re-used at most 3 times in a row with a different camera/time/light), 3-10 cast members or creatures, ~40 typed black cards, 1-3 recurring devices that fit the format (list: a big round number badge counting down; versus: a two-colour score bar; timeline: the flipping calendar; explainer: "STEP n" badge; story: balloon + stopwatch; what-if: a "REAL WORLD / WHAT IF" split triptych).
+Budget for 10 min (about 150 lines): 8-14 different sets (re-used at most 3 times in a row with a different camera/time/light), 3-10 cast members or creatures, ~40 typed black cards, 1-3 recurring devices that fit the format (list: a big round number badge counting down; versus: a two-colour score bar; timeline: the flipping calendar; explainer: "STEP n" badge; story: balloon + stopwatch; what-if: a "REAL WORLD / WHAT IF" split triptych; adventure: a fixed "DAY n / 30" badge top-left (`text` layer with `hud:true`) + a resource meter (`oxygen` prop with `level`/`levelTo`) that drops across the video).
 Show: title · format · numbered narration · cast (name + look) · sets used · the diorama rows grouped in chapters · **"Will be drawn new"** (each missing set/creature/prop, and whether it goes into the shared library or this project only) · sources. End with **"Build it, or what should change?"** and wait for yes.
 
 ## 5. Build in code (default)
