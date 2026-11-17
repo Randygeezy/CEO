@@ -1,6 +1,6 @@
-# Paper Billions Animate Video style: the diorama system
+# Great Escapes Animate Video style: the diorama system
 
-Flat 2D cartoon explainer about money, companies, markets. 16:9, 1920x1080, 30 fps, 8-15 minutes.
+Flat 2D cartoon explainer about real prison escapes (the plan, the dig, the night, the manhunt). Same diorama system as the money explainers it grew from. 16:9, 1920x1080, 30 fps, 8-15 minutes.
 All stories, characters, places and props are ORIGINAL. The format rules below were measured on a 15-minute reference of this
 genre (244 cuts in 15:00, mean shot 3.65 s, median 3.1 s, 12-21 cuts per minute, ~40 typed black cards).
 
@@ -89,6 +89,17 @@ Cards may carry `tin:"flash"`.
 | twist / question | black typed `card`, then `flash` into the next shot |
 | everything is fine (irony) | ekg object, calm plate, then whip into red |
 | a crowd reacts | `crowd`, confetti or red SELL tags popping on desks |
+| a prison, its reputation | `yard` or `wall` set wide, `tag` with the prison name + "ESCAPE-PROOF?" stamp |
+| the plan | `doc` blueprint with typed rows, red circles, dashed `poly` route drawing itself |
+| days / months of digging | `calendar` flipping + `tunnel` set + a counter of feet dug ("12 FT") |
+| a hidden tool or trick | `cell` set with `hole:true`, close-up prop with `glow`, typed card "WHAT THE GUARDS MISSED" |
+| the count / the guards | `cellblock` set, guard puppet with a clipboard, `clock` overlay ticking toward lights-out |
+| the night of the escape | `wall` set with the sweeping searchlight (`sweep`), `flicker`, slow push in |
+| the way out | `sewer` set (light shaft from the grate) or `tunnel` with `end:true`, then `flash` |
+| out, but not free | `shore` set (`raft:true`), then `map` with `pin` + dashed route for the manhunt |
+| the manhunt | `map` + red `pin`s popping, newswire `doc` printing WANTED headline, `ticker` |
+| the alarm | any prison set with `"time":"red"` + `flicker` + `shake` |
+| caught / never found | `stamp` CAPTURED (red) or a typed card "NEVER FOUND" over a dark `shore` |
 
 ## 9. QA checklist (read every contact sheet, frame by frame)
 - Does the picture show what the sentence says at that second? Do numbers on screen equal the script's numbers?

@@ -3,7 +3,7 @@
 mixes the sound, renders a draft, makes a contact sheet. Prints SELFTEST PASSED.   python selftest.py"""
 import os, shutil, subprocess, sys, tempfile
 SK = os.path.dirname(os.path.dirname(os.path.abspath(__file__))); PY = sys.executable
-T = os.path.join(tempfile.gettempdir(), 'robbiskill_selftest')
+T = os.path.join(tempfile.gettempdir(), 'escapeskill_selftest')
 shutil.rmtree(T, ignore_errors=True); shutil.copytree(os.path.join(SK, 'example'), T)
 def run(*a):
     print('>', ' '.join(os.path.basename(x) if os.path.isabs(x) else x for x in a), flush=True)

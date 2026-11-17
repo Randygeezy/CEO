@@ -7,7 +7,8 @@ Everything here is drawn by the engine in code. No images needed. Read STYLE.md 
 "cast": {"hero": {"skin":"#f1c9a0","suit":"#2b3a67","shirt":"#f4efe2","tie":"#b3283a","hair":"slick","hair_col":"#2a1d14","moustache":true},
          "boss": {"skin":"#e8b98f","suit":"#6b4a30","hair":"bald","glasses":true,"bowtie":"#b3283a"}}
 ```
-Spec fields: `skin skin_d suit suit_d shirt tie bowtie dress hair(bald|slick|short|curly|bob|long|bun|grey) hair_col glasses moustache beard hat hat_col hat_band shoes`. One cast entry = one recognisable person (caricature: hair, glasses, signature clothes). Different people must differ in at least hair + suit colour.
+Spec fields: `skin skin_d suit suit_d shirt tie bowtie dress hair(bald|slick|short|curly|bob|long|bun|grey) hair_col glasses moustache beard hat hat_col hat_band shoes`.
+**Prison outfits (EscapeSkill):** `outfit:"jumpsuit"` (plain coverall, V-neck, zip; `suit` = the colour, e.g. orange `#E8742A`, khaki `#b8a27a`, blue `#4f6fa8`), `outfit:"stripes"` (classic black-and-white bands, `suit` = light band, `stripe` = dark band; use for stories before about 1950), `outfit:"guard"` (uniform shirt in `suit`, dark `tie`, gold star badge, shoulder patches `patch`, belt). `number:"A-1962"` prints an inmate number patch (jumpsuit/stripes). Hats: `hat:"cap"` (guard/police peaked cap, `hat_col`), `hat:"beanie"` (knit cap), `hat:true` (the old fedora). A warden = normal suit + glasses; a detective/US marshal = suit + `hat:true`. One cast entry = one recognisable person (caricature: hair, glasses, signature clothes). Different people must differ in at least hair + suit colour.
 
 ## 2. A puppet in a shot
 `"chars":[{"puppet":"hero","x":700,"y":900,"s":1.0,"face":1,"mood":"smug","pose":"gesture","enter":"left","enterAt":0.2}]`
@@ -18,7 +19,8 @@ Spec fields: `skin skin_d suit suit_d shirt tie bowtie dress hair(bald|slick|sho
 - Other puppet fields work like STYLE.md characters (`attach`, `path`, `swap`, `crowd`).
 
 ## 3. Sets and light: `"set":{"kind":"office","time":"night", ...}`
-Kinds: `office` (calendar:"MAY 1925"), `street` (sign:"CAFE"), `city` (landmark:"tower"|"skyscraper"), `boardroom`, `stage` (spot, screen, spotX), `trading` (mood:"red"|"green"), `map` (cities:[[x,y],..]), `vault`, `server`, `capitol`, `living` (screen).
+Kinds (prison, EscapeSkill): `cell` (high barred moon window, bunk bed, steel toilet, door bars right; `hole:true` dug hole with rubble and a spoon, `lamp:true` ceiling bulb, `tally:false` no scratch marks; free floor x 820-1450), `cellblock` (two tiers of barred cells, walkway, stairs, three hanging lamps; `block:"D BLOCK"`), `yard` (default `time:"day"`; fence with razor wire, guard tower, hoop, bench + weights; floodlights at night), `wall` (stone wall, razor wire, tower with a SWEEPING searchlight: `sweep` px (default 360, 0 = still), `sweepSpeed`, `spotX` centre of the pool, `rope:<x>` a rope down the wall), `tunnel` (side cut of a dug tunnel, timber frames, lantern `lampX`, rails `rails:false`, `end:true` dirt face + pickaxe), `sewer` (brick arches, water channel, moonlight shaft from a grate `grateX`; heroes stand in the water), `shore` (island prison far away across the water, moon path; `raft:true` a home-made raft). Floor lines: 975-1000. `tunnel`/`sewer` set their own dark ambient.
+Kinds (from the money explainers, still useful: warden office, newsroom, manhunt map, city): `office` (calendar:"MAY 1925"), `street` (sign:"CAFE"), `city` (landmark:"tower"|"skyscraper"), `boardroom`, `stage` (spot, screen, spotX), `trading` (mood:"red"|"green"), `map` (cities:[[x,y],..]), `vault`, `server`, `capitol`, `living` (screen).
 - `time`: `night` (navy mood), `dusk` (purple), `day` (no darkening), `red` (crisis). `ambient` overrides the colour; `lighting:false` turns the light layer off.
 - The engine darkens the whole picture (characters included) and cuts soft light holes at the lamps/windows/screens, adds glows and light cones. Heroes standing in a light pool are bright; outside it they are dark: that is what removes the "pasted" look. Put the hero near a lamp.
 - Extra light for one shot: `"set":{..., "lights":[{"x":..,"y":..,"r":..,"a":0.9}], "glows":[{"x":..,"y":..,"r":..,"c":"#FFD27A","a":.3}], "cones":[{"x":..,"y":..,"w0":..,"w1":..,"len":..,"a":.2}]}`. `flicker` on the shot makes lights breathe.
@@ -31,3 +33,6 @@ See SKILL.md section 6B (`scripts/tts.py say|check`). Speed 0.95-1.0 for a calm 
 
 ## 5. Render cost
 Sets are heavier than flat plates. Use `--draft` (low res) for reviews; the per-shot cache means only changed shots are redone. See README "Speed" (about 0.12 s per frame on 2 CPUs).
+
+## 6. Renderer browser
+If Playwright's own Chromium is missing or the wrong version, point the renderer at any Chromium/Chrome: set `ESCAPESKILL_CHROMIUM=/path/to/chrome` before `render.py` / `selftest.py`.

@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
-"""Create a project folder:  python new_video.py <name> [--dir <parent>]   (default parent: ~/robbi-videos)"""
+"""Create a project folder:  python new_video.py <name> [--dir <parent>]   (default parent: ~/escape-videos)"""
 import argparse, json, os, shutil, sys
-ap = argparse.ArgumentParser(); ap.add_argument('name'); ap.add_argument('--dir', default=os.path.join(os.path.expanduser('~'), 'robbi-videos'))
+ap = argparse.ArgumentParser(); ap.add_argument('name'); ap.add_argument('--dir', default=os.path.join(os.path.expanduser('~'), 'escape-videos'))
 a = ap.parse_args()
 P = os.path.join(a.dir, a.name)
 if os.path.exists(P): sys.exit(f'{P} already exists: pick another name')
