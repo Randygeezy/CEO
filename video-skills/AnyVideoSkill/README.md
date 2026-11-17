@@ -1,35 +1,43 @@
-# EscapeSkill: Great Escapes Animate Video, a skill for Claude and OpenCode
+# AnyVideo: Any Topic Animate Video, a skill for Claude and OpenCode
 
-One prompt: a real prison escape -> research with sources -> script -> prisoners, guards and prison sets drawn in code -> your voiceover or a generated one checked by speech recognition -> animated 16:9 video (8-15 min) -> sound -> QA -> YouTube package.
-Style: flat 2D cartoon, one small "diorama" per sentence, night lighting. Original characters and scripts. Built on the RobbiSkill (Paper Billions Animate Video) engine.
+One prompt, any topic: animals, dinosaurs, cars, sports, plants, space, science, history, money, crime, what-ifs, top-10 lists, A-vs-B.
+Topic -> research with sources -> script in the right format -> characters, animals, props and places drawn in code -> your voiceover or a generated one checked by speech recognition -> animated 16:9 video (8-15 min) with music and sound effects -> frame-by-frame QA -> YouTube package.
+Built on the RobbiSkill (Paper Billions) engine and the EscapeSkill prison sets; everything those skills could do still works here.
 
-![All seven prison sets](example_escape/preview.png)
+![Some of the built-in sets, animals and props](example_any/preview.png)
 
-## What's new compared with RobbiSkill
-- **7 prison sets** (`engine/sets.js`): `cell` (optional dug hole, ceiling lamp), `cellblock` (two tiers, walkway, stairs), `yard` (day or floodlit night, fence, razor wire, guard tower), `wall` (tower with a **sweeping searchlight**, optional rope), `tunnel` (timber frames, lantern, rails, dig face), `sewer` (brick arches, water, moonlight shaft), `shore` (island prison across the water, optional raft).
-- **Prison outfits** (`engine/puppet.js`): `outfit: jumpsuit | stripes | guard`, inmate `number` patch, `hat: cap | beanie`.
-- **Sweeping lights**: any light or cone can take `sweep` (pixels) and `speed`.
-- **Escape storytelling** in `SKILL.md`: idea search for lesser-known escapes, story shape (prison, plan, night, manhunt, ending), content rules (history not a how-to, no gore, careful with real people), escape devices in `style/STYLE.md`.
-- `ESCAPESKILL_CHROMIUM=/path/to/chrome` lets the renderer use an existing Chromium when Playwright's download is missing.
+## What it can draw out of the box (full list: `style/LIBRARY.md`)
+- **35 sets:** nature (forest, savanna, jungle, desert, mountains, beach, underwater ocean, farm, prehistoric volcano), science/space (lab, space with planets or moon ground), sport/vehicles (stadium for soccer/football/basketball/track, racetrack, garage), general (plain colour, classroom, city, street, living room, stage), money (office, boardroom, trading floor, vault, server room, capitol, world map) and prison (cell, cell block, yard, wall with searchlight, tunnel, sewer, shore). Day, dusk, night and red-alert lighting.
+- **People:** cartoon puppets with hair, glasses, beards, hats, suits, jumpsuits, guard uniforms, numbers; 12 moods, 17 poses, lip-sync.
+- **22 animals and dinosaurs:** dog, wolf, fox, cat, lion, tiger, bear, rabbit, elephant, cow, pig, goat, sheep, horse, chicken, rooster, duck, T-rex, raptor, stegosaurus, triceratops, brachiosaurus. They walk, talk, roar and change mood. New ones start from a preset (`{"base":"dog","color":"#fff","pattern":"spots"}`).
+- **25+ props:** cars (sedan, sports, truck, race car with spinning wheels), trees, pines, palms, bushes, flowers, a plant that grows on screen, rocks, clouds, sun, planets, rocket, globe, microscope, flask, balls (soccer, basketball, football, tennis), trophy, egg (cracks), bone, fossil, sign, house, fish, plus shark, turtle and jellyfish from the library. Plus all the story graphics: counters, stamps, documents, calendars, map pins, arrows, charts, cash, fire.
+
+## The library grows
+When a video needs something new (a beetle, a submarine, a volcano interior), Claude draws it in code in the same style, test-renders it, and saves it:
+- `library/<topic>.js` for things every later video can reuse (loaded automatically),
+- the project's `custom.js` (listed in `timeline.json` as `"library":["custom.js"]`) for one-off things,
+then adds a line to `style/LIBRARY.md`. `library/sea_life.js` and `example_any/custom.js` show both.
+
+## Video formats
+True story · Explainer · What if · Top list · Versus · Timeline. Each has its own script shape and recurring on-screen device (countdown badge, score bar, step badge, flipping calendar, real-vs-what-if split screen).
 
 ## Install
-Claude Code: copy the folder to `~/.claude/skills/EscapeSkill/` (or `.claude/skills/` in a project).
-OpenCode: `~/.config/opencode/skills/EscapeSkill/`. Restart the app.
+Claude Code: copy the folder to `~/.claude/skills/AnyVideoSkill/` (or `.claude/skills/` in a project). OpenCode: `~/.config/opencode/skills/AnyVideoSkill/`. Restart the app.
 
 ## First run
 ```
 python scripts/setup.py          # checks Python 3.10+, ffmpeg; installs packages. Prints "All set"
 python scripts/setup.py --voice  # optional: built-in voice + speech-recognition models (~850 MB, once)
 python scripts/selftest.py       # renders the bundled example. Prints "SELFTEST PASSED"
-python engine/render.py example_escape/timeline.json --draft --out /abs/path/sets.mp4   # every prison set, 18 s
+python engine/render.py example_any/timeline.json --draft --out /abs/path/any.mp4   # library + custom drawings
 ```
-Mac/Linux: `python3`. Install ffmpeg first (Windows: `winget install ffmpeg`; Mac: `brew install ffmpeg`).
+Mac/Linux: `python3`. Install ffmpeg first (Windows: `winget install ffmpeg`; Mac: `brew install ffmpeg`). If Playwright's own Chromium is missing, set `ESCAPESKILL_CHROMIUM=/path/to/chrome`.
 
 ## Use
-Write: `Make a Great Escapes Animate Video about <escape>` or `/escapeskill`. Answer the six one-question stages, approve the diorama plan ("Build it?"), send or generate the voice, review the draft, get the MP4 and `package.md`.
+`/anyvideo` or "Make an Any Topic Animate Video about <topic>". Seven one-question stages: length, topic, format, script + plan, look check, voice + draft, YouTube package.
 
 ## Speed
-About 0.12 s per frame on 2 CPUs: the 18-second set preview renders in about 40 s; a 10-minute video takes roughly 35-50 minutes. Shots are cached, so edits re-render only what changed.
+About 0.12 s per frame on 2 CPUs: a 10-minute video takes roughly 35-50 minutes to render. Shots are cached, so edits re-render only what changed.
 
 ## Status (honest)
-Tested on Linux: setup, selftest, all 7 prison sets rendered with prisoner/guard puppets and checked frame by frame, the sweeping searchlight. Not tested yet: a full 10-minute escape video end to end, Windows/Mac, the optional Google Flow mode for prison places.
+Tested on Linux: setup, selftest, every set, all 22 creatures, all props, the library loader and a project `custom.js`, each rendered and checked frame by frame. Not tested yet: a full 10-minute video in each format end to end, Windows/Mac. Drawings are deliberately simple flat cartoons; detailed subjects become friendly cartoon versions.

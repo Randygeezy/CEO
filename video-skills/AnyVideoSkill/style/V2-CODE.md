@@ -1,5 +1,7 @@
 # V2-CODE: puppets, sets, night light, voice (the default way to build)
 
+**AnyVideo:** animals/dinosaurs (`"creature"` chars), props (`"kind":"prop"` layers), the world sets and the `library/` folder are in `engine/world.js` and documented in `style/LIBRARY.md`. This file covers people, the original sets and light.
+
 Everything here is drawn by the engine in code. No images needed. Read STYLE.md for layers, cameras, devices and pacing; they work the same on code shots.
 
 ## 1. Cast (in `timeline.json`)

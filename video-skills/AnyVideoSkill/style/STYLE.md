@@ -1,6 +1,6 @@
-# Great Escapes Animate Video style: the diorama system
+# AnyVideo style: the diorama system
 
-Flat 2D cartoon explainer about real prison escapes (the plan, the dig, the night, the manhunt). Same diorama system as the money explainers it grew from. 16:9, 1920x1080, 30 fps, 8-15 minutes.
+Flat 2D cartoon videos about any topic (stories, explainers, what-ifs, lists, versus, timelines). The rules below were measured on the money-explainer genre and apply to every format; the device library (section 8) has money, escape and general recipes.
 All stories, characters, places and props are ORIGINAL. The format rules below were measured on a 15-minute reference of this
 genre (244 cuts in 15:00, mean shot 3.65 s, median 3.1 s, 12-21 cuts per minute, ~40 typed black cards).
 
@@ -100,6 +100,16 @@ Cards may carry `tin:"flash"`.
 | the manhunt | `map` + red `pin`s popping, newswire `doc` printing WANTED headline, `ticker` |
 | the alarm | any prison set with `"time":"red"` + `flicker` + `shake` |
 | caught / never found | `stamp` CAPTURED (red) or a typed card "NEVER FOUND" over a dark `shore` |
+| **any topic (AnyVideo)** | |
+| an animal / dinosaur does something | `creature` in its home set (`savanna`, `prehistoric`, `ocean`...), `walk:true` + `kf` path across, `mood` roar/happy, camera follows |
+| how big / how fast | the creature or `car` next to a puppet or a `house` for scale, a `poly` measuring arrow drawing itself + `text` counter ("40 FT", "200 MPH") |
+| list entry (Top N) | `plain` set in the entry's colour, a huge round number badge (`circle` + `text` "#7") popping, the subject entering, one `stamp` fact |
+| versus round | `triptych` with 2 panels (A left, B right, different `grade`), a score bar (`rect` widths) growing, `stamp` WINNER on one side |
+| what if: real vs changed | `triptych` "REAL WORLD" / "WHAT IF" typed labels, same set in both with one thing missing or added; then `flash` into the changed world |
+| explainer step | "STEP n" badge top-left (recurring), one prop in close-up with `poly` arrows showing the flow, `inset` magnifier on the key part |
+| growth / time passing | `plant` with `growAt` (grows on screen), `calendar` flipping, `time` day → dusk → night across 3 shots |
+| sport moment | `stadium` or `racetrack` set, `ball`/`car` with `kf` + `spin`, `crowd` or `confetti` fx, `shake` on the goal/finish |
+| space / science | `space` or `lab` set, `planet` / `rocket` / `flask` props, `glow`, slow camera push |
 
 ## 9. QA checklist (read every contact sheet, frame by frame)
 - Does the picture show what the sentence says at that second? Do numbers on screen equal the script's numbers?
