@@ -1,0 +1,16 @@
+{"fps":30,
+ "cast":{
+  "con":{"skin":"#f1c9a0","suit":"#E8742A","shirt":"#f4efe2","outfit":"jumpsuit","number":"A-1962","hair":"short","hair_col":"#3a2a1c"},
+  "old":{"skin":"#d9a77a","suit":"#eeeae0","shirt":"#f4efe2","outfit":"stripes","number":"1934","hair":"grey","moustache":true},
+  "guard":{"skin":"#8d5a3b","suit":"#7f9cc4","tie":"#1f2a4a","outfit":"guard","hat":"cap","hair":"short"}
+ },
+ "shots":[
+  {"id":"cell","duration":2,"set":{"kind":"cell","time":"night","hole":true},"chars":[{"puppet":"con","x":960,"y":980,"s":1.1,"mood":"smug","pose":"hold","face":0.3}]},
+  {"id":"block","duration":2,"set":{"kind":"cellblock","time":"night"},"chars":[{"puppet":"guard","x":700,"y":980,"s":1.0,"mood":"angry","pose":"point","face":0.4},{"puppet":"old","x":1180,"y":990,"s":0.95,"mood":"worry","pose":"shrug","face":-0.3}]},
+  {"id":"yard","duration":2,"set":{"kind":"yard","time":"day"},"chars":[{"puppet":"con","x":760,"y":990,"s":0.9,"mood":"think","pose":"think"},{"puppet":"old","x":1000,"y":990,"s":0.9,"mood":"happy","pose":"gesture","face":-0.4}]},
+  {"id":"yardn","duration":2,"set":{"kind":"yard","time":"night"},"chars":[{"puppet":"guard","x":900,"y":990,"s":0.9,"mood":"neutral","pose":"hip"}]},
+  {"id":"wall","duration":4,"set":{"kind":"wall","time":"night","rope":600},"chars":[{"puppet":"con","x":620,"y":990,"s":0.85,"mood":"panic","pose":"panic","face":0.5}]},
+  {"id":"tunnel","duration":2,"set":{"kind":"tunnel","end":true},"chars":[{"puppet":"con","x":1000,"y":975,"s":0.9,"mood":"worry","pose":"push","face":0.6}]},
+  {"id":"sewer","duration":2,"set":{"kind":"sewer"},"chars":[{"puppet":"con","x":640,"y":990,"s":0.9,"mood":"shock","pose":"idle","face":0}]},
+  {"id":"shore","duration":2,"set":{"kind":"shore","time":"night","raft":true},"chars":[{"puppet":"con","x":800,"y":1000,"s":0.85,"mood":"grin","pose":"cheer"}]}
+ ]}
