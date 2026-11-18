@@ -1,0 +1,1382 @@
+{
+ "escape": [
+  {
+   "scope": 5,
+   "pull": 5,
+   "stay": 5,
+   "total": 15,
+   "n1m": 9,
+   "market": "Crowded",
+   "top": [
+    "MrBeast",
+    207158011,
+    "1y ago",
+    "I Survived The 5 Deadliest Places On Earth",
+    "aKq8bkY5eTU"
+   ],
+   "best": [
+    "Dangerous Things Explained",
+    1400,
+    403633,
+    "5mo ago",
+    "The most dangerous places on earth in 7 minutes",
+    "3am_h3Wr7x8",
+    288
+   ],
+   "desire": "I want to feel the danger from somewhere safe",
+   "q": "most dangerous places on earth",
+   "n": 17
+  },
+  {
+   "scope": 5,
+   "pull": 3,
+   "stay": 5,
+   "total": 13,
+   "n1m": 8,
+   "market": "Crowded",
+   "top": [
+    "Kento Bento",
+    34941638,
+    "7y ago",
+    "The Incredible Japanese Prison Break",
+    "oI8trlbCbU8"
+   ],
+   "best": [
+    "PLAN: ESCAPE",
+    26600,
+    783147,
+    "11mo ago",
+    "They Escaped a 17-Story Prison Using Dental Floss",
+    "GF_xZVKyXZs",
+    29
+   ],
+   "desire": "I want to see how they pulled off the escape",
+   "q": "how they escaped prison",
+   "n": 15
+  },
+  {
+   "scope": 2,
+   "pull": 5,
+   "stay": 5,
+   "total": 12,
+   "n1m": 1,
+   "market": "Fresh",
+   "top": [
+    "Yes Theory",
+    11111120,
+    "4mo ago",
+    "\"he's crazy\" - We Found a Man Living Alone in the Amazon (39 years isolated)",
+    "dpHpKeXm-B0"
+   ],
+   "best": [
+    "Worth Knowing Files",
+    922,
+    456519,
+    "1mo ago",
+    "4 Men Were Left On An Arctic Island For 6 Years: True Survival Story",
+    "KI6H4ImjdRk",
+    495
+   ],
+   "desire": "I want to see how someone survived the impossible",
+   "q": "survived alone for years true story",
+   "n": 20
+  },
+  {
+   "scope": 2,
+   "pull": 3,
+   "stay": 3,
+   "total": 8,
+   "n1m": 1,
+   "market": "Fresh",
+   "top": [
+    "The Secret",
+    3046807,
+    "1y ago",
+    "Scientists Finally Solved The Alcatraz Escape Mystery In 2025",
+    "MnErGophh3c"
+   ],
+   "best": [
+    "mindgap",
+    48200,
+    714605,
+    "1y ago",
+    "Alcatraz Escape Mystery FINALLY Solved in 2025! Investigation Update!",
+    "pwI8xPaPe5s",
+    15
+   ],
+   "desire": "I want the mystery finally solved",
+   "q": "escape mystery finally solved",
+   "n": 20
+  },
+  {
+   "scope": 1,
+   "pull": 1,
+   "stay": 3,
+   "total": 5,
+   "n1m": 0,
+   "market": "Fresh",
+   "top": [
+    "WatchData",
+    896022,
+    "4y ago",
+    "Timeline: What If You Were Trapped In A Microwave?",
+    "RGlELV7K4NM"
+   ],
+   "best": null,
+   "desire": "I want to know if I would make it out",
+   "q": "what if you were trapped",
+   "n": 15
+  }
+ ],
+ "money": [
+  {
+   "scope": 3,
+   "pull": 4,
+   "stay": 5,
+   "total": 12,
+   "n1m": 3,
+   "market": "Proven",
+   "top": [
+    "It's Complicated",
+    5448777,
+    "1y ago",
+    "Why everything feels more expensive now",
+    "H2Z-FQtezCc"
+   ],
+   "best": [
+    "It's Complicated",
+    76900,
+    5448777,
+    "1y ago",
+    "Why everything feels more expensive now",
+    "H2Z-FQtezCc",
+    71
+   ],
+   "desire": "I want to know why everything costs so much",
+   "q": "why everything is so expensive",
+   "n": 17
+  },
+  {
+   "scope": 4,
+   "pull": 3,
+   "stay": 5,
+   "total": 12,
+   "n1m": 6,
+   "market": "Proven",
+   "top": [
+    "Dhruv Rathee",
+    11760063,
+    "1y ago",
+    "The IMPOSSIBLE Story of a Poor Boy who became a Billionaire",
+    "7V16Z3VIo54"
+   ],
+   "best": [
+    "Portfolio Breakdown",
+    36100,
+    585141,
+    "5mo ago",
+    "How Adam Sandler Quietly Became A Billionaire",
+    "-ysTOJTSZhY",
+    16
+   ],
+   "desire": "I want to know how people really got rich",
+   "q": "how he became a billionaire",
+   "n": 14
+  },
+  {
+   "scope": 4,
+   "pull": 2,
+   "stay": 5,
+   "total": 11,
+   "n1m": 4,
+   "market": "Proven",
+   "top": [
+    "ColdFusion",
+    8801192,
+    "7y ago",
+    "Enron - The Biggest Fraud in History",
+    "e5qC1YGRMKI"
+   ],
+   "best": [
+    "R Jack's The Art Of Wealth",
+    196000,
+    1902188,
+    "3y ago",
+    "EXPLAINING 20 SCAMS IN 20 MINUTES (pt 1)",
+    "cRUpM9MS3-k",
+    10
+   ],
+   "desire": "I want to avoid getting scammed",
+   "q": "biggest scams in history explained",
+   "n": 16
+  },
+  {
+   "scope": 2,
+   "pull": 2,
+   "stay": 5,
+   "total": 9,
+   "n1m": 1,
+   "market": "Fresh",
+   "top": [
+    "The Iced Coffee Hour Clips",
+    1089024,
+    "10mo ago",
+    "How to Actually Get Out of Debt in 2026 | George Kamel",
+    "WA-QJHaTbsg"
+   ],
+   "best": [
+    "Susan Wanjiku",
+    226000,
+    758799,
+    "3y ago",
+    "HOW I GOT OUT OF POVERTY AND BAD DEBT || MINDSET SHIFTS",
+    "IPL2lHSNm-E",
+    3
+   ],
+   "desire": "I want to escape debt and money stress",
+   "q": "how I got out of debt",
+   "n": 20
+  },
+  {
+   "scope": 3,
+   "pull": 1,
+   "stay": 5,
+   "total": 9,
+   "n1m": 2,
+   "market": "Fresh",
+   "top": [
+    "Grunge",
+    2425732,
+    "5y ago",
+    "How The Vanderbilt Family Lost Their Entire Fortune",
+    "wVCTJpZauwg"
+   ],
+   "best": null,
+   "desire": "I want to see how fortunes get lost",
+   "q": "lost his entire fortune",
+   "n": 7
+  }
+ ],
+ "space": [
+  {
+   "scope": 5,
+   "pull": 3,
+   "stay": 5,
+   "total": 13,
+   "n1m": 11,
+   "market": "Crowded",
+   "top": [
+    "Alex Evett",
+    162395010,
+    "9y ago",
+    "Universe Size Comparison 3D",
+    "i93Z7zljQ7I"
+   ],
+   "best": [
+    "Actual Space",
+    57500,
+    1197828,
+    "5mo ago",
+    "The true Scale of the Universe – How Big is the Universe? | Space Documentary 2026",
+    "7odTB3nlN6U",
+    21
+   ],
+   "desire": "I want to feel how big the universe is",
+   "q": "scale of the universe",
+   "n": 19
+  },
+  {
+   "scope": 4,
+   "pull": 3,
+   "stay": 5,
+   "total": 12,
+   "n1m": 5,
+   "market": "Proven",
+   "top": [
+    "JRE Clips",
+    4860881,
+    "7y ago",
+    "Are We The Only Intelligent Life in the Universe?? | Joe Rogan & Brian Cox",
+    "p9GNCc_4f8A"
+   ],
+   "best": [
+    "Free Documentary - Space",
+    54500,
+    1559339,
+    "2mo ago",
+    "Are We Alone? The Mystery of the Fermi Paradox | Free Documentary Space",
+    "ODWKrhs_5xs",
+    29
+   ],
+   "desire": "I want to know if we are alone",
+   "q": "are we alone in the universe",
+   "n": 18
+  },
+  {
+   "scope": 5,
+   "pull": 1,
+   "stay": 5,
+   "total": 11,
+   "n1m": 7,
+   "market": "Crowded",
+   "top": [
+    "Vsauce",
+    20877727,
+    "13y ago",
+    "What If The Sun Disappeared?",
+    "rltpH6ck2Kc"
+   ],
+   "best": null,
+   "desire": "I want to know what would happen if",
+   "q": "what if the sun disappeared",
+   "n": 14
+  },
+  {
+   "scope": 5,
+   "pull": 1,
+   "stay": 5,
+   "total": 11,
+   "n1m": 7,
+   "market": "Crowded",
+   "top": [
+    "melodysheep",
+    113445661,
+    "7y ago",
+    "TIMELAPSE OF THE FUTURE: A Journey to the End of Time (4K)",
+    "uD4izuDMUQA"
+   ],
+   "best": null,
+   "desire": "I want to know humanity's future",
+   "q": "future of humanity in space",
+   "n": 18
+  }
+ ],
+ "history": [
+  {
+   "scope": 4,
+   "pull": 4,
+   "stay": 5,
+   "total": 13,
+   "n1m": 6,
+   "market": "Proven",
+   "top": [
+    "Weird History",
+    6948592,
+    "7y ago",
+    "What Life Was Like In Medieval Castles",
+    "z56d4f1uT3k"
+   ],
+   "best": [
+    "George's Life Lessons",
+    12100,
+    1001621,
+    "9mo ago",
+    "1348: No Showers, No Toilet Paper – Life in the Middle Ages",
+    "1ikf4ztFPQg",
+    83
+   ],
+   "desire": "I want to know what life was really like back then",
+   "q": "what life was like in medieval times",
+   "n": 18
+  },
+  {
+   "scope": 4,
+   "pull": 3,
+   "stay": 5,
+   "total": 12,
+   "n1m": 6,
+   "market": "Proven",
+   "top": [
+    "Fall of Civilizations",
+    41167910,
+    "6y ago",
+    "8. The Sumerians - Fall of the First Cities",
+    "d2lJUOv0hLA"
+   ],
+   "best": [
+    "VLAD - Meditative History ",
+    27500,
+    384112,
+    "8mo ago",
+    "The Civilization The World Forgot for 4,000 Years",
+    "Kx-JVMCBEH8",
+    14
+   ],
+   "desire": "I want to know where it all started",
+   "q": "first civilization history",
+   "n": 14
+  },
+  {
+   "scope": 4,
+   "pull": 2,
+   "stay": 5,
+   "total": 11,
+   "n1m": 6,
+   "market": "Proven",
+   "top": [
+    "Real Time History",
+    2975250,
+    "3y ago",
+    "Okinawa 1945: Japan's Last Stand",
+    "ha5WvjOF7Rc"
+   ],
+   "best": [
+    "Uncovered ",
+    196000,
+    1292044,
+    "1y ago",
+    "CUSTER'S LAST STAND - The Battle of Little Bighorn - 4K DOCUMENTARY",
+    "7xVVKbbowkY",
+    7
+   ],
+   "desire": "I want epic stories of last stands",
+   "q": "last stand battle history",
+   "n": 20
+  },
+  {
+   "scope": 4,
+   "pull": 1,
+   "stay": 5,
+   "total": 10,
+   "n1m": 6,
+   "market": "Proven",
+   "top": [
+    "BE AMAZED",
+    6702851,
+    "4y ago",
+    "Most Expensive Mistakes In All History",
+    "9kSxD46E8YM"
+   ],
+   "best": null,
+   "desire": "I want to laugh at history's dumbest moments",
+   "q": "dumbest mistakes in history",
+   "n": 15
+  }
+ ],
+ "crime": [
+  {
+   "scope": 5,
+   "pull": 5,
+   "stay": 5,
+   "total": 15,
+   "n1m": 10,
+   "market": "Crowded",
+   "top": [
+    "Dr Insanity",
+    22218839,
+    "1y ago",
+    "Killer Couple Realizes Cops Found Their Murder House",
+    "ppBajdOW9DU"
+   ],
+   "best": [
+    "Red File",
+    122000,
+    16100511,
+    "3mo ago",
+    "“Friendly” Cop Has No Idea Police Already Matched Her DNA After 23 Years",
+    "rJYy0pHZDxA",
+    132
+   ],
+   "desire": "I want to know how they got caught",
+   "q": "how police caught the killer",
+   "n": 18
+  },
+  {
+   "scope": 5,
+   "pull": 4,
+   "stay": 5,
+   "total": 14,
+   "n1m": 8,
+   "market": "Crowded",
+   "top": [
+    "ABC News In-depth",
+    32625562,
+    "5y ago",
+    "Inside Mexico's Most Powerful Drug Cartel | Foreign Correspondent",
+    "M2IQuXbExjU"
+   ],
+   "best": [
+    "The Life Outline",
+    92100,
+    7428972,
+    "9mo ago",
+    "Your Life as Every Mexican Cartel Rank",
+    "IuQBOpDCsKQ",
+    81
+   ],
+   "desire": "I want to see the world's most dangerous criminals",
+   "q": "most dangerous cartel boss",
+   "n": 15
+  },
+  {
+   "scope": 5,
+   "pull": 4,
+   "stay": 5,
+   "total": 14,
+   "n1m": 12,
+   "market": "Crowded",
+   "top": [
+    "SunnyV2",
+    7017614,
+    "3y ago",
+    "Buzzfeed Unsolved Cases That Are Now Solved",
+    "lbdsWS1epsE"
+   ],
+   "best": [
+    "The Mystorian",
+    95700,
+    3236412,
+    "1y ago",
+    "BuzzFeed Unsolved Cases That Are Now SOLVED",
+    "Tob2h29tsCk",
+    34
+   ],
+   "desire": "I want the unsolved finally solved",
+   "q": "unsolved mysteries finally solved",
+   "n": 20
+  },
+  {
+   "scope": 3,
+   "pull": 1,
+   "stay": 3,
+   "total": 7,
+   "n1m": 2,
+   "market": "Fresh",
+   "top": [
+    "TED-Ed",
+    5945268,
+    "9y ago",
+    "Why do people join cults? - Janja Lalich",
+    "kB-dJaCXAxA"
+   ],
+   "best": null,
+   "desire": "I want to understand how cults trap people",
+   "q": "how cults brainwash people",
+   "n": 18
+  }
+ ],
+ "psych": [
+  {
+   "scope": 3,
+   "pull": 4,
+   "stay": 5,
+   "total": 12,
+   "n1m": 2,
+   "market": "Fresh",
+   "top": [
+    "ReBorn Mindset",
+    3108310,
+    "1y ago",
+    "5 DARK PSYCHOLOGY Tricks to Control Anyone Silently 🤫 Hidden Secrets",
+    "mlKxf78CBX4"
+   ],
+   "best": [
+    "Shonen Dynamics",
+    8650,
+    454844,
+    "1y ago",
+    "5 Dark Psychology Tricks That Control Anyone (99% Success)",
+    "-u2y6fFzx8M",
+    53
+   ],
+   "desire": "I want to read and influence people",
+   "q": "dark psychology tricks",
+   "n": 16
+  },
+  {
+   "scope": 4,
+   "pull": 1,
+   "stay": 5,
+   "total": 10,
+   "n1m": 6,
+   "market": "Proven",
+   "top": [
+    "Mel Robbins",
+    4606865,
+    "8y ago",
+    "The ONLY Way To Stop Procrastinating | Mel Robbins",
+    "4x7MkLDGnu8"
+   ],
+   "best": null,
+   "desire": "I want to fix my focus and habits",
+   "q": "how to stop procrastinating",
+   "n": 15
+  },
+  {
+   "scope": 4,
+   "pull": 1,
+   "stay": 5,
+   "total": 10,
+   "n1m": 5,
+   "market": "Proven",
+   "top": [
+    "MedCircle",
+    9306336,
+    "8y ago",
+    "Signs You're Dating A Narcissist",
+    "TLM94DnKkQo"
+   ],
+   "best": null,
+   "desire": "I want to protect myself from toxic people",
+   "q": "signs of a narcissist",
+   "n": 18
+  },
+  {
+   "scope": 4,
+   "pull": 1,
+   "stay": 5,
+   "total": 10,
+   "n1m": 4,
+   "market": "Proven",
+   "top": [
+    "The Diary Of A CEO",
+    3211254,
+    "3y ago",
+    "Simon Sinek: \"I FEEL LONELY!\" How To Deal With Loneliness! | E230",
+    "D46zvJI-njU"
+   ],
+   "best": null,
+   "desire": "I want to understand why I feel this way",
+   "q": "why you feel lonely",
+   "n": 14
+  }
+ ],
+ "body": [
+  {
+   "scope": 4,
+   "pull": 4,
+   "stay": 5,
+   "total": 13,
+   "n1m": 5,
+   "market": "Proven",
+   "top": [
+    "Daniel Pink",
+    4816449,
+    "11mo ago",
+    "How To Fix Your Attention Span (Before It's Too Late)",
+    "ZXHrPfWJcCI"
+   ],
+   "best": [
+    "Ashy",
+    34600,
+    1939636,
+    "1y ago",
+    "train your attention span SO GOOD it feels weird to scroll",
+    "fNgIXNrI4sw",
+    56
+   ],
+   "desire": "I want my attention span back",
+   "q": "how to fix your attention span",
+   "n": 19
+  },
+  {
+   "scope": 3,
+   "pull": 4,
+   "stay": 5,
+   "total": 12,
+   "n1m": 3,
+   "market": "Proven",
+   "top": [
+    "AsapSCIENCE",
+    5896952,
+    "10y ago",
+    "What Happens When You Die?",
+    "55j-nVwHa_c"
+   ],
+   "best": [
+    "Parnia Lab at NYU Langone Health",
+    15800,
+    1429867,
+    "2y ago",
+    "Rethinking Death: Exploring What Happens When We Die",
+    "_18UdG4STHA",
+    90
+   ],
+   "desire": "I want to know what happens when we die",
+   "q": "what happens when you die science",
+   "n": 14
+  },
+  {
+   "scope": 4,
+   "pull": 1,
+   "stay": 5,
+   "total": 10,
+   "n1m": 6,
+   "market": "Proven",
+   "top": [
+    "The Infographics Show",
+    8733745,
+    "4y ago",
+    "What Happens To Your Body When You Stop Drinking Alcohol",
+    "gkWByWY3Gdk"
+   ],
+   "best": null,
+   "desire": "I want to know what happens to my body",
+   "q": "what happens to your body if you stop",
+   "n": 19
+  },
+  {
+   "scope": 2,
+   "pull": 1,
+   "stay": 5,
+   "total": 8,
+   "n1m": 1,
+   "market": "Fresh",
+   "top": [
+    "Dr Rangan Chatterjee",
+    1626980,
+    "5y ago",
+    "The Science of Ageing: What It Takes to Live Longer | David Sinclair",
+    "GSkkBkMcwdY"
+   ],
+   "best": null,
+   "desire": "I want to live longer and healthier",
+   "q": "how to live longer science",
+   "n": 19
+  }
+ ],
+ "animals": [
+  {
+   "scope": 4,
+   "pull": 4,
+   "stay": 5,
+   "total": 13,
+   "n1m": 4,
+   "market": "Proven",
+   "top": [
+    "What If",
+    4411661,
+    "3y ago",
+    "What Happened After the Dinosaurs Went Extinct?",
+    "c7nyan0wnkQ"
+   ],
+   "best": [
+    "Silence of the Earth",
+    62500,
+    3027174,
+    "10mo ago",
+    "What If Dinosaurs Never Went Extinct? | Documentary for Sleep",
+    "2yiYRmCyfWc",
+    48
+   ],
+   "desire": "I want to know what if dinosaurs still lived",
+   "q": "what if dinosaurs never went extinct",
+   "n": 17
+  },
+  {
+   "scope": 5,
+   "pull": 1,
+   "stay": 5,
+   "total": 11,
+   "n1m": 8,
+   "market": "Crowded",
+   "top": [
+    "Trend Max",
+    7360986,
+    "8y ago",
+    "THE MOST DANGEROUS ANIMALS In The World",
+    "V84yfZZ0jGY"
+   ],
+   "best": null,
+   "desire": "I want to see the scariest creatures",
+   "q": "most dangerous animals in the world",
+   "n": 15
+  },
+  {
+   "scope": 5,
+   "pull": 1,
+   "stay": 5,
+   "total": 11,
+   "n1m": 7,
+   "market": "Crowded",
+   "top": [
+    "Best Documentary",
+    7795804,
+    "3y ago",
+    "Man's First Friend | The Epic Story Of Humans And Dogs",
+    "talBvZ5x8sY"
+   ],
+   "best": null,
+   "desire": "I want to know how animals became what they are",
+   "q": "how dogs evolved from wolves",
+   "n": 15
+  },
+  {
+   "scope": 4,
+   "pull": 1,
+   "stay": 5,
+   "total": 10,
+   "n1m": 5,
+   "market": "Proven",
+   "top": [
+    "Free High-Quality Documentaries",
+    8209778,
+    "6y ago",
+    "The world's weirdest creatures | Full Documentary",
+    "67vKK_UAg20"
+   ],
+   "best": null,
+   "desire": "I want weird animal facts",
+   "q": "weirdest animals on earth",
+   "n": 14
+  }
+ ],
+ "disaster": [
+  {
+   "scope": 5,
+   "pull": 5,
+   "stay": 5,
+   "total": 15,
+   "n1m": 9,
+   "market": "Crowded",
+   "top": [
+    "The Infographics Show",
+    6266475,
+    "4y ago",
+    "Chernobyl's Explosion, Minute by Minute",
+    "2uJhjqBz5Tk"
+   ],
+   "best": [
+    "David Puls",
+    4530,
+    1253130,
+    "3y ago",
+    "THE 1994 NORTHRIDGE CALIFORNIA EARTHQUAKE MINUTE BY MINUTE",
+    "Q-p--XCX7_o",
+    277
+   ],
+   "desire": "I want to know how the disaster happened minute by minute",
+   "q": "disaster minute by minute",
+   "n": 19
+  },
+  {
+   "scope": 5,
+   "pull": 5,
+   "stay": 5,
+   "total": 15,
+   "n1m": 11,
+   "market": "Crowded",
+   "top": [
+    "MegaBuilds",
+    55252137,
+    "5y ago",
+    "Most Useless Megaprojects in the World",
+    "on2yz8SN3fg"
+   ],
+   "best": [
+    "SIGNUM",
+    27000,
+    3655866,
+    "2y ago",
+    "Biggest Megaprojects in The World",
+    "j8lXJz-t9mk",
+    135
+   ],
+   "desire": "I want to see the biggest things humans build",
+   "q": "biggest megaprojects in the world",
+   "n": 18
+  },
+  {
+   "scope": 5,
+   "pull": 3,
+   "stay": 5,
+   "total": 13,
+   "n1m": 9,
+   "market": "Crowded",
+   "top": [
+    "Dhruv Rathee",
+    11032249,
+    "4y ago",
+    "Worst Air Disaster in China | Boeing 737 Plane Crash | Dhruv Rathee",
+    "BkU4o3vPxwY"
+   ],
+   "best": [
+    "Flight Paul Aviation",
+    25300,
+    604785,
+    "1y ago",
+    "Animation MISTAKES in Air Crash Investigation | PART 2!!!",
+    "6mTpgeef3yE",
+    24
+   ],
+   "desire": "I want to understand plane crashes",
+   "q": "plane crash explained animation",
+   "n": 17
+  },
+  {
+   "scope": 2,
+   "pull": 2,
+   "stay": 5,
+   "total": 9,
+   "n1m": 1,
+   "market": "Fresh",
+   "top": [
+    "Tom Scott",
+    2678433,
+    "9y ago",
+    "The Disaster That Changed Engineering: The Hyatt Regency Collapse",
+    "VnvGwFegbC8"
+   ],
+   "best": [
+    "Building Tales",
+    49000,
+    316381,
+    "1y ago",
+    "Top 10 Most Shocking Engineering Disasters",
+    "efi-5icameA",
+    6
+   ],
+   "desire": "I want to see engineering failures",
+   "q": "engineering disasters explained",
+   "n": 19
+  }
+ ],
+ "geo": [
+  {
+   "scope": 3,
+   "pull": 3,
+   "stay": 5,
+   "total": 11,
+   "n1m": 3,
+   "market": "Proven",
+   "top": [
+    "The Infographics Show",
+    3897726,
+    "4y ago",
+    "US World War 3 Plan",
+    "qlNNetHEMYs"
+   ],
+   "best": [
+    "Teer",
+    23900,
+    520770,
+    "10d ago",
+    "World War 3 | Full AI Movie",
+    "PJZhfX5uZuY",
+    22
+   ],
+   "desire": "I want to know where the next big war is",
+   "q": "world war 3 explained",
+   "n": 14
+  },
+  {
+   "scope": 5,
+   "pull": 1,
+   "stay": 5,
+   "total": 11,
+   "n1m": 8,
+   "market": "Crowded",
+   "top": [
+    "Bloomberg Originals",
+    4961638,
+    "2y ago",
+    "How Singapore Got So Crazy Rich",
+    "YSMWN8VpY6A"
+   ],
+   "best": null,
+   "desire": "I want to know why some countries are rich or poor",
+   "q": "why is this country so rich",
+   "n": 20
+  },
+  {
+   "scope": 5,
+   "pull": 1,
+   "stay": 5,
+   "total": 11,
+   "n1m": 8,
+   "market": "Crowded",
+   "top": [
+    "Top Fives",
+    11608663,
+    "4y ago",
+    "TOP 15 Forbidden Places You’re Not Allowed to Visit",
+    "nB_PwGn-ekw"
+   ],
+   "best": null,
+   "desire": "I want to see places no one can go",
+   "q": "places no one is allowed to go",
+   "n": 17
+  },
+  {
+   "scope": 4,
+   "pull": 1,
+   "stay": 5,
+   "total": 10,
+   "n1m": 4,
+   "market": "Proven",
+   "top": [
+    "RealLifeLore",
+    9849605,
+    "10y ago",
+    "The World's Strangest Borders Part 1: Panhandles",
+    "b3Ysh6IQ6dc"
+   ],
+   "best": null,
+   "desire": "I want to know why the map looks so strange",
+   "q": "why borders are so weird",
+   "n": 17
+  }
+ ],
+ "finance": [
+  {
+   "scope": 5,
+   "pull": 2,
+   "stay": 5,
+   "total": 12,
+   "n1m": 8,
+   "market": "Crowded",
+   "top": [
+    "Principles by Ray Dalio",
+    141510097,
+    "13y ago",
+    "How The Economic Machine Works by Ray Dalio",
+    "PHe0bXAIuk0"
+   ],
+   "best": [
+    "Sketchinance",
+    41000,
+    300798,
+    "11mo ago",
+    "How Money Really Works | What They Never Teach",
+    "n4iwpbVwfbI",
+    7
+   ],
+   "desire": "I want to finally understand how money works",
+   "q": "how money works explained",
+   "n": 12
+  },
+  {
+   "scope": 1,
+   "pull": 2,
+   "stay": 5,
+   "total": 8,
+   "n1m": 0,
+   "market": "Fresh",
+   "top": [
+    "MedigapSeminars.org",
+    560418,
+    "3y ago",
+    "Medicare Explained Part A & B C D (Advantage vs Supplement)",
+    "1qyrikJKzZc"
+   ],
+   "best": [
+    "MedigapSeminars.org",
+    99600,
+    560418,
+    "3y ago",
+    "Medicare Explained Part A & B C D (Advantage vs Supplement)",
+    "1qyrikJKzZc",
+    6
+   ],
+   "desire": "I want to understand Medicare",
+   "q": "medicare explained",
+   "n": 19
+  },
+  {
+   "scope": 2,
+   "pull": 1,
+   "stay": 5,
+   "total": 8,
+   "n1m": 1,
+   "market": "Fresh",
+   "top": [
+    "More Perfect Union",
+    1633272,
+    "2y ago",
+    "We Went To Florida: The Housing Insurance Crisis Will Shock You",
+    "RdSa7dol1ng"
+   ],
+   "best": null,
+   "desire": "I want to know if my home stays insurable",
+   "q": "home insurance crisis explained",
+   "n": 19
+  },
+  {
+   "scope": 1,
+   "pull": 1,
+   "stay": 5,
+   "total": 7,
+   "n1m": 0,
+   "market": "Fresh",
+   "top": [
+    "Doctor Mike",
+    764097,
+    "6mo ago",
+    "Insurance Companies Will HATE Me For This",
+    "TYpfoI5fyxw"
+   ],
+   "best": null,
+   "desire": "I want to stop getting ripped off by insurance",
+   "q": "how insurance companies deny claims",
+   "n": 19
+  }
+ ],
+ "faith": [
+  {
+   "scope": 4,
+   "pull": 4,
+   "stay": 5,
+   "total": 13,
+   "n1m": 6,
+   "market": "Proven",
+   "top": [
+    "Bible In a Nutshell",
+    8534421,
+    "1y ago",
+    "David and Goliath | Animated Bible Movie",
+    "qtGSUNfwXds"
+   ],
+   "best": [
+    "Nola Bible Stories",
+    13800,
+    1224584,
+    "1y ago",
+    "The Story of Jonah | Animated Bible Movie",
+    "0BJacsgTjfg",
+    89
+   ],
+   "desire": "I want to see Bible stories come alive",
+   "q": "bible story animated",
+   "n": 16
+  },
+  {
+   "scope": 4,
+   "pull": 3,
+   "stay": 5,
+   "total": 12,
+   "n1m": 6,
+   "market": "Proven",
+   "top": [
+    "David Jeremiah",
+    4773739,
+    "6y ago",
+    "What is Heaven like?",
+    "Iu3urc7I6yI"
+   ],
+   "best": [
+    "May the Lord Studio",
+    125000,
+    3606929,
+    "3mo ago",
+    "Tell me, how is Heaven - May the Lord Studio - Official music video",
+    "XTK36WhFftM",
+    29
+   ],
+   "desire": "I want to know what heaven looks like",
+   "q": "what heaven looks like bible",
+   "n": 20
+  },
+  {
+   "scope": 4,
+   "pull": 1,
+   "stay": 5,
+   "total": 10,
+   "n1m": 5,
+   "market": "Proven",
+   "top": [
+    "BibleProject",
+    9674477,
+    "9y ago",
+    "Book of Revelation Summary: A Complete Animated Overview (Part 1)",
+    "5nvVVcYD-0w"
+   ],
+   "best": null,
+   "desire": "I want to understand the end times",
+   "q": "book of revelation explained",
+   "n": 19
+  }
+ ],
+ "ai": [
+  {
+   "scope": 4,
+   "pull": 5,
+   "stay": 3,
+   "total": 12,
+   "n1m": 5,
+   "market": "Proven",
+   "top": [
+    "Purrverse",
+    83644386,
+    "10mo ago",
+    "Cute Kitten Trying Makeup for the First Time 🐱💄 #catstory #catlovers #cutekitten",
+    "iLF1iehws6E"
+   ],
+   "best": [
+    "Purrverse",
+    72700,
+    83644386,
+    "10mo ago",
+    "Cute Kitten Trying Makeup for the First Time 🐱💄 #catstory #catlovers #cutekitten",
+    "iLF1iehws6E",
+    1151
+   ],
+   "desire": "I want feel-good animal stories",
+   "q": "ai cat story",
+   "n": 15
+  },
+  {
+   "scope": 3,
+   "pull": 5,
+   "stay": 3,
+   "total": 11,
+   "n1m": 3,
+   "market": "Proven",
+   "top": [
+    "Titan Entertainment",
+    11863309,
+    "6mo ago",
+    "The Last Howl Full HD Movie | Epic Action Adventure Fantasy | Warrior’s Revenge Against Dark Destiny",
+    "Mg_CuDtpf0U"
+   ],
+   "best": [
+    "History Dormant",
+    2510,
+    410266,
+    "4w ago",
+    "The Wolf-Born Queen 👑🐺 | Full Fantasy Movie HD | AI Fantasy Film",
+    "MIgZnq8txRU",
+    163
+   ],
+   "desire": "I want an epic story I can binge",
+   "q": "full fantasy movie AI",
+   "n": 13
+  },
+  {
+   "scope": 4,
+   "pull": 4,
+   "stay": 3,
+   "total": 11,
+   "n1m": 4,
+   "market": "Proven",
+   "top": [
+    "Bible In a Nutshell",
+    8534421,
+    "1y ago",
+    "David and Goliath | Animated Bible Movie",
+    "qtGSUNfwXds"
+   ],
+   "best": [
+    "Nola Bible Stories",
+    13800,
+    1224584,
+    "1y ago",
+    "The Story of Jonah | Animated Bible Movie",
+    "0BJacsgTjfg",
+    89
+   ],
+   "desire": "I want faith stories as cinema",
+   "q": "AI animated bible movie",
+   "n": 18
+  }
+ ],
+ "creator": [
+  {
+   "scope": 3,
+   "pull": 5,
+   "stay": 5,
+   "total": 13,
+   "n1m": 3,
+   "market": "Proven",
+   "top": [
+    "Tube Project",
+    1731190,
+    "1y ago",
+    "How To Create Kids Nursery Rhyme Videos With Free AI Tools (Step by Step)",
+    "zXslPW1reRI"
+   ],
+   "best": [
+    "Tube Project",
+    13800,
+    1731190,
+    "1y ago",
+    "How To Create Kids Nursery Rhyme Videos With Free AI Tools (Step by Step)",
+    "zXslPW1reRI",
+    125
+   ],
+   "desire": "I want to make animated videos myself",
+   "q": "how to make animated videos for youtube",
+   "n": 17
+  },
+  {
+   "scope": 3,
+   "pull": 3,
+   "stay": 5,
+   "total": 11,
+   "n1m": 2,
+   "market": "Fresh",
+   "top": [
+    "Kellan Henneberry",
+    1361501,
+    "1y ago",
+    "how i make $36,438/mo posting YouTube Shorts (using AI)",
+    "ygeCgN-SfE8"
+   ],
+   "best": [
+    "Kellan Henneberry",
+    100000,
+    1361501,
+    "1y ago",
+    "how i make $36,438/mo posting YouTube Shorts (using AI)",
+    "ygeCgN-SfE8",
+    14
+   ],
+   "desire": "I want to use AI to make my videos",
+   "q": "make videos with ai for youtube",
+   "n": 17
+  },
+  {
+   "scope": 1,
+   "pull": 4,
+   "stay": 5,
+   "total": 10,
+   "n1m": 0,
+   "market": "Fresh",
+   "top": [
+    "Tube Wealth ",
+    598951,
+    "3y ago",
+    "How to Make a FACELESS YouTube Channel - Full Course",
+    "OTLxMmrMyYo"
+   ],
+   "best": [
+    "Tube Wealth ",
+    15300,
+    598951,
+    "3y ago",
+    "How to Make a FACELESS YouTube Channel - Full Course",
+    "OTLxMmrMyYo",
+    39
+   ],
+   "desire": "I want to make money on YouTube without showing my face",
+   "q": "faceless youtube channel",
+   "n": 19
+  },
+  {
+   "scope": 1,
+   "pull": 4,
+   "stay": 5,
+   "total": 10,
+   "n1m": 0,
+   "market": "Fresh",
+   "top": [
+    "Darragh Lucey",
+    910448,
+    "3y ago",
+    "I tried Faceless YouTube Automation for 200 days",
+    "mJld3pDws_c"
+   ],
+   "best": [
+    "Darragh Lucey",
+    23800,
+    910448,
+    "3y ago",
+    "I tried Faceless YouTube Automation for 200 days",
+    "mJld3pDws_c",
+    38
+   ],
+   "desire": "I want proof that it really works",
+   "q": "faceless youtube channel results",
+   "n": 19
+  }
+ ]
+}
