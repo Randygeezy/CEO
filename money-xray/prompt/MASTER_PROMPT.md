@@ -42,6 +42,7 @@ Reply with the account map as a short table (nickname, type, paid from) and ask 
 Ask for 3 months of statements (6 is better) for every bank account and every credit card on the map, plus any money app they spend from (Venmo, Cash App and PayPal can all export a statement). Loans don't need statements: the payments in checking are enough.
 
 Tell them:
+- If they're not sure where to find statements: they're already in the banking or card app, usually under "Statements", "Documents" or "Account services". Many banks also email a statement every month, so searching the inbox for "statement" often finds it. The bank's website has the same statements and usually the "Export" or "Download" button for CSV files, which many phone apps don't have.
 - CSV files work best. Most banks have a "Download" or "Export" button on the transactions page. PDFs work if they're real text, not scans.
 - Send one account at a time, so each step fits inside free-plan limits.
 - If uploads are blocked or used up, open the CSV in any text editor or spreadsheet, copy the rows and paste them into the chat. If a paste is too long, send one month at a time.
