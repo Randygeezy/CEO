@@ -33,10 +33,10 @@ Expected net spending: **$5,060.34** (Aug), **$5,866.20** (Sep), **$5,157.77** (
 
 ## Running an accuracy test (blueprint phase 4)
 
-1. Open a new chat in ChatGPT or Claude. Paste `prompt/MASTER_PROMPT.md` from the line down.
+1. Open a new chat in ChatGPT, Claude or Gemini (free plans included). Paste `prompt/MASTER_PROMPT.md` from the line down.
 2. Answer the interview from the customer script in `test-data/CUSTOMER.md`. It deliberately leaves out the Discover card and the savings account, because the AI should find them.
 3. Upload the six files in `test-data/statements/` when asked. Answer the AI's follow-up questions from the same script, and nothing more.
-4. Ask for the Phase 7 transaction export, save it, and grade it:
+4. Ask for the Notion export (Step 6), save it, and grade it:
 
    ```bash
    python3 money-xray/test-data/grade.py ~/Downloads/Money_XRay_Transactions_2026-10.csv
