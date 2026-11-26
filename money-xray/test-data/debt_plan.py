@@ -58,7 +58,7 @@ def simulate(order, extra, lump, rollover=True, max_months=600):
                 d["balance"] = round(d["balance"] - pay, 2)
                 budget -= pay
         for d in queue:  # everything left goes to the target, then the next
-            if d["balance"] > 0 and budget > 0:
+            if rollover and d["balance"] > 0 and budget > 0:
                 pay = min(budget, d["balance"])
                 d["balance"] = round(d["balance"] - pay, 2)
                 budget -= pay

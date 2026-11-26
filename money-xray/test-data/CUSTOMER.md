@@ -23,7 +23,8 @@ Answers to follow-up questions, if the auditor asks about them (only if asked):
 - Asked to upload an earlier statement again in a new chat: "I don't have those handy right now."
 - Debt plan, if asked: "I can put $300 extra a month toward debt. Use the money in Joint Checking, but keep $2,000 there as a cushion. Don't touch savings or the jar."
 - If asked about the Discover balance and rate: "About $2,140, 27.24% APR, minimum $65."
-- Which method: "Show me both. I'll pick after I see the numbers."
+- Which method, after seeing both: "Avalanche. I want to pay the least interest."
+- Keep paying Discover $175 instead of the $65 minimum? "No, put that toward the plan like everything else."
 - Anything else: "I'm not sure. Use your best judgment and mark it for review."
 
 Answer to "Is there money that never shows up on these statements?" (Step 3B), if asked:

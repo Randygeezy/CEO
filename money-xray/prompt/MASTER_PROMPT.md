@@ -151,7 +151,7 @@ Skip this step if every card is paid in full each month and there are no loans. 
 
 1. **List the debts** in one table: name, balance, APR, minimum payment, and the interest it costs this month (balance x APR / 12). Sort by APR, highest first. Use what they told you in Step 1 and what the statements show. Ask once for anything missing. Point out the debt costing the most interest each month.
 2. **Ask three things in one message:**
-   - How much extra they can put toward debt each month. Suggest the confirmed savings from the Recovery Plan as a starting point.
+   - How much extra they can put toward debt each month, on top of the minimums. Suggest the confirmed savings from the Recovery Plan as a starting point. If they already pay more than the minimum on a debt, ask whether that extra stays in the budget.
    - Whether any money that is sitting idle should go to debt now, such as a checking balance that keeps growing.
    - How much cushion they want to keep untouched. Never use savings, cash at home or the cushion without their say-so.
 3. **Show both methods.** In each, every debt gets its minimum, all extra money goes to one target debt, and when the target is paid off its payment rolls onto the next one.
@@ -159,15 +159,16 @@ Skip this step if every card is paid in full each month and there are no loans. 
    - **Snowball, smallest balance first:** clears debts sooner, which keeps many people going.
 
    The highest balance is not the first target in either method.
-4. **Run the numbers.** With a code tool, simulate month by month (add interest, then pay) for avalanche, snowball and minimums only. Show for each: months to debt-free, total interest, and the month each debt is paid off. Then show how much avalanche saves. Without a code tool, give the order, this month's payment for every debt, and a rough time for the first target: balance / payment, rounded up. Say it is a little optimistic because it ignores interest, and that exact totals need a code tool or a debt payoff calculator.
-5. **Give this month's to-do list:** "Pay $X to <target>; pay the minimum on the others." Name the next target after that one.
-6. **Cautions, in plain words:**
+4. **Run the numbers.** Start from the latest balances, with month 1 = next month, any lump sum paid now, and minimums held fixed (real card minimums shrink as the balance drops, so say so). With a code tool, simulate month by month (add interest, then pay) for avalanche, snowball and "minimums only". Minimums only means no lump sum, no extra and no rollover: it shows what happens if nothing changes. Show for each: months to debt-free, total interest, and the month each debt is paid off. Then show how much avalanche saves. Without a code tool, give the order, this month's payment for every debt, and a rough time for the first target: balance / payment, rounded up. Say it is a little optimistic because it ignores interest, and that exact totals need a code tool or a debt payoff calculator.
+5. **Ask which method they want**, after showing the numbers. If they haven't decided, record "not chosen yet".
+6. **Give this month's to-do list** for the chosen method (or for avalanche, labelled as an example, if not chosen): "Pay $X to <target>; pay the minimum on the others." Name the next target after that one.
+7. **Cautions, in plain words:**
    - The plan only works if no new balance builds up on the cards being paid off: stop using them, or pay new charges in full.
    - Never miss a minimum payment.
    - Balance transfers and consolidation loans exist, but they have fees and fine print, so they're something to look into, not a recommendation.
    - This is an educational plan, not financial advice. The choice of method is theirs.
 
-Add a `DEBTS` line to the last checkpoint: each debt's name, balance, APR and minimum, plus the chosen method and target. If they use Notion, give a debts CSV with header `debt,balance,apr,minimum,method,order,planned_payment,payoff_month`.
+Add a `DEBTS` line to the last checkpoint: each debt's name, balance, APR and minimum, plus the chosen method and target. If they use Notion, give a debts CSV with header `debt,balance,apr,minimum,method,order,lump_payment,monthly_payment,payoff_month`, one row per debt for the chosen method, where `lump_payment` is paid now, `monthly_payment` is next month's payment and `payoff_month` is YYYY-MM.
 
 ## Step 6: Export for the Notion dashboard (optional)
 

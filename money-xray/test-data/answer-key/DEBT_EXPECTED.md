@@ -21,9 +21,9 @@ Plan inputs: $300.00 extra per month, plus a one-time $3,699.99 from Joint Check
 |---|---|---:|---:|---|
 | Avalanche (highest APR first) | Discover > Visa Rewards > Toyota car loan > Mom (family loan) | 22 months | $1,652.59 | Discover: lump sum, Visa Rewards: month 10, Toyota car loan: month 22, Mom (family loan): month 9 |
 | Snowball (smallest balance first) | Mom (family loan) > Discover > Visa Rewards > Toyota car loan | 22 months | $1,704.71 | Mom (family loan): lump sum, Discover: lump sum, Visa Rewards: month 10, Toyota car loan: month 22 |
-| Minimums only, no lump sum, no rollover | Visa Rewards > Discover > Toyota car loan > Mom (family loan) | 59 months | $7,481.26 | Visa Rewards: month 54, Discover: month 59, Toyota car loan: month 39, Mom (family loan): month 9 |
+| Minimums only, no lump sum, no rollover | Visa Rewards > Discover > Toyota car loan > Mom (family loan) | 62 months | $7,503.15 | Visa Rewards: month 54, Discover: month 62, Toyota car loan: month 39, Mom (family loan): month 9 |
 
-Avalanche saves $52.12 in interest compared with snowball, and $5,828.67 compared with paying minimums only.
+Avalanche saves $52.12 in interest compared with snowball, and $5,850.56 compared with paying minimums only.
 
 ## What the AI must get right
 
