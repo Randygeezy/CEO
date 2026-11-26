@@ -25,6 +25,7 @@ Answers to follow-up questions, if the auditor asks about them (only if asked):
 - If asked about the Discover balance and rate: "About $2,140, 27.24% APR, minimum $65."
 - Which method, after seeing both: "Avalanche. I want to pay the least interest."
 - Keep paying Discover $175 instead of the $65 minimum? "No, put that toward the plan like everything else."
+- Net worth, if asked: "Our house is worth about $340,000; the mortgage balance is $248,000. The Toyota is worth about $18,500 (loan $14,600 as I said). Our second car is paid off, worth maybe $6,000. My 401(k) has $42,000 and my spouse's 403(b) has $18,500. No student loans or medical bills."
 - Anything else: "I'm not sure. Use your best judgment and mark it for review."
 
 Answer to "Is there money that never shows up on these statements?" (Step 3B), if asked:
