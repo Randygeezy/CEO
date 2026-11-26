@@ -29,7 +29,7 @@ Fourteen deliberate traps are planted, each listed in `answer-key/ANSWER_KEY.md`
 - a new bank maintenance fee, late and foreign-transaction fees, card interest
 - Costco groceries and gas mislabelled "Shopping" by the bank
 
-Expected net spending: **$5,060.34** (Aug), **$5,866.20** (Sep), **$5,157.77** (Oct), against $7,290 a month in take-home pay. On paper there's about $2,000 a month left over. The audit has to explain why the family still feels broke: a growing Visa balance and its interest, a Discover card nobody listed, and fees.
+Expected net spending: **$5,060.34** (Aug), **$5,866.20** (Sep), **$5,112.77** (Oct), against $7,290 a month in take-home pay. On paper there's about $2,000 a month left over. The audit has to explain why the family still feels broke: a growing Visa balance and its interest, a Discover card nobody listed, and fees.
 
 ## Running an accuracy test (blueprint phase 4)
 
