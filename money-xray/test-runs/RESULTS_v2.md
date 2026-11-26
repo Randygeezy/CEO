@@ -43,3 +43,7 @@ Both runs resumed in a new chat from saved notes, blind to `DEBT_EXPECTED.md`.
 | `debtB` | Free plan, no code | Debt table, avalanche and snowball order and this month's payments correct. It held back $1,112.91 for the Mastercard bill Joint Checking still had to pay, which the answer key had missed (now a prompt rule). As the prompt allows, it gave only rough timings: no total interest, no debt-free date. |
 
 What a no-code free plan can't give: total interest, the debt-free date, and the exact difference between avalanche and snowball. Those need a month-by-month calculation. The prompt tells customers to use a code tool or a debt payoff calculator for exact totals.
+
+# Net worth snapshot (Step 5C)
+
+`networth` run: free plan, no code, resumed from saved notes, blind to `NETWORTH_EXPECTED.md`. Assets $435,980.49, liabilities $273,426.41, net worth $162,554.08 and liquid net worth $154.08 all match exactly. Paid-in-full card balances were counted as owed. It explained why a positive net worth can still feel broke. Fixed after the run: the snapshot date rule and the list of CSV categories. Not tested: uploading investment and loan statements.

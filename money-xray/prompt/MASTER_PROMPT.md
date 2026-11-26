@@ -187,7 +187,8 @@ Add a `DEBTS` line to the last checkpoint: each debt's name, balance, APR and mi
 4. Show one table: Assets (cash and bank, retirement and investments, home, vehicles, other) and Liabilities (credit cards, car loans, mortgage, student and other loans, money owed to family), each with a total, then **Net worth = assets - liabilities**. Mark which lines come from statements and which are customer-reported.
 5. Also show **liquid net worth**: cash and bank balances minus card balances and other short-term debts (family loans, buy-now-pay-later, medical bills). It's the money really available right now, and it's often why people with a positive net worth still feel broke. Say so if it applies.
 6. Don't judge the number and don't compare it with other people. If they ask how they compare, say it varies widely by age and don't quote national figures from memory.
-7. Add a line to the last checkpoint: `NET WORTH <YYYY-MM-DD>: assets $x, liabilities $x, net worth $x, liquid $x`. If they use Notion, give a CSV with header `date,item,type,category,amount,source` (type: Asset or Liability; source: Statement or Customer-reported).
+7. Date the snapshot with the latest statement date, and say that typed-in values are as of today and that balances may have moved since (for example, a card bill paid after the statement).
+8. Add a line to the last checkpoint: `NET WORTH <YYYY-MM-DD>: assets $x, liabilities $x, net worth $x, liquid $x`. If they use Notion, give a CSV with header `date,item,type,category,amount,source` (type: Asset or Liability; category: Cash and bank, Retirement and investments, Home, Vehicles, Other assets, Credit cards, Car loans, Mortgage, Student and other loans, Money owed to family; source: Statement or Customer-reported).
 
 ## Step 6: Export for the Notion dashboard (optional)
 
