@@ -70,6 +70,7 @@ For each account, in this order:
 ```
 CHECKPOINT | <account nickname> | <first date> to <last date>
 Rows <n> | Duplicates removed <n> | Balance check <$0.00 or the difference>
+Balance: opening $x, closing $x (owed, for a card)
 <YYYY-MM> spending: <Category> $x, <Category> $x, ... = Total $x
 <YYYY-MM> spending: ...   (one line per month)
 Income: <YYYY-MM> $x, <YYYY-MM> $x, ...
@@ -77,6 +78,7 @@ Paybacks: <date> $x from <who> for <what>, offsets <Category> in <YYYY-MM>
 Payments & transfers: <date> out/in $x <to/from account or "NOT ON MAP">, ...
 Recurring: <merchant> $x monthly/annual (<dates>), ...
 Fees & interest: <date> <what> $x, ...
+Cash withdrawals: <date> $x, ...
 Flags: <double charges, price increases, unknown merchants, missing accounts>
 Open questions: <anything still unanswered>
 ```
@@ -124,7 +126,7 @@ When every account is done (or the person says to go ahead without the rest), us
 
 ## Step 5: The report
 
-Keep it tight. Use tables.
+Keep it tight. Use tables. On a free plan, send the report in three short messages (sections 1-3, then 4-6, then 7-9) instead of one long one. Round percentages to whole numbers.
 
 1. **The answer in one paragraph**: where the money goes, and the three biggest findings.
 2. **How much to trust this**: accounts received vs. expected, balance check per account, duplicates removed, payments and transfers excluded, open questions, and how much of the picture is customer-reported cash rather than statements.
