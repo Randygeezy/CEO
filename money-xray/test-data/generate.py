@@ -433,7 +433,7 @@ for r in uniq:
     mk = month_name[r["date"].month]
     if r["type"] == "Expense":
         spend[mk][r["category"]] += r["amount"]
-    elif r["type"] == "Refund":
+    elif r["type"] in ("Refund", "Reimbursement"):  # the test customer confirms Jordan's payback
         spend[mk][r["category"]] -= r["amount"]
     elif r["type"] == "Income":
         income[mk] += r["amount"]
@@ -455,7 +455,7 @@ key = {
         "internal_transfers": round(sum(r["amount"] for r in uniq if r["type"] == "Transfer"
                                         and "savings_transfer" not in r["flags"]), 2),
         "savings_transfers": round(sum(r["amount"] for r in uniq if "savings_transfer" in r["flags"]), 2),
-        "reimbursements": round(sum(r["amount"] for r in uniq if r["type"] == "Reimbursement"), 2),
+        "reimbursements_netted_in_dining": round(sum(r["amount"] for r in uniq if r["type"] == "Reimbursement"), 2),
         "unknown_inflows": round(sum(r["amount"] for r in uniq if r["type"] == "Unknown Inflow"), 2),
     },
     "reconciliation": [dict(zip(["account", "file", "type", "start", "end", "opening", "closing",
@@ -515,8 +515,9 @@ for c in cats:
     L.append(f"| {c} | " + " | ".join(f"${spend[mk].get(c, 0):,.2f}" for mk in key["income_by_month"]) + " |")
 L.append("| **Total** | " + " | ".join(f"**${key['net_spending_total_by_month'][mk]:,.2f}**"
                                          for mk in key["income_by_month"]) + " |")
-L += ["", "Refunds are netted against their category (Amazon return in Shopping, Kroger refund in Groceries). "
-      "The $45 Zelle reimbursement is NOT netted until the user confirms it.", "",
+L += ["", "Refunds and confirmed reimbursements are netted against their category (Amazon return in Shopping, "
+      "Kroger refund in Groceries, Jordan's $45 dinner payback in Dining Out, which the customer confirms). "
+      "The $60 Venmo cash-out stays unknown and offsets nothing.", "",
       "## Excluded from spending", ""]
 for k, v in key["excluded_from_spending"].items():
     L.append(f"- {k.replace('_', ' ')}: ${v:,.2f}")

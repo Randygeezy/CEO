@@ -17,7 +17,7 @@ Period: 2026-08-01 to 2026-10-31. Raw rows across the five files: 222. Unique tr
 | Cash & ATM | $100.00 | $0.00 | $100.00 |
 | Childcare | $170.00 | $170.00 | $170.00 |
 | Debt Payments | $419.00 | $419.00 | $419.00 |
-| Dining Out | $277.72 | $373.43 | $331.30 |
+| Dining Out | $277.72 | $373.43 | $286.30 |
 | Entertainment | $54.80 | $118.00 | $72.00 |
 | Fees & Interest | $62.34 | $197.62 | $80.47 |
 | Gas | $191.40 | $178.05 | $201.15 |
@@ -34,9 +34,9 @@ Period: 2026-08-01 to 2026-10-31. Raw rows across the five files: 222. Unique tr
 | Travel | $0.00 | $312.40 | $0.00 |
 | Uncategorized | $45.00 | $45.00 | $45.00 |
 | Utilities | $500.70 | $481.45 | $447.70 |
-| **Total** | **$5,060.34** | **$5,866.20** | **$5,157.77** |
+| **Total** | **$5,060.34** | **$5,866.20** | **$5,112.77** |
 
-Refunds are netted against their category (Amazon return in Shopping, Kroger refund in Groceries). The $45 Zelle reimbursement is NOT netted until the user confirms it.
+Refunds and confirmed reimbursements are netted against their category (Amazon return in Shopping, Kroger refund in Groceries, Jordan's $45 dinner payback in Dining Out, which the customer confirms). The $60 Venmo cash-out stays unknown and offsets nothing.
 
 ## Excluded from spending
 
@@ -44,7 +44,7 @@ Refunds are netted against their category (Amazon return in Shopping, Kroger ref
 - card payments to missing card: $525.00
 - internal transfers: $2,400.00
 - savings transfers: $900.00
-- reimbursements: $45.00
+- reimbursements netted in dining: $45.00
 - unknown inflows: $60.00
 
 ## Recurring charges
@@ -90,7 +90,7 @@ Refunds are netted against their category (Amazon return in Shopping, Kroger ref
 | Cash & ATM | $66.67 | see below |
 | Childcare | $170.00 | $169.50 |
 | Debt Payments | $419.00 | $418.58 |
-| Dining Out | $327.48 | $371.42 |
+| Dining Out | $312.48 | $371.42 |
 | Entertainment | $81.60 | see below |
 | Fees & Interest | $113.48 | see below |
 | Gas | $190.20 | $208.58 |

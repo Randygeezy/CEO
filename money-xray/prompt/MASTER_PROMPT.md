@@ -49,7 +49,7 @@ Ask for **3 to 6 months** of statements for **every account on the map**. Fewer 
 When files arrive, list each one: file name, account it belongs to, date range covered, row count, and the sign convention you detected (for example, "purchases are negative in this file"). Ask the user to confirm the account each file belongs to when it isn't obvious.
 
 **Coverage check.** Compare the files against the account map and against the transactions themselves:
-- An account on the map with no statement → missing.
+- A bank or card account on the map with no statement → missing. A loan doesn't need its own statement: the payments in checking are enough.
 - A payment or transfer to an account that is not on the map (for example, "DISCOVER E-PAYMENT" when no Discover card was listed) → ask about it. It may be an account the user forgot.
 - Gaps between date ranges, or a month that is partly missing → say which days.
 
@@ -72,9 +72,9 @@ Run every check below in code. Report each one as Pass, Fixed, or Needs the user
 
 1. **Export duplicates.** Rows in the same file with the same date, amount, description and reference/transaction ID, typically where one export overlaps the next. Keep one copy and mark the others `Excluded - Duplicate`. If there is no reference ID, do NOT remove anything automatically: ask the user.
 2. **Possible merchant double charges.** Same merchant, same amount, same day, but different reference IDs. These are real charges. Keep both, and flag them for the user to check with the card issuer.
-3. **Card payments.** Match each outflow from a bank account that pays a card to the matching inflow on that card's statement: same amount, posted 0 to 5 days apart. Both sides become `Card Payment`, which is not spending. A card payment with no matching card statement is still not spending, but flag it: spending on that card is invisible until its statement is supplied.
+3. **Card payments.** Match each outflow from a bank account that pays a card to the matching inflow on that card's statement: same amount, 0 to 5 days apart (use the transaction date, or the post date if that is all the file has). Bank descriptions usually name the card's issuer ("CHASE CARD EPAY", "CITI AUTOPAY"), not the user's nickname, so match on amount and timing and state which card you matched each payment to. Both sides become `Card Payment`, which is not spending. A card payment with no matching card statement is still not spending, but flag it: spending on that card is invisible until its statement is supplied.
 4. **Internal transfers.** Match outflows and inflows between the user's own accounts (same amount, 0 to 5 days apart, transfer-like descriptions). Both sides become `Transfer`, which is not spending. Transfers to a savings or investment account the user owns are savings, not spending. Report them separately.
-5. **Refunds and reimbursements.** A merchant refund offsets the original purchase's category. Money from a person (Zelle, Venmo, Cash App) is not income and not a refund until the user says what it was. Ask.
+5. **Refunds and reimbursements.** A merchant refund offsets the original purchase's category. Money from a person (Zelle, Venmo, Cash App) is not income and not a refund until the user says what it was. Ask. Once the user confirms a payback ("Jordan paid me back for dinner"), mark it `Reimbursement` with the category it pays back, and it offsets that category exactly as a refund does. Until then it is `Unknown Inflow` and offsets nothing.
 6. **Reconciliation.** For each account with a statement summary: opening balance + inflows - outflows (checking), or opening balance + charges - payments and credits (cards), must equal the closing balance to the cent. If the bank's CSV has a running balance column, check it row by row too. Show the result per account. If an account doesn't reconcile, find the rows that explain the difference (often duplicates or missing days) before moving on. A $0.00 difference proves the arithmetic adds up. It does not prove every category is right or that no account is missing. Say so.
 7. **Coverage.** Restate any missing accounts or date gaps from Phase 2.
 
@@ -82,8 +82,8 @@ Then classify every row:
 
 - **type**: `Income`, `Expense`, `Refund`, `Reimbursement`, `Transfer`, `Card Payment`, or `Unknown Inflow`.
 - **category** (expenses and refunds): Housing, Utilities, Groceries, Dining Out, Gas, Transportation, Insurance, Subscriptions, Shopping, Health, Personal Care, Entertainment, Travel, Education, Childcare, Pets, Gifts & Donations, Cash & ATM, Debt Payments, Fees & Interest, Uncategorized. Income uses Salary or Other Income.
-- **counts_as_spending**: `Yes` only for `Expense`. Refunds reduce spending in their category.
-- **recurring**: `Monthly`, `Semi-monthly`, `Quarterly`, `Annual`, or blank. A charge is recurring only if the same merchant appears at a regular interval with a similar amount. Annual and quarterly charges need enough history to see. If you only see one, say "possibly annual."
+- **counts_as_spending**: `Yes` only for `Expense`. Net spending in a category = Expenses - Refunds - confirmed Reimbursements in that category. Use this one formula everywhere: in the report, the charts and the export, so their totals always agree.
+- **recurring**: `Monthly`, `Semi-monthly`, `Quarterly`, `Annual`, or blank. A charge is recurring only if the same merchant bills at a regular interval for a similar amount: subscriptions, memberships, bills, loan payments, fees. Frequent visits to the same restaurant or store are habits, not recurring charges. Report habits under trends, not subscriptions. Annual and quarterly charges need enough history to see. If you only see one, say "possibly annual."
 - **confidence**: High, Medium, or Low. Anything Low goes on the question list.
 
 Notes on hard cases:
@@ -101,7 +101,7 @@ From the verified ledger, compute:
 1. **Cash flow per month**: income, total spending, net (income - spending), and amounts moved to savings.
 2. **Spending by category per month**, with each category's share of total spending, and a 3-month (or longer) average.
 3. **Trends**: categories that rose or fell month over month by more than 15% and $25, with the transactions driving the change.
-4. **Recurring charges and subscriptions**: merchant, account, frequency, latest amount, annualized cost, and first and last date seen. Flag:
+4. **Recurring charges and subscriptions**: merchant, account, frequency, latest amount, annualized cost, and first and last date seen. Annualize a fixed charge from its latest amount, and a bill that varies (electricity, card interest) from its average, and say which you used. Flag:
    - price increases (amount went up)
    - overlapping services (two or more music services, several video streamers, duplicate cloud storage)
    - subscriptions on more than one account

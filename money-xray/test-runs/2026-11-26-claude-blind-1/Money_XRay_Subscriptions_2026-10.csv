@@ -1,0 +1,25 @@
+merchant,account_alias,frequency,latest_amount,annualized_cost,first_seen,last_seen,flags,user_decision
+Rocket Mortgage,Everyday Checking,Monthly,1385.00,16620.00,2026-08-01,2026-10-01,,Keep for now
+Toyota Financial,Joint Checking,Monthly,419.00,5028.00,2026-08-02,2026-10-02,,Keep for now
+GEICO,Everyday Checking,Monthly,186.40,2236.80,2026-08-10,2026-10-10,,Keep for now
+Kids R Kids Afterschool,Joint Checking,Monthly,170.00,2040.00,2026-08-05,2026-10-05,,Keep for now
+Duke Energy,Everyday Checking,Monthly,128.60,1956.60,2026-08-03,2026-10-03,variable amount; annualized from 3-month average $163.05,Keep for now
+First Baptist Church,Everyday Checking,Monthly,150.00,1800.00,2026-08-01,2026-10-01,,Keep for now
+Verizon Wireless,Everyday Checking,Monthly,142.00,1704.00,2026-08-22,2026-10-22,,Keep for now
+Comcast Xfinity,Everyday Checking,Monthly,80.00,960.00,2026-08-05,2026-10-05,,Keep for now
+Visa interest charge,Visa Rewards,Monthly,63.11,734.28,2026-08-25,2026-10-25,variable amount; annualized from 3-month average $61.19; interest on carried balance; avoidable by paying the balance down,Keep for now
+City of Raleigh Utilities,Everyday Checking,Monthly,55.35,701.80,2026-08-26,2026-10-26,variable amount; annualized from 3-month average $58.48,Keep for now
+SQ *JMK LLC (unknown),Amex Blue,Monthly,45.00,540.00,2026-08-19,2026-10-19,UNRECOGNIZED merchant: user does not know it,Investigate
+Great Clips,Amex Blue,Monthly,42.00,504.00,2026-08-06,2026-10-09,"regular haircut visits, not a contract",Keep for now
+Piedmont Natural Gas,Everyday Checking,Monthly,41.75,397.00,2026-08-04,2026-10-04,variable amount; annualized from 3-month average $33.08,Keep for now
+Planet Fitness,Joint Checking,Monthly,24.99,299.88,2026-08-06,2026-10-06,,Keep for now
+Spotify,Visa Rewards,Monthly,19.99,239.88,2026-08-11,2026-10-11,OVERLAP: two music services (Spotify + likely Apple Music),Keep for now
+Hulu,Amex Blue,Monthly,18.99,227.88,2026-08-03,2026-10-03,"OVERLAP: 4 services with video streaming (Netflix, Hulu, Disney+, Prime Video) across 3 cards",Cancel
+Netflix,Visa Rewards,Monthly,17.99,215.88,2026-08-04,2026-10-04,"PRICE INCREASE $15.49 -> $17.99 on 2026-09-04; OVERLAP: 4 services with video streaming (Netflix, Hulu, Disney+, Prime Video) across 3 cards",Keep for now
+Disney+,Amex Blue,Monthly,15.99,191.88,2026-08-03,2026-10-03,"OVERLAP: 4 services with video streaming (Netflix, Hulu, Disney+, Prime Video) across 3 cards",Keep for now
+Amazon Prime,Mastercard Cash Back,Monthly,14.99,179.88,2026-08-07,2026-10-07,"OVERLAP: 4 services with video streaming (Netflix, Hulu, Disney+, Prime Video) across 3 cards",Keep for now
+Monthly maintenance fee,Everyday Checking,Monthly,12.00,144.00,2026-09-30,2026-10-31,avoidable fee; charged Sep and Oct only,Keep for now
+Apple.com/bill (likely Apple Music),Mastercard Cash Back,Monthly,10.99,131.88,2026-08-17,2026-10-17,OVERLAP: two music services (Spotify + likely Apple Music); Apple service not confirmed (user unsure),Cancel (Apple Music; keep Spotify)
+Mastercard annual fee,Mastercard Cash Back,Annual,95.00,95.00,2026-09-01,2026-09-01,"possibly annual (only one seen); next expected ~2027-09-01, not within 60 days",Keep for now
+Planet Fitness (annual fee),Joint Checking,Annual,49.00,49.00,2026-10-06,2026-10-06,"possibly annual (only one seen); next expected ~2027-10-06, not within 60 days",Keep for now
+Apple.com/bill (likely iCloud+),Mastercard Cash Back,Monthly,2.99,35.88,2026-08-09,2026-10-09,Apple service not confirmed (user unsure),Keep for now

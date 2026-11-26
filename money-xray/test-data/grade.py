@@ -121,7 +121,7 @@ def main(path):
             m = norm_date(r["date"])[:7]
             if spend:
                 out[m] += float(norm_amt(r["amount"]))
-            elif t == "Refund":
+            elif t in ("Refund", "Reimbursement"):  # confirmed paybacks offset spending, like refunds
                 out[m] -= float(norm_amt(r["amount"]))
         return out
 

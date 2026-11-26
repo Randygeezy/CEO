@@ -62,7 +62,7 @@
       "Cash & ATM": 100.0,
       "Childcare": 170.0,
       "Debt Payments": 419.0,
-      "Dining Out": 331.3,
+      "Dining Out": 286.3,
       "Entertainment": 72.0,
       "Fees & Interest": 80.47,
       "Gas": 201.15,
@@ -83,14 +83,14 @@
   "net_spending_total_by_month": {
     "2026-08": 5060.34,
     "2026-09": 5866.2,
-    "2026-10": 5157.77
+    "2026-10": 5112.77
   },
   "excluded_from_spending": {
     "card_payments_matched": 11000,
     "card_payments_to_missing_card": 525.0,
     "internal_transfers": 2400.0,
     "savings_transfers": 900.0,
-    "reimbursements": 45.0,
+    "reimbursements_netted_in_dining": 45.0,
     "unknown_inflows": 60.0
   },
   "reconciliation": [
