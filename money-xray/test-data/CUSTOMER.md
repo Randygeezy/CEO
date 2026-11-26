@@ -20,4 +20,10 @@ Answers to follow-up questions, if the auditor asks about them (only if asked):
 - DoorDash charged twice: "We only ordered once."
 - Anything else: "I'm not sure. Use your best judgment and mark it for review."
 
+Answer to "Is there money that never shows up on these statements?" (Step 3B), if asked:
+- "I mow lawns on weekends for cash, about $80 a week. I never deposit it."
+- "Out of that I spend about $40 a week on lunch out, and I give my mom $50 a month in cash to pay back $600 I borrowed from her. The rest goes in a jar at home."
+- "The $100 ATM cash in August: $60 went to the babysitter and $40 to the farmers market. The $100 in October: $60 on Halloween costumes and candy, $40 on pizza night."
+- "That's everything. No Venmo or Cash App spending beyond what's on the statements."
+
 Recovery plan choices, if asked which items to change: cancel Hulu, cancel Apple Music (keep Spotify), and look into the unknown SQ *JMK LLC charge. Keep everything else for now.
