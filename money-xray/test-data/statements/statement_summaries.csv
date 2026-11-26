@@ -1,0 +1,6 @@
+Account,File,Account Type,Period Start,Period End,Opening Balance,Closing Balance,Total Charges/Debits,Total Payments/Credits
+Everyday Checking,everyday_checking.csv,checking,2026-08-01,2026-10-31,2140.55,4615.33,12330.22,14805.00
+Joint Checking,joint_checking.csv,checking,2026-08-01,2026-10-31,860.00,680.55,1998.44,1818.99
+Visa Rewards,visa_rewards.csv,credit card,2026-08-01,2026-10-31,2480.00,2083.35,1683.34,2079.99
+Mastercard Cash Back,mastercard_cashback.csv,credit card,2026-08-01,2026-10-31,1120.00,876.62,506.62,750.00
+Amex Blue,amex_blue.csv,credit card,2026-08-01,2026-10-31,640.00,577.20,462.20,525.00
