@@ -2,6 +2,7 @@
 """Grade a Money X-Ray transaction export against the answer key.
 
 Usage: python3 grade.py path/to/Money_XRay_Transactions_2026-10.csv
+       python3 grade.py export.csv --only mastercard_cashback.csv,amex_blue.csv   (partial export)
 
 The export must use the column schema from prompt/MASTER_PROMPT.md (Phase 7).
 Rows are matched to the ground truth on (source_file, date, amount, description),
@@ -51,8 +52,10 @@ def yes(s):
     return s.strip().lower() in ("yes", "y", "true", "1")
 
 
-def main(path):
+def main(path, only=None):
     truth = list(csv.DictReader(open(TRUTH, newline="")))
+    if only:  # grade a partial export (e.g. a resumed free-plan chat) on the named statement files
+        truth = [r for r in truth if r["source_file"] in only]
     ai = list(csv.DictReader(open(path, newline="", encoding="utf-8-sig")))
     if not ai:
         sys.exit("export is empty")
@@ -157,7 +160,7 @@ def main(path):
             critical.append(f"TOTAL    {m} net spending off by {diff:+,.2f}")
 
     exp_path = os.path.join(HERE, "answer-key", "manual_expected.json")
-    if manual and os.path.exists(exp_path):
+    if manual and not only and os.path.exists(exp_path):
         new_cash = json.load(open(exp_path))["new_cash_spending_by_month"]
         print("\nStatements + customer-reported cash (export vs expected):")
         for m in sorted(t_tot):
@@ -183,6 +186,12 @@ def main(path):
 
 
 if __name__ == "__main__":
-    if len(sys.argv) != 2:
+    args = sys.argv[1:]
+    only = None
+    if "--only" in args:
+        i = args.index("--only")
+        only = set(args[i + 1].split(","))
+        del args[i:i + 2]
+    if len(args) != 1:
         sys.exit(__doc__)
-    sys.exit(main(sys.argv[1]))
+    sys.exit(main(args[0], only))

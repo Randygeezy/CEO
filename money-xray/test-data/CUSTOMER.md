@@ -8,6 +8,7 @@ Interview answers, in order:
 5. Debts: a Toyota car loan, and we carry a balance on the Visa, around $6,000. I don't know the rate.
 6. Friends sometimes Zelle us back when we split dinner.
 7. We make decent money but never seem to get ahead. I want to know where it goes and find about $300 a month to free up.
+8. Yes, I want to use the Notion dashboard.
 
 Statements: the six files in uploads/ are everything Sam has. Sam confirms the account map as summarized.
 
@@ -18,6 +19,7 @@ Answers to follow-up questions, if the auditor asks about them (only if asked):
 - Venmo cashout $60: "Not sure. Maybe something my spouse sold. Leave it as unknown."
 - SQ *JMK LLC: "No idea what that is."
 - DoorDash charged twice: "We only ordered once."
+- Asked to upload an earlier statement again in a new chat: "I don't have those handy right now."
 - Anything else: "I'm not sure. Use your best judgment and mark it for review."
 
 Answer to "Is there money that never shows up on these statements?" (Step 3B), if asked:
