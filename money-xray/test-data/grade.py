@@ -59,6 +59,9 @@ def main(path):
     if missing_cols:
         sys.exit(f"export is missing required columns: {', '.join(missing_cols)}")
 
+    manual = [r for r in ai if r["source_file"].strip().lower() == "manual"]
+    ai = [r for r in ai if r["source_file"].strip().lower() != "manual"]
+
     t_groups = defaultdict(list)
     for r in truth:
         t_groups[key(r)].append(r)
@@ -129,6 +132,8 @@ def main(path):
 
     print(f"Money X-Ray grade for {os.path.basename(path)}\n")
     print(f"Rows in export: {len(ai)}   ground-truth rows: {len(truth)}   matched transactions checked: {checked}")
+    if manual:
+        print(f"Customer-reported manual rows (not graded, not in totals): {len(manual)}")
     print(f"Type correct:      {type_ok}/{checked}")
     print(f"Spending flag:     {spend_ok}/{checked}")
     print(f"Category correct:  {cat_ok}/{checked}\n")
