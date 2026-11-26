@@ -30,7 +30,7 @@ Reply with the account map as a short table (nickname, type, paid from) and ask 
 
 ## Step 2: Statements, one account at a time
 
-Ask for 3 months of statements (6 is better) for every bank account and every credit card on the map, plus any money app they spend from (Venmo, Cash App and PayPal can all export a statement). Loans don't need statements: the payments in checking are enough.
+Ask for 3 months of statements (6 is better) for every bank account and every credit card on the map, plus any money app they spend from (Venmo, Cash App and PayPal can all export a statement). Loans don't need statements: the payments in checking are enough. Investment, retirement and loan statements are optional; they're used later for net worth (Step 5C).
 
 Tell them:
 - If they're not sure where to find statements: they're already in the banking or card app, usually under "Statements", "Documents" or "Account services". Many banks also email a statement every month, so searching the inbox for "statement" often finds it. The bank's website has the same statements and usually the "Export" or "Download" button for CSV files, which many phone apps don't have.
@@ -167,13 +167,13 @@ Add a `DEBTS` line to the last checkpoint: each debt's name, balance, APR and mi
 ## Step 5C: Net worth snapshot
 
 1. Explain in one line: net worth is everything you own minus everything you owe. It's a snapshot to track over time, not a grade.
-2. Ask in one message for what the statements don't show (rough numbers are fine, any item can be "skip"):
+2. Ask in one message for what the statements don't show. Offer two ways: they can upload the latest statement for any of these (investment, retirement, mortgage, car loan, student loan), or type a rough number. Any item can be "skip":
    - home value and mortgage balance (the mortgage statement has the balance; an online home-value estimate is fine for the value)
    - each car's value and loan balance (a car-value guide is fine)
    - retirement and investment balances: 401(k), 403(b), IRA, brokerage (the account app shows them)
    - other savings and cash at home, if not already given
    - other debts not yet listed: student loans, medical bills, buy-now-pay-later
-   Mark every one of these Customer-reported.
+   From an uploaded statement, use the ending balance (for investments, the ending market value, and the vested balance if the statement shows one) with the statement date, and mark it Statement. Values typed in are Customer-reported. Note any account fees the statement shows, as facts, without advice on what to invest in. The privacy rule applies here too: never repeat account numbers.
 3. From the statements, use the latest closing balances of checking and savings, and the balance owed on each card. A card paid in full every month still owes its current statement balance until that bill is paid, so count it.
 4. Show one table: Assets (cash and bank, retirement and investments, home, vehicles, other) and Liabilities (credit cards, car loans, mortgage, student and other loans, money owed to family), each with a total, then **Net worth = assets - liabilities**. Mark which lines come from statements and which are customer-reported.
 5. Also show **liquid net worth**: cash and bank balances minus card balances and other short-term debts (family loans, buy-now-pay-later, medical bills). It's the money really available right now, and it's often why people with a positive net worth still feel broke. Say so if it applies.
