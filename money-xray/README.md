@@ -16,7 +16,7 @@ money-xray/
 
 ## The test dataset
 
-Five fictional accounts, August to October 2026: Everyday Checking, Joint Checking, Visa Rewards, Mastercard Cash Back, Amex Blue. There are 148 raw rows, 145 of them real. Every file uses a different bank's format, sign convention and date format, the way real exports do. `statement_summaries.csv` stands in for the PDF summary page (opening and closing balances) so the AI can reconcile.
+A fictional two-earner family calibrated to the **average US household** in the BLS Consumer Expenditure Survey 2025 (income $110,847 before tax, $81,905 a year spent; [BLS release](https://www.bls.gov/news.release/cesan.htm)). Five accounts, August to October 2026: Everyday Checking, Joint Checking, Visa Rewards, Mastercard Cash Back, Amex Blue. There are 222 raw rows, 219 of them real. `ANSWER_KEY.md` compares each spending category with the BLS average. Every file uses a different bank's format, sign convention and date format, the way real exports do. `statement_summaries.csv` stands in for the PDF summary page (opening and closing balances) so the AI can reconcile.
 
 Fourteen deliberate traps are planted, each listed in `answer-key/ANSWER_KEY.md`, including:
 
@@ -29,13 +29,13 @@ Fourteen deliberate traps are planted, each listed in `answer-key/ANSWER_KEY.md`
 - a new bank maintenance fee, late and foreign-transaction fees, card interest
 - Costco groceries and gas mislabelled "Shopping" by the bank
 
-Expected net spending: **$3,387.88** (Aug), **$3,578.17** (Sep), **$3,790.79** (Oct), against $4,900 a month in salary.
+Expected net spending: **$5,060.34** (Aug), **$5,866.20** (Sep), **$5,157.77** (Oct), against $7,290 a month in take-home pay. On paper there's about $2,000 a month left over. The audit has to explain why the family still feels broke: a growing Visa balance and its interest, a Discover card nobody listed, and fees.
 
 ## Running an accuracy test (blueprint phase 4)
 
 1. Open a new chat in ChatGPT or Claude. Paste `prompt/MASTER_PROMPT.md` from the line down.
-2. Answer the interview as the fictional customer: paid $2,450 on the 1st and 15th; the five accounts above, with Everyday Checking paying all three cards and moving $600 a month to Joint; a car loan; and **don't mention Discover or the savings account** (the AI should find them).
-3. Upload the six files in `test-data/statements/` when asked. Answer the AI's questions honestly from `ANSWER_KEY.md` (for example, Jordan's $45 was a dinner split).
+2. Answer the interview from the customer script in `test-data/CUSTOMER.md`. It deliberately leaves out the Discover card and the savings account, because the AI should find them.
+3. Upload the six files in `test-data/statements/` when asked. Answer the AI's follow-up questions from the same script, and nothing more.
 4. Ask for the Phase 7 transaction export, save it, and grade it:
 
    ```bash

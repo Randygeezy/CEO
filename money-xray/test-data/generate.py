@@ -47,7 +47,7 @@ ALIASES = {
     "MC": "Mastercard Cash Back",
     "AMEX": "Amex Blue",
 }
-OPENING = {"CHK": 2140.55, "JNT": 860.00, "VISA": 2480.00, "MC": 1120.00, "AMEX": 640.00}
+OPENING = {"CHK": 1840.55, "JNT": 960.00, "VISA": 6180.00, "MC": 1120.00, "AMEX": 640.00}
 
 # Truth types. Only Expense counts as spending; Refund offsets spending.
 #   Income | Expense | Refund | Reimbursement | Transfer | Card Payment | Unknown Inflow
@@ -95,37 +95,76 @@ def xfer(acct, dt, desc, amount, ttype, dirn, flags=(), merchant=""):
     return r
 
 
-utility = {8: 112.40, 9: 138.75, 10: 156.20}
-visa_pay = {8: 600.00, 9: 650.00, 10: 700.00}
-mc_pay = {8: 250.00, 9: 300.00, 10: 200.00}
-amex_pay = {8: 200.00, 9: 150.00, 10: 175.00}
+# ---------------------------------------------------------------------------
+# Household profile: calibrated to the average US consumer unit in the BLS
+# Consumer Expenditure Survey 2025 (released Oct 29, 2026): income before taxes
+# $110,847, average annual expenditures $81,905. Two earners, a mortgage, one
+# car loan, a child in after-school care. Take-home pay is estimated after
+# income taxes, payroll taxes, retirement and health premiums withheld at work.
+# CE_MONTHLY below is the CE annual figure / 12 for each category the bank
+# statements can show; the answer key compares the dataset against it.
+# ---------------------------------------------------------------------------
+CE_MONTHLY = {
+    "Housing": (17626 - 1366) / 12,          # shelter excl. other lodging (mortgage)
+    "Utilities": 4931 / 12,
+    "Groceries": (6491 + 630 * 0.5) / 12,    # food at home + half of alcohol
+    "Dining Out": (4142 + 630 * 0.5) / 12,   # food away + half of alcohol
+    "Gas": 2503 / 12,
+    "Debt Payments": 5023 / 12,              # vehicle purchases -> car loan payment
+    "Transportation": None,                  # part of "other vehicle expenses" ($4,765/yr incl. insurance)
+    "Insurance": None,
+    "Travel": 1199 / 12,                     # public and other transportation
+    "Health": (6470 - 4310) / 12,            # out-of-pocket; premiums are payroll-deducted
+    "Shopping": (2010 + 844 + 2355) / 12,    # apparel + housekeeping supplies + furnishings
+    "Childcare": 2034 / 12,                  # household operations
+    "Personal Care": 986 / 12,
+    "Gifts & Donations": 2237 / 12,          # cash contributions
+}
+CE_COMBINED = {  # categories the CE groups differently from a bank statement
+    "Subscriptions + Entertainment + Pets": 4084 / 12,
+    "Insurance + Transportation": 4765 / 12,
+}
+
+
+def charges(acct, m):
+    return round(sum(r["amount"] for r in rows if r["acct"] == acct and r["date"].month == m
+                     and r["type"] == "Expense"), 2)
+
 
 for m in MONTHS:
-    # ---------------- Everyday Checking ----------------
-    add("CHK", d(m, 1), "ZELLE TO OAKWOOD PROPERTY MGMT", 1650.00, "Expense", "Housing", "Monthly",
-        merchant="Oakwood Property Mgmt (rent)")
-    add("CHK", d(m, 1), "ACME LOGISTICS PAYROLL DIR DEP", 2450.00, "Income", "Salary", "Semi-monthly",
-        merchant="Acme Logistics (salary)")
-    add("CHK", d(m, 15), "ACME LOGISTICS PAYROLL DIR DEP", 2450.00, "Income", "Salary", "Semi-monthly",
-        merchant="Acme Logistics (salary)")
-    add("CHK", d(m, 3), "DUKE ENERGY BILL PAY", utility[m], "Expense", "Utilities", "Monthly",
-        merchant="Duke Energy")
-    add("CHK", d(m, 5), "COMCAST XFINITY", 79.99, "Expense", "Utilities", "Monthly", merchant="Comcast Xfinity")
-    xfer("CHK", d(m, 8), "TRANSFER TO JOINT CHK XXXX4471", 600.00, "Transfer", OUT, merchant="To Joint Checking")
-    add("CHK", d(m, 10), "GEICO AUTO", 142.30, "Expense", "Insurance", "Monthly", merchant="GEICO")
-    xfer("CHK", d(m, 12), "CHASE CARD EPAY", visa_pay[m], "Card Payment", OUT, merchant="Payment to Visa Rewards")
-    xfer("CHK", d(m, 14), "CITI AUTOPAY", mc_pay[m], "Card Payment", OUT, merchant="Payment to Mastercard")
-    xfer("CHK", d(m, 18), "AMEX EPAYMENT ACH PMT", amex_pay[m], "Card Payment", OUT, merchant="Payment to Amex")
-    xfer("CHK", d(m, 20), "DISCOVER E-PAYMENT", 150.00, "Card Payment", OUT,
+    # ---------------- Everyday Checking (earner 1 + household bills) ----------------
+    for day in (1, 15):
+        add("CHK", d(m, day), "ACME LOGISTICS PAYROLL DIR DEP", 2185.00, "Income", "Salary", "Semi-monthly",
+            merchant="Acme Logistics (salary, earner 1)")
+    add("CHK", d(m, 1), "ROCKET MORTGAGE PMT", 1385.00, "Expense", "Housing", "Monthly",
+        merchant="Rocket Mortgage (mortgage)")
+    add("CHK", d(m, 1), "FIRST BAPTIST CHURCH GIVING", 150.00, "Expense", "Gifts & Donations", "Monthly",
+        merchant="First Baptist Church (giving)")
+    add("CHK", d(m, 3), "DUKE ENERGY BILL PAY", {8: 189.40, 9: 171.15, 10: 128.60}[m], "Expense", "Utilities",
+        "Monthly", merchant="Duke Energy (electric)")
+    add("CHK", d(m, 4), "PIEDMONT NATURAL GAS", {8: 28.10, 9: 29.40, 10: 41.75}[m], "Expense", "Utilities",
+        "Monthly", merchant="Piedmont Natural Gas")
+    add("CHK", d(m, 5), "COMCAST XFINITY", 80.00, "Expense", "Utilities", "Monthly", merchant="Comcast Xfinity (internet)")
+    add("CHK", d(m, 22), "VERIZON WIRELESS", 142.00, "Expense", "Utilities", "Monthly", merchant="Verizon (phones)")
+    add("CHK", d(m, 26), "CITY OF RALEIGH UTIL", {8: 61.20, 9: 58.90, 10: 55.35}[m], "Expense", "Utilities",
+        "Monthly", merchant="City water/sewer")
+    xfer("CHK", d(m, 8), "TRANSFER TO JOINT CHK XXXX4471", 400.00, "Transfer", OUT, merchant="To Joint Checking")
+    add("CHK", d(m, 10), "GEICO AUTO", 186.40, "Expense", "Insurance", "Monthly", merchant="GEICO (2 cars)")
+    xfer("CHK", d(m, 20), "DISCOVER E-PAYMENT", 175.00, "Card Payment", OUT,
          flags=["missing_statement"], merchant="Payment to Discover (statement not supplied)")
-    xfer("CHK", d(m, 28), "TRANSFER TO SAVINGS XXXX8812", 200.00, "Transfer", OUT,
+    xfer("CHK", d(m, 28), "TRANSFER TO SAVINGS XXXX8812", 300.00, "Transfer", OUT,
          flags=["savings_transfer"], merchant="To Savings (statement not supplied)")
 
-    # ---------------- Joint Checking ----------------
-    xfer("JNT", d(m, 9), "TRANSFER FROM EVERYDAY XXXX2290", 600.00, "Transfer", IN, merchant="From Everyday Checking")
-    add("JNT", d(m, 2), "TOYOTA FINANCIAL PMT", 389.00, "Expense", "Debt Payments", "Monthly",
+    # ---------------- Joint Checking (earner 2 + family costs) ----------------
+    for day in (1, 15):
+        add("JNT", d(m, day), "WAKE CO SCHOOLS PAYROLL", 1460.00, "Income", "Salary", "Semi-monthly",
+            merchant="Wake County Schools (salary, earner 2)")
+    xfer("JNT", d(m, 9), "TRANSFER FROM EVERYDAY XXXX2290", 400.00, "Transfer", IN, merchant="From Everyday Checking")
+    add("JNT", d(m, 2), "TOYOTA FINANCIAL PMT", 419.00, "Expense", "Debt Payments", "Monthly",
         flags=["debt_principal_interest_unknown"], merchant="Toyota Financial (car loan)")
     add("JNT", d(m, 6), "PLANET FITNESS", 24.99, "Expense", "Subscriptions", "Monthly", merchant="Planet Fitness")
+    add("JNT", d(m, 5), "KIDS R KIDS AFTERSCHOOL", 170.00, "Expense", "Childcare", "Monthly",
+        merchant="Kids R Kids (after-school care)")
 
 # Everyday Checking one-offs
 add("CHK", d(8, 22), "ATM WITHDRAWAL 7-ELEVEN #3381", 100.00, "Expense", "Cash & ATM", merchant="ATM cash")
@@ -134,96 +173,146 @@ add("CHK", d(8, 22), "NON-NETWORK ATM FEE", 3.50, "Expense", "Fees & Interest", 
 add("CHK", d(10, 22), "ATM WITHDRAWAL 7-ELEVEN #3381", 100.00, "Expense", "Cash & ATM", merchant="ATM cash")
 add("CHK", d(10, 22), "NON-NETWORK ATM FEE", 3.50, "Expense", "Fees & Interest", flags=["avoidable_fee"],
     merchant="ATM fee")
-add("CHK", d(9, 30), "MONTHLY MAINTENANCE FEE", 12.00, "Expense", "Fees & Interest", "Monthly",
-    flags=["new_fee", "avoidable_fee"], merchant="Bank maintenance fee")
-add("CHK", d(10, 31), "MONTHLY MAINTENANCE FEE", 12.00, "Expense", "Fees & Interest", "Monthly",
-    flags=["new_fee", "avoidable_fee"], merchant="Bank maintenance fee")
+for m, day in ((9, 30), (10, 31)):
+    add("CHK", d(m, day), "MONTHLY MAINTENANCE FEE", 12.00, "Expense", "Fees & Interest", "Monthly",
+        flags=["new_fee", "avoidable_fee"], merchant="Bank maintenance fee")
 add("CHK", d(10, 16), "ZELLE FROM JORDAN M", 45.00, "Reimbursement", "Dining Out",
     flags=["needs_review"], merchant="Jordan M (likely dinner split, Oct 15)")
 add("CHK", d(10, 25), "VENMO CASHOUT", 60.00, "Unknown Inflow", flags=["needs_review"], merchant="Venmo cash-out")
 
-# Joint Checking one-offs
-for dt, amt in [(d(8, 4), 86.42), (d(8, 19), 112.18), (d(9, 3), 94.10), (d(9, 17), 131.55),
-                (d(10, 5), 102.77), (d(10, 18), 148.30)]:
-    add("JNT", dt, "KROGER #0412", amt, "Expense", "Groceries", merchant="Kroger")
+# Joint Checking one-offs: weekly groceries, health out-of-pocket
+kroger = {8: [(2, 88.42), (9, 76.18), (16, 92.65), (23, 81.30), (30, 69.94)],
+          9: [(6, 94.10), (13, 71.55), (20, 88.02), (27, 79.63)],
+          10: [(4, 86.77), (11, 98.30), (18, 74.41), (25, 102.16)]}
+for m, items in kroger.items():
+    for day, amt in items:
+        add("JNT", d(m, day), "KROGER #0412", amt, "Expense", "Groceries", merchant="Kroger")
 add("JNT", d(10, 20), "KROGER #0412 REFUND", 18.99, "Refund", "Groceries", merchant="Kroger")
-add("JNT", d(9, 15), "CVS/PHARMACY #2207", 32.15, "Expense", "Health", merchant="CVS Pharmacy")
+for dt, desc, amt, merch in [
+        (d(8, 12), "ATRIUM HEALTH COPAY", 40.00, "Atrium Health (copay)"),
+        (d(8, 12), "CVS/PHARMACY #2207", 38.15, "CVS Pharmacy"),
+        (d(8, 27), "SMILE DENTAL GROUP", 95.00, "Smile Dental"),
+        (d(9, 15), "CVS/PHARMACY #2207", 32.15, "CVS Pharmacy"),
+        (d(9, 23), "ATRIUM HEALTH COPAY", 40.00, "Atrium Health (copay)"),
+        (d(9, 23), "LABCORP", 112.60, "Labcorp"),
+        (d(10, 7), "CVS/PHARMACY #2207", 41.80, "CVS Pharmacy"),
+        (d(10, 28), "ATRIUM HEALTH COPAY", 40.00, "Atrium Health (copay)"),
+        (d(10, 28), "CVS/PHARMACY #2207", 29.90, "CVS Pharmacy")]:
+    add("JNT", dt, desc, amt, "Expense", "Health", merchant=merch)
 add("JNT", d(10, 6), "PLANET FITNESS ANNUAL FEE", 49.00, "Expense", "Subscriptions", "Annual",
     flags=["annual_charge"], merchant="Planet Fitness annual fee")
 
-# ---------------- Visa Rewards ----------------
+# ---------------- Visa Rewards (everyday card) ----------------
 for m, amt in [(8, 15.49), (9, 17.99), (10, 17.99)]:
     add("VISA", d(m, 4), "NETFLIX.COM", amt, "Expense", "Subscriptions", "Monthly",
         flags=["price_increase"] if m == 9 else [], merchant="Netflix", bank_category="Entertainment")
 for m in MONTHS:
-    add("VISA", d(m, 11), "SPOTIFY USA", 11.99, "Expense", "Subscriptions", "Monthly",
-        flags=["overlapping_service"], merchant="Spotify", bank_category="Entertainment")
-for dt, amt in [(d(8, 7), 48.20), (d(8, 21), 51.75), (d(9, 6), 46.90), (d(9, 28), 39.80),
-                (d(10, 5), 52.30), (d(10, 19), 58.40)]:
+    add("VISA", d(m, 11), "SPOTIFY USA", 19.99, "Expense", "Subscriptions", "Monthly",
+        flags=["overlapping_service"], merchant="Spotify Family", bank_category="Entertainment")
+for dt, amt in [(d(8, 3), 48.20), (d(8, 10), 51.75), (d(8, 17), 44.10), (d(8, 26), 47.35),
+                (d(9, 6), 46.90), (d(9, 14), 50.15), (d(9, 28), 39.80),
+                (d(10, 5), 52.30), (d(10, 12), 45.60), (d(10, 19), 58.40)]:
     add("VISA", dt, "SHELL OIL 57442", amt, "Expense", "Gas", merchant="Shell", bank_category="Gas")
-for dt, amt in [(d(8, 13), 184.66), (d(9, 11), 201.34), (d(10, 15), 236.89)]:
+for dt, amt in [(d(8, 13), 184.66), (d(9, 11), 231.34), (d(10, 15), 216.89)]:
     add("VISA", dt, "COSTCO WHSE #1123", amt, "Expense", "Groceries", flags=["bank_category_wrong"],
         merchant="Costco", bank_category="Shopping")
-add("VISA", d(9, 25), "COSTCO GAS #1123", 41.20, "Expense", "Gas", flags=["bank_category_wrong"],
-    merchant="Costco Gas", bank_category="Shopping")
-for dt, amt in [(d(8, 9), 14.85), (d(8, 24), 16.20), (d(9, 3), 15.40), (d(9, 30), 18.75),
-                (d(10, 8), 21.40), (d(10, 21), 24.10)]:
-    add("VISA", dt, "CHIPOTLE 2291", amt, "Expense", "Dining Out", merchant="Chipotle", bank_category="Food & Drink")
-add("VISA", d(10, 15), "OLIVE GARDEN #1590", 92.60, "Expense", "Dining Out", merchant="Olive Garden",
-    bank_category="Food & Drink")
-for dt, amt in [(d(8, 16), 38.20), (d(9, 19), 44.75), (d(10, 23), 52.10)]:
-    add("VISA", dt, "UBER *EATS", amt, "Expense", "Dining Out", merchant="Uber Eats", bank_category="Food & Drink")
-for dt, amt in [(d(8, 18), 67.43), (d(9, 22), 129.99), (d(10, 2), 34.12)]:
+for dt, amt in [(d(9, 25), 41.20), (d(10, 26), 44.85)]:
+    add("VISA", dt, "COSTCO GAS #1123", amt, "Expense", "Gas", flags=["bank_category_wrong"],
+        merchant="Costco Gas", bank_category="Shopping")
+DINING_NAMES = {"CHICK-FIL-A": "Chick-fil-A", "CHIPOTLE": "Chipotle", "UBER": "Uber Eats",
+                "MCDONALD'S": "McDonald's", "OUTBACK": "Outback Steakhouse", "OLIVE": "Olive Garden"}
+for dt, desc, amt in [
+        (d(8, 2), "CHICK-FIL-A #01988", 31.45), (d(8, 9), "CHIPOTLE 2291", 34.85), (d(8, 16), "UBER *EATS", 48.20),
+        (d(8, 20), "MCDONALD'S F11872", 18.62), (d(8, 24), "CHIPOTLE 2291", 36.20), (d(8, 29), "OUTBACK 4412", 88.40),
+        (d(9, 3), "CHICK-FIL-A #01988", 29.10), (d(9, 7), "CHIPOTLE 2291", 35.40), (d(9, 19), "UBER *EATS", 54.75),
+        (d(9, 21), "MCDONALD'S F11872", 21.08), (d(9, 30), "CHIPOTLE 2291", 38.75), (d(9, 26), "OUTBACK 4412", 96.10),
+        (d(10, 3), "CHICK-FIL-A #01988", 33.60), (d(10, 8), "CHIPOTLE 2291", 41.40),
+        (d(10, 15), "OLIVE GARDEN #1590", 92.60), (d(10, 21), "MCDONALD'S F11872", 24.10),
+        (d(10, 23), "UBER *EATS", 62.10), (d(10, 30), "CHIPOTLE 2291", 39.85)]:
+    add("VISA", dt, desc, amt, "Expense", "Dining Out", merchant=DINING_NAMES[desc.split()[0]],
+        bank_category="Food & Drink")
+for dt, amt in [(d(8, 18), 67.43), (d(8, 27), 42.18), (d(9, 22), 129.99), (d(9, 24), 38.64),
+                (d(10, 2), 34.12), (d(10, 17), 58.27)]:
     add("VISA", dt, "AMAZON MKTPL*2K4TR8", amt, "Expense", "Shopping", merchant="Amazon", bank_category="Shopping")
 add("VISA", d(9, 29), "AMAZON MKTPL*2K4TR8", 129.99, "Refund", "Shopping", merchant="Amazon (return)",
     bank_category="Shopping")
-for m, amt in [(8, 21.84), (9, 19.62), (10, 23.11)]:
+for m, amt in [(8, 58.84), (9, 61.62), (10, 63.11)]:
     add("VISA", d(m, 25), "PURCHASE INTEREST CHARGE", amt, "Expense", "Fees & Interest", "Monthly",
         flags=["interest"], merchant="Visa interest", bank_category="Fees & Adjustments")
-for m in MONTHS:
-    r = xfer("VISA", d(m, 13), "Payment Thank You-Mobile", visa_pay[m], "Card Payment", IN,
-             merchant="Payment from Everyday Checking")
-    r["bank_category"] = ""
 
-# ---------------- Mastercard Cash Back ----------------
+# ---------------- Mastercard Cash Back (household shopping) ----------------
 for m in MONTHS:
-    add("MC", d(m, 14), "ADOBE *CREATIVE CLD", 22.99, "Expense", "Subscriptions", "Monthly", merchant="Adobe")
+    add("MC", d(m, 7), "AMAZON PRIME*RT4K2", 14.99, "Expense", "Subscriptions", "Monthly", merchant="Amazon Prime")
     add("MC", d(m, 9), "APPLE.COM/BILL", 2.99, "Expense", "Subscriptions", "Monthly", merchant="Apple iCloud+")
     add("MC", d(m, 17), "APPLE.COM/BILL", 10.99, "Expense", "Subscriptions", "Monthly",
         flags=["overlapping_service"], merchant="Apple Music")
-    xfer("MC", d(m, 15), "AUTOPAY PAYMENT - THANK YOU", mc_pay[m], "Card Payment", IN,
-         merchant="Payment from Everyday Checking")
-for dt, amt in [(d(8, 10), 54.21), (d(9, 7), 88.40), (d(10, 12), 61.77)]:
-    add("MC", dt, "TARGET 00012", amt, "Expense", "Shopping", merchant="Target")
+for dt, desc, amt, cat, merch in [
+        (d(8, 10), "TARGET 00012", 84.21, "Shopping", "Target"), (d(8, 24), "TARGET 00012", 61.40, "Shopping", "Target"),
+        (d(8, 14), "OLD NAVY #6621", 96.33, "Shopping", "Old Navy"),
+        (d(8, 30), "THE HOME DEPOT #3612", 142.18, "Shopping", "Home Depot"),
+        (d(9, 7), "TARGET 00012", 88.40, "Shopping", "Target"), (d(9, 21), "TARGET 00012", 52.95, "Shopping", "Target"),
+        (d(9, 13), "OLD NAVY #6621", 74.10, "Shopping", "Old Navy"),
+        (d(9, 27), "WAYFAIR*FURNITURE", 189.00, "Shopping", "Wayfair"),
+        (d(10, 12), "TARGET 00012", 61.77, "Shopping", "Target"), (d(10, 26), "TARGET 00012", 93.28, "Shopping", "Target"),
+        (d(10, 4), "KOHLS #0712", 112.46, "Shopping", "Kohl's"),
+        (d(10, 19), "THE HOME DEPOT #3612", 68.90, "Shopping", "Home Depot"),
+        (d(8, 20), "WALGREENS #4410", 27.33, "Health", "Walgreens"),
+        (d(9, 18), "FIRESTONE AUTO #0219", 284.70, "Transportation", "Firestone (car repair)"),
+        (d(10, 29), "JIFFY LUBE #1877", 79.99, "Transportation", "Jiffy Lube (oil change)")]:
+    add("MC", dt, desc, amt, "Expense", cat, merchant=merch)
 add("MC", d(9, 12), "DOORDASH*THAI BASIL", 34.50, "Expense", "Dining Out", flags=["possible_double_charge"],
     merchant="DoorDash - Thai Basil")
 add("MC", d(9, 12), "DOORDASH*THAI BASIL", 34.50, "Expense", "Dining Out", flags=["possible_double_charge"],
     merchant="DoorDash - Thai Basil")
 add("MC", d(9, 1), "ANNUAL MEMBERSHIP FEE", 95.00, "Expense", "Fees & Interest", "Annual",
     flags=["annual_charge", "avoidable_fee"], merchant="Mastercard annual fee")
-add("MC", d(8, 20), "WALGREENS #4410", 27.33, "Expense", "Health", merchant="Walgreens")
 
-# ---------------- Amex Blue ----------------
+# ---------------- Amex Blue (fun money) ----------------
 for m in MONTHS:
     add("AMEX", d(m, 3), "HULU 877-8244858", 18.99, "Expense", "Subscriptions", "Monthly",
         flags=["overlapping_service"], merchant="Hulu")
-    add("AMEX", d(m, 3), "DISNEY PLUS", 13.99, "Expense", "Subscriptions", "Monthly",
+    add("AMEX", d(m, 3), "DISNEY PLUS", 15.99, "Expense", "Subscriptions", "Monthly",
         flags=["overlapping_service"], merchant="Disney+")
     add("AMEX", d(m, 19), "SQ *JMK LLC", 45.00, "Expense", "Uncategorized", "Monthly",
         flags=["unrecognized_recurring", "needs_review"], merchant="SQ *JMK LLC (unknown)")
-    xfer("AMEX", d(m, 20), "ONLINE PAYMENT - THANK YOU", amex_pay[m], "Card Payment", IN,
-         merchant="Payment from Everyday Checking")
 starbucks = {8: [(2, 6.45), (12, 7.10), (26, 6.45)],
              9: [(4, 6.95), (11, 7.25), (18, 6.95), (27, 8.10)],
              10: [(1, 7.25), (7, 7.25), (13, 8.40), (21, 6.95), (29, 7.80)]}
 for m, items in starbucks.items():
     for day, amt in items:
         add("AMEX", d(m, day), "STARBUCKS STORE 08812", amt, "Expense", "Dining Out", merchant="Starbucks")
+for dt, desc, amt, cat, merch in [
+        (d(8, 9), "PETCO 1288", 64.20, "Pets", "Petco"), (d(9, 10), "PETCO 1288", 58.75, "Pets", "Petco"),
+        (d(10, 11), "PETCO 1288", 61.30, "Pets", "Petco"),
+        (d(9, 14), "BANFIELD PET HOSP", 145.00, "Pets", "Banfield (vet)"),
+        (d(8, 15), "AMC THEATRES 2210", 54.80, "Entertainment", "AMC Theatres"),
+        (d(9, 20), "TICKETMASTER*NC STATE", 118.00, "Entertainment", "Ticketmaster"),
+        (d(10, 24), "SKY ZONE RALEIGH", 72.00, "Entertainment", "Sky Zone"),
+        (d(8, 6), "GREAT CLIPS #4471", 42.00, "Personal Care", "Great Clips"),
+        (d(9, 8), "GREAT CLIPS #4471", 42.00, "Personal Care", "Great Clips"),
+        (d(10, 14), "SEPHORA #0331", 48.50, "Personal Care", "Sephora"),
+        (d(10, 9), "GREAT CLIPS #4471", 42.00, "Personal Care", "Great Clips"),
+        (d(9, 2), "DELTA AIR 0062317745", 312.40, "Travel", "Delta Air Lines"),
+        (d(10, 8), "ETSY.COM*CRAFTHAUS", 62.00, "Shopping", "Etsy - Crafthaus")]:
+    add("AMEX", dt, desc, amt, "Expense", cat, merchant=merch)
 add("AMEX", d(9, 26), "LATE FEE", 29.00, "Expense", "Fees & Interest", flags=["avoidable_fee"], merchant="Amex late fee")
-add("AMEX", d(10, 8), "ETSY.COM*CRAFTHAUS", 62.00, "Expense", "Shopping", merchant="Etsy - Crafthaus")
 add("AMEX", d(10, 8), "FOREIGN TRANSACTION FEE", 1.86, "Expense", "Fees & Interest", flags=["avoidable_fee"],
     merchant="Foreign transaction fee")
-add("AMEX", d(10, 14), "SEPHORA #0331", 48.50, "Expense", "Personal Care", merchant="Sephora")
+
+# ---------------- Card payments (sized from each month's charges) ----------------
+# Visa carries a balance (pays $150 less than it charges, hence interest); the
+# others are paid roughly in full. Everyday pays Visa and Amex; Joint pays Mastercard.
+for m in MONTHS:
+    for card, payer, pday, pdesc, cdesc, carry in [
+            ("VISA", "CHK", 12, "CHASE CARD EPAY", "Payment Thank You-Mobile", 150),
+            ("MC", "JNT", 14, "CITI AUTOPAY", "AUTOPAY PAYMENT - THANK YOU", 0),
+            ("AMEX", "CHK", 18, "AMEX EPAYMENT ACH PMT", "ONLINE PAYMENT - THANK YOU", 0)]:
+        amt = max(25.0, round((charges(card, m) - carry) / 25) * 25)
+        xfer(payer, d(m, pday), pdesc, amt, "Card Payment", OUT, merchant=f"Payment to {ALIASES[card]}")
+        r = xfer(card, d(m, pday + 1 if card != "AMEX" else pday + 2), cdesc, amt, "Card Payment", IN,
+                 merchant=f"Payment from {ALIASES[payer]}")
+        r["bank_category"] = ""
+
 
 # ---------------- Export duplicates (Visa) ----------------
 # The Visa file was stitched from monthly exports; the October export began Sep 28,
@@ -391,20 +480,20 @@ for (merchant, acct, freq), rs in sorted(subs.items()):
     })
 
 flag_notes = {
-    "missing_statement": "Payments to DISCOVER from Everyday Checking: card statement not supplied; spending on that card is unknown. Ask the user for it; do not count the payment as spending.",
-    "savings_transfer": "Transfers to savings XXXX8812: not spending; confirm the account belongs to the user.",
+    "missing_statement": "Payments to DISCOVER ($175/mo) from Everyday Checking: card statement not supplied; spending on that card is unknown. Ask the user for it; do not count the payment as spending.",
+    "savings_transfer": "Transfers to savings XXXX8812 ($300/mo): not spending; confirm the account belongs to the user.",
     "export_duplicate": "Visa export overlap: rows dated Sep 28-30 appear twice with identical references. Exclude the second copy; reconciliation only balances after removing them.",
     "possible_double_charge": "DoorDash Thai Basil charged twice on Sep 12 with different references: a possible merchant double charge. Keep both, flag for the user to check with the issuer.",
     "price_increase": "Netflix rose from $15.49 to $17.99 in September.",
-    "overlapping_service": "Overlapping services: Spotify and Apple Music (music); Netflix, Hulu and Disney+ (streaming).",
+    "overlapping_service": "Overlapping services: Spotify Family and Apple Music (music); Netflix, Hulu and Disney+ (streaming).",
     "unrecognized_recurring": "SQ *JMK LLC: $45.00 on the 19th each month on Amex; merchant not identifiable. Ask the user.",
     "new_fee": "Everyday Checking began charging a $12.00 monthly maintenance fee in September.",
     "avoidable_fee": "Fees: out-of-network ATM fees, maintenance fee, Amex late fee, foreign transaction fee, Mastercard annual fee.",
-    "interest": "Visa purchase interest every month: the card carries a balance.",
+    "interest": "Visa purchase interest of about $60 every month: the card carries a balance of roughly $6,000 that keeps growing.",
     "annual_charge": "Annual charges: Mastercard annual fee $95 (Sep), Planet Fitness annual fee $49 (Oct).",
     "bank_category_wrong": "Visa labels Costco Warehouse and Costco Gas as Shopping; they are Groceries and Gas.",
     "needs_review": "Ask the user: Zelle from Jordan M $45 (likely reimbursement for the Oct 15 Olive Garden dinner), Venmo cash-out $60, SQ *JMK LLC.",
-    "debt_principal_interest_unknown": "Toyota Financial $389/mo: principal/interest split is not on the statement.",
+    "debt_principal_interest_unknown": "Toyota Financial $419/mo: principal/interest split is not on the statement.",
 }
 key["expected_flags"] = flag_notes
 
@@ -441,6 +530,21 @@ L += ["", "## Reconciliation (from statement_summaries.csv)", "",
 for s in key["reconciliation"]:
     L.append(f"| {s['account']} | ${float(s['opening']):,.2f} | ${float(s['charges_debits']):,.2f} | "
              f"${float(s['payments_credits']):,.2f} | ${float(s['closing']):,.2f} |")
+avg = {c: sum(spend[mk].get(c, 0) for mk in key["income_by_month"]) / len(key["income_by_month"]) for c in cats}
+L += ["", "## Calibration against the average US household (BLS CE 2025, annual / 12)", "",
+      "| Category | Dataset 3-month average | CE 2025 average |", "|---|---:|---:|"]
+for c in cats:
+    ce = CE_MONTHLY.get(c)
+    L.append(f"| {c} | ${avg[c]:,.2f} | " + (f"${ce:,.2f}" if ce else "see below") + " |")
+L.append(f"| Subscriptions + Entertainment + Pets | ${sum(avg.get(c, 0) for c in ('Subscriptions', 'Entertainment', 'Pets')):,.2f} "
+         f"| ${CE_COMBINED['Subscriptions + Entertainment + Pets']:,.2f} |")
+L.append(f"| Insurance + Transportation | ${sum(avg.get(c, 0) for c in ('Insurance', 'Transportation')):,.2f} "
+         f"| ${CE_COMBINED['Insurance + Transportation']:,.2f} |")
+L += ["", "CE figures are averages over all US households, including renters, people without cars and people "
+      "with no debt, so a single household's statements will not match every line. Health insurance "
+      "premiums, retirement contributions and payroll taxes come out of the paycheck and never reach a "
+      "bank statement. Source: BLS Consumer Expenditures 2025, released Oct 29, 2026 "
+      "(https://www.bls.gov/news.release/cesan.htm)."]
 L += ["", "## Every trap the audit must catch", ""]
 for k, v in flag_notes.items():
     L.append(f"- **{k}**: {v}")

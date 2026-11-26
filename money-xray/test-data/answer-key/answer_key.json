@@ -8,70 +8,88 @@
     "amex_blue.csv",
     "statement_summaries.csv"
   ],
-  "raw_rows": 148,
-  "unique_transactions": 145,
+  "raw_rows": 222,
+  "unique_transactions": 219,
   "export_duplicates": 3,
   "income_by_month": {
-    "2026-08": 4900.0,
-    "2026-09": 4900.0,
-    "2026-10": 4900.0
+    "2026-08": 7290.0,
+    "2026-09": 7290.0,
+    "2026-10": 7290.0
   },
   "net_spending_by_month_and_category": {
     "2026-08": {
       "Cash & ATM": 100.0,
-      "Debt Payments": 389.0,
-      "Dining Out": 89.25,
-      "Fees & Interest": 25.34,
-      "Gas": 99.95,
-      "Groceries": 383.26,
-      "Health": 27.33,
-      "Housing": 1650.0,
-      "Insurance": 142.3,
-      "Shopping": 121.64,
-      "Subscriptions": 122.42,
+      "Childcare": 170.0,
+      "Debt Payments": 419.0,
+      "Dining Out": 277.72,
+      "Entertainment": 54.8,
+      "Fees & Interest": 62.34,
+      "Gas": 191.4,
+      "Gifts & Donations": 150.0,
+      "Groceries": 593.15,
+      "Health": 200.48,
+      "Housing": 1385.0,
+      "Insurance": 186.4,
+      "Personal Care": 42.0,
+      "Pets": 64.2,
+      "Shopping": 493.73,
+      "Subscriptions": 124.42,
       "Uncategorized": 45.0,
-      "Utilities": 192.39
+      "Utilities": 500.7
     },
     "2026-09": {
-      "Debt Payments": 389.0,
-      "Dining Out": 177.15,
-      "Fees & Interest": 155.62,
-      "Gas": 127.9,
-      "Groceries": 426.99,
-      "Health": 32.15,
-      "Housing": 1650.0,
-      "Insurance": 142.3,
-      "Shopping": 88.4,
-      "Subscriptions": 124.92,
+      "Childcare": 170.0,
+      "Debt Payments": 419.0,
+      "Dining Out": 373.43,
+      "Entertainment": 118.0,
+      "Fees & Interest": 197.62,
+      "Gas": 178.05,
+      "Gifts & Donations": 150.0,
+      "Groceries": 564.64,
+      "Health": 184.75,
+      "Housing": 1385.0,
+      "Insurance": 186.4,
+      "Personal Care": 42.0,
+      "Pets": 203.75,
+      "Shopping": 443.09,
+      "Subscriptions": 126.92,
+      "Transportation": 284.7,
+      "Travel": 312.4,
       "Uncategorized": 45.0,
-      "Utilities": 218.74
+      "Utilities": 481.45
     },
     "2026-10": {
       "Cash & ATM": 100.0,
-      "Debt Payments": 389.0,
-      "Dining Out": 227.85,
-      "Fees & Interest": 40.47,
-      "Gas": 110.7,
-      "Groceries": 468.97,
-      "Housing": 1650.0,
-      "Insurance": 142.3,
-      "Personal Care": 48.5,
-      "Shopping": 157.89,
-      "Subscriptions": 173.92,
+      "Childcare": 170.0,
+      "Debt Payments": 419.0,
+      "Dining Out": 331.3,
+      "Entertainment": 72.0,
+      "Fees & Interest": 80.47,
+      "Gas": 201.15,
+      "Gifts & Donations": 150.0,
+      "Groceries": 559.54,
+      "Health": 111.7,
+      "Housing": 1385.0,
+      "Insurance": 186.4,
+      "Personal Care": 90.5,
+      "Pets": 61.3,
+      "Shopping": 490.8,
+      "Subscriptions": 175.92,
+      "Transportation": 79.99,
       "Uncategorized": 45.0,
-      "Utilities": 236.19
+      "Utilities": 447.7
     }
   },
   "net_spending_total_by_month": {
-    "2026-08": 3387.88,
-    "2026-09": 3578.17,
-    "2026-10": 3790.79
+    "2026-08": 5060.34,
+    "2026-09": 5866.2,
+    "2026-10": 5157.77
   },
   "excluded_from_spending": {
-    "card_payments_matched": 6450.0,
-    "card_payments_to_missing_card": 450.0,
-    "internal_transfers": 3600.0,
-    "savings_transfers": 600.0,
+    "card_payments_matched": 11000,
+    "card_payments_to_missing_card": 525.0,
+    "internal_transfers": 2400.0,
+    "savings_transfers": 900.0,
     "reimbursements": 45.0,
     "unknown_inflows": 60.0
   },
@@ -82,10 +100,10 @@
       "type": "checking",
       "start": "2026-08-01",
       "end": "2026-10-31",
-      "opening": "2140.55",
-      "closing": "4615.33",
-      "charges_debits": "12330.22",
-      "payments_credits": "14805.00"
+      "opening": "1840.55",
+      "closing": "1880.50",
+      "charges_debits": "13175.05",
+      "payments_credits": "13215.00"
     },
     {
       "account": "Joint Checking",
@@ -93,10 +111,10 @@
       "type": "checking",
       "start": "2026-08-01",
       "end": "2026-10-31",
-      "opening": "860.00",
-      "closing": "680.55",
-      "charges_debits": "1998.44",
-      "payments_credits": "1818.99"
+      "opening": "960.00",
+      "closing": "5699.99",
+      "charges_debits": "5239.00",
+      "payments_credits": "9978.99"
     },
     {
       "account": "Visa Rewards",
@@ -104,10 +122,10 @@
       "type": "credit card",
       "start": "2026-08-01",
       "end": "2026-10-31",
-      "opening": "2480.00",
-      "closing": "2083.35",
-      "charges_debits": "1683.34",
-      "payments_credits": "2079.99"
+      "opening": "6180.00",
+      "closing": "6495.69",
+      "charges_debits": "2695.68",
+      "payments_credits": "2379.99"
     },
     {
       "account": "Mastercard Cash Back",
@@ -116,9 +134,9 @@
       "start": "2026-08-01",
       "end": "2026-10-31",
       "opening": "1120.00",
-      "closing": "876.62",
-      "charges_debits": "506.62",
-      "payments_credits": "750.00"
+      "closing": "1112.91",
+      "charges_debits": "1767.91",
+      "payments_credits": "1775.00"
     },
     {
       "account": "Amex Blue",
@@ -127,23 +145,23 @@
       "start": "2026-08-01",
       "end": "2026-10-31",
       "opening": "640.00",
-      "closing": "577.20",
-      "charges_debits": "462.20",
-      "payments_credits": "525.00"
+      "closing": "645.65",
+      "charges_debits": "1480.65",
+      "payments_credits": "1475.00"
     }
   ],
   "recurring_charges": [
     {
-      "merchant": "Adobe",
+      "merchant": "Amazon Prime",
       "account": "Mastercard Cash Back",
       "frequency": "Monthly",
       "occurrences": 3,
-      "latest_amount": 22.99,
-      "annualized": 275.88,
+      "latest_amount": 14.99,
+      "annualized": 179.88,
       "amounts": [
-        22.99,
-        22.99,
-        22.99
+        14.99,
+        14.99,
+        14.99
       ],
       "flags": []
     },
@@ -194,16 +212,30 @@
       ]
     },
     {
-      "merchant": "Comcast Xfinity",
+      "merchant": "City water/sewer",
       "account": "Everyday Checking",
       "frequency": "Monthly",
       "occurrences": 3,
-      "latest_amount": 79.99,
-      "annualized": 959.88,
+      "latest_amount": 55.35,
+      "annualized": 664.2,
       "amounts": [
-        79.99,
-        79.99,
-        79.99
+        61.2,
+        58.9,
+        55.35
+      ],
+      "flags": []
+    },
+    {
+      "merchant": "Comcast Xfinity (internet)",
+      "account": "Everyday Checking",
+      "frequency": "Monthly",
+      "occurrences": 3,
+      "latest_amount": 80.0,
+      "annualized": 960.0,
+      "amounts": [
+        80.0,
+        80.0,
+        80.0
       ],
       "flags": []
     },
@@ -212,42 +244,56 @@
       "account": "Amex Blue",
       "frequency": "Monthly",
       "occurrences": 3,
-      "latest_amount": 13.99,
-      "annualized": 167.88,
+      "latest_amount": 15.99,
+      "annualized": 191.88,
       "amounts": [
-        13.99,
-        13.99,
-        13.99
+        15.99,
+        15.99,
+        15.99
       ],
       "flags": [
         "overlapping_service"
       ]
     },
     {
-      "merchant": "Duke Energy",
+      "merchant": "Duke Energy (electric)",
       "account": "Everyday Checking",
       "frequency": "Monthly",
       "occurrences": 3,
-      "latest_amount": 156.2,
-      "annualized": 1874.4,
+      "latest_amount": 128.6,
+      "annualized": 1543.2,
       "amounts": [
-        112.4,
-        138.75,
-        156.2
+        189.4,
+        171.15,
+        128.6
       ],
       "flags": []
     },
     {
-      "merchant": "GEICO",
+      "merchant": "First Baptist Church (giving)",
       "account": "Everyday Checking",
       "frequency": "Monthly",
       "occurrences": 3,
-      "latest_amount": 142.3,
-      "annualized": 1707.6,
+      "latest_amount": 150.0,
+      "annualized": 1800.0,
       "amounts": [
-        142.3,
-        142.3,
-        142.3
+        150.0,
+        150.0,
+        150.0
+      ],
+      "flags": []
+    },
+    {
+      "merchant": "GEICO (2 cars)",
+      "account": "Everyday Checking",
+      "frequency": "Monthly",
+      "occurrences": 3,
+      "latest_amount": 186.4,
+      "annualized": 2236.8,
+      "amounts": [
+        186.4,
+        186.4,
+        186.4
       ],
       "flags": []
     },
@@ -266,6 +312,20 @@
       "flags": [
         "overlapping_service"
       ]
+    },
+    {
+      "merchant": "Kids R Kids (after-school care)",
+      "account": "Joint Checking",
+      "frequency": "Monthly",
+      "occurrences": 3,
+      "latest_amount": 170.0,
+      "annualized": 2040.0,
+      "amounts": [
+        170.0,
+        170.0,
+        170.0
+      ],
+      "flags": []
     },
     {
       "merchant": "Mastercard annual fee",
@@ -297,6 +357,20 @@
       "flags": [
         "price_increase"
       ]
+    },
+    {
+      "merchant": "Piedmont Natural Gas",
+      "account": "Everyday Checking",
+      "frequency": "Monthly",
+      "occurrences": 3,
+      "latest_amount": 41.75,
+      "annualized": 501.0,
+      "amounts": [
+        28.1,
+        29.4,
+        41.75
+      ],
+      "flags": []
     },
     {
       "merchant": "Planet Fitness",
@@ -344,32 +418,46 @@
       ]
     },
     {
-      "merchant": "Spotify",
+      "merchant": "Spotify Family",
       "account": "Visa Rewards",
       "frequency": "Monthly",
       "occurrences": 3,
-      "latest_amount": 11.99,
-      "annualized": 143.88,
+      "latest_amount": 19.99,
+      "annualized": 239.88,
       "amounts": [
-        11.99,
-        11.99,
-        11.99
+        19.99,
+        19.99,
+        19.99
       ],
       "flags": [
         "overlapping_service"
       ]
     },
     {
+      "merchant": "Verizon (phones)",
+      "account": "Everyday Checking",
+      "frequency": "Monthly",
+      "occurrences": 3,
+      "latest_amount": 142.0,
+      "annualized": 1704.0,
+      "amounts": [
+        142.0,
+        142.0,
+        142.0
+      ],
+      "flags": []
+    },
+    {
       "merchant": "Visa interest",
       "account": "Visa Rewards",
       "frequency": "Monthly",
       "occurrences": 3,
-      "latest_amount": 23.11,
-      "annualized": 277.32,
+      "latest_amount": 63.11,
+      "annualized": 757.32,
       "amounts": [
-        21.84,
-        19.62,
-        23.11
+        58.84,
+        61.62,
+        63.11
       ],
       "flags": [
         "interest"
@@ -377,19 +465,19 @@
     }
   ],
   "expected_flags": {
-    "missing_statement": "Payments to DISCOVER from Everyday Checking: card statement not supplied; spending on that card is unknown. Ask the user for it; do not count the payment as spending.",
-    "savings_transfer": "Transfers to savings XXXX8812: not spending; confirm the account belongs to the user.",
+    "missing_statement": "Payments to DISCOVER ($175/mo) from Everyday Checking: card statement not supplied; spending on that card is unknown. Ask the user for it; do not count the payment as spending.",
+    "savings_transfer": "Transfers to savings XXXX8812 ($300/mo): not spending; confirm the account belongs to the user.",
     "export_duplicate": "Visa export overlap: rows dated Sep 28-30 appear twice with identical references. Exclude the second copy; reconciliation only balances after removing them.",
     "possible_double_charge": "DoorDash Thai Basil charged twice on Sep 12 with different references: a possible merchant double charge. Keep both, flag for the user to check with the issuer.",
     "price_increase": "Netflix rose from $15.49 to $17.99 in September.",
-    "overlapping_service": "Overlapping services: Spotify and Apple Music (music); Netflix, Hulu and Disney+ (streaming).",
+    "overlapping_service": "Overlapping services: Spotify Family and Apple Music (music); Netflix, Hulu and Disney+ (streaming).",
     "unrecognized_recurring": "SQ *JMK LLC: $45.00 on the 19th each month on Amex; merchant not identifiable. Ask the user.",
     "new_fee": "Everyday Checking began charging a $12.00 monthly maintenance fee in September.",
     "avoidable_fee": "Fees: out-of-network ATM fees, maintenance fee, Amex late fee, foreign transaction fee, Mastercard annual fee.",
-    "interest": "Visa purchase interest every month: the card carries a balance.",
+    "interest": "Visa purchase interest of about $60 every month: the card carries a balance of roughly $6,000 that keeps growing.",
     "annual_charge": "Annual charges: Mastercard annual fee $95 (Sep), Planet Fitness annual fee $49 (Oct).",
     "bank_category_wrong": "Visa labels Costco Warehouse and Costco Gas as Shopping; they are Groceries and Gas.",
     "needs_review": "Ask the user: Zelle from Jordan M $45 (likely reimbursement for the Oct 15 Olive Garden dinner), Venmo cash-out $60, SQ *JMK LLC.",
-    "debt_principal_interest_unknown": "Toyota Financial $389/mo: principal/interest split is not on the statement."
+    "debt_principal_interest_unknown": "Toyota Financial $419/mo: principal/interest split is not on the statement."
   }
 }
