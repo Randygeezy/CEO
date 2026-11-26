@@ -32,3 +32,14 @@ A first attempt at the resume run (B2) was thrown out: the agent opened the earl
 - Real ChatGPT, Claude.ai and Gemini free plans. These runs simulate the free plan, but they're still Claude, the model that wrote the prompt.
 - PDF statements, scanned statements, messy or vague customer answers.
 - The B1 to B3 runs used the prompt before fixes 1 to 3 and 7. Those fixes have not been rerun.
+
+# Debt payoff step (Step 5B)
+
+Both runs resumed in a new chat from saved notes, blind to `DEBT_EXPECTED.md`.
+
+| Run | Setup | Result |
+|---|---|---|
+| `debtA` | Code tool | Debt table, APR order and this month's to-do list correct. Avalanche 22 months, $1,652.59; snowball 22 months, $1,704.71; minimums only 62 months, $7,503.15. All three match the reference calculator to the cent (using a $3,699.99 lump sum). It caught a bug in the reference calculator's minimums-only baseline. |
+| `debtB` | Free plan, no code | Debt table, avalanche and snowball order and this month's payments correct. It held back $1,112.91 for the Mastercard bill Joint Checking still had to pay, which the answer key had missed (now a prompt rule). As the prompt allows, it gave only rough timings: no total interest, no debt-free date. |
+
+What a no-code free plan can't give: total interest, the debt-free date, and the exact difference between avalanche and snowball. Those need a month-by-month calculation. The prompt tells customers to use a code tool or a debt payoff calculator for exact totals.

@@ -1,0 +1,9 @@
+debt,balance,apr,minimum,method,order,planned_payment,payoff_month
+Discover,2140.00,27.24,65.00,Avalanche,1,2140.00,2026-11
+Visa Rewards,6477.85,22.99,195.00,Avalanche,2,560.00,2027-09
+Toyota car loan,14600.00,6.9,419.00,Avalanche,3,419.00,2028-09
+Mom,450.00,0,50.00,Avalanche,4,50.00,2027-08
+Mom,450.00,0,50.00,Snowball,1,450.00,2026-11
+Discover,2140.00,27.24,65.00,Snowball,2,2140.00,2026-11
+Visa Rewards,6477.85,22.99,195.00,Snowball,3,610.00,2027-09
+Toyota car loan,14600.00,6.9,419.00,Snowball,4,419.00,2028-09

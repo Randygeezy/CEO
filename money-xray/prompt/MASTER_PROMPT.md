@@ -154,6 +154,8 @@ Skip this step if every card is paid in full each month and there are no loans. 
    - How much extra they can put toward debt each month, on top of the minimums. Suggest the confirmed savings from the Recovery Plan as a starting point. If they already pay more than the minimum on a debt, ask whether that extra stays in the budget.
    - Whether any money that is sitting idle should go to debt now, such as a checking balance that keeps growing.
    - How much cushion they want to keep untouched. Never use savings, cash at home or the cushion without their say-so.
+
+   Before you count idle money as available, subtract bills that are about to come out of that account, such as a card balance it pays in full next. If you can't tell whether a bill has already been paid, leave the money for it and say so.
 3. **Show both methods.** In each, every debt gets its minimum, all extra money goes to one target debt, and when the target is paid off its payment rolls onto the next one.
    - **Avalanche, highest APR first:** pays the least interest overall.
    - **Snowball, smallest balance first:** clears debts sooner, which keeps many people going.

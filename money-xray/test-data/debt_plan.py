@@ -27,7 +27,7 @@ DEBTS = [
     {"name": "Mom (family loan)", "balance": 450.00, "apr": 0.00, "minimum": 50.00},
 ]
 EXTRA = 300.00
-LUMP = round(5699.99 - 2000.00, 2)  # Joint Checking closing balance minus the $2,000 cushion they keep
+LUMP = round(5699.99 - 2000.00 - 1112.91, 2)  # Joint balance - $2,000 cushion - Mastercard bill Joint pays next
 
 
 def simulate(order, extra, lump, rollover=True, max_months=600):
@@ -90,7 +90,9 @@ for d in sorted(DEBTS, key=lambda d: -d["apr"]):
 L += ["", "Mastercard Cash Back and Amex Blue are paid in full each month, so they are not debt in the plan "
       "(no interest is charged while the full statement balance is paid).", "",
       f"Plan inputs: ${EXTRA:,.2f} extra per month, plus a one-time ${LUMP:,.2f} from Joint Checking "
-      "($5,699.99 minus a $2,000 cushion the customer keeps). Savings ($3,200) and the cash jar are left alone.", "",
+      "($5,699.99 minus the $2,000 cushion the customer keeps, minus the $1,112.91 Mastercard bill Joint Checking "
+      "pays next). Savings ($3,200) and the cash jar are left alone. A plan that uses $3,699.99 because the "
+      "Mastercard bill was already paid is also correct if the AI says it assumed that.", "",
       "## Results", "",
       "| Method | Order | Debt-free in | Total interest | Payoff month per debt |", "|---|---|---:|---:|---|"]
 for name, (order, (months, interest, paid)) in results.items():
