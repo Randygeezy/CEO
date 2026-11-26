@@ -1,0 +1,17 @@
+date,item,type,category,amount,source
+2026-10-31,Everyday Checking,Asset,Cash & Bank,1680.50,Statement
+2026-10-31,Joint Checking,Asset,Cash & Bank,5699.99,Statement
+2026-11-26,Savings (ending 8812),Asset,Cash & Bank,3200.00,Customer-reported
+2026-11-26,Cash jar at home,Asset,Cash & Bank,400.00,Customer-reported
+2026-11-26,401(k),Asset,Retirement & Investments,42000.00,Customer-reported
+2026-11-26,Spouse 403(b),Asset,Retirement & Investments,18500.00,Customer-reported
+2026-11-26,Home,Asset,Home,340000.00,Customer-reported
+2026-11-26,Toyota,Asset,Vehicles,18500.00,Customer-reported
+2026-11-26,Second car,Asset,Vehicles,6000.00,Customer-reported
+2026-11-26,Mortgage,Liability,Mortgage,248000.00,Customer-reported
+2026-11-26,Toyota loan,Liability,Car Loans,14600.00,Customer-reported
+2026-10-31,Visa Rewards,Liability,Credit Cards,6477.85,Statement
+2026-11-26,Discover,Liability,Credit Cards,2140.00,Customer-reported
+2026-10-31,Mastercard Cash Back,Liability,Credit Cards,1112.91,Statement
+2026-10-31,Amex Blue,Liability,Credit Cards,645.65,Statement
+2026-11-26,Loan from Mom,Liability,Money Owed to Family,450.00,Customer-reported

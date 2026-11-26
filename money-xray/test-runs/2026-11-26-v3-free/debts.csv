@@ -1,0 +1,5 @@
+debt,balance,apr,minimum,method,order,lump_payment,monthly_payment,payoff_month
+Discover,2140.00,27.24,65.00,avalanche,1,2140.00,0.00,2026-11
+Visa Rewards,6477.85,22.98,189.00,avalanche,2,447.08,554.00,2027-10
+Toyota loan,14600.00,6.90,419.00,avalanche,3,0.00,419.00,not estimated (needs payoff calculator)
+Mom (family loan),450.00,0.00,50.00,avalanche,4,0.00,50.00,2027-08

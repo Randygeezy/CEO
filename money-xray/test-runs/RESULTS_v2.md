@@ -47,3 +47,12 @@ What a no-code free plan can't give: total interest, the debt-free date, and the
 # Net worth snapshot (Step 5C)
 
 `networth` run: free plan, no code, resumed from saved notes, blind to `NETWORTH_EXPECTED.md`. Assets $435,980.49, liabilities $273,426.41, net worth $162,554.08 and liquid net worth $154.08 all match exactly. Paid-in-full card balances were counted as owed. It explained why a positive net worth can still feel broke. Fixed after the run: the snapshot date rule and the list of CSV categories. Not tested: uploading investment and loan statements.
+
+# Prompt v3: paste, upload, done
+
+| Run | Setup | Result |
+|---|---|---|
+| `v3-code` | Code tool, all six files at once | 1 message before the report, 0 questions before it, 6 after. grade.py PASS: 219/219, all monthly totals and cash exact. All balances $0.00. Net worth $162,554.08 and liquid $154.08 exact. Debt plan 23 vs 62 months (interest about $15 off the key because card CSVs lack the minimum payment, so it was estimated). |
+| `v3-free` | No code, by hand, one account per message | Every balance $0.00, every monthly total exact, cash and net worth exact. Exported accounts 69/69 (grade.py --only PASS). It took 7 "go" replies, so no-code mode now does two accounts per message and sends the report in two parts. |
+
+Fixes after these runs: no-code mode depends on tool access, not on guessing the plan; other people's names become initials; memberships go in Subscriptions; a rule for guessing a card's minimum payment; up to 8 grouped questions; mortgage left out of the payoff order; month 1 = the month after the latest statement; a warning when a card takes more new spending than it gets paid; blank categories for payments and transfers. These were not rerun.
