@@ -10,6 +10,7 @@ so which copy of an export duplicate the AI excluded does not matter.
 Exit code 0 when every critical check passes, 1 otherwise.
 """
 import csv
+import json
 import os
 import re
 import sys
@@ -71,6 +72,7 @@ def main(path):
 
     critical, warnings = [], []
     type_ok = cat_ok = spend_ok = checked = 0
+    atm_moved = defaultdict(float)
 
     for k, trs in t_groups.items():
         expected_kept = sum(1 for r in trs if r["export_duplicate"] == "No")
@@ -85,6 +87,12 @@ def main(path):
             critical.append(f"COUNT    {label}: kept {len(kept)}, expected {expected_kept} ({what})")
         t = trs[0]
         for a in kept[:expected_kept]:
+            # ATM cash may be moved into a "cash" transfer when the customer says what it bought;
+            # the purchases then appear as manual rows (checked in the combined totals below).
+            if t["category"] == "Cash & ATM" and a["type"].strip() == "Transfer" and not yes(a["counts_as_spending"]):
+                checked += 1; type_ok += 1; spend_ok += 1; cat_ok += 1
+                atm_moved[norm_date(a["date"])[:7]] += float(norm_amt(a["amount"]))
+                continue
             checked += 1
             t_type, a_type = t["type"], a["type"].strip()
             if a_type == t_type or (t_type in SOFT_TYPES and a_type in SOFT_TYPES):
@@ -129,6 +137,9 @@ def main(path):
         return out
 
     t_tot, a_tot = totals(truth, True), totals(ai, False)
+    for m, v in atm_moved.items():  # compare statement totals as if the ATM rows were still spending
+        a_tot[m] += v
+    m_tot = totals(manual, False)
 
     print(f"Money X-Ray grade for {os.path.basename(path)}\n")
     print(f"Rows in export: {len(ai)}   ground-truth rows: {len(truth)}   matched transactions checked: {checked}")
@@ -144,6 +155,19 @@ def main(path):
         print(f"  {mark} {m}: ${a_tot.get(m, 0):,.2f} vs ${t_tot[m]:,.2f}  (diff {diff:+,.2f})")
         if mark == "OFF":
             critical.append(f"TOTAL    {m} net spending off by {diff:+,.2f}")
+
+    exp_path = os.path.join(HERE, "answer-key", "manual_expected.json")
+    if manual and os.path.exists(exp_path):
+        new_cash = json.load(open(exp_path))["new_cash_spending_by_month"]
+        print("\nStatements + customer-reported cash (export vs expected):")
+        for m in sorted(t_tot):
+            got = a_tot.get(m, 0) - atm_moved.get(m, 0) + m_tot.get(m, 0)
+            want = t_tot[m] + new_cash.get(m, 0)
+            diff = got - want
+            mark = "OK " if abs(diff) < 0.02 else "OFF"
+            print(f"  {mark} {m}: ${got:,.2f} vs ${want:,.2f}  (diff {diff:+,.2f})")
+            if mark == "OFF":
+                critical.append(f"CASH     {m} statements + cash off by {diff:+,.2f} (cash counted twice or missed?)")
 
     cats = Counter(w.split()[0] for w in warnings)
     print(f"\nCritical problems: {len(critical)}")

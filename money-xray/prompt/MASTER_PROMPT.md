@@ -146,6 +146,7 @@ If they use the Money X-Ray Notion template, give them the transactions as CSV i
 - `import_batch`: the months covered, for example `2026-08_to_2026-10`.
 - `txn_id`: account nickname + date + amount + row number, so the same row always gets the same ID.
 - Manual entries: `account_alias` = `Cash / manual`, `source_file` = `manual`, `verification` = `Customer-reported`, one row per month for weekly or monthly items.
+- ATM cash the person explained: change the ATM withdrawal row to type `Transfer` (into cash), counts_as_spending `No`, and add one manual row per thing the cash bought, dated the day of the withdrawal, as `Expense`. ATM cash they didn't explain stays an `Expense` in Cash & ATM.
 
 Tell them to paste each block into a text file saved as `.csv`, then import it into the Notion transactions database.
 

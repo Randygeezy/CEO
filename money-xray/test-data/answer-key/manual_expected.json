@@ -1,0 +1,8 @@
+{
+  "_note": "Customer-reported spending from cash income (new money) per month; see MANUAL_EXPECTED.md. ATM cash that is reallocated is not new spending.",
+  "new_cash_spending_by_month": {
+    "2026-08": 223.33,
+    "2026-09": 223.33,
+    "2026-10": 223.33
+  }
+}
