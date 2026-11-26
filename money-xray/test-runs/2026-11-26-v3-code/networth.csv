@@ -1,0 +1,21 @@
+date,item,type,category,amount,source
+2026-10-31,Everyday Checking,Asset,Cash & bank,1680.50,Statement
+2026-10-31,Joint Checking,Asset,Cash & bank,5699.99,Statement
+2026-11-26,Savings account,Asset,Cash & bank,3200.00,Customer-reported
+2026-11-26,Cash jar at home,Asset,Cash & bank,400.00,Customer-reported
+2026-11-26,401(k),Asset,Retirement & investments,42000.00,Customer-reported
+2026-11-26,Spouse's 403(b),Asset,Retirement & investments,18500.00,Customer-reported
+2026-11-26,Home,Asset,Home,340000.00,Customer-reported
+2026-11-26,Toyota,Asset,Vehicles,18500.00,Customer-reported
+2026-11-26,Second car,Asset,Vehicles,6000.00,Customer-reported
+2026-10-31,Visa Rewards,Liability,Credit card,6477.85,Statement
+2026-10-31,Mastercard Cash Back,Liability,Credit card,1112.91,Statement
+2026-10-31,Amex Blue,Liability,Credit card,645.65,Statement
+2026-11-26,Discover card,Liability,Credit card,2140.00,Customer-reported
+2026-11-26,Toyota car loan,Liability,Car loan,14600.00,Customer-reported
+2026-11-26,Mortgage,Liability,Mortgage,248000.00,Customer-reported
+2026-11-26,Loan from Mom,Liability,Money owed to family,450.00,Customer-reported
+2026-10-31,Total assets,Total,,435980.49,Calculated
+2026-10-31,Total liabilities,Total,,273426.41,Calculated
+2026-10-31,Net worth,Total,,162554.08,Calculated
+2026-10-31,Liquid net worth,Total,,154.08,Calculated

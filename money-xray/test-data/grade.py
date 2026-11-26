@@ -117,6 +117,22 @@ def main(path, only=None):
                 cat_ok += 1
 
     extra = [k for k in a_groups if k not in t_groups]
+    # A redacted description (e.g. a person's name removed for privacy) still matches on file, date and amount
+    # when exactly one ground-truth group has that file, date and amount.
+    for k in list(extra):
+        loose = [tk for tk in t_groups if tk[:3] == k[:3]]
+        if len(loose) == 1 and any(c.startswith(("MISSING", "COUNT")) and loose[0][3] in c for c in critical):
+            tk = loose[0]
+            critical[:] = [c for c in critical if not (c.startswith(("MISSING", "COUNT")) and tk[3] in c and tk[1] in c)]
+            ars = a_groups[k]
+            kept = [r for r in ars if "duplicate" not in r["verification"].lower()]
+            t = t_groups[tk][0]
+            for a in kept[:1]:
+                checked += 1
+                type_ok += a["type"].strip() == t["type"] or (t["type"] in SOFT_TYPES and a["type"].strip() in SOFT_TYPES)
+                spend_ok += yes(a["counts_as_spending"]) == (t["counts_as_spending"] == "Yes")
+                cat_ok += t["type"] not in ("Expense", "Refund") or a["category"].strip().lower() == t["category"].lower()
+            extra.remove(k)
     for k in extra:
         critical.append(f"INVENTED {k[0]} {k[1]} {k[3]} ${k[2]} is not in any statement")
 

@@ -1,0 +1,236 @@
+txn_id,date,account_alias,merchant,description_raw,category,amount,direction,type,counts_as_spending,recurring,verification,confidence,source_file,source_row,import_batch,notes
+EverydayChk-2026-08-01-2185.00-r2,2026-08-01,Everyday Checking,Acme Logistics (payroll),ACME LOGISTICS PAYROLL DIR DEP,,2185.00,Inflow,Income,No,Yes,Verified,High,everyday_checking.csv,2,2026-08_to_2026-10,Payroll
+EverydayChk-2026-08-01-1385.00-r3,2026-08-01,Everyday Checking,Rocket Mortgage,ROCKET MORTGAGE PMT,Housing,1385.00,Outflow,Expense,Yes,Yes,Verified,High,everyday_checking.csv,3,2026-08_to_2026-10,Mortgage payment
+EverydayChk-2026-08-01-150.00-r4,2026-08-01,Everyday Checking,First Baptist Church,FIRST BAPTIST CHURCH GIVING,Gifts & Donations,150.00,Outflow,Expense,Yes,Yes,Verified,High,everyday_checking.csv,4,2026-08_to_2026-10,
+EverydayChk-2026-08-03-189.40-r5,2026-08-03,Everyday Checking,Duke Energy,DUKE ENERGY BILL PAY,Utilities,189.40,Outflow,Expense,Yes,Yes,Verified,High,everyday_checking.csv,5,2026-08_to_2026-10,Electric
+EverydayChk-2026-08-04-28.10-r6,2026-08-04,Everyday Checking,Piedmont Natural Gas,PIEDMONT NATURAL GAS,Utilities,28.10,Outflow,Expense,Yes,Yes,Verified,High,everyday_checking.csv,6,2026-08_to_2026-10,Natural gas
+EverydayChk-2026-08-05-80.00-r7,2026-08-05,Everyday Checking,Comcast Xfinity,COMCAST XFINITY,Utilities,80.00,Outflow,Expense,Yes,Yes,Verified,High,everyday_checking.csv,7,2026-08_to_2026-10,Internet/TV
+EverydayChk-2026-08-08-400.00-r8,2026-08-08,Everyday Checking,Transfer to Joint Checking,TRANSFER TO JOINT CHK XXXX4471,,400.00,Outflow,Transfer,No,Yes,Verified,High,everyday_checking.csv,8,2026-08_to_2026-10,To Joint Checking
+EverydayChk-2026-08-10-186.40-r9,2026-08-10,Everyday Checking,GEICO,GEICO AUTO,Insurance,186.40,Outflow,Expense,Yes,Yes,Verified,High,everyday_checking.csv,9,2026-08_to_2026-10,Auto insurance
+EverydayChk-2026-08-12-750.00-r10,2026-08-12,Everyday Checking,Payment to Visa Rewards,CHASE CARD EPAY,,750.00,Outflow,Card Payment,No,No,Verified,High,everyday_checking.csv,10,2026-08_to_2026-10,Pays Visa Rewards
+EverydayChk-2026-08-15-2185.00-r11,2026-08-15,Everyday Checking,Acme Logistics (payroll),ACME LOGISTICS PAYROLL DIR DEP,,2185.00,Inflow,Income,No,Yes,Verified,High,everyday_checking.csv,11,2026-08_to_2026-10,Payroll
+EverydayChk-2026-08-18-250.00-r12,2026-08-18,Everyday Checking,Payment to Amex Blue,AMEX EPAYMENT ACH PMT,,250.00,Outflow,Card Payment,No,No,Verified,High,everyday_checking.csv,12,2026-08_to_2026-10,Pays Amex Blue
+EverydayChk-2026-08-20-175.00-r13,2026-08-20,Everyday Checking,Payment to Discover (not uploaded),DISCOVER E-PAYMENT,,175.00,Outflow,Card Payment,No,Yes,Needs Review,Medium,everyday_checking.csv,13,2026-08_to_2026-10,"Pays Discover card (not uploaded; customer-reported balance $2,140)"
+EverydayChk-2026-08-22-142.00-r14,2026-08-22,Everyday Checking,Verizon Wireless,VERIZON WIRELESS,Utilities,142.00,Outflow,Expense,Yes,Yes,Verified,High,everyday_checking.csv,14,2026-08_to_2026-10,Phone
+EverydayChk-2026-08-22-100.00-r15,2026-08-22,Everyday Checking,ATM withdrawal,ATM WITHDRAWAL 7-ELEVEN #3381,,100.00,Outflow,Transfer,No,No,Verified,High,everyday_checking.csv,15,2026-08_to_2026-10,Cash withdrawn; customer explained what it bought (see Cash / manual rows)
+EverydayChk-2026-08-22-3.50-r16,2026-08-22,Everyday Checking,ATM fee,NON-NETWORK ATM FEE,Fees & Interest,3.50,Outflow,Expense,Yes,No,Verified,High,everyday_checking.csv,16,2026-08_to_2026-10,Out-of-network ATM fee
+EverydayChk-2026-08-26-61.20-r17,2026-08-26,Everyday Checking,City of Raleigh Utilities,CITY OF RALEIGH UTIL,Utilities,61.20,Outflow,Expense,Yes,Yes,Verified,High,everyday_checking.csv,17,2026-08_to_2026-10,Water/sewer
+EverydayChk-2026-08-28-300.00-r18,2026-08-28,Everyday Checking,Transfer to savings (not uploaded),TRANSFER TO SAVINGS XXXX8812,,300.00,Outflow,Transfer,No,Yes,Needs Review,Medium,everyday_checking.csv,18,2026-08_to_2026-10,To savings ending 8812 (not uploaded); my guess: your savings
+EverydayChk-2026-09-01-2185.00-r19,2026-09-01,Everyday Checking,Acme Logistics (payroll),ACME LOGISTICS PAYROLL DIR DEP,,2185.00,Inflow,Income,No,Yes,Verified,High,everyday_checking.csv,19,2026-08_to_2026-10,Payroll
+EverydayChk-2026-09-01-1385.00-r20,2026-09-01,Everyday Checking,Rocket Mortgage,ROCKET MORTGAGE PMT,Housing,1385.00,Outflow,Expense,Yes,Yes,Verified,High,everyday_checking.csv,20,2026-08_to_2026-10,Mortgage payment
+EverydayChk-2026-09-01-150.00-r21,2026-09-01,Everyday Checking,First Baptist Church,FIRST BAPTIST CHURCH GIVING,Gifts & Donations,150.00,Outflow,Expense,Yes,Yes,Verified,High,everyday_checking.csv,21,2026-08_to_2026-10,
+EverydayChk-2026-09-03-171.15-r22,2026-09-03,Everyday Checking,Duke Energy,DUKE ENERGY BILL PAY,Utilities,171.15,Outflow,Expense,Yes,Yes,Verified,High,everyday_checking.csv,22,2026-08_to_2026-10,Electric
+EverydayChk-2026-09-04-29.40-r23,2026-09-04,Everyday Checking,Piedmont Natural Gas,PIEDMONT NATURAL GAS,Utilities,29.40,Outflow,Expense,Yes,Yes,Verified,High,everyday_checking.csv,23,2026-08_to_2026-10,Natural gas
+EverydayChk-2026-09-05-80.00-r24,2026-09-05,Everyday Checking,Comcast Xfinity,COMCAST XFINITY,Utilities,80.00,Outflow,Expense,Yes,Yes,Verified,High,everyday_checking.csv,24,2026-08_to_2026-10,Internet/TV
+EverydayChk-2026-09-08-400.00-r25,2026-09-08,Everyday Checking,Transfer to Joint Checking,TRANSFER TO JOINT CHK XXXX4471,,400.00,Outflow,Transfer,No,Yes,Verified,High,everyday_checking.csv,25,2026-08_to_2026-10,To Joint Checking
+EverydayChk-2026-09-10-186.40-r26,2026-09-10,Everyday Checking,GEICO,GEICO AUTO,Insurance,186.40,Outflow,Expense,Yes,Yes,Verified,High,everyday_checking.csv,26,2026-08_to_2026-10,Auto insurance
+EverydayChk-2026-09-12-875.00-r27,2026-09-12,Everyday Checking,Payment to Visa Rewards,CHASE CARD EPAY,,875.00,Outflow,Card Payment,No,No,Verified,High,everyday_checking.csv,27,2026-08_to_2026-10,Pays Visa Rewards
+EverydayChk-2026-09-15-2185.00-r28,2026-09-15,Everyday Checking,Acme Logistics (payroll),ACME LOGISTICS PAYROLL DIR DEP,,2185.00,Inflow,Income,No,Yes,Verified,High,everyday_checking.csv,28,2026-08_to_2026-10,Payroll
+EverydayChk-2026-09-18-825.00-r29,2026-09-18,Everyday Checking,Payment to Amex Blue,AMEX EPAYMENT ACH PMT,,825.00,Outflow,Card Payment,No,No,Verified,High,everyday_checking.csv,29,2026-08_to_2026-10,Pays Amex Blue
+EverydayChk-2026-09-20-175.00-r30,2026-09-20,Everyday Checking,Payment to Discover (not uploaded),DISCOVER E-PAYMENT,,175.00,Outflow,Card Payment,No,Yes,Needs Review,Medium,everyday_checking.csv,30,2026-08_to_2026-10,"Pays Discover card (not uploaded; customer-reported balance $2,140)"
+EverydayChk-2026-09-22-142.00-r31,2026-09-22,Everyday Checking,Verizon Wireless,VERIZON WIRELESS,Utilities,142.00,Outflow,Expense,Yes,Yes,Verified,High,everyday_checking.csv,31,2026-08_to_2026-10,Phone
+EverydayChk-2026-09-26-58.90-r32,2026-09-26,Everyday Checking,City of Raleigh Utilities,CITY OF RALEIGH UTIL,Utilities,58.90,Outflow,Expense,Yes,Yes,Verified,High,everyday_checking.csv,32,2026-08_to_2026-10,Water/sewer
+EverydayChk-2026-09-28-300.00-r33,2026-09-28,Everyday Checking,Transfer to savings (not uploaded),TRANSFER TO SAVINGS XXXX8812,,300.00,Outflow,Transfer,No,Yes,Needs Review,Medium,everyday_checking.csv,33,2026-08_to_2026-10,To savings ending 8812 (not uploaded); my guess: your savings
+EverydayChk-2026-09-30-12.00-r34,2026-09-30,Everyday Checking,Bank maintenance fee,MONTHLY MAINTENANCE FEE,Fees & Interest,12.00,Outflow,Expense,Yes,No,Verified,High,everyday_checking.csv,34,2026-08_to_2026-10,Checking maintenance fee
+EverydayChk-2026-10-01-2185.00-r35,2026-10-01,Everyday Checking,Acme Logistics (payroll),ACME LOGISTICS PAYROLL DIR DEP,,2185.00,Inflow,Income,No,Yes,Verified,High,everyday_checking.csv,35,2026-08_to_2026-10,Payroll
+EverydayChk-2026-10-01-1385.00-r36,2026-10-01,Everyday Checking,Rocket Mortgage,ROCKET MORTGAGE PMT,Housing,1385.00,Outflow,Expense,Yes,Yes,Verified,High,everyday_checking.csv,36,2026-08_to_2026-10,Mortgage payment
+EverydayChk-2026-10-01-150.00-r37,2026-10-01,Everyday Checking,First Baptist Church,FIRST BAPTIST CHURCH GIVING,Gifts & Donations,150.00,Outflow,Expense,Yes,Yes,Verified,High,everyday_checking.csv,37,2026-08_to_2026-10,
+EverydayChk-2026-10-03-128.60-r38,2026-10-03,Everyday Checking,Duke Energy,DUKE ENERGY BILL PAY,Utilities,128.60,Outflow,Expense,Yes,Yes,Verified,High,everyday_checking.csv,38,2026-08_to_2026-10,Electric
+EverydayChk-2026-10-04-41.75-r39,2026-10-04,Everyday Checking,Piedmont Natural Gas,PIEDMONT NATURAL GAS,Utilities,41.75,Outflow,Expense,Yes,Yes,Verified,High,everyday_checking.csv,39,2026-08_to_2026-10,Natural gas
+EverydayChk-2026-10-05-80.00-r40,2026-10-05,Everyday Checking,Comcast Xfinity,COMCAST XFINITY,Utilities,80.00,Outflow,Expense,Yes,Yes,Verified,High,everyday_checking.csv,40,2026-08_to_2026-10,Internet/TV
+EverydayChk-2026-10-08-400.00-r41,2026-10-08,Everyday Checking,Transfer to Joint Checking,TRANSFER TO JOINT CHK XXXX4471,,400.00,Outflow,Transfer,No,Yes,Verified,High,everyday_checking.csv,41,2026-08_to_2026-10,To Joint Checking
+EverydayChk-2026-10-10-186.40-r42,2026-10-10,Everyday Checking,GEICO,GEICO AUTO,Insurance,186.40,Outflow,Expense,Yes,Yes,Verified,High,everyday_checking.csv,42,2026-08_to_2026-10,Auto insurance
+EverydayChk-2026-10-12-825.00-r43,2026-10-12,Everyday Checking,Payment to Visa Rewards,CHASE CARD EPAY,,825.00,Outflow,Card Payment,No,No,Verified,High,everyday_checking.csv,43,2026-08_to_2026-10,Pays Visa Rewards
+EverydayChk-2026-10-15-2185.00-r44,2026-10-15,Everyday Checking,Acme Logistics (payroll),ACME LOGISTICS PAYROLL DIR DEP,,2185.00,Inflow,Income,No,Yes,Verified,High,everyday_checking.csv,44,2026-08_to_2026-10,Payroll
+EverydayChk-2026-10-16-45.00-r45,2026-10-16,Everyday Checking,Zelle from a friend,ZELLE FROM [name removed],Dining Out,45.00,Inflow,Reimbursement,No,No,Verified,High,everyday_checking.csv,45,2026-08_to_2026-10,Customer confirmed: friend paid back share of Oct 15 Olive Garden dinner
+EverydayChk-2026-10-18-400.00-r46,2026-10-18,Everyday Checking,Payment to Amex Blue,AMEX EPAYMENT ACH PMT,,400.00,Outflow,Card Payment,No,No,Verified,High,everyday_checking.csv,46,2026-08_to_2026-10,Pays Amex Blue
+EverydayChk-2026-10-20-175.00-r47,2026-10-20,Everyday Checking,Payment to Discover (not uploaded),DISCOVER E-PAYMENT,,175.00,Outflow,Card Payment,No,Yes,Needs Review,Medium,everyday_checking.csv,47,2026-08_to_2026-10,"Pays Discover card (not uploaded; customer-reported balance $2,140)"
+EverydayChk-2026-10-22-142.00-r48,2026-10-22,Everyday Checking,Verizon Wireless,VERIZON WIRELESS,Utilities,142.00,Outflow,Expense,Yes,Yes,Verified,High,everyday_checking.csv,48,2026-08_to_2026-10,Phone
+EverydayChk-2026-10-22-100.00-r49,2026-10-22,Everyday Checking,ATM withdrawal,ATM WITHDRAWAL 7-ELEVEN #3381,,100.00,Outflow,Transfer,No,No,Verified,High,everyday_checking.csv,49,2026-08_to_2026-10,Cash withdrawn; customer explained what it bought (see Cash / manual rows)
+EverydayChk-2026-10-22-3.50-r50,2026-10-22,Everyday Checking,ATM fee,NON-NETWORK ATM FEE,Fees & Interest,3.50,Outflow,Expense,Yes,No,Verified,High,everyday_checking.csv,50,2026-08_to_2026-10,Out-of-network ATM fee
+EverydayChk-2026-10-25-60.00-r51,2026-10-25,Everyday Checking,Venmo cashout,VENMO CASHOUT,,60.00,Inflow,Unknown Inflow,No,No,Needs Review,Low,everyday_checking.csv,51,2026-08_to_2026-10,Customer unsure (maybe something spouse sold); left as unknown
+EverydayChk-2026-10-26-55.35-r52,2026-10-26,Everyday Checking,City of Raleigh Utilities,CITY OF RALEIGH UTIL,Utilities,55.35,Outflow,Expense,Yes,Yes,Verified,High,everyday_checking.csv,52,2026-08_to_2026-10,Water/sewer
+EverydayChk-2026-10-28-300.00-r53,2026-10-28,Everyday Checking,Transfer to savings (not uploaded),TRANSFER TO SAVINGS XXXX8812,,300.00,Outflow,Transfer,No,Yes,Needs Review,Medium,everyday_checking.csv,53,2026-08_to_2026-10,To savings ending 8812 (not uploaded); my guess: your savings
+EverydayChk-2026-10-31-12.00-r54,2026-10-31,Everyday Checking,Bank maintenance fee,MONTHLY MAINTENANCE FEE,Fees & Interest,12.00,Outflow,Expense,Yes,No,Verified,High,everyday_checking.csv,54,2026-08_to_2026-10,Checking maintenance fee
+JointChk-2026-08-01-1460.00-r2,2026-08-01,Joint Checking,Wake County Schools (payroll),WAKE CO SCHOOLS PAYROLL,,1460.00,Inflow,Income,No,Yes,Verified,High,joint_checking.csv,2,2026-08_to_2026-10,Payroll
+JointChk-2026-08-02-419.00-r3,2026-08-02,Joint Checking,Toyota Financial,TOYOTA FINANCIAL PMT,Debt Payments,419.00,Outflow,Expense,Yes,Yes,Verified,High,joint_checking.csv,3,2026-08_to_2026-10,Car loan
+JointChk-2026-08-02-88.42-r4,2026-08-02,Joint Checking,Kroger,KROGER #0412,Groceries,88.42,Outflow,Expense,Yes,No,Verified,High,joint_checking.csv,4,2026-08_to_2026-10,
+JointChk-2026-08-05-170.00-r5,2026-08-05,Joint Checking,Kids R Kids,KIDS R KIDS AFTERSCHOOL,Childcare,170.00,Outflow,Expense,Yes,Yes,Verified,High,joint_checking.csv,5,2026-08_to_2026-10,Afterschool
+JointChk-2026-08-06-24.99-r6,2026-08-06,Joint Checking,Planet Fitness,PLANET FITNESS,Health,24.99,Outflow,Expense,Yes,Yes,Verified,High,joint_checking.csv,6,2026-08_to_2026-10,Gym membership
+JointChk-2026-08-09-400.00-r7,2026-08-09,Joint Checking,Transfer from Everyday Checking,TRANSFER FROM EVERYDAY XXXX2290,,400.00,Inflow,Transfer,No,Yes,Verified,High,joint_checking.csv,7,2026-08_to_2026-10,From Everyday Checking
+JointChk-2026-08-09-76.18-r8,2026-08-09,Joint Checking,Kroger,KROGER #0412,Groceries,76.18,Outflow,Expense,Yes,No,Verified,High,joint_checking.csv,8,2026-08_to_2026-10,
+JointChk-2026-08-12-40.00-r9,2026-08-12,Joint Checking,Atrium Health,ATRIUM HEALTH COPAY,Health,40.00,Outflow,Expense,Yes,No,Verified,High,joint_checking.csv,9,2026-08_to_2026-10,Copay
+JointChk-2026-08-12-38.15-r10,2026-08-12,Joint Checking,CVS Pharmacy,CVS/PHARMACY #2207,Health,38.15,Outflow,Expense,Yes,No,Verified,High,joint_checking.csv,10,2026-08_to_2026-10,Pharmacy
+JointChk-2026-08-14-450.00-r11,2026-08-14,Joint Checking,Payment to Mastercard Cash Back,CITI AUTOPAY,,450.00,Outflow,Card Payment,No,No,Verified,High,joint_checking.csv,11,2026-08_to_2026-10,Pays Mastercard Cash Back
+JointChk-2026-08-15-1460.00-r12,2026-08-15,Joint Checking,Wake County Schools (payroll),WAKE CO SCHOOLS PAYROLL,,1460.00,Inflow,Income,No,Yes,Verified,High,joint_checking.csv,12,2026-08_to_2026-10,Payroll
+JointChk-2026-08-16-92.65-r13,2026-08-16,Joint Checking,Kroger,KROGER #0412,Groceries,92.65,Outflow,Expense,Yes,No,Verified,High,joint_checking.csv,13,2026-08_to_2026-10,
+JointChk-2026-08-23-81.30-r14,2026-08-23,Joint Checking,Kroger,KROGER #0412,Groceries,81.30,Outflow,Expense,Yes,No,Verified,High,joint_checking.csv,14,2026-08_to_2026-10,
+JointChk-2026-08-27-95.00-r15,2026-08-27,Joint Checking,Smile Dental Group,SMILE DENTAL GROUP,Health,95.00,Outflow,Expense,Yes,No,Verified,High,joint_checking.csv,15,2026-08_to_2026-10,Dental
+JointChk-2026-08-30-69.94-r16,2026-08-30,Joint Checking,Kroger,KROGER #0412,Groceries,69.94,Outflow,Expense,Yes,No,Verified,High,joint_checking.csv,16,2026-08_to_2026-10,
+JointChk-2026-09-01-1460.00-r17,2026-09-01,Joint Checking,Wake County Schools (payroll),WAKE CO SCHOOLS PAYROLL,,1460.00,Inflow,Income,No,Yes,Verified,High,joint_checking.csv,17,2026-08_to_2026-10,Payroll
+JointChk-2026-09-02-419.00-r18,2026-09-02,Joint Checking,Toyota Financial,TOYOTA FINANCIAL PMT,Debt Payments,419.00,Outflow,Expense,Yes,Yes,Verified,High,joint_checking.csv,18,2026-08_to_2026-10,Car loan
+JointChk-2026-09-05-170.00-r19,2026-09-05,Joint Checking,Kids R Kids,KIDS R KIDS AFTERSCHOOL,Childcare,170.00,Outflow,Expense,Yes,Yes,Verified,High,joint_checking.csv,19,2026-08_to_2026-10,Afterschool
+JointChk-2026-09-06-24.99-r20,2026-09-06,Joint Checking,Planet Fitness,PLANET FITNESS,Health,24.99,Outflow,Expense,Yes,Yes,Verified,High,joint_checking.csv,20,2026-08_to_2026-10,Gym membership
+JointChk-2026-09-06-94.10-r21,2026-09-06,Joint Checking,Kroger,KROGER #0412,Groceries,94.10,Outflow,Expense,Yes,No,Verified,High,joint_checking.csv,21,2026-08_to_2026-10,
+JointChk-2026-09-09-400.00-r22,2026-09-09,Joint Checking,Transfer from Everyday Checking,TRANSFER FROM EVERYDAY XXXX2290,,400.00,Inflow,Transfer,No,Yes,Verified,High,joint_checking.csv,22,2026-08_to_2026-10,From Everyday Checking
+JointChk-2026-09-13-71.55-r23,2026-09-13,Joint Checking,Kroger,KROGER #0412,Groceries,71.55,Outflow,Expense,Yes,No,Verified,High,joint_checking.csv,23,2026-08_to_2026-10,
+JointChk-2026-09-14-875.00-r24,2026-09-14,Joint Checking,Payment to Mastercard Cash Back,CITI AUTOPAY,,875.00,Outflow,Card Payment,No,No,Verified,High,joint_checking.csv,24,2026-08_to_2026-10,Pays Mastercard Cash Back
+JointChk-2026-09-15-1460.00-r25,2026-09-15,Joint Checking,Wake County Schools (payroll),WAKE CO SCHOOLS PAYROLL,,1460.00,Inflow,Income,No,Yes,Verified,High,joint_checking.csv,25,2026-08_to_2026-10,Payroll
+JointChk-2026-09-15-32.15-r26,2026-09-15,Joint Checking,CVS Pharmacy,CVS/PHARMACY #2207,Health,32.15,Outflow,Expense,Yes,No,Verified,High,joint_checking.csv,26,2026-08_to_2026-10,Pharmacy
+JointChk-2026-09-20-88.02-r27,2026-09-20,Joint Checking,Kroger,KROGER #0412,Groceries,88.02,Outflow,Expense,Yes,No,Verified,High,joint_checking.csv,27,2026-08_to_2026-10,
+JointChk-2026-09-23-40.00-r28,2026-09-23,Joint Checking,Atrium Health,ATRIUM HEALTH COPAY,Health,40.00,Outflow,Expense,Yes,No,Verified,High,joint_checking.csv,28,2026-08_to_2026-10,Copay
+JointChk-2026-09-23-112.60-r29,2026-09-23,Joint Checking,Labcorp,LABCORP,Health,112.60,Outflow,Expense,Yes,No,Verified,High,joint_checking.csv,29,2026-08_to_2026-10,Lab
+JointChk-2026-09-27-79.63-r30,2026-09-27,Joint Checking,Kroger,KROGER #0412,Groceries,79.63,Outflow,Expense,Yes,No,Verified,High,joint_checking.csv,30,2026-08_to_2026-10,
+JointChk-2026-10-01-1460.00-r31,2026-10-01,Joint Checking,Wake County Schools (payroll),WAKE CO SCHOOLS PAYROLL,,1460.00,Inflow,Income,No,Yes,Verified,High,joint_checking.csv,31,2026-08_to_2026-10,Payroll
+JointChk-2026-10-02-419.00-r32,2026-10-02,Joint Checking,Toyota Financial,TOYOTA FINANCIAL PMT,Debt Payments,419.00,Outflow,Expense,Yes,Yes,Verified,High,joint_checking.csv,32,2026-08_to_2026-10,Car loan
+JointChk-2026-10-04-86.77-r33,2026-10-04,Joint Checking,Kroger,KROGER #0412,Groceries,86.77,Outflow,Expense,Yes,No,Verified,High,joint_checking.csv,33,2026-08_to_2026-10,
+JointChk-2026-10-05-170.00-r34,2026-10-05,Joint Checking,Kids R Kids,KIDS R KIDS AFTERSCHOOL,Childcare,170.00,Outflow,Expense,Yes,Yes,Verified,High,joint_checking.csv,34,2026-08_to_2026-10,Afterschool
+JointChk-2026-10-06-24.99-r35,2026-10-06,Joint Checking,Planet Fitness,PLANET FITNESS,Health,24.99,Outflow,Expense,Yes,Yes,Verified,High,joint_checking.csv,35,2026-08_to_2026-10,Gym membership
+JointChk-2026-10-06-49.00-r36,2026-10-06,Joint Checking,Planet Fitness,PLANET FITNESS ANNUAL FEE,Health,49.00,Outflow,Expense,Yes,Yes,Verified,High,joint_checking.csv,36,2026-08_to_2026-10,Gym annual fee
+JointChk-2026-10-07-41.80-r37,2026-10-07,Joint Checking,CVS Pharmacy,CVS/PHARMACY #2207,Health,41.80,Outflow,Expense,Yes,No,Verified,High,joint_checking.csv,37,2026-08_to_2026-10,Pharmacy
+JointChk-2026-10-09-400.00-r38,2026-10-09,Joint Checking,Transfer from Everyday Checking,TRANSFER FROM EVERYDAY XXXX2290,,400.00,Inflow,Transfer,No,Yes,Verified,High,joint_checking.csv,38,2026-08_to_2026-10,From Everyday Checking
+JointChk-2026-10-11-98.30-r39,2026-10-11,Joint Checking,Kroger,KROGER #0412,Groceries,98.30,Outflow,Expense,Yes,No,Verified,High,joint_checking.csv,39,2026-08_to_2026-10,
+JointChk-2026-10-14-450.00-r40,2026-10-14,Joint Checking,Payment to Mastercard Cash Back,CITI AUTOPAY,,450.00,Outflow,Card Payment,No,No,Verified,High,joint_checking.csv,40,2026-08_to_2026-10,Pays Mastercard Cash Back
+JointChk-2026-10-15-1460.00-r41,2026-10-15,Joint Checking,Wake County Schools (payroll),WAKE CO SCHOOLS PAYROLL,,1460.00,Inflow,Income,No,Yes,Verified,High,joint_checking.csv,41,2026-08_to_2026-10,Payroll
+JointChk-2026-10-18-74.41-r42,2026-10-18,Joint Checking,Kroger,KROGER #0412,Groceries,74.41,Outflow,Expense,Yes,No,Verified,High,joint_checking.csv,42,2026-08_to_2026-10,
+JointChk-2026-10-20-18.99-r43,2026-10-20,Joint Checking,Kroger,KROGER #0412 REFUND,Groceries,18.99,Inflow,Refund,No,No,Verified,High,joint_checking.csv,43,2026-08_to_2026-10,Merchant refund
+JointChk-2026-10-25-102.16-r44,2026-10-25,Joint Checking,Kroger,KROGER #0412,Groceries,102.16,Outflow,Expense,Yes,No,Verified,High,joint_checking.csv,44,2026-08_to_2026-10,
+JointChk-2026-10-28-40.00-r45,2026-10-28,Joint Checking,Atrium Health,ATRIUM HEALTH COPAY,Health,40.00,Outflow,Expense,Yes,No,Verified,High,joint_checking.csv,45,2026-08_to_2026-10,Copay
+JointChk-2026-10-28-29.90-r46,2026-10-28,Joint Checking,CVS Pharmacy,CVS/PHARMACY #2207,Health,29.90,Outflow,Expense,Yes,No,Verified,High,joint_checking.csv,46,2026-08_to_2026-10,Pharmacy
+Visa-2026-08-02-31.45-r2,2026-08-02,Visa Rewards,Chick-fil-A,CHICK-FIL-A #01988,Dining Out,31.45,Outflow,Expense,Yes,No,Verified,High,visa_rewards.csv,2,2026-08_to_2026-10,
+Visa-2026-08-03-48.20-r3,2026-08-03,Visa Rewards,Shell,SHELL OIL 57442,Gas,48.20,Outflow,Expense,Yes,No,Verified,High,visa_rewards.csv,3,2026-08_to_2026-10,
+Visa-2026-08-04-15.49-r4,2026-08-04,Visa Rewards,Netflix,NETFLIX.COM,Subscriptions,15.49,Outflow,Expense,Yes,Yes,Verified,High,visa_rewards.csv,4,2026-08_to_2026-10,Streaming
+Visa-2026-08-09-34.85-r5,2026-08-09,Visa Rewards,Chipotle,CHIPOTLE 2291,Dining Out,34.85,Outflow,Expense,Yes,No,Verified,High,visa_rewards.csv,5,2026-08_to_2026-10,
+Visa-2026-08-10-51.75-r6,2026-08-10,Visa Rewards,Shell,SHELL OIL 57442,Gas,51.75,Outflow,Expense,Yes,No,Verified,High,visa_rewards.csv,6,2026-08_to_2026-10,
+Visa-2026-08-11-19.99-r7,2026-08-11,Visa Rewards,Spotify,SPOTIFY USA,Subscriptions,19.99,Outflow,Expense,Yes,Yes,Verified,High,visa_rewards.csv,7,2026-08_to_2026-10,Music
+Visa-2026-08-13-184.66-r8,2026-08-13,Visa Rewards,Costco,COSTCO WHSE #1123,Groceries,184.66,Outflow,Expense,Yes,No,Verified,High,visa_rewards.csv,8,2026-08_to_2026-10,Warehouse club; bank says Shopping
+Visa-2026-08-13-750.00-r9,2026-08-13,Visa Rewards,Card payment received,Payment Thank You-Mobile,,750.00,Inflow,Card Payment,No,No,Verified,High,visa_rewards.csv,9,2026-08_to_2026-10,Payment received on card
+Visa-2026-08-16-48.20-r10,2026-08-16,Visa Rewards,Uber Eats,UBER *EATS,Dining Out,48.20,Outflow,Expense,Yes,No,Verified,High,visa_rewards.csv,10,2026-08_to_2026-10,Delivery
+Visa-2026-08-17-44.10-r11,2026-08-17,Visa Rewards,Shell,SHELL OIL 57442,Gas,44.10,Outflow,Expense,Yes,No,Verified,High,visa_rewards.csv,11,2026-08_to_2026-10,
+Visa-2026-08-18-67.43-r12,2026-08-18,Visa Rewards,Amazon Marketplace,AMAZON MKTPL*2K4TR8,Shopping,67.43,Outflow,Expense,Yes,No,Verified,High,visa_rewards.csv,12,2026-08_to_2026-10,
+Visa-2026-08-20-18.62-r13,2026-08-20,Visa Rewards,McDonald's,MCDONALD'S F11872,Dining Out,18.62,Outflow,Expense,Yes,No,Verified,High,visa_rewards.csv,13,2026-08_to_2026-10,
+Visa-2026-08-24-36.20-r14,2026-08-24,Visa Rewards,Chipotle,CHIPOTLE 2291,Dining Out,36.20,Outflow,Expense,Yes,No,Verified,High,visa_rewards.csv,14,2026-08_to_2026-10,
+Visa-2026-08-25-119.74-r15,2026-08-25,Visa Rewards,Visa interest charge,PURCHASE INTEREST CHARGE,Fees & Interest,119.74,Outflow,Expense,Yes,Yes,Verified,High,visa_rewards.csv,15,2026-08_to_2026-10,Card interest
+Visa-2026-08-26-47.35-r16,2026-08-26,Visa Rewards,Shell,SHELL OIL 57442,Gas,47.35,Outflow,Expense,Yes,No,Verified,High,visa_rewards.csv,16,2026-08_to_2026-10,
+Visa-2026-08-27-42.18-r17,2026-08-27,Visa Rewards,Amazon Marketplace,AMAZON MKTPL*2K4TR8,Shopping,42.18,Outflow,Expense,Yes,No,Verified,High,visa_rewards.csv,17,2026-08_to_2026-10,
+Visa-2026-08-29-88.40-r18,2026-08-29,Visa Rewards,Outback,OUTBACK 4412,Dining Out,88.40,Outflow,Expense,Yes,No,Verified,High,visa_rewards.csv,18,2026-08_to_2026-10,
+Visa-2026-09-03-29.10-r19,2026-09-03,Visa Rewards,Chick-fil-A,CHICK-FIL-A #01988,Dining Out,29.10,Outflow,Expense,Yes,No,Verified,High,visa_rewards.csv,19,2026-08_to_2026-10,
+Visa-2026-09-04-17.99-r20,2026-09-04,Visa Rewards,Netflix,NETFLIX.COM,Subscriptions,17.99,Outflow,Expense,Yes,Yes,Verified,High,visa_rewards.csv,20,2026-08_to_2026-10,Streaming
+Visa-2026-09-06-46.90-r21,2026-09-06,Visa Rewards,Shell,SHELL OIL 57442,Gas,46.90,Outflow,Expense,Yes,No,Verified,High,visa_rewards.csv,21,2026-08_to_2026-10,
+Visa-2026-09-07-35.40-r22,2026-09-07,Visa Rewards,Chipotle,CHIPOTLE 2291,Dining Out,35.40,Outflow,Expense,Yes,No,Verified,High,visa_rewards.csv,22,2026-08_to_2026-10,
+Visa-2026-09-11-19.99-r23,2026-09-11,Visa Rewards,Spotify,SPOTIFY USA,Subscriptions,19.99,Outflow,Expense,Yes,Yes,Verified,High,visa_rewards.csv,23,2026-08_to_2026-10,Music
+Visa-2026-09-11-231.34-r24,2026-09-11,Visa Rewards,Costco,COSTCO WHSE #1123,Groceries,231.34,Outflow,Expense,Yes,No,Verified,High,visa_rewards.csv,24,2026-08_to_2026-10,Warehouse club; bank says Shopping
+Visa-2026-09-13-875.00-r25,2026-09-13,Visa Rewards,Card payment received,Payment Thank You-Mobile,,875.00,Inflow,Card Payment,No,No,Verified,High,visa_rewards.csv,25,2026-08_to_2026-10,Payment received on card
+Visa-2026-09-14-50.15-r26,2026-09-14,Visa Rewards,Shell,SHELL OIL 57442,Gas,50.15,Outflow,Expense,Yes,No,Verified,High,visa_rewards.csv,26,2026-08_to_2026-10,
+Visa-2026-09-19-54.75-r27,2026-09-19,Visa Rewards,Uber Eats,UBER *EATS,Dining Out,54.75,Outflow,Expense,Yes,No,Verified,High,visa_rewards.csv,27,2026-08_to_2026-10,Delivery
+Visa-2026-09-21-21.08-r28,2026-09-21,Visa Rewards,McDonald's,MCDONALD'S F11872,Dining Out,21.08,Outflow,Expense,Yes,No,Verified,High,visa_rewards.csv,28,2026-08_to_2026-10,
+Visa-2026-09-22-129.99-r29,2026-09-22,Visa Rewards,Amazon Marketplace,AMAZON MKTPL*2K4TR8,Shopping,129.99,Outflow,Expense,Yes,No,Verified,High,visa_rewards.csv,29,2026-08_to_2026-10,
+Visa-2026-09-24-38.64-r30,2026-09-24,Visa Rewards,Amazon Marketplace,AMAZON MKTPL*2K4TR8,Shopping,38.64,Outflow,Expense,Yes,No,Verified,High,visa_rewards.csv,30,2026-08_to_2026-10,
+Visa-2026-09-25-41.20-r31,2026-09-25,Visa Rewards,Costco Gas,COSTCO GAS #1123,Gas,41.20,Outflow,Expense,Yes,No,Verified,High,visa_rewards.csv,31,2026-08_to_2026-10,Bank says Shopping; it's fuel
+Visa-2026-09-25-121.93-r32,2026-09-25,Visa Rewards,Visa interest charge,PURCHASE INTEREST CHARGE,Fees & Interest,121.93,Outflow,Expense,Yes,Yes,Verified,High,visa_rewards.csv,32,2026-08_to_2026-10,Card interest
+Visa-2026-09-26-96.10-r33,2026-09-26,Visa Rewards,Outback,OUTBACK 4412,Dining Out,96.10,Outflow,Expense,Yes,No,Verified,High,visa_rewards.csv,33,2026-08_to_2026-10,
+Visa-2026-09-28-39.80-r34,2026-09-28,Visa Rewards,Shell,SHELL OIL 57442,Gas,39.80,Outflow,Expense,Yes,No,Verified,High,visa_rewards.csv,34,2026-08_to_2026-10,
+Visa-2026-09-29-129.99-r35,2026-09-29,Visa Rewards,Amazon Marketplace,AMAZON MKTPL*2K4TR8,Shopping,129.99,Inflow,Refund,No,No,Verified,High,visa_rewards.csv,35,2026-08_to_2026-10,Return of Sep 22 Amazon purchase
+Visa-2026-09-30-38.75-r36,2026-09-30,Visa Rewards,Chipotle,CHIPOTLE 2291,Dining Out,38.75,Outflow,Expense,Yes,No,Verified,High,visa_rewards.csv,36,2026-08_to_2026-10,
+Visa-2026-09-28-39.80-r37,2026-09-28,Visa Rewards,Shell,SHELL OIL 57442,Gas,39.80,Outflow,Expense,No,No,Excluded - Duplicate,High,visa_rewards.csv,37,2026-08_to_2026-10,"Export duplicate of row 34 (same date, amount, description, reference)"
+Visa-2026-09-30-38.75-r38,2026-09-30,Visa Rewards,Chipotle,CHIPOTLE 2291,Dining Out,38.75,Outflow,Expense,No,No,Excluded - Duplicate,High,visa_rewards.csv,38,2026-08_to_2026-10,"Export duplicate of row 36 (same date, amount, description, reference)"
+Visa-2026-09-29-129.99-r39,2026-09-29,Visa Rewards,Amazon Marketplace,AMAZON MKTPL*2K4TR8,Shopping,129.99,Inflow,Refund,No,No,Excluded - Duplicate,High,visa_rewards.csv,39,2026-08_to_2026-10,"Export duplicate of row 35 (same date, amount, description, reference)"
+Visa-2026-10-02-34.12-r40,2026-10-02,Visa Rewards,Amazon Marketplace,AMAZON MKTPL*2K4TR8,Shopping,34.12,Outflow,Expense,Yes,No,Verified,High,visa_rewards.csv,40,2026-08_to_2026-10,
+Visa-2026-10-03-33.60-r41,2026-10-03,Visa Rewards,Chick-fil-A,CHICK-FIL-A #01988,Dining Out,33.60,Outflow,Expense,Yes,No,Verified,High,visa_rewards.csv,41,2026-08_to_2026-10,
+Visa-2026-10-04-17.99-r42,2026-10-04,Visa Rewards,Netflix,NETFLIX.COM,Subscriptions,17.99,Outflow,Expense,Yes,Yes,Verified,High,visa_rewards.csv,42,2026-08_to_2026-10,Streaming
+Visa-2026-10-05-52.30-r43,2026-10-05,Visa Rewards,Shell,SHELL OIL 57442,Gas,52.30,Outflow,Expense,Yes,No,Verified,High,visa_rewards.csv,43,2026-08_to_2026-10,
+Visa-2026-10-08-41.40-r44,2026-10-08,Visa Rewards,Chipotle,CHIPOTLE 2291,Dining Out,41.40,Outflow,Expense,Yes,No,Verified,High,visa_rewards.csv,44,2026-08_to_2026-10,
+Visa-2026-10-11-19.99-r45,2026-10-11,Visa Rewards,Spotify,SPOTIFY USA,Subscriptions,19.99,Outflow,Expense,Yes,Yes,Verified,High,visa_rewards.csv,45,2026-08_to_2026-10,Music
+Visa-2026-10-12-45.60-r46,2026-10-12,Visa Rewards,Shell,SHELL OIL 57442,Gas,45.60,Outflow,Expense,Yes,No,Verified,High,visa_rewards.csv,46,2026-08_to_2026-10,
+Visa-2026-10-13-825.00-r47,2026-10-13,Visa Rewards,Card payment received,Payment Thank You-Mobile,,825.00,Inflow,Card Payment,No,No,Verified,High,visa_rewards.csv,47,2026-08_to_2026-10,Payment received on card
+Visa-2026-10-15-216.89-r48,2026-10-15,Visa Rewards,Costco,COSTCO WHSE #1123,Groceries,216.89,Outflow,Expense,Yes,No,Verified,High,visa_rewards.csv,48,2026-08_to_2026-10,Warehouse club; bank says Shopping
+Visa-2026-10-15-92.60-r49,2026-10-15,Visa Rewards,Olive Garden,OLIVE GARDEN #1590,Dining Out,92.60,Outflow,Expense,Yes,No,Verified,High,visa_rewards.csv,49,2026-08_to_2026-10,
+Visa-2026-10-17-58.27-r50,2026-10-17,Visa Rewards,Amazon Marketplace,AMAZON MKTPL*2K4TR8,Shopping,58.27,Outflow,Expense,Yes,No,Verified,High,visa_rewards.csv,50,2026-08_to_2026-10,
+Visa-2026-10-19-58.40-r51,2026-10-19,Visa Rewards,Shell,SHELL OIL 57442,Gas,58.40,Outflow,Expense,Yes,No,Verified,High,visa_rewards.csv,51,2026-08_to_2026-10,
+Visa-2026-10-21-24.10-r52,2026-10-21,Visa Rewards,McDonald's,MCDONALD'S F11872,Dining Out,24.10,Outflow,Expense,Yes,No,Verified,High,visa_rewards.csv,52,2026-08_to_2026-10,
+Visa-2026-10-23-62.10-r53,2026-10-23,Visa Rewards,Uber Eats,UBER *EATS,Dining Out,62.10,Outflow,Expense,Yes,No,Verified,High,visa_rewards.csv,53,2026-08_to_2026-10,Delivery
+Visa-2026-10-25-124.06-r54,2026-10-25,Visa Rewards,Visa interest charge,PURCHASE INTEREST CHARGE,Fees & Interest,124.06,Outflow,Expense,Yes,Yes,Verified,High,visa_rewards.csv,54,2026-08_to_2026-10,Card interest
+Visa-2026-10-26-44.85-r55,2026-10-26,Visa Rewards,Costco Gas,COSTCO GAS #1123,Gas,44.85,Outflow,Expense,Yes,No,Verified,High,visa_rewards.csv,55,2026-08_to_2026-10,Bank says Shopping; it's fuel
+Visa-2026-10-30-39.85-r56,2026-10-30,Visa Rewards,Chipotle,CHIPOTLE 2291,Dining Out,39.85,Outflow,Expense,Yes,No,Verified,High,visa_rewards.csv,56,2026-08_to_2026-10,
+Mastercard-2026-08-07-14.99-r2,2026-08-07,Mastercard Cash Back,Amazon Prime,AMAZON PRIME*RT4K2,Subscriptions,14.99,Outflow,Expense,Yes,Yes,Verified,High,mastercard_cashback.csv,2,2026-08_to_2026-10,Prime membership
+Mastercard-2026-08-09-2.99-r3,2026-08-09,Mastercard Cash Back,Apple,APPLE.COM/BILL,Subscriptions,2.99,Outflow,Expense,Yes,Yes,Verified,High,mastercard_cashback.csv,3,2026-08_to_2026-10,Apple subscription
+Mastercard-2026-08-10-84.21-r4,2026-08-10,Mastercard Cash Back,Target,TARGET 00012,Shopping,84.21,Outflow,Expense,Yes,No,Verified,High,mastercard_cashback.csv,4,2026-08_to_2026-10,
+Mastercard-2026-08-14-96.33-r5,2026-08-14,Mastercard Cash Back,Old Navy,OLD NAVY #6621,Shopping,96.33,Outflow,Expense,Yes,No,Verified,High,mastercard_cashback.csv,5,2026-08_to_2026-10,Clothing
+Mastercard-2026-08-15-450.00-r6,2026-08-15,Mastercard Cash Back,Card payment received,AUTOPAY PAYMENT - THANK YOU,,450.00,Inflow,Card Payment,No,No,Verified,High,mastercard_cashback.csv,6,2026-08_to_2026-10,Payment received on card
+Mastercard-2026-08-17-10.99-r7,2026-08-17,Mastercard Cash Back,Apple,APPLE.COM/BILL,Subscriptions,10.99,Outflow,Expense,Yes,Yes,Verified,High,mastercard_cashback.csv,7,2026-08_to_2026-10,Apple subscription
+Mastercard-2026-08-20-27.33-r8,2026-08-20,Mastercard Cash Back,Walgreens,WALGREENS #4410,Health,27.33,Outflow,Expense,Yes,No,Verified,High,mastercard_cashback.csv,8,2026-08_to_2026-10,Pharmacy
+Mastercard-2026-08-24-61.40-r9,2026-08-24,Mastercard Cash Back,Target,TARGET 00012,Shopping,61.40,Outflow,Expense,Yes,No,Verified,High,mastercard_cashback.csv,9,2026-08_to_2026-10,
+Mastercard-2026-08-30-142.18-r10,2026-08-30,Mastercard Cash Back,The Home Depot,THE HOME DEPOT #3612,Shopping,142.18,Outflow,Expense,Yes,No,Verified,High,mastercard_cashback.csv,10,2026-08_to_2026-10,Home improvement
+Mastercard-2026-09-01-95.00-r11,2026-09-01,Mastercard Cash Back,Mastercard annual fee,ANNUAL MEMBERSHIP FEE,Fees & Interest,95.00,Outflow,Expense,Yes,Yes,Verified,High,mastercard_cashback.csv,11,2026-08_to_2026-10,Card annual fee
+Mastercard-2026-09-07-14.99-r12,2026-09-07,Mastercard Cash Back,Amazon Prime,AMAZON PRIME*RT4K2,Subscriptions,14.99,Outflow,Expense,Yes,Yes,Verified,High,mastercard_cashback.csv,12,2026-08_to_2026-10,Prime membership
+Mastercard-2026-09-07-88.40-r13,2026-09-07,Mastercard Cash Back,Target,TARGET 00012,Shopping,88.40,Outflow,Expense,Yes,No,Verified,High,mastercard_cashback.csv,13,2026-08_to_2026-10,
+Mastercard-2026-09-09-2.99-r14,2026-09-09,Mastercard Cash Back,Apple,APPLE.COM/BILL,Subscriptions,2.99,Outflow,Expense,Yes,Yes,Verified,High,mastercard_cashback.csv,14,2026-08_to_2026-10,Apple subscription
+Mastercard-2026-09-12-34.50-r15,2026-09-12,Mastercard Cash Back,DoorDash (Thai Basil),DOORDASH*THAI BASIL,Dining Out,34.50,Outflow,Expense,Yes,No,Verified,High,mastercard_cashback.csv,15,2026-08_to_2026-10,Delivery; see possible double charge row 16
+Mastercard-2026-09-12-34.50-r16,2026-09-12,Mastercard Cash Back,DoorDash (Thai Basil),DOORDASH*THAI BASIL,Dining Out,34.50,Outflow,Expense,Yes,No,Needs Review,Medium,mastercard_cashback.csv,16,2026-08_to_2026-10,Likely double charge: customer says they ordered once; dispute with DoorDash or card
+Mastercard-2026-09-13-74.10-r17,2026-09-13,Mastercard Cash Back,Old Navy,OLD NAVY #6621,Shopping,74.10,Outflow,Expense,Yes,No,Verified,High,mastercard_cashback.csv,17,2026-08_to_2026-10,Clothing
+Mastercard-2026-09-15-875.00-r18,2026-09-15,Mastercard Cash Back,Card payment received,AUTOPAY PAYMENT - THANK YOU,,875.00,Inflow,Card Payment,No,No,Verified,High,mastercard_cashback.csv,18,2026-08_to_2026-10,Payment received on card
+Mastercard-2026-09-17-10.99-r19,2026-09-17,Mastercard Cash Back,Apple,APPLE.COM/BILL,Subscriptions,10.99,Outflow,Expense,Yes,Yes,Verified,High,mastercard_cashback.csv,19,2026-08_to_2026-10,Apple subscription
+Mastercard-2026-09-18-284.70-r20,2026-09-18,Mastercard Cash Back,Firestone,FIRESTONE AUTO #0219,Transportation,284.70,Outflow,Expense,Yes,No,Verified,High,mastercard_cashback.csv,20,2026-08_to_2026-10,Car repair
+Mastercard-2026-09-21-52.95-r21,2026-09-21,Mastercard Cash Back,Target,TARGET 00012,Shopping,52.95,Outflow,Expense,Yes,No,Verified,High,mastercard_cashback.csv,21,2026-08_to_2026-10,
+Mastercard-2026-09-27-189.00-r22,2026-09-27,Mastercard Cash Back,Wayfair,WAYFAIR*FURNITURE,Shopping,189.00,Outflow,Expense,Yes,No,Verified,High,mastercard_cashback.csv,22,2026-08_to_2026-10,Furniture
+Mastercard-2026-10-04-112.46-r23,2026-10-04,Mastercard Cash Back,Kohl's,KOHLS #0712,Shopping,112.46,Outflow,Expense,Yes,No,Verified,High,mastercard_cashback.csv,23,2026-08_to_2026-10,Clothing/home
+Mastercard-2026-10-07-14.99-r24,2026-10-07,Mastercard Cash Back,Amazon Prime,AMAZON PRIME*RT4K2,Subscriptions,14.99,Outflow,Expense,Yes,Yes,Verified,High,mastercard_cashback.csv,24,2026-08_to_2026-10,Prime membership
+Mastercard-2026-10-09-2.99-r25,2026-10-09,Mastercard Cash Back,Apple,APPLE.COM/BILL,Subscriptions,2.99,Outflow,Expense,Yes,Yes,Verified,High,mastercard_cashback.csv,25,2026-08_to_2026-10,Apple subscription
+Mastercard-2026-10-12-61.77-r26,2026-10-12,Mastercard Cash Back,Target,TARGET 00012,Shopping,61.77,Outflow,Expense,Yes,No,Verified,High,mastercard_cashback.csv,26,2026-08_to_2026-10,
+Mastercard-2026-10-15-450.00-r27,2026-10-15,Mastercard Cash Back,Card payment received,AUTOPAY PAYMENT - THANK YOU,,450.00,Inflow,Card Payment,No,No,Verified,High,mastercard_cashback.csv,27,2026-08_to_2026-10,Payment received on card
+Mastercard-2026-10-17-10.99-r28,2026-10-17,Mastercard Cash Back,Apple,APPLE.COM/BILL,Subscriptions,10.99,Outflow,Expense,Yes,Yes,Verified,High,mastercard_cashback.csv,28,2026-08_to_2026-10,Apple subscription
+Mastercard-2026-10-19-68.90-r29,2026-10-19,Mastercard Cash Back,The Home Depot,THE HOME DEPOT #3612,Shopping,68.90,Outflow,Expense,Yes,No,Verified,High,mastercard_cashback.csv,29,2026-08_to_2026-10,Home improvement
+Mastercard-2026-10-26-93.28-r30,2026-10-26,Mastercard Cash Back,Target,TARGET 00012,Shopping,93.28,Outflow,Expense,Yes,No,Verified,High,mastercard_cashback.csv,30,2026-08_to_2026-10,
+Mastercard-2026-10-29-79.99-r31,2026-10-29,Mastercard Cash Back,Jiffy Lube,JIFFY LUBE #1877,Transportation,79.99,Outflow,Expense,Yes,No,Verified,High,mastercard_cashback.csv,31,2026-08_to_2026-10,Oil change
+Amex-2026-08-02-6.45-r2,2026-08-02,Amex Blue,Starbucks,STARBUCKS STORE 08812,Dining Out,6.45,Outflow,Expense,Yes,No,Verified,High,amex_blue.csv,2,2026-08_to_2026-10,Coffee
+Amex-2026-08-03-18.99-r3,2026-08-03,Amex Blue,Hulu,HULU 877-8244858,Subscriptions,18.99,Outflow,Expense,Yes,Yes,Verified,High,amex_blue.csv,3,2026-08_to_2026-10,Streaming
+Amex-2026-08-03-15.99-r4,2026-08-03,Amex Blue,Disney+,DISNEY PLUS,Subscriptions,15.99,Outflow,Expense,Yes,Yes,Verified,High,amex_blue.csv,4,2026-08_to_2026-10,Streaming
+Amex-2026-08-06-42.00-r5,2026-08-06,Amex Blue,Great Clips,GREAT CLIPS #4471,Personal Care,42.00,Outflow,Expense,Yes,Yes,Verified,High,amex_blue.csv,5,2026-08_to_2026-10,Haircut
+Amex-2026-08-09-64.20-r6,2026-08-09,Amex Blue,Petco,PETCO 1288,Pets,64.20,Outflow,Expense,Yes,Yes,Verified,High,amex_blue.csv,6,2026-08_to_2026-10,
+Amex-2026-08-12-7.10-r7,2026-08-12,Amex Blue,Starbucks,STARBUCKS STORE 08812,Dining Out,7.10,Outflow,Expense,Yes,No,Verified,High,amex_blue.csv,7,2026-08_to_2026-10,Coffee
+Amex-2026-08-15-54.80-r8,2026-08-15,Amex Blue,AMC Theatres,AMC THEATRES 2210,Entertainment,54.80,Outflow,Expense,Yes,No,Verified,High,amex_blue.csv,8,2026-08_to_2026-10,
+Amex-2026-08-19-45.00-r9,2026-08-19,Amex Blue,SQ *JMK LLC (unknown),SQ *JMK LLC,Uncategorized,45.00,Outflow,Expense,Yes,Yes,Needs Review,Low,amex_blue.csv,9,2026-08_to_2026-10,Customer doesn't recognize it; look into it with the card issuer
+Amex-2026-08-20-250.00-r10,2026-08-20,Amex Blue,Card payment received,ONLINE PAYMENT - THANK YOU,,250.00,Inflow,Card Payment,No,No,Verified,High,amex_blue.csv,10,2026-08_to_2026-10,Payment received on card
+Amex-2026-08-26-6.45-r11,2026-08-26,Amex Blue,Starbucks,STARBUCKS STORE 08812,Dining Out,6.45,Outflow,Expense,Yes,No,Verified,High,amex_blue.csv,11,2026-08_to_2026-10,Coffee
+Amex-2026-09-02-312.40-r12,2026-09-02,Amex Blue,Delta Air Lines,DELTA AIR 0062317745,Travel,312.40,Outflow,Expense,Yes,No,Verified,High,amex_blue.csv,12,2026-08_to_2026-10,Airfare
+Amex-2026-09-03-18.99-r13,2026-09-03,Amex Blue,Hulu,HULU 877-8244858,Subscriptions,18.99,Outflow,Expense,Yes,Yes,Verified,High,amex_blue.csv,13,2026-08_to_2026-10,Streaming
+Amex-2026-09-03-15.99-r14,2026-09-03,Amex Blue,Disney+,DISNEY PLUS,Subscriptions,15.99,Outflow,Expense,Yes,Yes,Verified,High,amex_blue.csv,14,2026-08_to_2026-10,Streaming
+Amex-2026-09-04-6.95-r15,2026-09-04,Amex Blue,Starbucks,STARBUCKS STORE 08812,Dining Out,6.95,Outflow,Expense,Yes,No,Verified,High,amex_blue.csv,15,2026-08_to_2026-10,Coffee
+Amex-2026-09-08-42.00-r16,2026-09-08,Amex Blue,Great Clips,GREAT CLIPS #4471,Personal Care,42.00,Outflow,Expense,Yes,Yes,Verified,High,amex_blue.csv,16,2026-08_to_2026-10,Haircut
+Amex-2026-09-10-58.75-r17,2026-09-10,Amex Blue,Petco,PETCO 1288,Pets,58.75,Outflow,Expense,Yes,Yes,Verified,High,amex_blue.csv,17,2026-08_to_2026-10,
+Amex-2026-09-11-7.25-r18,2026-09-11,Amex Blue,Starbucks,STARBUCKS STORE 08812,Dining Out,7.25,Outflow,Expense,Yes,No,Verified,High,amex_blue.csv,18,2026-08_to_2026-10,Coffee
+Amex-2026-09-14-145.00-r19,2026-09-14,Amex Blue,Banfield Pet Hospital,BANFIELD PET HOSP,Pets,145.00,Outflow,Expense,Yes,No,Verified,High,amex_blue.csv,19,2026-08_to_2026-10,Vet
+Amex-2026-09-18-6.95-r20,2026-09-18,Amex Blue,Starbucks,STARBUCKS STORE 08812,Dining Out,6.95,Outflow,Expense,Yes,No,Verified,High,amex_blue.csv,20,2026-08_to_2026-10,Coffee
+Amex-2026-09-19-45.00-r21,2026-09-19,Amex Blue,SQ *JMK LLC (unknown),SQ *JMK LLC,Uncategorized,45.00,Outflow,Expense,Yes,Yes,Needs Review,Low,amex_blue.csv,21,2026-08_to_2026-10,Customer doesn't recognize it; look into it with the card issuer
+Amex-2026-09-20-118.00-r22,2026-09-20,Amex Blue,Ticketmaster,TICKETMASTER*NC STATE,Entertainment,118.00,Outflow,Expense,Yes,No,Verified,High,amex_blue.csv,22,2026-08_to_2026-10,
+Amex-2026-09-20-825.00-r23,2026-09-20,Amex Blue,Card payment received,ONLINE PAYMENT - THANK YOU,,825.00,Inflow,Card Payment,No,No,Verified,High,amex_blue.csv,23,2026-08_to_2026-10,Payment received on card
+Amex-2026-09-26-29.00-r24,2026-09-26,Amex Blue,Amex late fee,LATE FEE,Fees & Interest,29.00,Outflow,Expense,Yes,No,Verified,High,amex_blue.csv,24,2026-08_to_2026-10,Card late fee
+Amex-2026-09-27-8.10-r25,2026-09-27,Amex Blue,Starbucks,STARBUCKS STORE 08812,Dining Out,8.10,Outflow,Expense,Yes,No,Verified,High,amex_blue.csv,25,2026-08_to_2026-10,Coffee
+Amex-2026-10-01-7.25-r26,2026-10-01,Amex Blue,Starbucks,STARBUCKS STORE 08812,Dining Out,7.25,Outflow,Expense,Yes,No,Verified,High,amex_blue.csv,26,2026-08_to_2026-10,Coffee
+Amex-2026-10-03-18.99-r27,2026-10-03,Amex Blue,Hulu,HULU 877-8244858,Subscriptions,18.99,Outflow,Expense,Yes,Yes,Verified,High,amex_blue.csv,27,2026-08_to_2026-10,Streaming
+Amex-2026-10-03-15.99-r28,2026-10-03,Amex Blue,Disney+,DISNEY PLUS,Subscriptions,15.99,Outflow,Expense,Yes,Yes,Verified,High,amex_blue.csv,28,2026-08_to_2026-10,Streaming
+Amex-2026-10-07-7.25-r29,2026-10-07,Amex Blue,Starbucks,STARBUCKS STORE 08812,Dining Out,7.25,Outflow,Expense,Yes,No,Verified,High,amex_blue.csv,29,2026-08_to_2026-10,Coffee
+Amex-2026-10-08-62.00-r30,2026-10-08,Amex Blue,Etsy (Crafthaus),ETSY.COM*CRAFTHAUS,Shopping,62.00,Outflow,Expense,Yes,No,Verified,High,amex_blue.csv,30,2026-08_to_2026-10,
+Amex-2026-10-08-1.86-r31,2026-10-08,Amex Blue,Foreign transaction fee,FOREIGN TRANSACTION FEE,Fees & Interest,1.86,Outflow,Expense,Yes,No,Verified,High,amex_blue.csv,31,2026-08_to_2026-10,On Oct 8 Etsy purchase
+Amex-2026-10-09-42.00-r32,2026-10-09,Amex Blue,Great Clips,GREAT CLIPS #4471,Personal Care,42.00,Outflow,Expense,Yes,Yes,Verified,High,amex_blue.csv,32,2026-08_to_2026-10,Haircut
+Amex-2026-10-11-61.30-r33,2026-10-11,Amex Blue,Petco,PETCO 1288,Pets,61.30,Outflow,Expense,Yes,Yes,Verified,High,amex_blue.csv,33,2026-08_to_2026-10,
+Amex-2026-10-13-8.40-r34,2026-10-13,Amex Blue,Starbucks,STARBUCKS STORE 08812,Dining Out,8.40,Outflow,Expense,Yes,No,Verified,High,amex_blue.csv,34,2026-08_to_2026-10,Coffee
+Amex-2026-10-14-48.50-r35,2026-10-14,Amex Blue,Sephora,SEPHORA #0331,Personal Care,48.50,Outflow,Expense,Yes,No,Verified,High,amex_blue.csv,35,2026-08_to_2026-10,
+Amex-2026-10-19-45.00-r36,2026-10-19,Amex Blue,SQ *JMK LLC (unknown),SQ *JMK LLC,Uncategorized,45.00,Outflow,Expense,Yes,Yes,Needs Review,Low,amex_blue.csv,36,2026-08_to_2026-10,Customer doesn't recognize it; look into it with the card issuer
+Amex-2026-10-20-400.00-r37,2026-10-20,Amex Blue,Card payment received,ONLINE PAYMENT - THANK YOU,,400.00,Inflow,Card Payment,No,No,Verified,High,amex_blue.csv,37,2026-08_to_2026-10,Payment received on card
+Amex-2026-10-21-6.95-r38,2026-10-21,Amex Blue,Starbucks,STARBUCKS STORE 08812,Dining Out,6.95,Outflow,Expense,Yes,No,Verified,High,amex_blue.csv,38,2026-08_to_2026-10,Coffee
+Amex-2026-10-24-72.00-r39,2026-10-24,Amex Blue,Sky Zone,SKY ZONE RALEIGH,Entertainment,72.00,Outflow,Expense,Yes,No,Verified,High,amex_blue.csv,39,2026-08_to_2026-10,
+Amex-2026-10-29-7.80-r40,2026-10-29,Amex Blue,Starbucks,STARBUCKS STORE 08812,Dining Out,7.80,Outflow,Expense,Yes,No,Verified,High,amex_blue.csv,40,2026-08_to_2026-10,Coffee
+Cash-2026-08-01-50.00-m1,2026-08-01,Cash / manual,Cash repayment to Mom,Cash repayment to Mom,Debt Payments,50.00,Outflow,Expense,Yes,Yes,Customer-reported,Medium,manual,,2026-08_to_2026-10,$50/month toward money borrowed from Mom (no interest)
+Cash-2026-08-01-346.67-m2,2026-08-01,Cash / manual,Lawn mowing cash income (never deposited),Lawn mowing cash income (never deposited),,346.67,Inflow,Income,No,Yes,Customer-reported,Medium,manual,,2026-08_to_2026-10,$80/week x 52 / 12
+Cash-2026-08-01-173.33-m3,2026-08-01,Cash / manual,Lunch out paid in cash,Lunch out paid in cash,Dining Out,173.33,Outflow,Expense,Yes,Yes,Customer-reported,Medium,manual,,2026-08_to_2026-10,$40/week x 52 / 12
+Cash-2026-08-22-60.00-m4,2026-08-22,Cash / manual,Babysitter (ATM cash),Babysitter (ATM cash),Childcare,60.00,Outflow,Expense,Yes,No,Customer-reported,Medium,manual,,2026-08_to_2026-10,Paid with ATM cash withdrawn this day
+Cash-2026-08-22-40.00-m5,2026-08-22,Cash / manual,Farmers market (ATM cash),Farmers market (ATM cash),Groceries,40.00,Outflow,Expense,Yes,No,Customer-reported,Medium,manual,,2026-08_to_2026-10,Paid with ATM cash withdrawn this day
+Cash-2026-09-01-50.00-m6,2026-09-01,Cash / manual,Cash repayment to Mom,Cash repayment to Mom,Debt Payments,50.00,Outflow,Expense,Yes,Yes,Customer-reported,Medium,manual,,2026-08_to_2026-10,$50/month toward money borrowed from Mom (no interest)
+Cash-2026-09-01-346.67-m7,2026-09-01,Cash / manual,Lawn mowing cash income (never deposited),Lawn mowing cash income (never deposited),,346.67,Inflow,Income,No,Yes,Customer-reported,Medium,manual,,2026-08_to_2026-10,$80/week x 52 / 12
+Cash-2026-09-01-173.33-m8,2026-09-01,Cash / manual,Lunch out paid in cash,Lunch out paid in cash,Dining Out,173.33,Outflow,Expense,Yes,Yes,Customer-reported,Medium,manual,,2026-08_to_2026-10,$40/week x 52 / 12
+Cash-2026-10-01-50.00-m9,2026-10-01,Cash / manual,Cash repayment to Mom,Cash repayment to Mom,Debt Payments,50.00,Outflow,Expense,Yes,Yes,Customer-reported,Medium,manual,,2026-08_to_2026-10,$50/month toward money borrowed from Mom (no interest)
+Cash-2026-10-01-346.67-m10,2026-10-01,Cash / manual,Lawn mowing cash income (never deposited),Lawn mowing cash income (never deposited),,346.67,Inflow,Income,No,Yes,Customer-reported,Medium,manual,,2026-08_to_2026-10,$80/week x 52 / 12
+Cash-2026-10-01-173.33-m11,2026-10-01,Cash / manual,Lunch out paid in cash,Lunch out paid in cash,Dining Out,173.33,Outflow,Expense,Yes,Yes,Customer-reported,Medium,manual,,2026-08_to_2026-10,$40/week x 52 / 12
+Cash-2026-10-22-60.00-m12,2026-10-22,Cash / manual,Halloween costumes and candy (ATM cash),Halloween costumes and candy (ATM cash),Shopping,60.00,Outflow,Expense,Yes,No,Customer-reported,Medium,manual,,2026-08_to_2026-10,Paid with ATM cash withdrawn this day
+Cash-2026-10-22-40.00-m13,2026-10-22,Cash / manual,Pizza night (ATM cash),Pizza night (ATM cash),Dining Out,40.00,Outflow,Expense,Yes,No,Customer-reported,Medium,manual,,2026-08_to_2026-10,Paid with ATM cash withdrawn this day

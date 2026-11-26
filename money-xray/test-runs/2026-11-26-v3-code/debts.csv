@@ -1,0 +1,13 @@
+debt,balance,apr,minimum,method,order,lump_payment,monthly_payment,payoff_month
+Discover card,2140.00,27.24,65.00,avalanche,1,2140.00,0.00,paid now
+Visa Rewards,6477.85,22.98,189.00,avalanche,2,447.08,554.00,2027-11
+Toyota car loan,14600.00,6.90,419.00,avalanche,3,0.00,419.00,2028-09
+Loan from Mom,450.00,0.00,50.00,avalanche,4,0.00,50.00,2027-07
+Loan from Mom,450.00,0.00,50.00,snowball,1,450.00,0.00,paid now
+Discover card,2140.00,27.24,65.00,snowball,2,2137.08,2.99,2026-11
+Visa Rewards,6477.85,22.98,189.00,snowball,3,0.00,601.01,2027-11
+Toyota car loan,14600.00,6.90,419.00,snowball,4,0.00,419.00,2028-09
+Discover card,2140.00,27.24,65.00,minimums only,1,0.00,65.00,2031-12
+Visa Rewards,6477.85,22.98,189.00,minimums only,2,0.00,189.00,2031-07
+Toyota car loan,14600.00,6.90,419.00,minimums only,3,0.00,419.00,2030-01
+Loan from Mom,450.00,0.00,50.00,minimums only,4,0.00,50.00,2027-07
