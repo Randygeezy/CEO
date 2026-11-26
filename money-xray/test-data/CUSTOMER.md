@@ -35,3 +35,13 @@ Answer to "Is there money that never shows up on these statements?" (Step 3B), i
 - "That's everything. No Venmo or Cash App spending beyond what's on the statements."
 
 Recovery plan choices, if asked which items to change: cancel Hulu, cancel Apple Music (keep Spotify), and look into the unknown SQ *JMK LLC charge. Keep everything else for now.
+
+## Replies for the v3 flow (statements first)
+- First message: the customer uploads all six files in uploads/ at once and types "done".
+- Whenever asked to reply "go": "go".
+- The question list after the report: answer each item from the "Answers to follow-up questions" and "Step 3B" sections above; anything not covered gets "ok".
+- The menu: "1, 2, 3 and 4."
+- For 1 (cut costs): cancel Hulu and Apple Music (keep Spotify), and look into the SQ *JMK LLC charge.
+- For 2 (debt): use the "Debt plan" answer above; method: avalanche.
+- For 3 (net worth): use the "Net worth" answer above, plus savings $3,200 and jar $400; Toyota loan $14,600 at 6.9%; Mom $450.
+- For 4: yes, all accounts.
