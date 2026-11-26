@@ -10,6 +10,8 @@ money-xray/
 └── test-data/
     ├── generate.py                  builds the dataset + answer key (deterministic)
     ├── grade.py                     scores an AI's CSV export against the answer key
+    ├── debt_plan.py                 expected avalanche/snowball results for the debt step
+    ├── CUSTOMER.md                  scripted customer answers for test runs
     ├── statements/                  what you upload to the AI (fictional)
     └── answer-key/                  what the AI should find. Never upload this.
 ```
@@ -29,7 +31,7 @@ Fourteen deliberate traps are planted, each listed in `answer-key/ANSWER_KEY.md`
 - a new bank maintenance fee, late and foreign-transaction fees, card interest
 - Costco groceries and gas mislabelled "Shopping" by the bank
 
-Expected net spending: **$5,060.34** (Aug), **$5,866.20** (Sep), **$5,112.77** (Oct), against $7,290 a month in take-home pay. On paper there's about $2,000 a month left over. The audit has to explain why the family still feels broke: a growing Visa balance and its interest, a Discover card nobody listed, and fees.
+Expected net spending: **$5,121.24** (Aug), **$5,926.51** (Sep), **$5,173.72** (Oct), against $7,290 a month in take-home pay. On paper there's about $2,000 a month left over. The audit has to explain why the family still feels broke: a growing Visa balance at 22.99% APR (about $122 a month in interest), a Discover card nobody listed, and fees.
 
 ## Running an accuracy test (blueprint phase 4)
 

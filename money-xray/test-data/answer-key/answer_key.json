@@ -23,7 +23,7 @@
       "Debt Payments": 419.0,
       "Dining Out": 277.72,
       "Entertainment": 54.8,
-      "Fees & Interest": 62.34,
+      "Fees & Interest": 123.24,
       "Gas": 191.4,
       "Gifts & Donations": 150.0,
       "Groceries": 593.15,
@@ -42,7 +42,7 @@
       "Debt Payments": 419.0,
       "Dining Out": 373.43,
       "Entertainment": 118.0,
-      "Fees & Interest": 197.62,
+      "Fees & Interest": 257.93,
       "Gas": 178.05,
       "Gifts & Donations": 150.0,
       "Groceries": 564.64,
@@ -64,7 +64,7 @@
       "Debt Payments": 419.0,
       "Dining Out": 286.3,
       "Entertainment": 72.0,
-      "Fees & Interest": 80.47,
+      "Fees & Interest": 141.42,
       "Gas": 201.15,
       "Gifts & Donations": 150.0,
       "Groceries": 559.54,
@@ -81,12 +81,12 @@
     }
   },
   "net_spending_total_by_month": {
-    "2026-08": 5060.34,
-    "2026-09": 5866.2,
-    "2026-10": 5112.77
+    "2026-08": 5121.24,
+    "2026-09": 5926.51,
+    "2026-10": 5173.72
   },
   "excluded_from_spending": {
-    "card_payments_matched": 11000,
+    "card_payments_matched": 11400,
     "card_payments_to_missing_card": 525.0,
     "internal_transfers": 2400.0,
     "savings_transfers": 900.0,
@@ -101,8 +101,8 @@
       "start": "2026-08-01",
       "end": "2026-10-31",
       "opening": "1840.55",
-      "closing": "1880.50",
-      "charges_debits": "13175.05",
+      "closing": "1680.50",
+      "charges_debits": "13375.05",
       "payments_credits": "13215.00"
     },
     {
@@ -123,9 +123,9 @@
       "start": "2026-08-01",
       "end": "2026-10-31",
       "opening": "6180.00",
-      "closing": "6495.69",
-      "charges_debits": "2695.68",
-      "payments_credits": "2379.99"
+      "closing": "6477.85",
+      "charges_debits": "2877.84",
+      "payments_credits": "2579.99"
     },
     {
       "account": "Mastercard Cash Back",
@@ -452,12 +452,12 @@
       "account": "Visa Rewards",
       "frequency": "Monthly",
       "occurrences": 3,
-      "latest_amount": 63.11,
-      "annualized": 757.32,
+      "latest_amount": 124.06,
+      "annualized": 1488.72,
       "amounts": [
-        58.84,
-        61.62,
-        63.11
+        119.74,
+        121.93,
+        124.06
       ],
       "flags": [
         "interest"
@@ -474,7 +474,7 @@
     "unrecognized_recurring": "SQ *JMK LLC: $45.00 on the 19th each month on Amex; merchant not identifiable. Ask the user.",
     "new_fee": "Everyday Checking began charging a $12.00 monthly maintenance fee in September.",
     "avoidable_fee": "Fees: out-of-network ATM fees, maintenance fee, Amex late fee, foreign transaction fee, Mastercard annual fee.",
-    "interest": "Visa purchase interest of about $60 every month: the card carries a balance of roughly $6,000 that keeps growing.",
+    "interest": "Visa purchase interest of about $122 every month (22.99% APR): the card carries a balance of roughly $6,500 that keeps growing.",
     "annual_charge": "Annual charges: Mastercard annual fee $95 (Sep), Planet Fitness annual fee $49 (Oct).",
     "bank_category_wrong": "Visa labels Costco Warehouse and Costco Gas as Shopping; they are Groceries and Gas.",
     "needs_review": "Ask the user: Zelle from Jordan M $45 (likely reimbursement for the Oct 15 Olive Garden dinner), Venmo cash-out $60, SQ *JMK LLC.",

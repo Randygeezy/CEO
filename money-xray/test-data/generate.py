@@ -236,7 +236,7 @@ for dt, amt in [(d(8, 18), 67.43), (d(8, 27), 42.18), (d(9, 22), 129.99), (d(9, 
     add("VISA", dt, "AMAZON MKTPL*2K4TR8", amt, "Expense", "Shopping", merchant="Amazon", bank_category="Shopping")
 add("VISA", d(9, 29), "AMAZON MKTPL*2K4TR8", 129.99, "Refund", "Shopping", merchant="Amazon (return)",
     bank_category="Shopping")
-for m, amt in [(8, 58.84), (9, 61.62), (10, 63.11)]:
+for m, amt in [(8, 119.74), (9, 121.93), (10, 124.06)]:  # 22.99% APR on ~$6,250-6,475
     add("VISA", d(m, 25), "PURCHASE INTEREST CHARGE", amt, "Expense", "Fees & Interest", "Monthly",
         flags=["interest"], merchant="Visa interest", bank_category="Fees & Adjustments")
 
@@ -489,7 +489,7 @@ flag_notes = {
     "unrecognized_recurring": "SQ *JMK LLC: $45.00 on the 19th each month on Amex; merchant not identifiable. Ask the user.",
     "new_fee": "Everyday Checking began charging a $12.00 monthly maintenance fee in September.",
     "avoidable_fee": "Fees: out-of-network ATM fees, maintenance fee, Amex late fee, foreign transaction fee, Mastercard annual fee.",
-    "interest": "Visa purchase interest of about $60 every month: the card carries a balance of roughly $6,000 that keeps growing.",
+    "interest": "Visa purchase interest of about $122 every month (22.99% APR): the card carries a balance of roughly $6,500 that keeps growing.",
     "annual_charge": "Annual charges: Mastercard annual fee $95 (Sep), Planet Fitness annual fee $49 (Oct).",
     "bank_category_wrong": "Visa labels Costco Warehouse and Costco Gas as Shopping; they are Groceries and Gas.",
     "needs_review": "Ask the user: Zelle from Jordan M $45 (likely reimbursement for the Oct 15 Olive Garden dinner), Venmo cash-out $60, SQ *JMK LLC.",

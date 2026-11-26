@@ -19,7 +19,7 @@ Period: 2026-08-01 to 2026-10-31. Raw rows across the five files: 222. Unique tr
 | Debt Payments | $419.00 | $419.00 | $419.00 |
 | Dining Out | $277.72 | $373.43 | $286.30 |
 | Entertainment | $54.80 | $118.00 | $72.00 |
-| Fees & Interest | $62.34 | $197.62 | $80.47 |
+| Fees & Interest | $123.24 | $257.93 | $141.42 |
 | Gas | $191.40 | $178.05 | $201.15 |
 | Gifts & Donations | $150.00 | $150.00 | $150.00 |
 | Groceries | $593.15 | $564.64 | $559.54 |
@@ -34,13 +34,13 @@ Period: 2026-08-01 to 2026-10-31. Raw rows across the five files: 222. Unique tr
 | Travel | $0.00 | $312.40 | $0.00 |
 | Uncategorized | $45.00 | $45.00 | $45.00 |
 | Utilities | $500.70 | $481.45 | $447.70 |
-| **Total** | **$5,060.34** | **$5,866.20** | **$5,112.77** |
+| **Total** | **$5,121.24** | **$5,926.51** | **$5,173.72** |
 
 Refunds and confirmed reimbursements are netted against their category (Amazon return in Shopping, Kroger refund in Groceries, Jordan's $45 dinner payback in Dining Out, which the customer confirms). The $60 Venmo cash-out stays unknown and offsets nothing.
 
 ## Excluded from spending
 
-- card payments matched: $11,000.00
+- card payments matched: $11,400.00
 - card payments to missing card: $525.00
 - internal transfers: $2,400.00
 - savings transfers: $900.00
@@ -71,15 +71,15 @@ Refunds and confirmed reimbursements are netted against their category (Amazon r
 | SQ *JMK LLC (unknown) | Amex Blue | Monthly | 3 | $45.00 | $540.00 | needs_review, unrecognized_recurring |
 | Spotify Family | Visa Rewards | Monthly | 3 | $19.99 | $239.88 | overlapping_service |
 | Verizon (phones) | Everyday Checking | Monthly | 3 | $142.00 | $1,704.00 |  |
-| Visa interest | Visa Rewards | Monthly | 3 | $63.11 | $757.32 | interest |
+| Visa interest | Visa Rewards | Monthly | 3 | $124.06 | $1,488.72 | interest |
 
 ## Reconciliation (from statement_summaries.csv)
 
 | Account | Opening | Charges/Debits | Payments/Credits | Closing |
 |---|---:|---:|---:|---:|
-| Everyday Checking | $1,840.55 | $13,175.05 | $13,215.00 | $1,880.50 |
+| Everyday Checking | $1,840.55 | $13,375.05 | $13,215.00 | $1,680.50 |
 | Joint Checking | $960.00 | $5,239.00 | $9,978.99 | $5,699.99 |
-| Visa Rewards | $6,180.00 | $2,695.68 | $2,379.99 | $6,495.69 |
+| Visa Rewards | $6,180.00 | $2,877.84 | $2,579.99 | $6,477.85 |
 | Mastercard Cash Back | $1,120.00 | $1,767.91 | $1,775.00 | $1,112.91 |
 | Amex Blue | $640.00 | $1,480.65 | $1,475.00 | $645.65 |
 
@@ -92,7 +92,7 @@ Refunds and confirmed reimbursements are netted against their category (Amazon r
 | Debt Payments | $419.00 | $418.58 |
 | Dining Out | $312.48 | $371.42 |
 | Entertainment | $81.60 | see below |
-| Fees & Interest | $113.48 | see below |
+| Fees & Interest | $174.20 | see below |
 | Gas | $190.20 | $208.58 |
 | Gifts & Donations | $150.00 | $186.42 |
 | Groceries | $572.44 | $567.17 |
@@ -123,7 +123,7 @@ CE figures are averages over all US households, including renters, people withou
 - **unrecognized_recurring**: SQ *JMK LLC: $45.00 on the 19th each month on Amex; merchant not identifiable. Ask the user.
 - **new_fee**: Everyday Checking began charging a $12.00 monthly maintenance fee in September.
 - **avoidable_fee**: Fees: out-of-network ATM fees, maintenance fee, Amex late fee, foreign transaction fee, Mastercard annual fee.
-- **interest**: Visa purchase interest of about $60 every month: the card carries a balance of roughly $6,000 that keeps growing.
+- **interest**: Visa purchase interest of about $122 every month (22.99% APR): the card carries a balance of roughly $6,500 that keeps growing.
 - **annual_charge**: Annual charges: Mastercard annual fee $95 (Sep), Planet Fitness annual fee $49 (Oct).
 - **bank_category_wrong**: Visa labels Costco Warehouse and Costco Gas as Shopping; they are Groceries and Gas.
 - **needs_review**: Ask the user: Zelle from Jordan M $45 (likely reimbursement for the Oct 15 Olive Garden dinner), Venmo cash-out $60, SQ *JMK LLC.

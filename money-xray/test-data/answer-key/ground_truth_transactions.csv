@@ -46,7 +46,7 @@ everyday_checking.csv,6,2026-08-04,Everyday Checking,PIEDMONT NATURAL GAS,Piedmo
 everyday_checking.csv,7,2026-08-05,Everyday Checking,COMCAST XFINITY,Comcast Xfinity (internet),80.00,Outflow,Expense,Utilities,Yes,Monthly,No,
 everyday_checking.csv,8,2026-08-08,Everyday Checking,TRANSFER TO JOINT CHK XXXX4471,To Joint Checking,400.00,Outflow,Transfer,,No,,No,
 everyday_checking.csv,9,2026-08-10,Everyday Checking,GEICO AUTO,GEICO (2 cars),186.40,Outflow,Expense,Insurance,Yes,Monthly,No,
-everyday_checking.csv,10,2026-08-12,Everyday Checking,CHASE CARD EPAY,Payment to Visa Rewards,700.00,Outflow,Card Payment,,No,,No,
+everyday_checking.csv,10,2026-08-12,Everyday Checking,CHASE CARD EPAY,Payment to Visa Rewards,750.00,Outflow,Card Payment,,No,,No,
 everyday_checking.csv,11,2026-08-15,Everyday Checking,ACME LOGISTICS PAYROLL DIR DEP,"Acme Logistics (salary, earner 1)",2185.00,Inflow,Income,Salary,No,Semi-monthly,No,
 everyday_checking.csv,12,2026-08-18,Everyday Checking,AMEX EPAYMENT ACH PMT,Payment to Amex Blue,250.00,Outflow,Card Payment,,No,,No,
 everyday_checking.csv,13,2026-08-20,Everyday Checking,DISCOVER E-PAYMENT,Payment to Discover (statement not supplied),175.00,Outflow,Card Payment,,No,,No,missing_statement
@@ -63,7 +63,7 @@ everyday_checking.csv,23,2026-09-04,Everyday Checking,PIEDMONT NATURAL GAS,Piedm
 everyday_checking.csv,24,2026-09-05,Everyday Checking,COMCAST XFINITY,Comcast Xfinity (internet),80.00,Outflow,Expense,Utilities,Yes,Monthly,No,
 everyday_checking.csv,25,2026-09-08,Everyday Checking,TRANSFER TO JOINT CHK XXXX4471,To Joint Checking,400.00,Outflow,Transfer,,No,,No,
 everyday_checking.csv,26,2026-09-10,Everyday Checking,GEICO AUTO,GEICO (2 cars),186.40,Outflow,Expense,Insurance,Yes,Monthly,No,
-everyday_checking.csv,27,2026-09-12,Everyday Checking,CHASE CARD EPAY,Payment to Visa Rewards,800.00,Outflow,Card Payment,,No,,No,
+everyday_checking.csv,27,2026-09-12,Everyday Checking,CHASE CARD EPAY,Payment to Visa Rewards,875.00,Outflow,Card Payment,,No,,No,
 everyday_checking.csv,28,2026-09-15,Everyday Checking,ACME LOGISTICS PAYROLL DIR DEP,"Acme Logistics (salary, earner 1)",2185.00,Inflow,Income,Salary,No,Semi-monthly,No,
 everyday_checking.csv,29,2026-09-18,Everyday Checking,AMEX EPAYMENT ACH PMT,Payment to Amex Blue,825.00,Outflow,Card Payment,,No,,No,
 everyday_checking.csv,30,2026-09-20,Everyday Checking,DISCOVER E-PAYMENT,Payment to Discover (statement not supplied),175.00,Outflow,Card Payment,,No,,No,missing_statement
@@ -79,7 +79,7 @@ everyday_checking.csv,39,2026-10-04,Everyday Checking,PIEDMONT NATURAL GAS,Piedm
 everyday_checking.csv,40,2026-10-05,Everyday Checking,COMCAST XFINITY,Comcast Xfinity (internet),80.00,Outflow,Expense,Utilities,Yes,Monthly,No,
 everyday_checking.csv,41,2026-10-08,Everyday Checking,TRANSFER TO JOINT CHK XXXX4471,To Joint Checking,400.00,Outflow,Transfer,,No,,No,
 everyday_checking.csv,42,2026-10-10,Everyday Checking,GEICO AUTO,GEICO (2 cars),186.40,Outflow,Expense,Insurance,Yes,Monthly,No,
-everyday_checking.csv,43,2026-10-12,Everyday Checking,CHASE CARD EPAY,Payment to Visa Rewards,750.00,Outflow,Card Payment,,No,,No,
+everyday_checking.csv,43,2026-10-12,Everyday Checking,CHASE CARD EPAY,Payment to Visa Rewards,825.00,Outflow,Card Payment,,No,,No,
 everyday_checking.csv,44,2026-10-15,Everyday Checking,ACME LOGISTICS PAYROLL DIR DEP,"Acme Logistics (salary, earner 1)",2185.00,Inflow,Income,Salary,No,Semi-monthly,No,
 everyday_checking.csv,45,2026-10-16,Everyday Checking,ZELLE FROM JORDAN M,"Jordan M (likely dinner split, Oct 15)",45.00,Inflow,Reimbursement,Dining Out,No,,No,needs_review
 everyday_checking.csv,46,2026-10-18,Everyday Checking,AMEX EPAYMENT ACH PMT,Payment to Amex Blue,400.00,Outflow,Card Payment,,No,,No,
@@ -173,13 +173,13 @@ visa_rewards.csv,5,2026-08-09,Visa Rewards,CHIPOTLE 2291,Chipotle,34.85,Outflow,
 visa_rewards.csv,6,2026-08-10,Visa Rewards,SHELL OIL 57442,Shell,51.75,Outflow,Expense,Gas,Yes,,No,
 visa_rewards.csv,7,2026-08-11,Visa Rewards,SPOTIFY USA,Spotify Family,19.99,Outflow,Expense,Subscriptions,Yes,Monthly,No,overlapping_service
 visa_rewards.csv,8,2026-08-13,Visa Rewards,COSTCO WHSE #1123,Costco,184.66,Outflow,Expense,Groceries,Yes,,No,bank_category_wrong
-visa_rewards.csv,9,2026-08-13,Visa Rewards,Payment Thank You-Mobile,Payment from Everyday Checking,700.00,Inflow,Card Payment,,No,,No,
+visa_rewards.csv,9,2026-08-13,Visa Rewards,Payment Thank You-Mobile,Payment from Everyday Checking,750.00,Inflow,Card Payment,,No,,No,
 visa_rewards.csv,10,2026-08-16,Visa Rewards,UBER *EATS,Uber Eats,48.20,Outflow,Expense,Dining Out,Yes,,No,
 visa_rewards.csv,11,2026-08-17,Visa Rewards,SHELL OIL 57442,Shell,44.10,Outflow,Expense,Gas,Yes,,No,
 visa_rewards.csv,12,2026-08-18,Visa Rewards,AMAZON MKTPL*2K4TR8,Amazon,67.43,Outflow,Expense,Shopping,Yes,,No,
 visa_rewards.csv,13,2026-08-20,Visa Rewards,MCDONALD'S F11872,McDonald's,18.62,Outflow,Expense,Dining Out,Yes,,No,
 visa_rewards.csv,14,2026-08-24,Visa Rewards,CHIPOTLE 2291,Chipotle,36.20,Outflow,Expense,Dining Out,Yes,,No,
-visa_rewards.csv,15,2026-08-25,Visa Rewards,PURCHASE INTEREST CHARGE,Visa interest,58.84,Outflow,Expense,Fees & Interest,Yes,Monthly,No,interest
+visa_rewards.csv,15,2026-08-25,Visa Rewards,PURCHASE INTEREST CHARGE,Visa interest,119.74,Outflow,Expense,Fees & Interest,Yes,Monthly,No,interest
 visa_rewards.csv,16,2026-08-26,Visa Rewards,SHELL OIL 57442,Shell,47.35,Outflow,Expense,Gas,Yes,,No,
 visa_rewards.csv,17,2026-08-27,Visa Rewards,AMAZON MKTPL*2K4TR8,Amazon,42.18,Outflow,Expense,Shopping,Yes,,No,
 visa_rewards.csv,18,2026-08-29,Visa Rewards,OUTBACK 4412,Outback Steakhouse,88.40,Outflow,Expense,Dining Out,Yes,,No,
@@ -189,14 +189,14 @@ visa_rewards.csv,21,2026-09-06,Visa Rewards,SHELL OIL 57442,Shell,46.90,Outflow,
 visa_rewards.csv,22,2026-09-07,Visa Rewards,CHIPOTLE 2291,Chipotle,35.40,Outflow,Expense,Dining Out,Yes,,No,
 visa_rewards.csv,23,2026-09-11,Visa Rewards,SPOTIFY USA,Spotify Family,19.99,Outflow,Expense,Subscriptions,Yes,Monthly,No,overlapping_service
 visa_rewards.csv,24,2026-09-11,Visa Rewards,COSTCO WHSE #1123,Costco,231.34,Outflow,Expense,Groceries,Yes,,No,bank_category_wrong
-visa_rewards.csv,25,2026-09-13,Visa Rewards,Payment Thank You-Mobile,Payment from Everyday Checking,800.00,Inflow,Card Payment,,No,,No,
+visa_rewards.csv,25,2026-09-13,Visa Rewards,Payment Thank You-Mobile,Payment from Everyday Checking,875.00,Inflow,Card Payment,,No,,No,
 visa_rewards.csv,26,2026-09-14,Visa Rewards,SHELL OIL 57442,Shell,50.15,Outflow,Expense,Gas,Yes,,No,
 visa_rewards.csv,27,2026-09-19,Visa Rewards,UBER *EATS,Uber Eats,54.75,Outflow,Expense,Dining Out,Yes,,No,
 visa_rewards.csv,28,2026-09-21,Visa Rewards,MCDONALD'S F11872,McDonald's,21.08,Outflow,Expense,Dining Out,Yes,,No,
 visa_rewards.csv,29,2026-09-22,Visa Rewards,AMAZON MKTPL*2K4TR8,Amazon,129.99,Outflow,Expense,Shopping,Yes,,No,
 visa_rewards.csv,30,2026-09-24,Visa Rewards,AMAZON MKTPL*2K4TR8,Amazon,38.64,Outflow,Expense,Shopping,Yes,,No,
 visa_rewards.csv,31,2026-09-25,Visa Rewards,COSTCO GAS #1123,Costco Gas,41.20,Outflow,Expense,Gas,Yes,,No,bank_category_wrong
-visa_rewards.csv,32,2026-09-25,Visa Rewards,PURCHASE INTEREST CHARGE,Visa interest,61.62,Outflow,Expense,Fees & Interest,Yes,Monthly,No,interest
+visa_rewards.csv,32,2026-09-25,Visa Rewards,PURCHASE INTEREST CHARGE,Visa interest,121.93,Outflow,Expense,Fees & Interest,Yes,Monthly,No,interest
 visa_rewards.csv,33,2026-09-26,Visa Rewards,OUTBACK 4412,Outback Steakhouse,96.10,Outflow,Expense,Dining Out,Yes,,No,
 visa_rewards.csv,34,2026-09-28,Visa Rewards,SHELL OIL 57442,Shell,39.80,Outflow,Expense,Gas,Yes,,No,
 visa_rewards.csv,35,2026-09-29,Visa Rewards,AMAZON MKTPL*2K4TR8,Amazon (return),129.99,Inflow,Refund,Shopping,No,,No,
@@ -211,13 +211,13 @@ visa_rewards.csv,43,2026-10-05,Visa Rewards,SHELL OIL 57442,Shell,52.30,Outflow,
 visa_rewards.csv,44,2026-10-08,Visa Rewards,CHIPOTLE 2291,Chipotle,41.40,Outflow,Expense,Dining Out,Yes,,No,
 visa_rewards.csv,45,2026-10-11,Visa Rewards,SPOTIFY USA,Spotify Family,19.99,Outflow,Expense,Subscriptions,Yes,Monthly,No,overlapping_service
 visa_rewards.csv,46,2026-10-12,Visa Rewards,SHELL OIL 57442,Shell,45.60,Outflow,Expense,Gas,Yes,,No,
-visa_rewards.csv,47,2026-10-13,Visa Rewards,Payment Thank You-Mobile,Payment from Everyday Checking,750.00,Inflow,Card Payment,,No,,No,
+visa_rewards.csv,47,2026-10-13,Visa Rewards,Payment Thank You-Mobile,Payment from Everyday Checking,825.00,Inflow,Card Payment,,No,,No,
 visa_rewards.csv,48,2026-10-15,Visa Rewards,COSTCO WHSE #1123,Costco,216.89,Outflow,Expense,Groceries,Yes,,No,bank_category_wrong
 visa_rewards.csv,49,2026-10-15,Visa Rewards,OLIVE GARDEN #1590,Olive Garden,92.60,Outflow,Expense,Dining Out,Yes,,No,
 visa_rewards.csv,50,2026-10-17,Visa Rewards,AMAZON MKTPL*2K4TR8,Amazon,58.27,Outflow,Expense,Shopping,Yes,,No,
 visa_rewards.csv,51,2026-10-19,Visa Rewards,SHELL OIL 57442,Shell,58.40,Outflow,Expense,Gas,Yes,,No,
 visa_rewards.csv,52,2026-10-21,Visa Rewards,MCDONALD'S F11872,McDonald's,24.10,Outflow,Expense,Dining Out,Yes,,No,
 visa_rewards.csv,53,2026-10-23,Visa Rewards,UBER *EATS,Uber Eats,62.10,Outflow,Expense,Dining Out,Yes,,No,
-visa_rewards.csv,54,2026-10-25,Visa Rewards,PURCHASE INTEREST CHARGE,Visa interest,63.11,Outflow,Expense,Fees & Interest,Yes,Monthly,No,interest
+visa_rewards.csv,54,2026-10-25,Visa Rewards,PURCHASE INTEREST CHARGE,Visa interest,124.06,Outflow,Expense,Fees & Interest,Yes,Monthly,No,interest
 visa_rewards.csv,55,2026-10-26,Visa Rewards,COSTCO GAS #1123,Costco Gas,44.85,Outflow,Expense,Gas,Yes,,No,bank_category_wrong
 visa_rewards.csv,56,2026-10-30,Visa Rewards,CHIPOTLE 2291,Chipotle,39.85,Outflow,Expense,Dining Out,Yes,,No,
