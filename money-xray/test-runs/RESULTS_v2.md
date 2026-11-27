@@ -90,3 +90,12 @@ Still open: support and refund contact for the guide; a recording on the latest 
 | Guide cold read (`r3-guide-review`) | Not ready: statement thumbnails inside screenshots were readable at full zoom. Fixed: all thumbnails pixelated, plus about ten wording fixes, a full budget example, and an appendix that flows page to page (45 pages, none under 40% full). |
 
 Prompt fixes from these runs (not rerun): payment tie-break by date, stricter "probably paid in full", save block and questions in the same reply, budget covers every category, income category and jar rules in the export, initials and last-4 in `description_raw`, APR estimate for multi-month downloads, "Reply go" between export parts, ask what they pay now in the debt option, first message up to 200 words.
+
+# Action Kit (2026-11-27)
+
+| Run | Result |
+|---|---|
+| `kit-code`: code tool fills the PDF from the r3 code chat | 513 fields filled; debt schedule re-simulated exactly (Sep 2028, $2,007.48; minimums Dec 2031, $7,503.15); net worth, fees and budget match the chat; every field name valid; text fits. Caught a chat error: the cut-costs total counted the unconfirmed $45 charge. |
+| `kit-free`: no code, values as text | All values correct, 7 messages and 6 "go". Typing ~360 boxes on a phone isn't realistic. |
+
+Fixed after (not rerun): free plans now get only the five short pages (3, 7, 8, 11, 15) as text; rules for payoff order, thermometer start, bill rows, savings-challenge goal, sinking-fund months, box length, no default choices; font resources in the form; the prompt counts only confirmed cuts.
