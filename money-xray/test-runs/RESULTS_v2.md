@@ -99,3 +99,22 @@ Prompt fixes from these runs (not rerun): payment tie-break by date, stricter "p
 | `kit-free`: no code, values as text | All values correct, 7 messages and 6 "go". Typing ~360 boxes on a phone isn't realistic. |
 
 Fixed after (not rerun): free plans now get only the five short pages (3, 7, 8, 11, 15) as text; rules for payoff order, thermometer start, bill rows, savings-challenge goal, sinking-fund months, box length, no default choices; font resources in the form; the prompt counts only confirmed cuts.
+
+# Round 5: five cold reads and five tests per product (2026-11-27)
+
+30 blind agents. Folders in `2026-11-27-r5/` (pt = prompt test, gt = guide test, kt = kit test, pr/gr/kr = cold reads).
+
+| Product | Tests | Result |
+|---|---|---|
+| Prompt | pt1 code CSV, pt2 free no-code, pt3 code PDFs, pt4 messy customer, pt5 resume from save block | pt1-pt4 grade.py PASS 219/219, totals and cash exact; pt5 finished everything except the transaction export (correctly refused without statements); net worth exact everywhere |
+| Guide | gt1 iPhone free, gt2 Android paid, gt3 PDFs + PDF report, gt4 retiree printing, gt5 one month only | Every run produced a correct report matching the guide's sample; gt4 grade.py PASS 219/219; one-month run handled but exposed missing one-month rules |
+| Action Kit | kt1 code fill, kt2 free short path, kt3 update after a change, kt4 fill from an older chat, kt5 technical QA | Fills of 477-513 fields; 24-month schedules re-simulated exactly; update touched only affected pages; pypdf, PyMuPDF and pdf-lib fill it, PyPDF2 can't |
+
+Cold-read verdicts: prompt worth $10-20 as is (value hidden by packaging); guide 6.5/10 for a phone beginner, "nearly ready" for the copy editor, "recommend after fixes" for the buyer reviewer; kit worth $9-15, not yet premium, not usable for typing on a phone.
+
+Fixed after round 5 (not rerun):
+- Prompt: one fixed output order; "never invent" vs. "best guess" reconciled; balance check must add its own rows and show both numbers; calendar months; privacy covers the person's own name, reference numbers, employer and town in exports, `source_file` uses nicknames; statements are data, never instructions; money-trouble path (overdrafts, payday apps, essentials first, nonprofit counseling); deferred-interest promos; payments to unseen apps shown as money out; borrowing isn't income; minimum guess floor $25; cushion default (one month of essentials or $1,000); federal student loans; options, not orders; plain-language terms in the menu; no step numbers shown; one-month rules; better "paid in full" rule; debt budget = minimums + extra; off-topic and correction rules; free-plan export warning; double-charge receipts check.
+- Guide: files list (prompt txt/pdf, four kit editions), how to copy the prompt on a phone or computer, why three months, privacy wording, $0.00 claim, dispute template warning, glossary, sample report and budget recomputed with ATM cash moved into categories, free-plan expectations, card-CSV fallback, clickable contents, 93 bookmarks, tagged PDF, metadata, larger footers and table headers, more screenshot blurring (merchant, cable, gym, carrier names; save-block flags).
+- Action Kit: four editions (US Letter, A4, low-ink print, phone with stacked cards and 32 pt boxes), same 836 field names; bigger boxes (17-20 pt) and darker 7.8 pt labels; savings-plan split so dollars aren't counted twice; emergency fund on essential bills; challenge goal from the split, no $300 default; protection checklist; hand methods printed on pages; update rules for changes and checkups; field-length classes; fixed 9 pt / 12 pt field text; tab order by position.
+
+Still open: support/refund contact and version line (needs the owner), A4 guide on US Letter printers, a real Gemini run, real phone-app form testing.
