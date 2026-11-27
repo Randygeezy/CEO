@@ -110,7 +110,7 @@ figcaption { font-size: 7.8pt; color: #555; margin-top: 1.5mm; }
 .check li { list-style: none; position: relative; padding-left: 7mm; margin: 2.2mm 0; }
 .check li:before { content: ""; position: absolute; left: 0; top: .6mm; width: 3.5mm; height: 3.5mm; border: 1.2px solid var(--ink); border-radius: 2px; }
 .check { padding-left: 0; }
-pre.prompt { margin-bottom: 2mm !important; overflow-wrap: anywhere; white-space: pre-wrap; font-family: "DejaVu Sans Mono", Menlo, monospace; font-size: 6.9pt; line-height: 1.42; background: #fbf9f6; border: 1px solid var(--line); padding: 5mm; margin: 0; }
+pre.prompt { margin: 0 0 2.2mm 0 !important; overflow-wrap: anywhere; white-space: pre-wrap; font-family: "DejaVu Sans Mono", Menlo, monospace; font-size: 7.6pt; line-height: 1.45; background: none; border: none; border-left: 2px solid var(--line); padding: 0 0 0 3mm; }
 .two { display: flex; gap: 6mm; }
 .two > div { flex: 1; }
 .script-box { background: #fbf9f6; border: 1px solid var(--line); border-radius: 8pt; padding: 4mm 5mm; margin: 3mm 0 5mm; font-size: 9pt; }
@@ -225,7 +225,7 @@ pre.prompt { margin-bottom: 2mm !important; overflow-wrap: anywhere; white-space
   </table>
   <div class="callout"><div class="k">The idea in one line</div><div class="v">You're not bad with money. You've just never seen all of it in one place.</div></div>
   <h3>What you'll get</h3>
-  <p>A report like the one in chapter 19: where every dollar went, each account balanced to $0.00, your subscriptions with their yearly cost, every fee, a debt payoff order, and your net worth. Flip to page <span data-pg="c19"></span> to see a full sample before you start.</p>
+  <p>A report like the one in chapter 19: where every dollar went, each account checked against its statement balances, your subscriptions with their yearly cost, every fee, a debt payoff order, and your net worth. Flip to page <span data-pg="c19"></span> to see a full sample before you start.</p>
   <h3>The fastest path</h3>
   <p>If you want results tonight: read chapter 4 (getting your statements), then chapter 6 (run it), and come back to the rest after you've seen your report. Once your statements are downloaded, the first run takes about 20 to 30 minutes on a paid plan, longer on a free one. If you like paper, print this guide: the worksheets in chapter 20 are made for it.</p>
   <div class="note"><div class="t">What Money X-Ray is, and isn't</div>It's an educational self-analysis of your own statements. It isn't financial, tax or legal advice, and it isn't a professional audit. It never promises savings: it shows you what's there, and the choices are yours. AI can make mistakes, so the prompt makes it show its checks, and you should confirm anything important against your statements before acting.</div>
@@ -239,8 +239,8 @@ pre.prompt { margin-bottom: 2mm !important; overflow-wrap: anywhere; white-space
   <p>Money X-Ray is a set of instructions, called a prompt, that you paste into an AI chat app. The prompt tells the AI exactly how to audit statements: what to check, in what order, what never to count twice, and how to explain the results. You do three things: paste, upload, read.</p>
   <h3>The $0.00 Check</h3>
   <p>Before it tells you anything, Money X-Ray proves its math. For every account, it starts with the statement's opening balance, adds every deposit, subtracts every charge, and has to land on the statement's closing balance. The difference should be $0.00.</p>
-  <div class="callout"><div class="k">Why it matters</div><div class="v">Every account is balance-checked to $0.00 before the report is written.</div></div>
-  <p>A $0.00 result means the transactions it read add up to your statement's balances, so nothing big was missed or counted twice in that account. It doesn't prove every category is right, so glance over the findings and check anything important.</p>
+  <div class="callout"><div class="k">Why it matters</div><div class="v">A $0.00 result means no transaction in that account was missed or counted twice. If an account can't be checked, the report says why.</div></div>
+  <p class="small">It doesn't prove every category is right, so glance over the findings and check anything important.</p>
   <h3>What it never counts twice</h3>
   <ul>
     <li><b>Card payments.</b> Buying groceries on your card is spending. Paying the card from checking later isn't spending again.</li>
@@ -338,7 +338,7 @@ pre.prompt { margin-bottom: 2mm !important; overflow-wrap: anywhere; white-space
   <h3>What's in your files</h3>
   <ul>
     <li><b>CSV downloads</b> usually contain dates, descriptions and amounts, with no account number, name or address. Usually nothing to cover.</li>
-    <li><b>Bank PDFs</b> usually show only the last 4 digits of the account number. Covering your name and address is optional.</li>
+    <li><b>Bank PDFs</b> show your name and address, and some show the full account number. Cover them before uploading if you can, for example with your phone's markup tool.</li>
   </ul>
   <h3>What the AI is told to do</h3>
   <ul>
@@ -367,7 +367,7 @@ pre.prompt { margin-bottom: 2mm !important; overflow-wrap: anywhere; white-space
   <div class="bar"><span class="num">06</span><h2>Run it, step by step</h2></div>
   <p class="small">The screenshots in Part 2 come from a real run on ChatGPT's paid plan, recorded with an earlier version of the prompt, so some wording and the order of sections differ slightly from what you'll see. Personal details, bank names and dollar amounts are blacked out. Other apps look different but follow the same steps.</p>
   <h4>Step 1. Open a new chat and add the prompt</h4>
-  <p>Start a fresh chat. Paste the whole prompt, or attach the prompt PDF with the + button, and send it with a short message such as "Start".</p>
+  <p>Start a fresh chat. Paste the whole prompt from Money_XRay_Prompt.txt, or attach that file (or Money_XRay_Prompt.pdf, not this guide) with the + button, and send it with a short message such as "Start".</p>
   <div class="shots">
     <figure><img src="screenshots/01_new-chat.png"><figcaption>A fresh, empty chat</figcaption></figure>
     <figure><img src="screenshots/02_attach-prompt.png"><figcaption>The prompt attached, ready to send</figcaption></figure>
@@ -476,10 +476,10 @@ pre.prompt { margin-bottom: 2mm !important; overflow-wrap: anywhere; white-space
     <tr><td>No code for the math</td><td>It adds by hand in small groups and checks every total twice. The $0.00 Check still proves it.</td></tr>
     <tr><td>Debt plan</td><td>You get the order and this month's payments; use a payoff calculator for the exact date</td></tr>
   </table>
-  <div class="good"><div class="t">Tested without code</div>In testing on a fictional family's statements, an AI working without a code tool balanced every account to $0.00 and matched every monthly total to the cent. See chapter 18 for what was and wasn't tested.</div>
+  <div class="good"><div class="t">Tested without code</div>In testing on one fictional family's statements, an AI working without a code tool balanced every account to $0.00 and matched every monthly total to the cent. See chapter 18 for what was and wasn't tested.</div>
 </section>
 
-<section class="ch cont" data-id="c10">
+<section class="ch" data-id="c10">
   <div class="bar"><span class="num">10</span><h2>Your save block</h2></div>
   <p>Right after the report, Money X-Ray gives you a short block of text that starts with <b>SAVE | Money X-Ray</b>, and an updated one at the very end. It holds your accounts, monthly totals, subscriptions, debts and net worth, one line each. Keep the latest one.</p>
   <div class="two">
@@ -487,7 +487,7 @@ pre.prompt { margin-bottom: 2mm !important; overflow-wrap: anywhere; white-space
       <p><b>Copy it into your notes app.</b> It's your record and your starting point.</p>
       <ul>
         <li>If the chat runs out: new chat, paste the prompt and the save block, type <b>continue</b>.</li>
-        <li>Next month: paste the prompt and the save block, type <b>monthly checkup</b>, upload last month's statements.</li>
+        <li>Next month: in one message, paste the prompt and the save block and type <b>monthly checkup</b>; then upload last month's statements.</li>
       </ul>
     </div>
     <div class="shots" style="margin:0"><figure style="max-width:58mm"><img src="screenshots/15_save-block.png"><figcaption>A save block kept in the Notes app (from an earlier version, so its lines differ slightly)</figcaption></figure></div>
@@ -641,14 +641,19 @@ pre.prompt { margin-bottom: 2mm !important; overflow-wrap: anywhere; white-space
     <tr><th>Category</th><th class="r">3-month average</th><th class="r">Target</th><th>Why</th></tr>
     <tr><td>Housing</td><td class="r">$1,385</td><td class="r">$1,385</td><td>Fixed</td></tr>
     <tr><td>Utilities</td><td class="r">$477</td><td class="r">$477</td><td>Fixed for now</td></tr>
+    <tr><td>Car loan</td><td class="r">$419</td><td class="r">$419</td><td>Fixed</td></tr>
+    <tr><td>Insurance</td><td class="r">$186</td><td class="r">$186</td><td>Fixed</td></tr>
     <tr><td>Groceries</td><td class="r">$572</td><td class="r">$540</td><td>One list, one big shop a week</td></tr>
     <tr><td>Dining out</td><td class="r">$312</td><td class="r">$280</td><td>About 10% below average</td></tr>
     <tr><td>Shopping</td><td class="r">$476</td><td class="r">$420</td><td>One trip a week, with a list</td></tr>
+    <tr><td>Gas</td><td class="r">$190</td><td class="r">$190</td><td>Same as now</td></tr>
     <tr><td>Subscriptions</td><td class="r">$142</td><td class="r">$112</td><td>Hulu and Apple Music cancelled</td></tr>
-    <tr><td>Fees and interest</td><td class="r">$174</td><td class="r">falling</td><td>Autopay on; card debt paid down, Discover first, then the Visa</td></tr>
+    <tr><td>Fees and interest</td><td class="r">$174</td><td class="r">$174</td><td>Falls as the cards are paid down, Discover first, then the Visa</td></tr>
+    <tr><td>Everything else</td><td class="r">$1,073</td><td class="r">$1,073</td><td>Same as now</td></tr>
+    <tr><td><b>Spending</b></td><td class="r"><b>$5,407</b></td><td class="r"><b>$5,256</b></td><td>$151 a month less</td></tr>
     <tr><td>Extra toward debt</td><td class="r">$0</td><td class="r">$300</td><td>From the cuts and the money left over</td></tr>
   </table>
-  <p class="small">Fictional household from chapter 19. Targets are examples, not advice.</p>
+  <p class="small">Fictional household from chapter 19, take-home pay $7,290 a month. Spending plus $300 extra toward debt and $300 to savings comes to $5,856, leaving room for the card minimums and a cushion. Rounded to the dollar. Targets are examples, not advice.</p>
   <div class="good"><div class="t">Use the worksheet</div>The monthly budget worksheet in chapter 20 has a column for your average, your target and the actual result.</div>
 </section>
 
@@ -657,11 +662,11 @@ pre.prompt { margin-bottom: 2mm !important; overflow-wrap: anywhere; white-space
 
 <section class="ch" style="break-before:auto" data-id="c16">
   <div class="bar"><span class="num">16</span><h2>The monthly checkup</h2></div>
-  <p>Once a month, about 10 minutes:</p>
+  <p>Once a month, usually 10 to 20 minutes:</p>
   <ol>
     <li>Download last month's statement for each account.</li>
-    <li>Open a new chat. Paste the prompt and your latest save block.</li>
-    <li>Type <b>monthly checkup</b> and upload the new statements.</li>
+    <li>Open a new chat. In one message, paste the prompt and your latest save block, and type <b>monthly checkup</b>.</li>
+    <li>Upload the new statements when it asks.</li>
   </ol>
   <h3>What it shows you</h3>
   <ul>
@@ -681,7 +686,7 @@ pre.prompt { margin-bottom: 2mm !important; overflow-wrap: anywhere; white-space
     <tr><th>What happened</th><th>Try this</th></tr>
     <tr><td>A file won't upload, or it's a scan</td><td>Download the original PDF or the CSV from the bank, send fewer files at a time, or paste the rows. Long file? One month at a time.</td></tr>
     <tr><td>It stopped partway</td><td>Type <b>go</b>. It picks up where it left off.</td></tr>
-    <tr><td>An account doesn't balance to $0.00</td><td>Check for a missing month or two overlapping downloads. It tells you which days look off.</td></tr>
+    <tr><td>An account doesn't balance to $0.00</td><td>Check for a missing month or two overlapping downloads. Ask it which dates it couldn't match, then upload the missing statement and ask it to check again.</td></tr>
     <tr><td>It missed a subscription</td><td>Tell it the merchant name; it adds it and updates the totals.</td></tr>
     <tr><td>A category looks wrong</td><td>Tell it the right one ("Costco is groceries"). It updates every total.</td></tr>
     <tr><td>The chat ran out</td><td>New chat, paste the prompt and your save block, type <b>continue</b>.</td></tr>
@@ -720,7 +725,7 @@ pre.prompt { margin-bottom: 2mm !important; overflow-wrap: anywhere; white-space
   <div class="bar"><span class="num">19</span><h2>A sample report</h2></div>
   <p class="small">The fictional test family from chapter 18, August to October 2026. Not a real household. Built from US spending averages.</p>
   <h3>1. The answer</h3>
-  <p>The family takes home $7,290 a month and spends about $5,407. After $300 to savings and $175 to a card nobody listed, about $1,400 is left over each month on paper, but it doesn't feel that way: the spare cash piles up in Joint Checking ($4,740 in three months) while the Visa balance keeps growing and costs about $122 a month in interest. Fees and interest came to $522.59 in three months, and they pay for three video streaming services plus Amazon Prime, and two music services, that overlap.</p>
+  <p>The family takes home $7,290 a month and spends about $5,407. After $300 to savings and $175 to a card nobody listed, about $1,400 is left over each month on paper, but it doesn't feel that way: the spare cash piles up in Joint Checking ($4,740 in three months, more than the amount left over, because more went on the Visa than was paid off) while the Visa balance keeps growing and costs about $122 a month in interest. Fees and interest came to $522.59 in three months. They also pay for three video streaming services plus Amazon Prime, and two music services, that overlap.</p>
   <h3>2. How much to trust this</h3>
   <table class="t">
     <tr><th>Account</th><th>Balance check</th><th>Notes</th></tr>
@@ -774,9 +779,9 @@ pre.prompt { margin-bottom: 2mm !important; overflow-wrap: anywhere; white-space
     <tr><td>Planet Fitness</td><td class="r">$24.99</td><td class="r">$299.88</td><td>Plus a $49 annual fee: $348.88 a year in all</td></tr>
     <tr><td>SQ *JMK LLC</td><td class="r">$45.00</td><td class="r">$540.00</td><td>Unknown merchant</td></tr>
   </table>
-  <p class="small">The Subscriptions category averages $142 a month: these services except the unknown charge, with the $49 annual fee spread over the three months.</p>
+  <p class="small">The Subscriptions category averages $142 a month: these services except the unknown charge, with the $49 annual fee spread over the three months. Without that fee, it's about $126 a month.</p>
   <h3>7. Fees and interest: $522.59 in three months</h3>
-  <p>Visa interest (about $122 a month at 22.99%), a $95 card annual fee, a $29 late fee, a new $12 monthly checking fee, out-of-network ATM fees and a foreign transaction fee.</p>
+  <p>Visa interest of $365.73 (about $122 a month at 22.99%), a $95 card annual fee, a $29 late fee, a new $12 monthly checking fee (twice so far), two $3.50 ATM fees and a $1.86 foreign transaction fee.</p>
   <h3>8 and 9. Debt and net worth (after menu options 2 and 3)</h3>
   <p>Avalanche order: Discover (27.24%), Visa (22.99%), car loan (6.9%), family loan. With $300 extra a month and a one-time payment from idle cash: debt-free in 23 months instead of 62, about $5,500 less interest. Net worth $162,554; liquid net worth $154.</p>
   <h3>Their choices</h3>
@@ -874,14 +879,14 @@ pre.prompt { margin-bottom: 2mm !important; overflow-wrap: anywhere; white-space
   <h4>Every month</h4>
   <ul class="check">
     <li>Download last month's statements</li>
-    <li>Paste the prompt and save block, type <b>monthly checkup</b></li>
+    <li>In one message: the prompt, the save block and <b>monthly checkup</b></li>
     <li>Save the new save block</li>
   </ul>
 </section>
 
 <section class="ch" data-id="c23">
   <div class="bar"><span class="num">A</span><h2>Appendix: the full prompt</h2></div>
-  <p class="small">This is the same prompt as the text file that came with this guide. Copy from the text file when you can; it pastes most cleanly.</p>
+  <p class="small">This is the same prompt as the text file that came with this guide. Copy from the text file, not from this page: PDF copies break long lines, such as the spreadsheet header.</p>
   {{PROMPT}}
 </section>
 
