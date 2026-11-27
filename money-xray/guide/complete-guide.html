@@ -96,6 +96,8 @@ table.t td.r, table.t th.r { text-align: right; }
 .shots figure { margin: 0; flex: 1; text-align: center; max-width: 60mm; }
 .shots img { width: 100%; max-height: 100mm; object-fit: contain; border-radius: 10pt; background: #000; }
 .shots.wide figure { max-width: 72mm; }
+.shots.three figure { max-width: 50mm; }
+.shots.three img { max-height: 92mm; }
 figcaption { font-size: 7.5pt; color: var(--muted); margin-top: 1.5mm; }
 .ph { border: 1.5px dashed var(--brown); border-radius: 10pt; padding: 6mm 8mm; text-align: center; color: var(--muted); font-size: 8.5pt; margin: 4mm 0; }
 .script-inline { font-family: "Script"; font-size: 30pt; line-height: 1; }
@@ -303,6 +305,18 @@ pre.prompt { margin-bottom: 2mm !important; overflow-wrap: anywhere; white-space
     <div class="last"><b>4. Download</b>PDF from the app, or CSV with "Download" / "Export"</div>
   </div>
   <p class="small"><b>Tip:</b> download everything first, then start the chat. Hunting for files mid-chat is the slowest part of the whole process.</p>
+  <h3>What it looks like in a banking app</h3>
+  <p class="small">An example from one big bank's iPhone app, with personal details, account numbers and the bank's name blurred. Every bank's menus are named a little differently.</p>
+  <div class="shots three">
+    <figure><img src="screenshots/bank_01_statements-menu.png"><figcaption>1. In the account, tap "Statements &amp; Documents"</figcaption></figure>
+    <figure><img src="screenshots/bank_02_pick-month.png"><figcaption>2. Pick the month</figcaption></figure>
+    <figure><img src="screenshots/bank_03_open-share.png"><figcaption>3. The statement opens; tap Share</figcaption></figure>
+  </div>
+  <div class="shots three">
+    <figure><img src="screenshots/bank_04_save-to-files.png"><figcaption>4. Choose "Save to Files"</figcaption></figure>
+    <figure><img src="screenshots/bank_05_save.png"><figcaption>5. Pick a folder and tap Save</figcaption></figure>
+  </div>
+  <p class="small">Repeat for each month and each account. On Android, use Download or Share, then save to your files.</p>
   <h3>CSV or PDF?</h3>
   <div class="two">
     <div class="good"><div class="t">CSV (best)</div>A plain table of transactions. Usually no account number, name or address in it, and the AI reads it most reliably.</div>
