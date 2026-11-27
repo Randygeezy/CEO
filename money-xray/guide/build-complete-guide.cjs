@@ -16,7 +16,7 @@ const tmp = path.join(here, '.build.html'), out = path.join(here, 'Money_XRay_Co
   fs.writeFileSync(tmp, html);
   const b = await chromium.launch(); const p = await b.newPage();
   await p.goto('file://' + tmp, { waitUntil: 'load' });
-  await p.waitForFunction(() => window.__result, null, { timeout: 60000 });
+  await p.waitForFunction(() => window.__result, null, { timeout: 180000 });
   const r = await p.evaluate(() => window.__result);
   await p.pdf({ path: out, width: '210mm', height: '297mm', printBackground: true, margin: { top: 0, right: 0, bottom: 0, left: 0 } });
   await b.close(); fs.unlinkSync(tmp);
