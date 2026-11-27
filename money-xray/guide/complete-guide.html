@@ -1,0 +1,821 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Money X-Ray: The Complete Guide</title>
+<style>
+@font-face { font-family: "Playfair Display"; font-weight: 400; src: url(fonts/playfair-display-latin-400-normal.woff2); }
+@font-face { font-family: "Playfair Display"; font-weight: 700; src: url(fonts/playfair-display-latin-700-normal.woff2); }
+@font-face { font-family: "Playfair Display"; font-weight: 900; src: url(fonts/playfair-display-latin-900-normal.woff2); }
+@font-face { font-family: "Playfair Display"; font-weight: 700; font-style: italic; src: url(fonts/playfair-display-latin-700-italic.woff2); }
+@font-face { font-family: "Poppins"; font-weight: 400; src: url(fonts/poppins-latin-400-normal.woff2); }
+@font-face { font-family: "Poppins"; font-weight: 600; src: url(fonts/poppins-latin-600-normal.woff2); }
+@font-face { font-family: "Poppins"; font-weight: 700; src: url(fonts/poppins-latin-700-normal.woff2); }
+@font-face { font-family: "Script"; src: url(fonts/mrs-saint-delafield-latin-400-normal.woff2); }
+
+:root { --bg:#f3efe9; --ink:#161514; --muted:#6d665e; --taupe:#cbbcab; --brown:#8b735f; --green:#1f7a5a; --green-soft:#e3efe8; --note:#efe3cf; --note-line:#8a6d3b; --line:#d8cfc4; --row:#ebe6df; }
+@page { size: A4; margin: 0; }
+html, body { background: var(--bg); }
+.pg { position: relative; width: 210mm; height: 297mm; overflow: hidden; background: var(--bg); break-after: page; }
+.pg .content { position: absolute; top: 16mm; left: 18mm; right: 18mm; bottom: 20mm; overflow: hidden; }
+.pg .foot { position: absolute; left: 18mm; right: 18mm; bottom: 9mm; display: flex; justify-content: space-between; font-size: 6.5pt; letter-spacing: .3em; color: #8a8279; }
+.pg .foot span:nth-child(2) { font-family: "Playfair Display"; letter-spacing: 0; font-size: 8pt; color: var(--ink); }
+#src { display: none; }
+body { margin: 0; font-family: "Poppins", sans-serif; font-size: 9.6pt; line-height: 1.55; color: var(--ink); -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+h1, h2, h3, .serif { font-family: "Playfair Display", serif; }
+p { margin: 0 0 8pt; }
+ul, ol { margin: 0 0 9pt; padding-left: 16pt; }
+li { margin: 3pt 0; }
+b, strong { font-weight: 600; }
+.mk { color: var(--bg); font-size: 1px; line-height: 0; }
+
+/* full-bleed pages */
+.full { position: relative; width: 210mm; height: 297mm; overflow: hidden; }
+
+/* cover */
+.cover { background: var(--bg); }
+.cover .frame { position: absolute; left: 9mm; top: 9mm; right: 9mm; bottom: 85mm; border: 1px solid var(--ink); }
+.cover .eyebrow { position: absolute; left: 22mm; top: 25mm; font-size: 8pt; letter-spacing: .45em; font-weight: 600; }
+.cover .eyebrow:after { content: ""; display: block; width: 25mm; border-bottom: 2px solid var(--ink); margin-top: 6mm; }
+.cover .tab { position: absolute; right: 22mm; top: 0; width: 62mm; height: 88mm; background: var(--green); border-radius: 0 0 31mm 31mm; display: flex; align-items: flex-end; justify-content: center; padding-bottom: 12mm; box-sizing: border-box; }
+.cover h1 { position: absolute; left: 22mm; top: 103mm; margin: 0; font-weight: 900; font-size: 64pt; line-height: .95; letter-spacing: -.01em; text-transform: uppercase; }
+.cover .sub { position: absolute; left: 22mm; top: 170mm; font-family: "Playfair Display"; font-style: italic; font-weight: 700; color: var(--brown); font-size: 27pt; }
+.cover .band { position: absolute; left: 0; right: 0; bottom: 0; height: 85mm; background: #0d0d0c; color: #f3efe9; padding: 18mm 22mm 0; box-sizing: border-box; }
+.cover .band .lead { font-family: "Playfair Display"; font-size: 15pt; line-height: 1.4; margin-bottom: 11mm; max-width: 150mm; }
+.cover .parts { display: flex; border-top: 1px solid #555; padding-top: 5mm; }
+.cover .parts div { flex: 1; }
+.cover .parts .n { font-family: "Playfair Display"; font-size: 17pt; color: var(--taupe); }
+.cover .parts .t { font-size: 6.5pt; letter-spacing: .3em; text-transform: uppercase; color: #cfc8bf; }
+.cover .foot { position: absolute; left: 22mm; bottom: 12mm; font-size: 6.5pt; letter-spacing: .4em; color: #8c857c; }
+
+/* contents */
+.contents { background: var(--bg); }
+.contents .rail { position: absolute; left: 0; top: 0; bottom: 0; width: 62mm; background: #0d0d0c; }
+.contents .pill { position: absolute; left: 11mm; top: 0; width: 42mm; height: 118mm; background: var(--taupe); border-radius: 0 0 21mm 21mm; }
+.contents .railtxt { position: absolute; left: 28mm; bottom: 18mm; transform: rotate(-90deg); transform-origin: left bottom; color: #cfc8bf; font-size: 6.5pt; letter-spacing: .45em; white-space: nowrap; }
+.contents .body { position: absolute; left: 72mm; right: 14mm; top: 16mm; }
+.contents .script { font-family: "Script"; font-size: 64pt; line-height: .82; margin: 0 0 9mm; }
+.toc { width: 100%; border-collapse: collapse; font-family: "Playfair Display"; }
+.toc td { padding: 1.1mm 0; font-size: 8pt; letter-spacing: .14em; text-transform: uppercase; font-weight: 700; vertical-align: top; }
+.toc td.n { width: 11mm; color: var(--brown); font-weight: 400; }
+.toc td.pgn { width: 9mm; text-align: right; color: var(--brown); font-weight: 400; }
+.toc tr.part td { padding-top: 4mm; font-family: "Poppins"; font-weight: 600; font-size: 6.8pt; letter-spacing: .35em; color: var(--brown); border-bottom: 1px solid var(--ink); }
+
+/* part dividers */
+.part { background: #0d0d0c; color: #f3efe9; text-align: center; }
+.part .big { position: absolute; left: 0; right: 0; top: 52mm; font-family: "Playfair Display"; font-size: 330pt; line-height: 1; color: #2a2826; }
+.part .label { position: absolute; left: 0; right: 0; top: 70mm; font-family: "Playfair Display"; font-size: 34pt; letter-spacing: .05em; }
+.part .title { position: absolute; left: 0; right: 0; top: 168mm; font-family: "Playfair Display"; font-size: 22pt; }
+.part .desc { position: absolute; left: 40mm; right: 40mm; top: 184mm; font-size: 9pt; color: #b9b2a9; }
+
+/* chapters */
+.ch { break-before: page; }
+.ch.cont { break-before: auto; margin-top: 8mm; }
+.bar { background: var(--ink); color: #f3efe9; padding: 4.5mm 7mm; margin: 0 0 6mm; display: flex; align-items: baseline; gap: 5mm; }
+.bar .num { font-family: "Playfair Display"; color: #5fc79e; font-size: 20pt; }
+.bar h2 { margin: 0; font-size: 19pt; font-weight: 900; text-transform: uppercase; letter-spacing: .01em; }
+h3 { font-size: 13.5pt; margin: 6mm 0 2mm; padding-bottom: 1.5mm; border-bottom: 1px solid var(--ink); }
+h4 { font-size: 10.5pt; margin: 4mm 0 1mm; }
+.callout { background: var(--taupe); border-radius: 0 16pt 16pt 16pt; padding: 5mm 7mm; margin: 5mm 0; }
+.callout .k { font-size: 6.8pt; letter-spacing: .35em; text-transform: uppercase; color: #5b4e42; font-weight: 600; margin-bottom: 1.5mm; }
+.callout .v { font-family: "Playfair Display"; font-weight: 700; font-size: 12pt; line-height: 1.4; }
+.note { background: var(--note); border-left: 4px solid var(--note-line); padding: 4mm 6mm; margin: 5mm 0; }
+.note .t { font-weight: 600; color: #6b5226; margin-bottom: 1mm; }
+.good { background: var(--green-soft); border-left: 4px solid var(--green); padding: 4mm 6mm; margin: 5mm 0; }
+.good .t { font-weight: 600; color: var(--green); margin-bottom: 1mm; }
+table.t { width: 100%; border-collapse: collapse; margin: 3mm 0 5mm; font-size: 9pt; }
+table.t th { background: var(--ink); color: #f3efe9; text-align: left; font-size: 6.8pt; letter-spacing: .2em; text-transform: uppercase; padding: 2.5mm 3mm; font-weight: 600; }
+table.t td { padding: 2.4mm 3mm; border-bottom: 1px solid var(--line); vertical-align: top; }
+table.t tr:nth-child(even) td { background: var(--row); }
+table.t td.r, table.t th.r { text-align: right; }
+.flow { display: flex; gap: 3mm; align-items: stretch; margin: 5mm 0; }
+.flow div { flex: 1; background: var(--ink); color: #f3efe9; border-radius: 3px; padding: 3.5mm; text-align: center; font-size: 7.8pt; line-height: 1.35; }
+.flow div b { display: block; font-family: "Playfair Display"; font-size: 10pt; margin-bottom: 1mm; }
+.flow div.last { background: var(--taupe); color: var(--ink); }
+.shots { display: flex; gap: 6mm; justify-content: center; margin: 4mm 0; }
+.shots figure { margin: 0; flex: 1; text-align: center; max-width: 60mm; }
+.shots img { width: 100%; max-height: 112mm; object-fit: contain; border-radius: 10pt; background: #000; }
+.shots.wide figure { max-width: 72mm; }
+figcaption { font-size: 7.5pt; color: var(--muted); margin-top: 1.5mm; }
+.ph { border: 1.5px dashed var(--brown); border-radius: 10pt; padding: 6mm 8mm; text-align: center; color: var(--muted); font-size: 8.5pt; margin: 4mm 0; }
+.script-inline { font-family: "Script"; font-size: 30pt; line-height: 1; }
+.sig { font-family: "Script"; font-size: 34pt; margin-top: 4mm; }
+.quote { font-family: "Playfair Display"; font-size: 12pt; line-height: 1.55; }
+.small { font-size: 8pt; color: var(--muted); }
+.ws { width: 100%; border-collapse: collapse; margin: 3mm 0 6mm; font-size: 8.5pt; }
+.ws th { background: var(--ink); color: #f3efe9; font-size: 6.6pt; letter-spacing: .18em; text-transform: uppercase; padding: 2mm; text-align: left; font-weight: 600; }
+.ws td { border: 1px solid var(--line); height: 8mm; padding: 1mm 2mm; background: #fbf9f6; }
+.check li { list-style: none; position: relative; padding-left: 7mm; margin: 2.2mm 0; }
+.check li:before { content: ""; position: absolute; left: 0; top: .6mm; width: 3.5mm; height: 3.5mm; border: 1.2px solid var(--ink); border-radius: 2px; }
+.check { padding-left: 0; }
+pre.prompt { margin-bottom: 2mm !important; white-space: pre-wrap; font-family: "DejaVu Sans Mono", Menlo, monospace; font-size: 6.9pt; line-height: 1.42; background: #fbf9f6; border: 1px solid var(--line); padding: 5mm; margin: 0; }
+.two { display: flex; gap: 6mm; }
+.two > div { flex: 1; }
+.script-box { background: #fbf9f6; border: 1px solid var(--line); border-radius: 8pt; padding: 4mm 5mm; margin: 3mm 0 5mm; font-size: 9pt; }
+.script-box .who { font-size: 6.8pt; letter-spacing: .25em; text-transform: uppercase; color: var(--brown); font-weight: 600; margin-bottom: 1mm; }
+</style>
+</head>
+<body>
+<div id="book"></div>
+<main id="src">
+
+<!-- ============ COVER ============ -->
+<section class="full cover">
+  <div class="frame"></div>
+  <div class="eyebrow">THE COMPLETE GUIDE</div>
+  <div class="tab">
+    <svg width="40mm" height="40mm" viewBox="0 0 100 100" fill="none" stroke="#f3efe9" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M26 14 h40 l8 8 v62 l-6 -4 -6 4 -6 -4 -6 4 -6 -4 -6 4 -6 -4 -6 4 z"/>
+      <path d="M34 34 h26 M34 44 h18 M34 54 h24 M34 64 h14"/>
+      <circle cx="62" cy="58" r="15" fill="#1f7a5a"/>
+      <path d="M73 69 l12 12" stroke-width="5"/>
+      <path d="M53 58 h18" stroke-dasharray="3 3"/>
+    </svg>
+  </div>
+  <h1>Money<br>X-Ray</h1>
+  <div class="sub">The No-App Money Audit</div>
+  <div class="band">
+    <div class="lead">Find out where your money really goes, using your own statements and the AI app you already have.</div>
+    <div class="parts">
+      <div><div class="n">01</div><div class="t">Before you start</div></div>
+      <div><div class="n">02</div><div class="t">Running the audit</div></div>
+      <div><div class="n">03</div><div class="t">Acting on results</div></div>
+      <div><div class="n">04</div><div class="t">Keeping it going</div></div>
+    </div>
+  </div>
+  <div class="foot">FOR EVERYDAY PEOPLE · NO FINANCE BACKGROUND NEEDED</div>
+</section>
+
+<!-- ============ CONTENTS ============ -->
+<section class="full contents">
+  <div class="rail"></div><div class="pill"></div>
+  <div class="railtxt">MONEY X-RAY · THE COMPLETE GUIDE</div>
+  <div class="body">
+    <div class="script">The<br>Contents</div>
+    <table class="toc">
+      <tr><td class="n"></td><td>A note from Randy</td><td class="pgn"><span data-pg="note"></span></td></tr>
+      <tr><td class="n">1</td><td>Start here</td><td class="pgn"><span data-pg="c01"></span></td></tr>
+      <tr class="part"><td colspan="3">PART 1: BEFORE YOU START</td></tr>
+      <tr><td class="n">2</td><td>How Money X-Ray works</td><td class="pgn"><span data-pg="c02"></span></td></tr>
+      <tr><td class="n">3</td><td>What you need</td><td class="pgn"><span data-pg="c03"></span></td></tr>
+      <tr><td class="n">4</td><td>Getting your statements</td><td class="pgn"><span data-pg="c04"></span></td></tr>
+      <tr><td class="n">5</td><td>Your privacy</td><td class="pgn"><span data-pg="c05"></span></td></tr>
+      <tr class="part"><td colspan="3">PART 2: RUNNING THE AUDIT</td></tr>
+      <tr><td class="n">6</td><td>Run it, step by step</td><td class="pgn"><span data-pg="c06"></span></td></tr>
+      <tr><td class="n">7</td><td>Your report, section by section</td><td class="pgn"><span data-pg="c07"></span></td></tr>
+      <tr><td class="n">8</td><td>Answering its questions</td><td class="pgn"><span data-pg="c08"></span></td></tr>
+      <tr><td class="n">9</td><td>On a free plan</td><td class="pgn"><span data-pg="c09"></span></td></tr>
+      <tr><td class="n">10</td><td>Your save block</td><td class="pgn"><span data-pg="c10"></span></td></tr>
+      <tr class="part"><td colspan="3">PART 3: ACTING ON YOUR RESULTS</td></tr>
+      <tr><td class="n">11</td><td>Subscriptions: keep, cut or cancel</td><td class="pgn"><span data-pg="c11"></span></td></tr>
+      <tr><td class="n">12</td><td>Fees and interest</td><td class="pgn"><span data-pg="c12"></span></td></tr>
+      <tr><td class="n">13</td><td>Your debt plan</td><td class="pgn"><span data-pg="c13"></span></td></tr>
+      <tr><td class="n">14</td><td>Your net worth</td><td class="pgn"><span data-pg="c14"></span></td></tr>
+      <tr><td class="n">15</td><td>Building a budget that holds</td><td class="pgn"><span data-pg="c15"></span></td></tr>
+      <tr class="part"><td colspan="3">PART 4: KEEPING IT GOING</td></tr>
+      <tr><td class="n">16</td><td>The monthly checkup</td><td class="pgn"><span data-pg="c16"></span></td></tr>
+      <tr><td class="n">17</td><td>If something goes wrong</td><td class="pgn"><span data-pg="c17"></span></td></tr>
+      <tr><td class="n">18</td><td>How it was tested, and its limits</td><td class="pgn"><span data-pg="c18"></span></td></tr>
+      <tr><td class="n">19</td><td>A sample report</td><td class="pgn"><span data-pg="c19"></span></td></tr>
+      <tr><td class="n">20</td><td>Worksheets</td><td class="pgn"><span data-pg="c20"></span></td></tr>
+      <tr><td class="n">21</td><td>Words you will meet</td><td class="pgn"><span data-pg="c21"></span></td></tr>
+      <tr><td class="n"></td><td>Your checklist</td><td class="pgn"><span data-pg="c22"></span></td></tr>
+      <tr><td class="n"></td><td>Appendix: the full prompt</td><td class="pgn"><span data-pg="c23"></span></td></tr>
+    </table>
+  </div>
+</section>
+
+<!-- ============ NOTE ============ -->
+<section class="ch" style="break-before:auto" data-id="note">
+  <div class="script-inline" style="margin-bottom:6mm">A note from Randy</div>
+  <div class="quote">
+    <p>Hi, I'm Randy Gonzalez.</p>
+    <p>I made Money X-Ray because I was tired of paying for budgeting apps, one subscription after another, just to see my own money. The other choice was paying hundreds of dollars for a professional audit. And even then, some months I still couldn't tell you where my money was going, or where all of it was coming from.</p>
+    <p>So I built something simpler. You download your own statements, paste one prompt into the AI app you already use, and it goes through every line for you. It checks that the math adds up, finds your subscriptions and fees, shows where the money goes, and helps you make a plan for your debt.</p>
+    <p>No app to install. No bank login. No monthly fee. You pay once and use it every month.</p>
+    <p>I ran it on my own statements first, and the screenshots in this guide come from that run, with my personal details blacked out.</p>
+    <p>Money X-Ray won't make decisions for you, and it isn't financial advice. It gives you a clear picture, so the next decision is yours.</p>
+  </div>
+  <div class="sig">Randy</div>
+</section>
+
+<!-- ============ 01 START HERE ============ -->
+<section class="ch" data-id="c01">
+  <div class="bar"><span class="num">01</span><h2>Start here</h2></div>
+  <p>Money X-Ray turns ChatGPT, Claude or Gemini into a careful money investigator. You give it your own bank and credit card statements. It reads every line, checks that each account adds up, and tells you in plain words where your money went, what it's costing you, and what you could change. By the end of this guide you'll have your first full report, a plan for your subscriptions and debt, and a save block you'll use again next month.</p>
+  <div class="flow">
+    <div><b>1. Before</b>Get your statements, set your privacy</div>
+    <div><b>2. Audit</b>Paste the prompt, upload, read the report</div>
+    <div><b>3. Act</b>Subscriptions, fees, debt, net worth, budget</div>
+    <div class="last"><b>4. Keep going</b>Monthly checkup, worksheets</div>
+  </div>
+  <table class="t">
+    <tr><th>Part</th><th>What you do</th><th>Chapters</th></tr>
+    <tr><td><b>1. Before you start</b></td><td>Understand how it works, get your statements, set your privacy</td><td>2 to 5</td></tr>
+    <tr><td><b>2. Running the audit</b></td><td>Paste, upload, read the report, answer a few questions</td><td>6 to 10</td></tr>
+    <tr><td><b>3. Acting on your results</b></td><td>Cut what you don't need, plan your debt, see your net worth, set a budget</td><td>11 to 15</td></tr>
+    <tr><td><b>4. Keeping it going</b></td><td>Monthly checkup, fixes, sample report, worksheets</td><td>16 to 21</td></tr>
+  </table>
+  <div class="callout"><div class="k">The idea in one line</div><div class="v">You're not bad with money. You've just never seen all of it in one place.</div></div>
+  <h3>The fastest path</h3>
+  <p>If you want results tonight: read chapter 4 (getting your statements), then chapter 6 (run it), and come back to the rest after you've seen your report. The whole first run takes about 20 minutes once your statements are downloaded.</p>
+  <div class="note"><div class="t">What Money X-Ray is, and isn't</div>It's an educational self-analysis of your own statements. It isn't financial, tax or legal advice, and it isn't a professional audit. It never promises savings: it shows you what's there, and the choices are yours. AI can make mistakes, so the prompt makes it show its checks, and you should confirm anything important against your statements before acting.</div>
+</section>
+
+<!-- ============ PART 1 ============ -->
+<section class="full part"><div class="big">1</div><div class="label">PART 1</div><div class="title">Before you start</div><div class="desc">How it works, what you need, where your statements are, and how to keep your information private.</div></section>
+
+<section class="ch" style="break-before:auto" data-id="c02">
+  <div class="bar"><span class="num">02</span><h2>How Money X-Ray works</h2></div>
+  <p>Money X-Ray is a set of instructions, called a prompt, that you paste into an AI chat app. The prompt tells the AI exactly how to audit statements: what to check, in what order, what never to count twice, and how to explain the results. You do three things: paste, upload, read.</p>
+  <h3>The $0.00 Check</h3>
+  <p>Before it tells you anything, Money X-Ray proves its math. For every account, it starts with the statement's opening balance, adds every deposit, subtracts every charge, and has to land on the statement's closing balance. The difference should be $0.00.</p>
+  <div class="callout"><div class="k">Why it matters</div><div class="v">Every account is balance-checked to $0.00 before you see a single finding.</div></div>
+  <p>A $0.00 result proves the math adds up and nothing was skipped. It doesn't prove every category is right, so you'll still glance over the findings, but you can trust the totals.</p>
+  <h3>What it never counts twice</h3>
+  <ul>
+    <li><b>Card payments.</b> Buying groceries on your card is spending. Paying the card from checking later isn't spending again.</li>
+    <li><b>Transfers.</b> Moving money between your own accounts isn't spending. Money moved to savings is saving.</li>
+    <li><b>Repeated rows.</b> Two downloads that overlap can repeat the same transactions. It keeps one copy, and uses the balance check to be sure.</li>
+  </ul>
+  <h3>What it finds</h3>
+  <table class="t">
+    <tr><th>It looks for</th><th>For example</th></tr>
+    <tr><td>Where the money goes</td><td>Every category by month, with averages and trends</td></tr>
+    <tr><td>Subscriptions</td><td>Forgotten apps, price increases, two services doing the same job</td></tr>
+    <tr><td>Fees and interest</td><td>Late fees, ATM fees, card interest, annual fees, and how to avoid each</td></tr>
+    <tr><td>Mistakes</td><td>A merchant charging you twice, a charge nobody recognizes</td></tr>
+    <tr><td>Hidden accounts</td><td>Payments to a card or loan you forgot to upload</td></tr>
+    <tr><td>Your debt</td><td>Each balance and interest rate, and the order to pay them off</td></tr>
+    <tr><td>Your net worth</td><td>What you own minus what you owe, and what's really free right now</td></tr>
+  </table>
+  <h3>Why no app, and no bank login</h3>
+  <p>Budgeting apps connect to your bank and charge every month. Money X-Ray reads statements you download yourself, so nothing connects to your bank and nothing keeps charging you. You buy it once, and you can run it again every month.</p>
+</section>
+
+<section class="ch" data-id="c03">
+  <div class="bar"><span class="num">03</span><h2>What you need</h2></div>
+  <table class="t">
+    <tr><th>What</th><th>Details</th></tr>
+    <tr><td><b>An AI chat app</b></td><td>ChatGPT, Claude or Gemini, on your phone or computer. Free plans work. Paid plans are faster and can run the math in code.</td></tr>
+    <tr><td><b>The Money X-Ray prompt</b></td><td>The PDF and text file that came with this guide. The text file copies most cleanly on a phone.</td></tr>
+    <tr><td><b>Your statements</b></td><td>3 months for every checking account, savings account and credit card. That's 3 statements per account, one for each month. 6 months is even better.</td></tr>
+    <tr><td><b>Optional statements</b></td><td>Venmo, Cash App or PayPal if you spend from them. Retirement, investment and loan statements for your net worth.</td></tr>
+    <tr><td><b>About 20 minutes</b></td><td>Longer on a free plan, where you type "go" between steps.</td></tr>
+  </table>
+  <h3>Free plan or paid plan?</h3>
+  <table class="t">
+    <tr><th>&nbsp;</th><th>Free plan</th><th>Paid plan</th></tr>
+    <tr><td>Works?</td><td>Yes</td><td>Yes</td></tr>
+    <tr><td>How it does the math</td><td>By hand, in small groups, checked twice</td><td>In code, all at once</td></tr>
+    <tr><td>Messages</td><td>Two accounts at a time; you type "go"</td><td>All accounts in one go</td></tr>
+    <tr><td>Uploads</td><td>Daily limits; you can paste the CSV text instead</td><td>Higher limits</td></tr>
+    <tr><td>Debt plan</td><td>Payment order and a rough timeline</td><td>Exact debt-free date and total interest</td></tr>
+    <tr><td>PDF report</td><td>Print the report to PDF yourself</td><td>Can usually make the file for you</td></tr>
+  </table>
+  <p class="small">Plan names, prices and limits change and differ by country. Check each app's own site.</p>
+  <h3>Which accounts to include</h3>
+  <p>Every account money goes in or out of. If you leave one out, Money X-Ray will usually spot the payments going to it and tell you there's an account it can't see. It won't guess what's on it.</p>
+  <ul class="check">
+    <li>Every checking account</li>
+    <li>Every savings account</li>
+    <li>Every credit card, including store cards</li>
+    <li>Venmo, Cash App or PayPal, if you spend from them</li>
+    <li>Optional: retirement, investment, mortgage, car and student loan statements</li>
+  </ul>
+</section>
+
+<section class="ch" data-id="c04">
+  <div class="bar"><span class="num">04</span><h2>Getting your statements</h2></div>
+  <p>Your statements are already waiting for you. Most people find them in one of three places.</p>
+  <table class="t">
+    <tr><th>Where</th><th>What to look for</th></tr>
+    <tr><td><b>Your bank or card app</b></td><td>"Statements", "Documents", "eStatements" or "Account services". Usually gives PDFs.</td></tr>
+    <tr><td><b>Your email</b></td><td>Many banks email a statement every month. Search your inbox for "statement".</td></tr>
+    <tr><td><b>Your bank's website</b></td><td>The same statements, plus a "Download" or "Export" button on the transactions page that gives CSV files.</td></tr>
+  </table>
+  <div class="ph">[Screenshots coming: finding statements in a banking app, and downloading a CSV on the bank's website]</div>
+  <h3>CSV or PDF?</h3>
+  <div class="two">
+    <div class="good"><div class="t">CSV (best)</div>A plain table of transactions. Usually no account number, name or address in it, and the AI reads it most reliably.</div>
+    <div class="note"><div class="t">PDF (fine)</div>Works if it's a real statement downloaded from the bank. Photos and scans of paper statements are much less reliable.</div>
+  </div>
+  <h3>Three statements per account</h3>
+  <p>One statement covers one month. For a three-month audit, download three statements for every account: for example January, February and March. Name them clearly so you can pick them quickly on your phone: "Chase checking Jan", "Visa Feb".</p>
+  <h3>Include the balance</h3>
+  <p>The $0.00 Check needs each account's opening and closing balance. PDFs show them on the first page. Many CSV files include a running balance column. If yours doesn't, the PDF for that month helps.</p>
+  <div class="note"><div class="t">Tip</div>Download everything first, then start the chat. Hunting for files mid-chat is the slowest part of the whole process.</div>
+</section>
+
+<section class="ch" data-id="c05">
+  <div class="bar"><span class="num">05</span><h2>Your privacy</h2></div>
+  <p>Your statements go only to the AI app you choose. Money X-Ray never sees them, never connects to your bank, and never asks for passwords, logins or your Social Security number.</p>
+  <h3>What's in your files</h3>
+  <ul>
+    <li><b>CSV downloads</b> usually contain dates, descriptions and amounts, with no account number, name or address. Nothing to cover.</li>
+    <li><b>Bank PDFs</b> usually show only the last 4 digits of the account number. Covering your name and address is optional.</li>
+  </ul>
+  <h3>What the AI is told to do</h3>
+  <ul>
+    <li>Never write out an account number. It uses nicknames such as "Chase checking" or "Visa card".</li>
+    <li>Turn other people's names into initials, for example the friend who paid you back through Zelle.</li>
+    <li>Leave addresses and personal IDs out of every reply, save block and export.</li>
+  </ul>
+  <h3>Your AI app's own settings</h3>
+  <p>Each AI company has its own privacy policy, and your uploads follow it. Most apps let you control whether your chats are saved or used to improve their models. Look in the app's settings under privacy or data controls before your first run, and choose what you're comfortable with. Settings and their names change, so check them yourself rather than relying on a screenshot.</p>
+  <div class="note"><div class="t">The honest version</div>Covering details and choosing privacy settings lowers the risk. It doesn't remove it. Upload only what you're comfortable sharing with that AI company.</div>
+  <h3>When you share results</h3>
+  <p>If you post your findings or show them to someone, black out names, account endings, addresses and anything that points to where you live or work. That's exactly how the screenshots in this guide were prepared.</p>
+</section>
+
+<!-- ============ PART 2 ============ -->
+<section class="full part"><div class="big">2</div><div class="label">PART 2</div><div class="title">Running the audit</div><div class="desc">Paste the prompt, upload your statements, read your report, answer a few questions, and save your progress.</div></section>
+
+<section class="ch" style="break-before:auto" data-id="c06">
+  <div class="bar"><span class="num">06</span><h2>Run it, step by step</h2></div>
+  <p class="small">The screenshots in Part 2 come from a real run on ChatGPT's paid plan. Every personal detail and dollar amount is blacked out. Other apps look different but follow the same steps.</p>
+  <h4>Step 1. Open a new chat and add the prompt</h4>
+  <p>Start a fresh chat. Paste the whole prompt, or attach the prompt PDF with the + button, and send it with a short message such as "Start".</p>
+  <div class="shots">
+    <figure><img src="screenshots/01_new-chat.png"><figcaption>A fresh, empty chat</figcaption></figure>
+    <figure><img src="screenshots/02_attach-prompt.png"><figcaption>The prompt attached, ready to send</figcaption></figure>
+  </div>
+  <h4>Step 2. It asks for your statements, and nothing else</h4>
+  <p>No questionnaire. One short message: what to upload, and that it will work on its own once the files are in.</p>
+  <div class="shots">
+    <figure><img src="screenshots/03_tell-me-what-you-need.png"><figcaption>One short reply</figcaption></figure>
+    <figure><img src="screenshots/04_asks-for-statements.png"><figcaption>The list of what to upload</figcaption></figure>
+  </div>
+</section>
+
+<section class="ch cont">
+  <h4>Step 3. Upload everything, then type "done"</h4>
+  <p>Select all your statement files at once. If the app won't take them all, send a few at a time with a note like "More coming". When the last ones are in, type <b>done</b>.</p>
+  <div class="shots">
+    <figure><img src="screenshots/05_pick-statements.png"><figcaption>Selecting statements on the phone</figcaption></figure>
+    <figure><img src="screenshots/06_more-coming.png"><figcaption>Sending in batches works fine</figcaption></figure>
+  </div>
+  <h4>Step 4. Let it work</h4>
+  <p>It identifies each account, removes repeated rows, labels every transaction, matches card payments and transfers between your accounts, and runs the $0.00 Check. On a paid plan this happens in one go. On a free plan it works two accounts at a time and asks you to type <b>go</b>.</p>
+  <h4>Step 5. Read the report, answer, choose</h4>
+  <p>The report arrives on its own, followed by a short list of questions and a menu of next steps. Chapters 7 to 10 walk through each part.</p>
+  <div class="good"><div class="t">You shouldn't have to push it</div>You never need to ask "where is my money going?" or "are you done?". If it ever stops partway, type <b>go</b> and it carries on.</div>
+</section>
+
+<section class="ch" data-id="c07">
+  <div class="bar"><span class="num">07</span><h2>Your report, section by section</h2></div>
+  <p>The report always comes in the same order. Where the money goes comes first, because that's the question you came with.</p>
+  <table class="t">
+    <tr><th>#</th><th>Section</th><th>What it tells you</th></tr>
+    <tr><td>1</td><td><b>The answer</b></td><td>One paragraph: where the money goes and the three biggest findings</td></tr>
+    <tr><td>2</td><td><b>How much to trust this</b></td><td>The $0.00 Check for each account, what was excluded, what was a guess</td></tr>
+    <tr><td>3</td><td><b>Money in vs. money out</b></td><td>Income, spending, saved and left over, each month</td></tr>
+    <tr><td>4</td><td><b>Spending by category</b></td><td>Each category per month, its average and its share</td></tr>
+    <tr><td>5</td><td><b>Trends</b></td><td>What rose or fell, and the transactions behind it</td></tr>
+    <tr><td>6</td><td><b>Subscriptions</b></td><td>Every recurring charge with its yearly cost and any warning flags</td></tr>
+    <tr><td>7</td><td><b>Fees and interest</b></td><td>Every fee, and how to avoid it next time</td></tr>
+    <tr><td>8</td><td><b>Debt</b></td><td>Each balance, its rate, this month's interest, and the payoff order</td></tr>
+    <tr><td>9</td><td><b>Net worth</b></td><td>From your statements, plus liquid net worth</td></tr>
+  </table>
+  <div class="shots">
+    <figure><img src="screenshots/11_balance-check.png"><figcaption>The $0.00 Check, account by account</figcaption></figure>
+    <figure><img src="screenshots/10_where-money-goes.png"><figcaption>Where the money goes</figcaption></figure>
+  </div>
+</section>
+
+<section class="ch cont">
+  <h3>Reading "left over"</h3>
+  <p>Many people find they have money left over on paper and still feel broke. The report says where that money actually went: sitting in an account you don't look at, paying down or building up a card, or going to an account you didn't upload. That one line is often the most useful thing in the whole report.</p>
+  <h3>Reading the flags</h3>
+  <table class="t">
+    <tr><th>Flag</th><th>What it means</th><th>What to do</th></tr>
+    <tr><td>Price increase</td><td>A subscription now costs more than before</td><td>Decide if it's still worth it at the new price</td></tr>
+    <tr><td>Overlapping services</td><td>Two or more services doing the same job</td><td>Keep the one you use most</td></tr>
+    <tr><td>Possible double charge</td><td>Same merchant, same amount, same day, different reference</td><td>Check with your card issuer; you may be owed a refund</td></tr>
+    <tr><td>Unknown merchant</td><td>A charge it can't identify</td><td>Look it up or call your bank</td></tr>
+    <tr><td>Account not uploaded</td><td>Payments to a card or loan it can't see</td><td>Upload that statement, or tell it the balance</td></tr>
+    <tr><td>My guess</td><td>A label it chose because it couldn't be sure</td><td>Confirm or correct it in the question list</td></tr>
+  </table>
+  <div class="note"><div class="t">If an account doesn't balance</div>The report says so and shows the difference. Usually a month is missing or two downloads overlap. Fix the files and it reruns the check. Don't trust a total from an account that didn't balance.</div>
+  <p>Some apps draw charts, sliders and calculators, like ChatGPT in the screenshots. Others use plain tables. The numbers come from the same checks either way.</p>
+</section>
+
+<section class="ch" data-id="c08">
+  <div class="bar"><span class="num">08</span><h2>Answering its questions</h2></div>
+  <p>After the report, Money X-Ray asks only about things it couldn't work out on its own. There are never more than 8 questions, and each one comes with its best guess.</p>
+  <div class="shots"><figure style="max-width:70mm"><img src="screenshots/08_questions-form.png"><figcaption>ChatGPT turned the questions into a form</figcaption></figure></div>
+  <h3>The kinds of questions you'll see</h3>
+  <ul>
+    <li>"$45 from J.M. on Oct 16. My guess: paying you back for the Oct 15 dinner. Right?"</li>
+    <li>"SQ *JMK LLC, $45 each month. My guess: unknown. What is it?"</li>
+    <li>"$175 a month goes to DISCOVER, but you didn't upload that card. Upload it, or tell me the balance."</li>
+    <li>"Any cash money that's not on these statements? Skip if none."</li>
+  </ul>
+  <div class="callout"><div class="k">The easy answer</div><div class="v">Reply "ok" to keep all its guesses. Answer only the ones you know are wrong.</div></div>
+  <h3>Telling it about cash</h3>
+  <p>Cash never shows up on a statement, so it asks once. Answer in plain words, one item per line: what it was, how much, in or out, and how often. For example, "I mow lawns for about $80 a week, cash" or "the $100 ATM cash paid the babysitter". It converts weekly amounts to monthly ones and never counts ATM cash twice. Your answers stay labelled as reported by you, separate from the statement totals.</p>
+</section>
+
+<section class="ch" data-id="c09">
+  <div class="bar"><span class="num">09</span><h2>On a free plan</h2></div>
+  <p>Money X-Ray works on free plans. It just takes a few more steps, because free plans limit messages, uploads and tools.</p>
+  <table class="t">
+    <tr><th>What changes</th><th>What you do</th></tr>
+    <tr><td>It works two accounts at a time</td><td>Type <b>go</b> when it asks</td></tr>
+    <tr><td>The report comes in two parts</td><td>Type <b>go</b> for the second part</td></tr>
+    <tr><td>Uploads run out for the day</td><td>Open the CSV, copy the rows, paste them in. Long file? One month at a time.</td></tr>
+    <tr><td>The chat hits its limit</td><td>Open a new chat, paste the prompt and your save block, type <b>continue</b></td></tr>
+    <tr><td>No code for the math</td><td>It adds by hand in small groups and checks every total twice. The $0.00 Check still proves it.</td></tr>
+    <tr><td>Debt plan</td><td>You get the order and this month's payments; use a payoff calculator for the exact date</td></tr>
+  </table>
+  <div class="good"><div class="t">Tested by hand</div>In testing on a fictional family's statements, the free-plan path (no code, all math by hand) balanced every account to $0.00 and matched every monthly total to the cent. See chapter 18.</div>
+</section>
+
+<section class="ch cont" data-id="c10">
+  <div class="bar"><span class="num">10</span><h2>Your save block</h2></div>
+  <p>At the end, Money X-Ray gives you a short block of text that starts with <b>SAVE | Money X-Ray</b>. It holds your accounts, monthly totals, subscriptions, debts and net worth, one line each.</p>
+  <div class="two">
+    <div>
+      <p><b>Copy it into your notes app.</b> It's your record and your starting point.</p>
+      <ul>
+        <li>If the chat runs out: new chat, paste the prompt and the save block, type <b>continue</b>.</li>
+        <li>Next month: paste the prompt and the save block, type <b>monthly checkup</b>, upload last month's statements.</li>
+      </ul>
+    </div>
+    <div class="shots" style="margin:0"><figure style="max-width:58mm"><img src="screenshots/15_save-block.png"><figcaption>Saved in the Notes app</figcaption></figure></div>
+  </div>
+</section>
+
+<!-- ============ PART 3 ============ -->
+<section class="full part"><div class="big">3</div><div class="label">PART 3</div><div class="title">Acting on your results</div><div class="desc">Cut what you don't use, stop paying fees, pick a debt plan, see your net worth, and build a budget from real numbers.</div></section>
+
+<section class="ch" style="break-before:auto" data-id="c11">
+  <div class="bar"><span class="num">11</span><h2>Subscriptions: keep, cut or cancel</h2></div>
+  <p>Subscriptions are easy to start and easy to forget. Money X-Ray lists every recurring charge across all your accounts with its yearly cost, which is usually the number that makes people act.</p>
+  <h3>The three-question test</h3>
+  <ol>
+    <li><b>Did I use it in the last 30 days?</b> If not, cancel it. You can always come back.</li>
+    <li><b>Does another subscription already do this?</b> Two music apps, four video streamers: keep the one you use most.</li>
+    <li><b>Is it worth the yearly cost?</b> $15.99 a month is $191.88 a year. Would you pay that today, in one go?</li>
+  </ol>
+  <div class="shots"><figure style="max-width:66mm"><img src="screenshots/09_subscription-calculator.png"><figcaption>Checking off subscriptions to see the savings</figcaption></figure></div>
+  <p>Pick your cuts from the menu ("Cut costs"), and Money X-Ray adds up the monthly and yearly total. It only counts savings you actually choose.</p>
+</section>
+
+<section class="ch cont">
+  <h3>How to cancel</h3>
+  <ul>
+    <li><b>App store subscriptions</b> (iPhone or Android): cancel in your phone's subscription settings, not inside the app.</li>
+    <li><b>Websites:</b> look for "Account", then "Membership", "Plan" or "Billing".</li>
+    <li><b>Gyms and clubs:</b> some need a form, a letter or a visit. Ask for written confirmation.</li>
+    <li><b>Can't find it?</b> Search the merchant name on your statement plus "cancel".</li>
+  </ul>
+  <h4>A message you can send</h4>
+  <div class="script-box"><div class="who">Cancel request</div>Hi, I'd like to cancel my subscription on the account under this email, effective today. Please confirm the cancellation in writing and that no further charges will be made. Thank you.</div>
+  <h4>A charge you don't recognize</h4>
+  <div class="script-box"><div class="who">To your card issuer</div>Hi, I see a charge from [merchant] for [amount] on [date] that I don't recognize. Can you tell me what it is? If it isn't mine, I'd like to dispute it and have the card checked.</div>
+  <h4>A double charge</h4>
+  <div class="script-box"><div class="who">To your card issuer</div>Hi, I was charged twice by [merchant] on [date], [amount] each time, with different reference numbers. I only made one purchase. I'd like to dispute the second charge.</div>
+  <div class="note"><div class="t">After you cancel</div>Next month's checkup flags any service you cancelled that's still charging you.</div>
+</section>
+
+<section class="ch" data-id="c12">
+  <div class="bar"><span class="num">12</span><h2>Fees and interest</h2></div>
+  <p>Fees and interest buy you nothing. In the fictional test family, they came to $522.59 in three months. Money X-Ray lists every one and how it could be avoided.</p>
+  <table class="t">
+    <tr><th>Fee</th><th>How people usually avoid it</th></tr>
+    <tr><td>Card interest</td><td>Pay the full statement balance by the due date; work down any carried balance (chapter 13)</td></tr>
+    <tr><td>Late fee</td><td>Turn on autopay for at least the minimum, and a due-date reminder</td></tr>
+    <tr><td>Out-of-network ATM fee</td><td>Use your own bank's ATMs, or get cash back at a store</td></tr>
+    <tr><td>Monthly maintenance fee</td><td>Meet the bank's waiver (direct deposit or minimum balance) or switch to a no-fee account</td></tr>
+    <tr><td>Foreign transaction fee</td><td>Use a card without one for purchases from other countries</td></tr>
+    <tr><td>Annual card fee</td><td>Ask to switch to the no-fee version of the card</td></tr>
+    <tr><td>Overdraft fee</td><td>Turn off overdraft coverage or link a savings account</td></tr>
+  </table>
+  <h3>Asking for a fee back</h3>
+  <p>Banks and card issuers sometimes remove a fee if you ask, especially the first time. They can also say no.</p>
+  <div class="script-box"><div class="who">Late fee</div>Hi, I was charged a late fee on [date]. I've been a customer for [years] and I've set up autopay so it won't happen again. Would you be able to remove this one?</div>
+  <div class="script-box"><div class="who">Lower APR</div>Hi, I'm working on paying down my balance and I'd like to ask whether a lower interest rate is available on my account. What options do I have?</div>
+  <div class="script-box"><div class="who">Annual fee</div>Hi, my annual fee posted on [date]. I'd like to keep the account open. Is there a no-fee version of this card I could switch to?</div>
+</section>
+
+<section class="ch" data-id="c13">
+  <div class="bar"><span class="num">13</span><h2>Your debt plan</h2></div>
+  <p>If you carry a balance on a card or have loans, Money X-Ray lists every debt with its balance, interest rate (APR, the yearly interest rate), minimum payment and what it's costing you this month. Then it shows two proven ways to pay it off.</p>
+  <div class="two">
+    <div class="callout"><div class="k">Avalanche</div><div class="v">Highest interest rate first. You pay the least interest overall.</div></div>
+    <div class="callout"><div class="k">Snowball</div><div class="v">Smallest balance first. You clear whole debts sooner, which keeps many people going.</div></div>
+  </div>
+  <h3>How both methods work</h3>
+  <ol>
+    <li>Pay the minimum on every debt, every month. Never miss one.</li>
+    <li>Put every extra dollar on one target debt.</li>
+    <li>When the target is paid off, add its whole payment to the next one. The payment grows as you go.</li>
+  </ol>
+  <div class="note"><div class="t">The highest balance isn't the first target</div>In both methods, the biggest balance usually comes last. Avalanche starts with the highest rate; snowball starts with the smallest balance.</div>
+  <h3>Cards with more than one rate</h3>
+  <p>One card can hold several balances: purchases, cash advances (often near 28%) and a 0% promo that ends on a set date. Money X-Ray lists each one separately and never blends them into one average. When a promo ends, the remaining balance moves to the regular rate, so a promo balance may need paying first if you can't clear it in time. In the US, payments above the minimum usually go to the card's highest-rate balance first.</p>
+  <div class="shots">
+    <figure><img src="screenshots/13_debt-simulator.png"><figcaption>Comparing methods in ChatGPT</figcaption></figure>
+    <figure><img src="screenshots/14_payoff-milestones.png"><figcaption>Payoff milestones by debt</figcaption></figure>
+  </div>
+</section>
+
+<section class="ch cont">
+  <h3>A worked example (fictional family)</h3>
+  <p>The test family has a Discover card at 27.24%, a Visa at 22.99%, a car loan at 6.9% and $450 owed to family. They chose $300 extra a month, plus a one-time $2,587.08 from money sitting idle in checking (after keeping a $2,000 cushion and leaving the next Mastercard bill covered).</p>
+  <table class="t">
+    <tr><th>Plan</th><th>Order</th><th class="r">Debt-free in</th><th class="r">Total interest</th></tr>
+    <tr><td>Avalanche</td><td>Discover, Visa, car, family</td><td class="r">23 months</td><td class="r">$2,007</td></tr>
+    <tr><td>Snowball</td><td>Family, Discover, Visa, car</td><td class="r">23 months</td><td class="r">$2,061</td></tr>
+    <tr><td>Minimums only</td><td>No extra, no lump sum</td><td class="r">62 months</td><td class="r">$7,503</td></tr>
+  </table>
+  <p class="small">Fictional family built from US government spending averages. Your numbers will differ. Assumes minimums held fixed and no new card spending.</p>
+  <h3>Before you put idle cash toward debt</h3>
+  <ul>
+    <li>Keep a cushion you're comfortable with. Money X-Ray never touches savings or your cushion unless you say so.</li>
+    <li>Leave money for bills about to come out of that account, like a card you pay in full.</li>
+    <li>Stop adding new charges to the cards you're paying off, or pay new charges in full each month. Otherwise the plan can't work.</li>
+  </ul>
+  <h3>On a free plan</h3>
+  <p>You'll get the order, this month's payment for each debt and a rough timeline. For the exact debt-free date and total interest, use a paid plan or any debt payoff calculator with the balances and rates from your report.</p>
+  <div class="note"><div class="t">About balance transfers and consolidation loans</div>They can lower interest, but they come with fees, deadlines and fine print. Treat them as something to research carefully, not a shortcut. This guide isn't financial advice.</div>
+</section>
+
+<section class="ch" data-id="c14">
+  <div class="bar"><span class="num">14</span><h2>Your net worth</h2></div>
+  <p>Net worth is everything you own minus everything you owe. It's a snapshot to track over time, not a grade. Money X-Ray builds it from your statements, then lets you add what statements don't show: your home, cars and retirement accounts. Upload a statement for any of them, or type a rough number.</p>
+  <h3>Two numbers worth knowing</h3>
+  <div class="two">
+    <div class="callout"><div class="k">Net worth</div><div class="v">All you own minus all you owe, including home, cars and retirement.</div></div>
+    <div class="callout"><div class="k">Liquid net worth</div><div class="v">Cash in the bank minus card balances and short-term debts. What's really free right now.</div></div>
+  </div>
+  <h3>The fictional family's snapshot</h3>
+  <table class="t">
+    <tr><th>Item</th><th class="r">Amount</th></tr>
+    <tr><td>Cash and bank (checking, savings, cash at home)</td><td class="r">$10,980</td></tr>
+    <tr><td>Retirement (401(k), 403(b))</td><td class="r">$60,500</td></tr>
+    <tr><td>Home and two cars</td><td class="r">$364,500</td></tr>
+    <tr><td>Mortgage, car loan, cards, family loan</td><td class="r">−$273,426</td></tr>
+    <tr><td><b>Net worth</b></td><td class="r"><b>$162,554</b></td></tr>
+    <tr><td><b>Liquid net worth</b></td><td class="r"><b>$154</b></td></tr>
+  </table>
+  <p>Worth over $160,000 on paper, with almost nothing free once the cards are paid. That gap is why a household earning $7,290 a month can still feel broke, and it's the number to watch shrink month by month.</p>
+  <p class="small">Cards you pay in full still count as owed until that bill is paid. Values you type in are your estimates and are labelled that way.</p>
+</section>
+
+<section class="ch" data-id="c15">
+  <div class="bar"><span class="num">15</span><h2>Building a budget that holds</h2></div>
+  <p>Most budgets fail because they start from guesses. Yours starts from three months of real numbers. Use your report's averages as the starting point, then set a target for each category you want to change.</p>
+  <h3>Three steps</h3>
+  <ol>
+    <li><b>Fixed first.</b> Rent or mortgage, insurance, loan payments, phone, utilities. Use the report's averages.</li>
+    <li><b>Then the minimums on every debt,</b> plus the extra amount from your debt plan.</li>
+    <li><b>Then flexible spending.</b> Groceries, dining, shopping, gas, subscriptions. Set a monthly target for each, a bit below your average, not a dramatic cut.</li>
+  </ol>
+  <div class="shots"><figure style="max-width:66mm"><img src="screenshots/12_budget.png"><figcaption>An adjustable budget built from the audit</figcaption></figure></div>
+</section>
+
+<section class="ch cont">
+  <h3>Targets that stick</h3>
+  <table class="t">
+    <tr><th>Instead of</th><th>Try</th></tr>
+    <tr><td>"Stop eating out"</td><td>"Dining out under $250 this month", about 20% below your average</td></tr>
+    <tr><td>"Spend less on shopping"</td><td>"One shopping trip a week, with a list"</td></tr>
+    <tr><td>"Cut subscriptions"</td><td>"Cancel the two I didn't use in 30 days"</td></tr>
+    <tr><td>"Save more"</td><td>"Move $100 to savings the day I get paid"</td></tr>
+  </table>
+  <h3>Make it automatic</h3>
+  <ul>
+    <li>Autopay at least the minimum on every card.</li>
+    <li>An automatic transfer to savings on payday, even a small one.</li>
+    <li>The monthly checkup (chapter 16) shows how each target went, without you tracking anything by hand.</li>
+  </ul>
+  <div class="good"><div class="t">Use the worksheet</div>The monthly budget worksheet in chapter 20 has a column for your average, your target and the actual result.</div>
+</section>
+
+<!-- ============ PART 4 ============ -->
+<section class="full part"><div class="big">4</div><div class="label">PART 4</div><div class="title">Keeping it going</div><div class="desc">The monthly checkup, fixes when something goes wrong, how it was tested, a sample report, worksheets and your checklist.</div></section>
+
+<section class="ch" style="break-before:auto" data-id="c16">
+  <div class="bar"><span class="num">16</span><h2>The monthly checkup</h2></div>
+  <p>Once a month, about 10 minutes:</p>
+  <ol>
+    <li>Download last month's statement for each account.</li>
+    <li>Open a new chat. Paste the prompt and your latest save block.</li>
+    <li>Type <b>monthly checkup</b> and upload the new statements.</li>
+  </ol>
+  <h3>What it shows you</h3>
+  <ul>
+    <li>New recurring charges, and price increases</li>
+    <li>Cancelled services that are still charging you</li>
+    <li>Categories that moved, against your targets</li>
+    <li>Debt paid down, and progress on your plan</li>
+    <li>The change in your net worth, and what drove it</li>
+  </ul>
+  <p>Then it gives you a new save block. Replace the old one in your notes.</p>
+  <div class="callout"><div class="k">The habit</div><div class="v">Same day every month, right after your statement closes. Ten minutes keeps the whole picture current.</div></div>
+</section>
+
+<section class="ch cont" data-id="c17">
+  <div class="bar"><span class="num">17</span><h2>If something goes wrong</h2></div>
+  <table class="t">
+    <tr><th>What happened</th><th>Try this</th></tr>
+    <tr><td>A file won't upload</td><td>Try the CSV version, send fewer files at a time, or paste the rows. Long file? One month at a time.</td></tr>
+    <tr><td>It stopped partway</td><td>Type <b>go</b>. It picks up where it left off.</td></tr>
+    <tr><td>An account doesn't balance to $0.00</td><td>Check for a missing month or two overlapping downloads. It tells you which days look off.</td></tr>
+    <tr><td>It missed a subscription</td><td>Tell it the merchant name; it adds it and updates the totals.</td></tr>
+    <tr><td>A category looks wrong</td><td>Tell it the right one ("Costco is groceries"). It updates every total.</td></tr>
+    <tr><td>The chat ran out</td><td>New chat, paste the prompt and your save block, type <b>continue</b>.</td></tr>
+    <tr><td>It mentions an account you didn't upload</td><td>Upload that statement, or tell it the balance and APR.</td></tr>
+    <tr><td>It asks too many questions</td><td>Reply <b>ok</b> to keep its guesses.</td></tr>
+    <tr><td>Scanned or photographed statement</td><td>Download the original from the bank instead; scans are unreliable.</td></tr>
+    <tr><td>The numbers seem off</td><td>Ask: "Show me the transactions behind [number]." Everything traces back to your statements.</td></tr>
+  </table>
+</section>
+
+<section class="ch" data-id="c18">
+  <div class="bar"><span class="num">18</span><h2>How it was tested, and its limits</h2></div>
+  <p>Before release, Money X-Ray was tested on a fictional household built from the US Bureau of Labor Statistics' 2025 spending averages: two earners, $7,290 a month take-home, a mortgage, a car loan, child care and three credit cards. Five accounts, three months, in five different bank formats.</p>
+  <h3>Problems planted on purpose</h3>
+  <p>Fourteen traps were hidden in those statements, including card payments that appear twice, overlapping downloads that repeat rows, a real double charge that must not be removed, a forgotten Discover card, a Netflix price rise, overlapping streaming services, an unknown $45 monthly charge, new bank fees, and warehouse-club purchases mislabelled by the bank.</p>
+  <h3>Results</h3>
+  <table class="t">
+    <tr><th>Test</th><th>Result</th></tr>
+    <tr><td>With a code tool (paid-plan style)</td><td>All 219 transactions correct; every account $0.00; every monthly total exact; all 14 traps caught</td></tr>
+    <tr><td>Without code (free-plan style), by hand</td><td>Every account $0.00; every monthly total exact to the cent</td></tr>
+    <tr><td>New chat resumed from a save block</td><td>Finished correctly with no access to the earlier statements</td></tr>
+    <tr><td>Cash, debt plan and net worth</td><td>Matched the expected results</td></tr>
+    <tr><td>Real statements, ChatGPT and Claude</td><td>Run by the founder; findings used to improve the prompt</td></tr>
+  </table>
+  <p class="small">The automated tests were run by AI agents that never saw the answers. Each run's problems were fixed and the prompt was tested again.</p>
+  <h3>What it can't promise</h3>
+  <ul>
+    <li>It can't promise savings. It shows what's there; what you change is up to you.</li>
+    <li>AI can make mistakes. The $0.00 Check catches arithmetic errors, not every wrong category. Glance over the findings and check anything important.</li>
+    <li>It only sees what you upload. A missing account means missing spending.</li>
+    <li>Scanned statements, unusual bank formats and very long files are less reliable.</li>
+    <li>It isn't financial, tax or legal advice, and it isn't a professional audit.</li>
+  </ul>
+</section>
+
+<section class="ch" data-id="c19">
+  <div class="bar"><span class="num">19</span><h2>A sample report</h2></div>
+  <p class="small">The fictional test family from chapter 18, August to October 2026. Not a real household. Built from US spending averages.</p>
+  <h3>1. The answer</h3>
+  <p>The family takes home $7,290 a month and spends about $5,407. On paper about $1,400 is left over each month, but it doesn't feel that way: the spare cash piles up in Joint Checking ($4,740 in three months) while the Visa balance keeps growing and costs about $122 a month in interest. Fees and interest came to $522.59 in three months, six streaming and music services overlap, and $175 a month goes to a Discover card nobody listed.</p>
+  <h3>2. How much to trust this</h3>
+  <table class="t">
+    <tr><th>Account</th><th>Balance check</th><th>Notes</th></tr>
+    <tr><td>Everyday Checking</td><td>$0.00</td><td>Running balance matches every row</td></tr>
+    <tr><td>Joint Checking</td><td>$0.00</td><td>Running balance matches every row</td></tr>
+    <tr><td>Visa Rewards</td><td>$0.00</td><td>3 repeated rows removed (overlapping downloads)</td></tr>
+    <tr><td>Mastercard Cash Back</td><td>$0.00</td><td>Possible double charge flagged</td></tr>
+    <tr><td>Amex Blue</td><td>$0.00</td><td></td></tr>
+  </table>
+  <p>Not uploaded: a Discover card ($175 a month in payments) and a savings account ($300 a month in transfers).</p>
+  <h3>3. Spending by category (monthly average)</h3>
+  <table class="t">
+    <tr><th>Category</th><th class="r">Average</th><th class="r">Share</th></tr>
+    <tr><td>Housing (mortgage)</td><td class="r">$1,385.00</td><td class="r">26%</td></tr>
+    <tr><td>Groceries</td><td class="r">$572.44</td><td class="r">11%</td></tr>
+    <tr><td>Utilities</td><td class="r">$476.62</td><td class="r">9%</td></tr>
+    <tr><td>Shopping</td><td class="r">$475.87</td><td class="r">9%</td></tr>
+    <tr><td>Car loan</td><td class="r">$419.00</td><td class="r">8%</td></tr>
+    <tr><td>Dining out</td><td class="r">$312.48</td><td class="r">6%</td></tr>
+    <tr><td>Gas</td><td class="r">$190.20</td><td class="r">4%</td></tr>
+    <tr><td>Insurance</td><td class="r">$186.40</td><td class="r">3%</td></tr>
+    <tr><td>Fees and interest</td><td class="r">$174.20</td><td class="r">3%</td></tr>
+    <tr><td>Everything else (11 categories)</td><td class="r">$1,214.95</td><td class="r">22%</td></tr>
+    <tr><td><b>Total</b></td><td class="r"><b>$5,407.16</b></td><td class="r"><b>100%</b></td></tr>
+  </table>
+</section>
+
+<section class="ch cont">
+  <h3>4. Subscriptions</h3>
+  <table class="t">
+    <tr><th>Charge</th><th class="r">Monthly</th><th class="r">Yearly</th><th>Flag</th></tr>
+    <tr><td>Netflix</td><td class="r">$17.99</td><td class="r">$215.88</td><td>Price rose from $15.49</td></tr>
+    <tr><td>Hulu</td><td class="r">$18.99</td><td class="r">$227.88</td><td>Overlaps other streaming</td></tr>
+    <tr><td>Disney+</td><td class="r">$15.99</td><td class="r">$191.88</td><td>Overlaps other streaming</td></tr>
+    <tr><td>Amazon Prime</td><td class="r">$14.99</td><td class="r">$179.88</td><td></td></tr>
+    <tr><td>Spotify Family</td><td class="r">$19.99</td><td class="r">$239.88</td><td>Overlaps Apple Music</td></tr>
+    <tr><td>Apple Music</td><td class="r">$10.99</td><td class="r">$131.88</td><td>Overlaps Spotify</td></tr>
+    <tr><td>iCloud+</td><td class="r">$2.99</td><td class="r">$35.88</td><td></td></tr>
+    <tr><td>Planet Fitness</td><td class="r">$24.99</td><td class="r">$299.88</td><td>Plus $49 annual fee</td></tr>
+    <tr><td>SQ *JMK LLC</td><td class="r">$45.00</td><td class="r">$540.00</td><td>Unknown merchant</td></tr>
+  </table>
+  <h3>5. Fees and interest: $522.59 in three months</h3>
+  <p>Visa interest (about $122 a month at 22.99%), a $95 card annual fee, a $29 late fee, a new $12 monthly checking fee, out-of-network ATM fees and a foreign transaction fee.</p>
+  <h3>6. Debt and net worth</h3>
+  <p>Avalanche order: Discover (27.24%), Visa (22.99%), car loan (6.9%), family loan. With $300 extra a month and a one-time payment from idle cash: debt-free in 23 months instead of 62, about $5,500 less interest. Net worth $162,554; liquid net worth $154.</p>
+  <h3>7. Their choices</h3>
+  <p>They cancelled Hulu and Apple Music: $29.98 a month, $359.76 a year. The report noted that this was $270 short of their $300 goal, and that the biggest remaining lever was using the idle checking cash against the Visa.</p>
+</section>
+
+<section class="ch" data-id="c20">
+  <div class="bar"><span class="num">20</span><h2>Worksheets</h2></div>
+  <h3>Statement checklist</h3>
+  <p class="small">Tick each statement as you download it.</p>
+  <table class="ws">
+    <tr><th>Account (nickname)</th><th>Type</th><th>Month 1</th><th>Month 2</th><th>Month 3</th><th>CSV / PDF</th></tr>
+    <tr><td></td><td></td><td></td><td></td><td></td><td></td></tr><tr><td></td><td></td><td></td><td></td><td></td><td></td></tr><tr><td></td><td></td><td></td><td></td><td></td><td></td></tr><tr><td></td><td></td><td></td><td></td><td></td><td></td></tr><tr><td></td><td></td><td></td><td></td><td></td><td></td></tr><tr><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+  </table>
+  <h3>Subscription review</h3>
+  <table class="ws">
+    <tr><th>Service</th><th>Monthly</th><th>Yearly</th><th>Used in 30 days?</th><th>Keep / cut</th><th>Cancelled on</th></tr>
+    <tr><td></td><td></td><td></td><td></td><td></td><td></td></tr><tr><td></td><td></td><td></td><td></td><td></td><td></td></tr><tr><td></td><td></td><td></td><td></td><td></td><td></td></tr><tr><td></td><td></td><td></td><td></td><td></td><td></td></tr><tr><td></td><td></td><td></td><td></td><td></td><td></td></tr><tr><td></td><td></td><td></td><td></td><td></td><td></td></tr><tr><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+  </table>
+  <h3>Debt list</h3>
+  <table class="ws">
+    <tr><th>Debt</th><th>Balance</th><th>APR</th><th>Minimum</th><th>Order</th><th>Paid off</th></tr>
+    <tr><td></td><td></td><td></td><td></td><td></td><td></td></tr><tr><td></td><td></td><td></td><td></td><td></td><td></td></tr><tr><td></td><td></td><td></td><td></td><td></td><td></td></tr><tr><td></td><td></td><td></td><td></td><td></td><td></td></tr><tr><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+  </table>
+</section>
+
+<section class="ch">
+  <h3>Monthly budget</h3>
+  <table class="ws">
+    <tr><th>Category</th><th>3-month average</th><th>Target</th><th>Actual</th><th>Difference</th></tr>
+    <tr><td>Housing</td><td></td><td></td><td></td><td></td></tr><tr><td>Utilities</td><td></td><td></td><td></td><td></td></tr><tr><td>Groceries</td><td></td><td></td><td></td><td></td></tr><tr><td>Dining out</td><td></td><td></td><td></td><td></td></tr><tr><td>Gas and transportation</td><td></td><td></td><td></td><td></td></tr><tr><td>Insurance</td><td></td><td></td><td></td><td></td></tr><tr><td>Debt payments</td><td></td><td></td><td></td><td></td></tr><tr><td>Subscriptions</td><td></td><td></td><td></td><td></td></tr><tr><td>Shopping</td><td></td><td></td><td></td><td></td></tr><tr><td>Other</td><td></td><td></td><td></td><td></td></tr><tr><td><b>Total</b></td><td></td><td></td><td></td><td></td></tr>
+  </table>
+  <h3>Net worth tracker</h3>
+  <table class="ws">
+    <tr><th>Date</th><th>Own</th><th>Owe</th><th>Net worth</th><th>Liquid</th><th>What changed</th></tr>
+    <tr><td></td><td></td><td></td><td></td><td></td><td></td></tr><tr><td></td><td></td><td></td><td></td><td></td><td></td></tr><tr><td></td><td></td><td></td><td></td><td></td><td></td></tr><tr><td></td><td></td><td></td><td></td><td></td><td></td></tr><tr><td></td><td></td><td></td><td></td><td></td><td></td></tr><tr><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+  </table>
+  <h3>Monthly checkup log</h3>
+  <table class="ws">
+    <tr><th>Month</th><th>Spent</th><th>Left over</th><th>Debt paid down</th><th>One thing to change</th></tr>
+    <tr><td></td><td></td><td></td><td></td><td></td></tr><tr><td></td><td></td><td></td><td></td><td></td></tr><tr><td></td><td></td><td></td><td></td><td></td></tr><tr><td></td><td></td><td></td><td></td><td></td></tr><tr><td></td><td></td><td></td><td></td><td></td></tr><tr><td></td><td></td><td></td><td></td><td></td></tr>
+  </table>
+</section>
+
+<section class="ch" data-id="c21">
+  <div class="bar"><span class="num">21</span><h2>Words you will meet</h2></div>
+  <table class="t">
+    <tr><th>Word</th><th>What it means</th></tr>
+    <tr><td>APR</td><td>The yearly interest rate on a card or loan. 24% APR is about 2% a month.</td></tr>
+    <tr><td>Avalanche</td><td>Paying off debts from the highest interest rate to the lowest.</td></tr>
+    <tr><td>Balance check ($0.00 Check)</td><td>Opening balance plus money in minus money out must equal the closing balance.</td></tr>
+    <tr><td>Cash advance</td><td>Cash taken from a credit card. Usually a higher rate, charged from day one.</td></tr>
+    <tr><td>CSV</td><td>A plain spreadsheet file of transactions you can download from your bank's website.</td></tr>
+    <tr><td>Card payment</td><td>Paying your credit card from checking. Not spending: the purchases were already counted.</td></tr>
+    <tr><td>Checkpoint / save block</td><td>The short text summary you save, to continue later or for next month's checkup.</td></tr>
+    <tr><td>Double charge</td><td>The same purchase charged twice. Different from a repeated row in a download.</td></tr>
+    <tr><td>Liquid net worth</td><td>Cash in the bank minus card balances and short-term debts.</td></tr>
+    <tr><td>Minimum payment</td><td>The least you must pay on a card or loan each month to stay current.</td></tr>
+    <tr><td>Net worth</td><td>Everything you own minus everything you owe.</td></tr>
+    <tr><td>Promo balance</td><td>A balance at a low or 0% rate until a set end date.</td></tr>
+    <tr><td>Prompt</td><td>The written instructions you paste into the AI app.</td></tr>
+    <tr><td>Reimbursement</td><td>Money someone pays you back for a shared cost. It reduces that category, not income.</td></tr>
+    <tr><td>Snowball</td><td>Paying off debts from the smallest balance to the largest.</td></tr>
+    <tr><td>Statement period</td><td>The dates one statement covers, usually about a month.</td></tr>
+    <tr><td>Transfer</td><td>Moving money between your own accounts. Not spending.</td></tr>
+  </table>
+</section>
+
+<section class="ch" data-id="c22">
+  <div class="bar"><span class="num">✓</span><h2>Your checklist</h2></div>
+  <h4>Before</h4>
+  <ul class="check">
+    <li>Choose ChatGPT, Claude or Gemini, and check its privacy settings</li>
+    <li>Download 3 months of statements for every checking, savings and card account</li>
+    <li>Optional: retirement, investment and loan statements</li>
+  </ul>
+  <h4>The audit</h4>
+  <ul class="check">
+    <li>New chat, paste or attach the prompt, send</li>
+    <li>Upload all statements, type <b>done</b></li>
+    <li>Type <b>go</b> whenever it asks</li>
+    <li>Read the report; check the $0.00 Check for every account</li>
+    <li>Answer the questions, or reply <b>ok</b></li>
+    <li>Copy the save block into your notes</li>
+  </ul>
+  <h4>Acting on it</h4>
+  <ul class="check">
+    <li>Pick subscriptions to cancel, and cancel them</li>
+    <li>Ask for one fee to be removed</li>
+    <li>Choose avalanche or snowball, and make this month's payments</li>
+    <li>Add home, car and retirement values for your full net worth</li>
+    <li>Set monthly targets for 3 flexible categories</li>
+    <li>Set up autopay minimums and a payday transfer to savings</li>
+  </ul>
+  <h4>Every month</h4>
+  <ul class="check">
+    <li>Download last month's statements</li>
+    <li>Paste the prompt and save block, type <b>monthly checkup</b></li>
+    <li>Save the new save block</li>
+  </ul>
+</section>
+
+<section class="ch" data-id="c23">
+  <div class="bar"><span class="num">A</span><h2>Appendix: the full prompt</h2></div>
+  <p class="small">This is the same prompt as the text file that came with this guide. Copy from the text file when you can; it pastes most cleanly.</p>
+  {{PROMPT}}
+</section>
+
+</main>
+<script src="paginate.js"></script>
+</body>
+</html>
