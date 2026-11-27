@@ -54,8 +54,7 @@ def pages():
 </div>
 <h3>No code tool? (most free plans)</h3>
 <p>The AI can't write into the PDF, so it lists the values for the five key pages (3, 7, 8, 11 and 15). Type them in
-(the free Adobe Acrobat Reader app works best; some phone viewers don't save typed boxes) or print and write by hand.
-The phone edition has bigger boxes for typing.</p>
+(the free Adobe Acrobat Reader app works best; some phone viewers don't save typed boxes) or print and write by hand.</p>
 <h3>Changed something?</h3>
 <p>Upload your filled kit again and say what changed ("I cancelled Disney+, update my kit"). After each monthly checkup, upload it with the new save block and type <b>update my kit</b>.</p>
 <h3>What's inside</h3>
@@ -382,6 +381,8 @@ def build(edition):
 
 
 if __name__ == "__main__":
-    for e in EDITIONS:
+    import sys
+    eds = sys.argv[1:] or ["letter"]   # the shipped kit is US Letter; a4, print and phone can still be built
+    for e in eds:
         build(e)
-    print("built", ", ".join(EDITIONS))
+    print("built", ", ".join(eds))

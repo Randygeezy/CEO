@@ -3,7 +3,7 @@ and writes the finished edition. Usage: python3 add_fields.py letter|a4|print|ph
 import json, os, sys, pymupdf
 here = os.path.dirname(os.path.abspath(__file__))
 ed = sys.argv[1]
-names = {"letter": "3 - Money X-Ray Action Kit (US Letter).pdf", "a4": "3 - Money X-Ray Action Kit (A4).pdf",
+names = {"letter": "3 - Money X-Ray Action Kit.pdf", "a4": "3 - Money X-Ray Action Kit (A4).pdf",
          "print": "3 - Money X-Ray Action Kit (Print).pdf", "phone": "3 - Money X-Ray Action Kit (Phone).pdf"}
 if ed == "phone":
     doc = pymupdf.open()
