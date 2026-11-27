@@ -456,10 +456,13 @@ pre.prompt { margin: 0 0 2.2mm 0 !important; overflow-wrap: anywhere; white-spac
     <tr><td>4</td><td>Budget</td><td>A target for every category, built from your averages</td><td>15</td></tr>
     <tr><td>5</td><td>Spreadsheet export</td><td>Your transactions as CSV to import into Notion, Google Sheets or Excel</td><td>below</td></tr>
     <tr><td>6</td><td>PDF report</td><td>Everything in one file, or how to save it as one on a free plan</td><td>below</td></tr>
-    <tr><td>7</td><td>Monthly checkup</td><td>How to come back next month</td><td>16</td></tr>
+    <tr><td>7</td><td>Fill my Action Kit</td><td>Upload the Action Kit PDF; it fills in your trackers</td><td>below</td></tr>
+    <tr><td>8</td><td>Monthly checkup</td><td>How to come back next month</td><td>16</td></tr>
   </table>
   <h4>Spreadsheet export</h4>
   <p>With a code tool, you get one CSV file with every account. Without one, it gives you each account's transactions as CSV text, one account per message. Copy each block into a text file saved as <b>.csv</b>, then import it into Notion, Google Sheets or Excel to sort and filter your own transactions. On a free plan, type <b>go</b> for each account; it can take six or more replies, so it's easiest on a computer.</p>
+  <h4>Action Kit</h4>
+  <p>The Action Kit is a separate fillable PDF: your snapshot, spending plan, subscriptions, debt plan, savings goals and a monthly log. Upload it in the same chat and type <b>fill my kit</b>. With a code tool, you get it back filled in. Without one, the AI lists what goes in each box, so you can type it in or write it by hand.</p>
   <h4>PDF report</h4>
   <p>If your app can create files, you get a PDF with the findings on the first page and your save block on the last. If it can't, copy the report messages into a notes app or document and export that as a PDF.</p>
 </section>
@@ -676,8 +679,8 @@ pre.prompt { margin: 0 0 2.2mm 0 !important; overflow-wrap: anywhere; white-spac
     <li>Debt paid down, and progress on your plan</li>
     <li>The change in your net worth, and what drove it</li>
   </ul>
-  <p>Then it gives you a new save block. Replace the old one in your notes.</p>
-  <div class="callout"><div class="k">The habit</div><div class="v">Same day every month, right after your statement closes. Ten minutes keeps the whole picture current.</div></div>
+  <p>Then it gives you a new save block. Replace the old one in your notes. If you use the Action Kit, upload it too and type <b>update my kit</b> to add this month's row.</p>
+  <div class="callout"><div class="k">The habit</div><div class="v">Same day every month, right after your statement closes.</div></div>
 </section>
 
 <section class="ch cont" data-id="c17">
@@ -687,8 +690,7 @@ pre.prompt { margin: 0 0 2.2mm 0 !important; overflow-wrap: anywhere; white-spac
     <tr><td>A file won't upload, or it's a scan</td><td>Download the original PDF or the CSV from the bank, send fewer files at a time, or paste the rows. Long file? One month at a time.</td></tr>
     <tr><td>It stopped partway</td><td>Type <b>go</b>. It picks up where it left off.</td></tr>
     <tr><td>An account doesn't balance to $0.00</td><td>Check for a missing month or two overlapping downloads. Ask it which dates it couldn't match, then upload the missing statement and ask it to check again.</td></tr>
-    <tr><td>It missed a subscription</td><td>Tell it the merchant name; it adds it and updates the totals.</td></tr>
-    <tr><td>A category looks wrong</td><td>Tell it the right one ("Costco is groceries"). It updates every total.</td></tr>
+    <tr><td>A subscription or category is wrong</td><td>Tell it ("Costco is groceries", "it missed Peacock"). It updates every total.</td></tr>
     <tr><td>The chat ran out</td><td>New chat, paste the prompt and your save block, type <b>continue</b>.</td></tr>
     <tr><td>It mentions an account you didn't upload</td><td>Upload that statement, or tell it the balance and APR.</td></tr>
     <tr><td>The numbers seem off</td><td>Ask: "Show me the transactions behind [number]." Everything traces back to your statements.</td></tr>
