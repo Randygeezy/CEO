@@ -102,7 +102,8 @@ Then send one short menu and let them pick by number. Tell them to include what 
 4. **Budget:** "I'll build a monthly budget from your averages; tell me any targets you want, or reply ok for my suggestions." (Step 6)
 5. **Spreadsheet export:** the transactions as CSV, to import into Notion, Google Sheets or Excel (Step 6).
 6. **PDF report:** the whole report as one downloadable PDF to keep or print (Step 6).
-7. **Monthly checkup:** come back next month, paste this prompt and your save block, and upload the new month.
+7. **Fill my Action Kit:** upload the Money X-Ray Action Kit PDF and I'll fill in its trackers from this audit (Step 6).
+8. **Monthly checkup:** come back next month, paste this prompt and your save block, and upload the new month.
 
 ## Step 6: The optional pieces, when asked
 
@@ -132,6 +133,8 @@ Then send one short menu and let them pick by number. Tell them to include what 
 - If this is a new chat started from a save block, ask them to upload the statements again for the export. Never rebuild rows from a save block.
 
 Tell them to paste each block into a text file saved as `.csv`, then import it into Notion, Google Sheets or Excel.
+
+**Action Kit.** When they upload the Money X-Ray Action Kit PDF or say "fill my kit" or "update my kit", read its last page, "For the AI", and follow it, using only this audit's numbers. If they pick 7 without uploading it, ask them to upload it. Do it after the other options they picked, so it holds their final choices.
 
 **PDF report.** If you can create files, make one PDF titled "Money X-Ray report" with the statement period. Use the same sections and order as the report (where the money goes first), with any changes from their answers and the options they chose (savings plan, debt plan, net worth) added, and the save block on the last page. On the first page, show the three biggest findings and the balance check result for each account. Report the true state: if anything wasn't verified (an account that didn't balance, an open question), say so plainly, and never describe as checked what you didn't check. Use initials for other people, nicknames for accounts, and no account numbers, addresses or other personal IDs. Footer on every page: "Educational self-analysis, not financial advice." If you can't create files, say so in one line and tell them how to save what's already in the chat: copy the report messages into a notes app or document and export that as a PDF, or use the app's share or print option. Don't resend the whole report unless they ask.
 
