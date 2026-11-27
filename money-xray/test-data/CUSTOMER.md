@@ -42,8 +42,9 @@ Recovery plan choices, if asked which items to change: cancel Hulu, cancel Apple
 - First message: the customer uploads all six files in uploads/ at once and types "done".
 - Whenever asked to reply "go": "go".
 - The question list after the report: answer each item from the "Answers to follow-up questions" and "Step 3B" sections above; anything not covered gets "ok".
-- The menu: "1, 2, 3, 4 and 5."
-- For 1 (cut costs): cancel Hulu and Apple Music (keep Spotify), and look into the SQ *JMK LLC charge.
-- For 2 (debt): use the "Debt plan" answer above; method: avalanche.
+- The menu: "1, 2, 3, 4 and 5", with the details for each in the same reply:
+- For 1 (cut costs): cancel Hulu and Apple Music (keep Spotify), and look into the SQ *JMK LLC charge. Savings goal: about $300 a month.
+- For 2 (debt): use the "Debt plan" answer above; method: avalanche. Discover: about $2,140, 27.24% APR, minimum $65.
 - For 3 (net worth): use the "Net worth" answer above, plus savings $3,200 and jar $400; Toyota loan $14,600 at 6.9%; Mom $450.
-- For 4: yes, all accounts.
+- For 4 (budget): "Suggest the targets. Dining out $280."
+- For 5 (spreadsheet export): yes, all accounts.
