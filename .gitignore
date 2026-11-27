@@ -79,3 +79,6 @@ ios-qa/scripts/gen-accessors-tool/Package.resolved
 money-xray/kit/kit.html
 money-xray/kit/kit_layout.pdf
 money-xray/kit/fields.json
+money-xray/kit/kit_*.html
+money-xray/kit/kit_*_layout.pdf
+money-xray/kit/fields_*.json
