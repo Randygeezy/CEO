@@ -1,12 +1,12 @@
-// Builds Money_XRay_Complete_Guide.pdf from complete-guide.html (pages laid out by paginate.js).
+// Builds 1 - Money X-Ray Complete Guide.pdf from complete-guide.html (pages laid out by paginate.js).
 // Usage (from this folder): node build-complete-guide.cjs   (needs playwright)
 const fs = require('fs'), path = require('path');
 const { chromium } = require('playwright');
 const here = __dirname;
 const esc = s => s.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
-const prompt = fs.readFileSync(path.join(here, '..', 'prompt', 'Money_XRay_Prompt.txt'), 'utf8');
+const prompt = fs.readFileSync(path.join(here, '..', 'prompt', '2 - Money X-Ray Prompt.txt'), 'utf8');
 const html = fs.readFileSync(path.join(here, 'complete-guide.html'), 'utf8').replace('{{PROMPT}}', require('./prompt-blocks.cjs')(prompt).map(t => '<pre class="prompt">' + esc(t) + '</pre>').join('\n'));
-const tmp = path.join(here, '.build.html'), out = path.join(here, 'Money_XRay_Complete_Guide.pdf');
+const tmp = path.join(here, '.build.html'), out = path.join(here, '1 - Money X-Ray Complete Guide.pdf');
 (async () => {
   fs.writeFileSync(tmp, html);
   const b = await chromium.launch(); const p = await b.newPage();
