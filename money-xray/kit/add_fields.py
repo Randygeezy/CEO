@@ -19,6 +19,14 @@ for f in json.load(open(os.path.join(here, "fields.json"))):
     w.border_width = 0
     w.fill_color = None
     doc[f["page"]].add_widget(w)
+# font resources for the fields, so any PDF library can draw filled text in Helvetica
+cat = doc.pdf_catalog(); af = doc.xref_get_key(cat, "AcroForm")
+if af[0] == "xref":
+    afx = int(af[1].split()[0])
+    doc.xref_set_key(afx, "DR", "<</Font<</Helv<</Type/Font/Subtype/Type1/BaseFont/Helvetica/Encoding/WinAnsiEncoding>>>>>>")
+    doc.xref_set_key(afx, "DA", "(/Helv 0 Tf 0 g)")
+else:
+    doc.xref_set_key(cat, "AcroForm/DR", "<</Font<</Helv<</Type/Font/Subtype/Type1/BaseFont/Helvetica/Encoding/WinAnsiEncoding>>>>>>")
 doc.set_metadata({"title": "Money X-Ray Action Kit", "author": "Money X-Ray"})
 doc.save(os.path.join(here, "Money_XRay_Action_Kit.pdf"), garbage=3, deflate=True)
 print("saved", len(doc), "pages")

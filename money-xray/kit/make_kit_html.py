@@ -34,7 +34,7 @@ how = """
   <div><i>3</i><span>Download the filled kit it sends back. Print it or keep it on your phone.</span></div>
 </div>
 <h3>No code tool? (most free plans)</h3>
-<p>The AI can't write into the PDF, so it lists what goes on each page instead. Tap a box in this PDF to type
+<p>The AI can't write into the PDF, so it lists the values for the five key pages (3, 7, 8, 11 and 15) instead. Tap a box in this PDF to type
 (Adobe Acrobat Reader is free; most phones' Files or Books apps work too), or print the kit and write by hand.</p>
 <h3>What's inside</h3>
 <table class="t toc"><colgroup><col style="width:9%"><col style="width:40%"><col></colgroup>
@@ -150,7 +150,7 @@ page("Monthly checkup log", "Twelve months on one page", ckp)
 
 # ---------- For the AI page ----------
 ai = r"""
-<p class="small">This page tells an AI assistant how to fill this PDF from a Money X-Ray audit in the same chat. People can skip it.</p>
+<p class="small">These last two pages tell an AI assistant how to fill this PDF from a Money X-Ray audit in the same chat. People can skip it.</p>
 <pre class="ai">FOR THE AI: HOW TO FILL THE MONEY X-RAY ACTION KIT
 This PDF has fillable form fields. Fill them from the Money X-Ray audit in this
 chat: the report, the person's answers and the options they chose. Use only
@@ -166,55 +166,75 @@ named Money_XRay_Action_Kit_filled.pdf. For example, with pypdf:
       w.update_page_form_field_values(page, values, auto_regenerate=False)
   w.set_need_appearances_writer(True)
   w.write("Money_XRay_Action_Kit_filled.pdf")
-Checkboxes take the value "/Yes". Then list the field names you filled, page by
-page, in one short message, and say which pages are left for them.
-WITHOUT A CODE TOOL: say you can't write into the PDF, then give each page
-as a short table (box label and value) to type in or copy by hand, two pages
-per message, ending each with "Reply go for the next pages".
+Checkboxes take the value "/Yes". Then say in one short message which pages
+are complete and which boxes are left for them. The save block doesn't change.
+WITHOUT A CODE TOOL: say you can't write into the PDF. Give only pages 3,
+7, 8, 11 and 15, each as a short table (box label and value) to type in or
+write by hand, at most two pages per message, ending each with "Reply go for
+the next pages". Say the other pages are for writing in by hand as they go.
 
 FORMAT: money as on the report ($1,234 or $1,234.56); APR as 22.99%;
-months as "Nov 2026"; dates as "Nov 3, 2026". Keep text short: fields are
-small. Rows in a list are numbered from 1 with no gaps.
+months as "Nov 2026"; dates as "Nov 3, 2026". Boxes are small: at most 25
+characters, except snap_answer (40 words), debt_warning and ns_rules (25
+words). Rows in a list are numbered from 1 with no gaps. "Freed up" = the
+monthly saving from the cuts they chose. Leave a choice empty if they didn't
+make it; never fill in a default.
 
-FIELDS (n = row number)
+(Field list on the next page.)</pre>
+"""
+ai2 = r"""<pre class="ai">FIELDS (n = row number)
 p3  snap_period snap_accounts snap_income snap_spending snap_savings
     snap_leftover snap_check ("All $0.00" or which ones weren't checked)
     snap_fees snap_answer (2-3 sentences) snap_fix_1..3 snap_missing snap_date
-p4  cat_n_name cat_n_avg cat_n_target (n 1-16, largest first; the rest as
-    "Everything else") cat_total_avg cat_total_target; cat_m1_label..
-    cat_m3_label = the next three months; leave cat_n_m1..m3 empty.
-    bud_income bud_planned bud_room
-p5  sub_n_name monthly yearly flag decision (Keep / Cut / Check) cancelled
-    (date, if they said so) stopped (checkbox, leave empty) (n 1-16)
-    sub_total_monthly sub_saved_monthly sub_saved_yearly
+p4  cat_n_name cat_n_avg cat_n_target (rows 1-15 largest first, row 16
+    "Everything else"; targets from the Budget option, else empty)
+    cat_total_avg cat_total_target; cat_m1_label..cat_m3_label = the three
+    months after the latest statement; leave cat_n_m1..m3 empty.
+    bud_income bud_planned (target total + savings + card minimums + the
+    extra to debt) cat_total_m1..m3 empty
+    bud_room
+p5  sub_n_name monthly yearly flag decision (Keep / Cut / Check, only as
+    they chose) cancelled (date, if they said so) stopped (leave empty)
+    (n 1-16: subscriptions first, then other recurring bills if room;
+    not housing, loans, child care or giving)
+    sub_total_monthly (sum of the rows listed) sub_saved_monthly
+    sub_saved_yearly
 p6  fee_n_item amount avoid (n 1-12) fee_total fee_monthly
-p7  todo_n_task saves by (n 1-12, biggest saving first) todo_goal
-    todo_total todo_gap ("$270 short" or "$40 over")
+p7  todo_n_task saves by (n 1-12, biggest saving first; by = a date or
+    "This week"; for a debt action, saves = interest saved per month)
+    todo_goal todo_total (only the cuts they chose; not items they're
+    still checking)
+    todo_gap ("$270 short" or "$40 over")
 p8  debt_n_order name balance apr min payoff (n 1-8, in payoff order,
     each separately priced balance on its own row) debt_method debt_extra
     debt_lump debt_cushion debt_free debt_interest debt_min_free
-    debt_min_interest debt_warning debt_asof
+    debt_min_interest debt_warning debt_asof (latest statement date).
+    Payoff order = the order the plan targets them, not the order they
+    reach $0.
 p9  plan_d1_name..plan_d4_name = first four debts in payoff order;
     plan_mk_label plan_mk_d1..d4 plan_mk_total (k 1-24, month 1 = the
     month after the latest statement; planned end-of-month balance; fill
     only with a code tool, otherwise fill labels and write "about" months
     on p8). Leave plan_mk_done empty.
-p10 thn_name thn_start thn_goal ("$0") thn_p10..thn_p90 = balance left
-    when that % is paid (n 1-4, payoff order)
+p10 thn_name thn_start (balance on the debt list) thn_goal ("$0")
+    thn_p10..thn_p90 = balance left when that % is paid (n 1-4, payoff order)
 p11 nw_date nw_an_item nw_an_value nw_ln_item nw_ln_value (n 1-10)
     nw_assets nw_liabs nw_total nw_liquid
 p12 ef_months ef_target ef_current ef_monthly ef_date ef_where;
-    sf_n_name target due monthly (n 1-8; yearly or annual charges found,
-    e.g. annual fees, insurance, holidays) leave sf_n_saved empty
-p13 ch_goal ch_for ch_start ch_wk_amount ch_wk_total (k 1-12; amounts add
-    up exactly to ch_goal; goal = 3 months of the money they freed up,
-    rounded to $25). Leave ch_wk_done empty.
-p14 ns_rules (top 2-3 flexible categories) ns_usual ns_start ns_end;
-    leave ns_instead ns_saved and the day boxes empty.
-p15 ck_1_month ck_1_spending ck_1_target ck_1_debt ck_1_networth ck_1_note.
+    (empty if they gave no goal); sf_n_name target due monthly (n 1-8;
+    yearly charges found, e.g. annual fees; monthly = amount / months left
+    until due) leave sf_n_saved empty
+p13 ch_goal ch_wk_amount ch_wk_total (k 1-12; amounts add up exactly to
+    ch_goal; goal = 3 months of the money they freed up, rounded up to $25,
+    at least $300). Leave ch_for ch_start and ch_wk_done empty.
+p14 ns_rules (top 2-3 flexible categories, not one-off purchases) ns_usual; leave the dates,
+    ns_instead, ns_saved and the day boxes empty.
+p15 ck_1_month (latest statement month) ck_1_spending (monthly average)
+    ck_1_target ck_1_debt (total debt, no mortgage) ck_1_networth ck_1_note.
     On "update my kit" with a newer save block, fill the next empty row.</pre>
 """
-page("For the AI", "Instructions an AI reads to fill this kit", ai)
+page("For the AI", "How an AI fills this kit (1 of 2)", ai)
+page("For the AI: field list", "How an AI fills this kit (2 of 2)", ai2)
 
 CSS = """
 @font-face { font-family: "Playfair Display"; font-weight: 700; src: url(../guide/fonts/playfair-display-latin-700-normal.woff2); }
@@ -262,7 +282,7 @@ table.toc td { padding: 3pt 5pt; }
 .ball { position: absolute; left: 1pt; bottom: 0; width: 22pt; height: 22pt; border-radius: 50%; background: var(--green); }
 .marks { flex: 1; } .tm { display: flex; align-items: center; gap: 4pt; margin-bottom: 3pt; } .tm span { width: 42pt; font-size: 6.8pt; color: var(--muted); } .tm .f { flex: 1; height: 13pt; }
 .days { display: grid; grid-template-columns: repeat(10, 1fr); gap: 5pt; } .day { background: #fff; border: 1px solid var(--line); border-radius: 3pt; text-align: center; padding: 3pt 0; font-size: 7.5pt; } .day span { display: block; color: var(--muted); }
-pre.ai { font-family: "DejaVu Sans Mono", monospace; font-size: 6.9pt; line-height: 1.36; background: #fff; border: 1px solid var(--line); padding: 8pt; margin: 0; white-space: pre-wrap; }
+pre.ai { font-family: "DejaVu Sans Mono", monospace; font-size: 7pt; line-height: 1.38; background: #fff; border: 1px solid var(--line); padding: 8pt; margin: 0; white-space: pre-wrap; }
 /* cover */
 .cover { background: var(--ink); color: var(--bg); }
 .cover .tab { position: absolute; top: 0; left: 0.6in; width: 1.3in; height: 1.75in; background: var(--green); border-radius: 0 0 .65in .65in; }
