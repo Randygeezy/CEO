@@ -5,12 +5,7 @@ const { chromium } = require('playwright');
 const here = __dirname;
 const esc = s => s.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
 const prompt = fs.readFileSync(path.join(here, '..', 'prompt', 'Money_XRay_Prompt.txt'), 'utf8');
-const html = fs.readFileSync(path.join(here, 'complete-guide.html'), 'utf8').replace('{{PROMPT}}', prompt.split(/\n(?=## )/).flatMap(sec => {
-  // keep each block well under a page: split long sections at blank lines
-  const parts = []; let buf = '';
-  for (const para of sec.split(/\n\n/)) { if ((buf + para).length > 2600 && buf) { parts.push(buf); buf = ''; } buf += (buf ? '\n\n' : '') + para; }
-  if (buf) parts.push(buf); return parts;
-}).map(t => '<pre class="prompt">' + esc(t) + '</pre>').join('\n'));
+const html = fs.readFileSync(path.join(here, 'complete-guide.html'), 'utf8').replace('{{PROMPT}}', require('./prompt-blocks.cjs')(prompt).map(t => '<pre class="prompt">' + esc(t) + '</pre>').join('\n'));
 const tmp = path.join(here, '.build.html'), out = path.join(here, 'Money_XRay_Complete_Guide.pdf');
 (async () => {
   fs.writeFileSync(tmp, html);
