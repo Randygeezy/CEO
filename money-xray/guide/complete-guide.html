@@ -65,8 +65,8 @@ b, strong { font-weight: 600; }
 .part { background: #0d0d0c; color: #f3efe9; text-align: center; }
 .part .big { position: absolute; left: 0; right: 0; top: 52mm; font-family: "Playfair Display"; font-size: 330pt; line-height: 1; color: #2a2826; }
 .part .label { position: absolute; left: 0; right: 0; top: 70mm; font-family: "Playfair Display"; font-size: 34pt; letter-spacing: .05em; }
-.part .title { position: absolute; left: 0; right: 0; top: 168mm; font-family: "Playfair Display"; font-size: 22pt; }
-.part .desc { position: absolute; left: 40mm; right: 40mm; top: 184mm; font-size: 9pt; color: #b9b2a9; }
+.part .title { position: absolute; left: 0; right: 0; top: 184mm; font-family: "Playfair Display"; font-size: 22pt; }
+.part .desc { position: absolute; left: 40mm; right: 40mm; top: 200mm; font-size: 9pt; color: #b9b2a9; }
 
 /* chapters */
 .ch { break-before: page; }
@@ -94,7 +94,7 @@ table.t td.r, table.t th.r { text-align: right; }
 .flow div.last { background: var(--taupe); color: var(--ink); }
 .shots { display: flex; gap: 6mm; justify-content: center; margin: 4mm 0; }
 .shots figure { margin: 0; flex: 1; text-align: center; max-width: 60mm; }
-.shots img { width: 100%; max-height: 112mm; object-fit: contain; border-radius: 10pt; background: #000; }
+.shots img { width: 100%; max-height: 100mm; object-fit: contain; border-radius: 10pt; background: #000; }
 .shots.wide figure { max-width: 72mm; }
 figcaption { font-size: 7.5pt; color: var(--muted); margin-top: 1.5mm; }
 .ph { border: 1.5px dashed var(--brown); border-radius: 10pt; padding: 6mm 8mm; text-align: center; color: var(--muted); font-size: 8.5pt; margin: 4mm 0; }
@@ -108,7 +108,7 @@ figcaption { font-size: 7.5pt; color: var(--muted); margin-top: 1.5mm; }
 .check li { list-style: none; position: relative; padding-left: 7mm; margin: 2.2mm 0; }
 .check li:before { content: ""; position: absolute; left: 0; top: .6mm; width: 3.5mm; height: 3.5mm; border: 1.2px solid var(--ink); border-radius: 2px; }
 .check { padding-left: 0; }
-pre.prompt { margin-bottom: 2mm !important; white-space: pre-wrap; font-family: "DejaVu Sans Mono", Menlo, monospace; font-size: 6.9pt; line-height: 1.42; background: #fbf9f6; border: 1px solid var(--line); padding: 5mm; margin: 0; }
+pre.prompt { margin-bottom: 2mm !important; overflow-wrap: anywhere; white-space: pre-wrap; font-family: "DejaVu Sans Mono", Menlo, monospace; font-size: 6.9pt; line-height: 1.42; background: #fbf9f6; border: 1px solid var(--line); padding: 5mm; margin: 0; }
 .two { display: flex; gap: 6mm; }
 .two > div { flex: 1; }
 .script-box { background: #fbf9f6; border: 1px solid var(--line); border-radius: 8pt; padding: 4mm 5mm; margin: 3mm 0 5mm; font-size: 9pt; }
@@ -217,6 +217,8 @@ pre.prompt { margin-bottom: 2mm !important; white-space: pre-wrap; font-family: 
     <tr><td><b>4. Keeping it going</b></td><td>Monthly checkup, fixes, sample report, worksheets</td><td>16 to 21</td></tr>
   </table>
   <div class="callout"><div class="k">The idea in one line</div><div class="v">You're not bad with money. You've just never seen all of it in one place.</div></div>
+  <h3>What you'll get</h3>
+  <p>A report like the one in chapter 19: where every dollar went, each account balanced to $0.00, your subscriptions with their yearly cost, every fee, a debt payoff order, and your net worth. Flip to page <span data-pg="c19"></span> to see a full sample before you start.</p>
   <h3>The fastest path</h3>
   <p>If you want results tonight: read chapter 4 (getting your statements), then chapter 6 (run it), and come back to the rest after you've seen your report. The whole first run takes about 20 minutes once your statements are downloaded.</p>
   <div class="note"><div class="t">What Money X-Ray is, and isn't</div>It's an educational self-analysis of your own statements. It isn't financial, tax or legal advice, and it isn't a professional audit. It never promises savings: it shows you what's there, and the choices are yours. AI can make mistakes, so the prompt makes it show its checks, and you should confirm anything important against your statements before acting.</div>
@@ -231,7 +233,7 @@ pre.prompt { margin-bottom: 2mm !important; white-space: pre-wrap; font-family: 
   <h3>The $0.00 Check</h3>
   <p>Before it tells you anything, Money X-Ray proves its math. For every account, it starts with the statement's opening balance, adds every deposit, subtracts every charge, and has to land on the statement's closing balance. The difference should be $0.00.</p>
   <div class="callout"><div class="k">Why it matters</div><div class="v">Every account is balance-checked to $0.00 before you see a single finding.</div></div>
-  <p>A $0.00 result proves the math adds up and nothing was skipped. It doesn't prove every category is right, so you'll still glance over the findings, but you can trust the totals.</p>
+  <p>A $0.00 result means the transactions it read add up to your statement's balances, so nothing big was missed or counted twice in that account. It doesn't prove every category is right, so glance over the findings and check anything important.</p>
   <h3>What it never counts twice</h3>
   <ul>
     <li><b>Card payments.</b> Buying groceries on your card is spending. Paying the card from checking later isn't spending again.</li>
@@ -259,7 +261,7 @@ pre.prompt { margin-bottom: 2mm !important; white-space: pre-wrap; font-family: 
     <tr><th>What</th><th>Details</th></tr>
     <tr><td><b>An AI chat app</b></td><td>ChatGPT, Claude or Gemini, on your phone or computer. Free plans work. Paid plans are faster and can run the math in code.</td></tr>
     <tr><td><b>The Money X-Ray prompt</b></td><td>The PDF and text file that came with this guide. The text file copies most cleanly on a phone.</td></tr>
-    <tr><td><b>Your statements</b></td><td>3 months for every checking account, savings account and credit card. That's 3 statements per account, one for each month. 6 months is even better.</td></tr>
+    <tr><td><b>Your statements</b></td><td>3 months for every checking account, savings account and credit card: three monthly statements per account, or one download that covers 3 months. 6 months is even better.</td></tr>
     <tr><td><b>Optional statements</b></td><td>Venmo, Cash App or PayPal if you spend from them. Retirement, investment and loan statements for your net worth.</td></tr>
     <tr><td><b>About 20 minutes</b></td><td>Longer on a free plan, where you type "go" between steps.</td></tr>
   </table>
@@ -271,7 +273,7 @@ pre.prompt { margin-bottom: 2mm !important; white-space: pre-wrap; font-family: 
     <tr><td>Messages</td><td>Two accounts at a time; you type "go"</td><td>All accounts in one go</td></tr>
     <tr><td>Uploads</td><td>Daily limits; you can paste the CSV text instead</td><td>Higher limits</td></tr>
     <tr><td>Debt plan</td><td>Payment order and a rough timeline</td><td>Exact debt-free date and total interest</td></tr>
-    <tr><td>PDF report</td><td>Print the report to PDF yourself</td><td>Can usually make the file for you</td></tr>
+    <tr><td>PDF report</td><td>Copy the report into a notes app and export it as PDF</td><td>Can usually make the file for you</td></tr>
   </table>
   <p class="small">Plan names, prices and limits change and differ by country. Check each app's own site.</p>
   <h3>Which accounts to include</h3>
@@ -294,17 +296,22 @@ pre.prompt { margin-bottom: 2mm !important; white-space: pre-wrap; font-family: 
     <tr><td><b>Your email</b></td><td>Many banks email a statement every month. Search your inbox for "statement".</td></tr>
     <tr><td><b>Your bank's website</b></td><td>The same statements, plus a "Download" or "Export" button on the transactions page that gives CSV files.</td></tr>
   </table>
-  <div class="ph">[Screenshots coming: finding statements in a banking app, and downloading a CSV on the bank's website]</div>
+  <div class="flow">
+    <div><b>1. Open</b>your bank or card app, or log in on the bank's website</div>
+    <div><b>2. Find</b>"Statements" or "Documents" (website: the transactions page)</div>
+    <div><b>3. Pick</b>the month, or a 3-month date range on the website</div>
+    <div class="last"><b>4. Download</b>PDF from the app, or CSV with "Download" / "Export"</div>
+  </div>
+  <p class="small"><b>Tip:</b> download everything first, then start the chat. Hunting for files mid-chat is the slowest part of the whole process.</p>
   <h3>CSV or PDF?</h3>
   <div class="two">
     <div class="good"><div class="t">CSV (best)</div>A plain table of transactions. Usually no account number, name or address in it, and the AI reads it most reliably.</div>
     <div class="note"><div class="t">PDF (fine)</div>Works if it's a real statement downloaded from the bank. Photos and scans of paper statements are much less reliable.</div>
   </div>
-  <h3>Three statements per account</h3>
-  <p>One statement covers one month. For a three-month audit, download three statements for every account: for example January, February and March. Name them clearly so you can pick them quickly on your phone: "Chase checking Jan", "Visa Feb".</p>
+  <h3>Three months per account</h3>
+  <p>One monthly statement covers one month. For a three-month audit, download three monthly statements for every account (for example January, February and March), or one CSV download from the website that covers all three months. Name files clearly so you can pick them quickly on your phone: "Chase checking Jan", "Visa Feb".</p>
   <h3>Include the balance</h3>
   <p>The $0.00 Check needs each account's opening and closing balance. PDFs show them on the first page. Many CSV files include a running balance column. If yours doesn't, the PDF for that month helps.</p>
-  <div class="note"><div class="t">Tip</div>Download everything first, then start the chat. Hunting for files mid-chat is the slowest part of the whole process.</div>
 </section>
 
 <section class="ch" data-id="c05">
@@ -333,7 +340,7 @@ pre.prompt { margin-bottom: 2mm !important; white-space: pre-wrap; font-family: 
 
 <section class="ch" style="break-before:auto" data-id="c06">
   <div class="bar"><span class="num">06</span><h2>Run it, step by step</h2></div>
-  <p class="small">The screenshots in Part 2 come from a real run on ChatGPT's paid plan. Every personal detail and dollar amount is blacked out. Other apps look different but follow the same steps.</p>
+  <p class="small">The screenshots in Part 2 come from a real run on ChatGPT's paid plan, recorded with an earlier version of the prompt, so some wording and the order of sections differ slightly from what you'll see. Personal details, bank names and dollar amounts are blacked out. Other apps look different but follow the same steps.</p>
   <h4>Step 1. Open a new chat and add the prompt</h4>
   <p>Start a fresh chat. Paste the whole prompt, or attach the prompt PDF with the + button, and send it with a short message such as "Start".</p>
   <div class="shots">
@@ -358,7 +365,7 @@ pre.prompt { margin-bottom: 2mm !important; white-space: pre-wrap; font-family: 
   <h4>Step 4. Let it work</h4>
   <p>It identifies each account, removes repeated rows, labels every transaction, matches card payments and transfers between your accounts, and runs the $0.00 Check. On a paid plan this happens in one go. On a free plan it works two accounts at a time and asks you to type <b>go</b>.</p>
   <h4>Step 5. Read the report, answer, choose</h4>
-  <p>The report arrives on its own, followed by a short list of questions and a menu of next steps. Chapters 7 to 10 walk through each part.</p>
+  <p>The report arrives on its own, then a save block to copy, then a short list of questions. After you answer, you get a menu of next steps. Chapters 7 to 10 walk through each part.</p>
   <div class="good"><div class="t">You shouldn't have to push it</div>You never need to ask "where is my money going?" or "are you done?". If it ever stops partway, type <b>go</b> and it carries on.</div>
 </section>
 
@@ -378,7 +385,7 @@ pre.prompt { margin-bottom: 2mm !important; white-space: pre-wrap; font-family: 
     <tr><td>9</td><td><b>Net worth</b></td><td>From your statements, plus liquid net worth</td></tr>
   </table>
   <div class="shots">
-    <figure><img src="screenshots/11_balance-check.png"><figcaption>The $0.00 Check, account by account</figcaption></figure>
+    <figure><img src="screenshots/11_balance-check.png"><figcaption>The $0.00 Check, account by account (one account was still pending in this run)</figcaption></figure>
     <figure><img src="screenshots/10_where-money-goes.png"><figcaption>Where the money goes</figcaption></figure>
   </div>
 </section>
@@ -414,26 +421,41 @@ pre.prompt { margin-bottom: 2mm !important; white-space: pre-wrap; font-family: 
   <div class="callout"><div class="k">The easy answer</div><div class="v">Reply "ok" to keep all its guesses. Answer only the ones you know are wrong.</div></div>
   <h3>Telling it about cash</h3>
   <p>Cash never shows up on a statement, so it asks once. Answer in plain words, one item per line: what it was, how much, in or out, and how often. For example, "I mow lawns for about $80 a week, cash" or "the $100 ATM cash paid the babysitter". It converts weekly amounts to monthly ones and never counts ATM cash twice. Your answers stay labelled as reported by you, separate from the statement totals.</p>
+  <h3>Then the menu</h3>
+  <p>After your answers, Money X-Ray updates the report and offers a menu. Pick any options by number, all optional:</p>
+  <table class="t">
+    <tr><th>#</th><th>Option</th><th>What you get</th><th>Chapter</th></tr>
+    <tr><td>1</td><td>Cut costs</td><td>Tell it what to cut; it totals the monthly and yearly savings</td><td>11, 12</td></tr>
+    <tr><td>2</td><td>Debt-free date</td><td>Your payoff plan; tell it your extra amount, idle cash, cushion and method</td><td>13</td></tr>
+    <tr><td>3</td><td>Full net worth</td><td>Add home, car and retirement values</td><td>14</td></tr>
+    <tr><td>4</td><td>Spreadsheet export</td><td>Your transactions as CSV text to save and import into Notion, Google Sheets or Excel</td><td>below</td></tr>
+    <tr><td>5</td><td>PDF report</td><td>Everything in one file, or how to save it as one on a free plan</td><td>below</td></tr>
+    <tr><td>6</td><td>Monthly checkup</td><td>How to come back next month</td><td>16</td></tr>
+  </table>
+  <h4>Spreadsheet export</h4>
+  <p>It gives you each account's transactions as CSV text, one account per message. Copy each block into a text file saved as <b>.csv</b>, then import it into Notion, Google Sheets or Excel to sort and filter your own transactions. On a free plan, type <b>go</b> for each account.</p>
+  <h4>PDF report</h4>
+  <p>If your app can create files, you get a PDF with the findings on the first page and your save block on the last. If it can't, copy the report messages into a notes app or document and export that as a PDF.</p>
 </section>
 
 <section class="ch" data-id="c09">
   <div class="bar"><span class="num">09</span><h2>On a free plan</h2></div>
-  <p>Money X-Ray works on free plans. It just takes a few more steps, because free plans limit messages, uploads and tools.</p>
+  <p>Money X-Ray works on free plans. It just takes a few more steps, because free plans limit messages, uploads and tools. What really changes the experience is whether your AI app can run code (a "data analysis" or "code" tool). Free plans often can't; the AI then works more slowly, in smaller steps.</p>
   <table class="t">
     <tr><th>What changes</th><th>What you do</th></tr>
-    <tr><td>It works two accounts at a time</td><td>Type <b>go</b> when it asks</td></tr>
+    <tr><td>It works two accounts at a time</td><td>Type <b>go</b> when it asks. Expect to type it a handful of times in all.</td></tr>
     <tr><td>The report comes in two parts</td><td>Type <b>go</b> for the second part</td></tr>
     <tr><td>Uploads run out for the day</td><td>Open the CSV, copy the rows, paste them in. Long file? One month at a time.</td></tr>
     <tr><td>The chat hits its limit</td><td>Open a new chat, paste the prompt and your save block, type <b>continue</b></td></tr>
     <tr><td>No code for the math</td><td>It adds by hand in small groups and checks every total twice. The $0.00 Check still proves it.</td></tr>
     <tr><td>Debt plan</td><td>You get the order and this month's payments; use a payoff calculator for the exact date</td></tr>
   </table>
-  <div class="good"><div class="t">Tested by hand</div>In testing on a fictional family's statements, the free-plan path (no code, all math by hand) balanced every account to $0.00 and matched every monthly total to the cent. See chapter 18.</div>
+  <div class="good"><div class="t">Tested without code</div>In testing on a fictional family's statements, an AI working without a code tool balanced every account to $0.00 and matched every monthly total to the cent. See chapter 18 for what was and wasn't tested.</div>
 </section>
 
 <section class="ch cont" data-id="c10">
   <div class="bar"><span class="num">10</span><h2>Your save block</h2></div>
-  <p>At the end, Money X-Ray gives you a short block of text that starts with <b>SAVE | Money X-Ray</b>. It holds your accounts, monthly totals, subscriptions, debts and net worth, one line each.</p>
+  <p>Right after the report, Money X-Ray gives you a short block of text that starts with <b>SAVE | Money X-Ray</b>, and an updated one at the very end. It holds your accounts, monthly totals, subscriptions, debts and net worth, one line each. Keep the latest one.</p>
   <div class="two">
     <div>
       <p><b>Copy it into your notes app.</b> It's your record and your starting point.</p>
@@ -442,7 +464,7 @@ pre.prompt { margin-bottom: 2mm !important; white-space: pre-wrap; font-family: 
         <li>Next month: paste the prompt and the save block, type <b>monthly checkup</b>, upload last month's statements.</li>
       </ul>
     </div>
-    <div class="shots" style="margin:0"><figure style="max-width:58mm"><img src="screenshots/15_save-block.png"><figcaption>Saved in the Notes app</figcaption></figure></div>
+    <div class="shots" style="margin:0"><figure style="max-width:58mm"><img src="screenshots/15_save-block.png"><figcaption>A save block kept in the Notes app (from an earlier version, so its lines differ slightly)</figcaption></figure></div>
   </div>
 </section>
 
@@ -515,10 +537,7 @@ pre.prompt { margin-bottom: 2mm !important; white-space: pre-wrap; font-family: 
   <div class="note"><div class="t">The highest balance isn't the first target</div>In both methods, the biggest balance usually comes last. Avalanche starts with the highest rate; snowball starts with the smallest balance.</div>
   <h3>Cards with more than one rate</h3>
   <p>One card can hold several balances: purchases, cash advances (often near 28%) and a 0% promo that ends on a set date. Money X-Ray lists each one separately and never blends them into one average. When a promo ends, the remaining balance moves to the regular rate, so a promo balance may need paying first if you can't clear it in time. In the US, payments above the minimum usually go to the card's highest-rate balance first.</p>
-  <div class="shots">
-    <figure><img src="screenshots/13_debt-simulator.png"><figcaption>Comparing methods in ChatGPT</figcaption></figure>
-    <figure><img src="screenshots/14_payoff-milestones.png"><figcaption>Payoff milestones by debt</figcaption></figure>
-  </div>
+  <div class="shots"><figure style="max-width:62mm"><img src="screenshots/14_payoff-milestones.png"><figcaption>Payoff milestones by debt (earlier version)</figcaption></figure></div>
 </section>
 
 <section class="ch cont">
@@ -530,7 +549,7 @@ pre.prompt { margin-bottom: 2mm !important; white-space: pre-wrap; font-family: 
     <tr><td>Snowball</td><td>Family, Discover, Visa, car</td><td class="r">23 months</td><td class="r">$2,061</td></tr>
     <tr><td>Minimums only</td><td>No extra, no lump sum</td><td class="r">62 months</td><td class="r">$7,503</td></tr>
   </table>
-  <p class="small">Fictional family built from US government spending averages. Your numbers will differ. Assumes minimums held fixed and no new card spending.</p>
+  <p class="small">Fictional family built from US government spending averages, using each card's exact rate and minimum. If your statements don't show those and the AI estimates them, totals come out a little different. Your numbers will differ. Assumes minimums held fixed and no new card spending.</p>
   <h3>Before you put idle cash toward debt</h3>
   <ul>
     <li>Keep a cushion you're comfortable with. Money X-Ray never touches savings or your cushion unless you say so.</li>
@@ -589,7 +608,7 @@ pre.prompt { margin-bottom: 2mm !important; white-space: pre-wrap; font-family: 
   <ul>
     <li>Autopay at least the minimum on every card.</li>
     <li>An automatic transfer to savings on payday, even a small one.</li>
-    <li>The monthly checkup (chapter 16) shows how each target went, without you tracking anything by hand.</li>
+    <li>The monthly checkup (chapter 16) shows which categories moved; compare them with your targets on the worksheet.</li>
   </ul>
   <div class="good"><div class="t">Use the worksheet</div>The monthly budget worksheet in chapter 20 has a column for your average, your target and the actual result.</div>
 </section>
@@ -609,7 +628,7 @@ pre.prompt { margin-bottom: 2mm !important; white-space: pre-wrap; font-family: 
   <ul>
     <li>New recurring charges, and price increases</li>
     <li>Cancelled services that are still charging you</li>
-    <li>Categories that moved, against your targets</li>
+    <li>Categories that moved since last time</li>
     <li>Debt paid down, and progress on your plan</li>
     <li>The change in your net worth, and what drove it</li>
   </ul>
@@ -636,19 +655,20 @@ pre.prompt { margin-bottom: 2mm !important; white-space: pre-wrap; font-family: 
 
 <section class="ch" data-id="c18">
   <div class="bar"><span class="num">18</span><h2>How it was tested, and its limits</h2></div>
-  <p>Before release, Money X-Ray was tested on a fictional household built from the US Bureau of Labor Statistics' 2025 spending averages: two earners, $7,290 a month take-home, a mortgage, a car loan, child care and three credit cards. Five accounts, three months, in five different bank formats.</p>
+  <p>Before release, Money X-Ray was tested on a fictional household built from the US Bureau of Labor Statistics' 2025 spending averages: two earners, $7,290 a month take-home, a mortgage, a car loan, child care and three credit cards they uploaded (plus a fourth they forgot to mention). Five accounts, three months, in five different bank formats.</p>
   <h3>Problems planted on purpose</h3>
   <p>Fourteen traps were hidden in those statements, including card payments that appear twice, overlapping downloads that repeat rows, a real double charge that must not be removed, a forgotten Discover card, a Netflix price rise, overlapping streaming services, an unknown $45 monthly charge, new bank fees, and warehouse-club purchases mislabelled by the bank.</p>
   <h3>Results</h3>
   <table class="t">
     <tr><th>Test</th><th>Result</th></tr>
     <tr><td>With a code tool (paid-plan style)</td><td>All 219 transactions correct; every account $0.00; every monthly total exact; all 14 traps caught</td></tr>
-    <tr><td>Without code (free-plan style), by hand</td><td>Every account $0.00; every monthly total exact to the cent</td></tr>
+    <tr><td>Without a code tool (free-plan style)</td><td>Every account $0.00; every monthly total exact to the cent</td></tr>
     <tr><td>New chat resumed from a save block</td><td>Finished correctly with no access to the earlier statements</td></tr>
     <tr><td>Cash, debt plan and net worth</td><td>Matched the expected results</td></tr>
     <tr><td>Real statements, ChatGPT and Claude</td><td>Run by the founder; findings used to improve the prompt</td></tr>
+    <tr><td>Gemini</td><td>Not tested yet</td></tr>
   </table>
-  <p class="small">The automated tests were run by AI agents that never saw the answers. Each run's problems were fixed and the prompt was tested again.</p>
+  <p class="small">The automated tests were run by AI agents that never saw the answers, all on the same fictional household, which the prompt was improved against. Real households are messier, so treat these results as a good sign, not a guarantee.</p>
   <h3>What it can't promise</h3>
   <ul>
     <li>It can't promise savings. It shows what's there; what you change is up to you.</li>
@@ -663,7 +683,7 @@ pre.prompt { margin-bottom: 2mm !important; white-space: pre-wrap; font-family: 
   <div class="bar"><span class="num">19</span><h2>A sample report</h2></div>
   <p class="small">The fictional test family from chapter 18, August to October 2026. Not a real household. Built from US spending averages.</p>
   <h3>1. The answer</h3>
-  <p>The family takes home $7,290 a month and spends about $5,407. On paper about $1,400 is left over each month, but it doesn't feel that way: the spare cash piles up in Joint Checking ($4,740 in three months) while the Visa balance keeps growing and costs about $122 a month in interest. Fees and interest came to $522.59 in three months, six streaming and music services overlap, and $175 a month goes to a Discover card nobody listed.</p>
+  <p>The family takes home $7,290 a month and spends about $5,407. After $300 to savings and $175 to a card nobody listed, about $1,400 is left over each month on paper, but it doesn't feel that way: the spare cash piles up in Joint Checking ($4,740 in three months) while the Visa balance keeps growing and costs about $122 a month in interest. Fees and interest came to $522.59 in three months, and they pay for four video and two music services that overlap.</p>
   <h3>2. How much to trust this</h3>
   <table class="t">
     <tr><th>Account</th><th>Balance check</th><th>Notes</th></tr>
@@ -674,14 +694,23 @@ pre.prompt { margin-bottom: 2mm !important; white-space: pre-wrap; font-family: 
     <tr><td>Amex Blue</td><td>$0.00</td><td></td></tr>
   </table>
   <p>Not uploaded: a Discover card ($175 a month in payments) and a savings account ($300 a month in transfers).</p>
-  <h3>3. Spending by category (monthly average)</h3>
+  <h3>3. Money in vs. money out (monthly average)</h3>
+  <table class="t">
+    <tr><th>&nbsp;</th><th class="r">Amount</th></tr>
+    <tr><td>Take-home pay</td><td class="r">$7,290.00</td></tr>
+    <tr><td>Spending</td><td class="r">−$5,407.16</td></tr>
+    <tr><td>Moved to savings</td><td class="r">−$300.00</td></tr>
+    <tr><td>Paid to a card it couldn't see (Discover)</td><td class="r">−$175.00</td></tr>
+    <tr><td><b>Left over</b></td><td class="r"><b>$1,407.84</b></td></tr>
+  </table>
+  <h3>4. Spending by category (monthly average)</h3>
   <table class="t">
     <tr><th>Category</th><th class="r">Average</th><th class="r">Share</th></tr>
     <tr><td>Housing (mortgage)</td><td class="r">$1,385.00</td><td class="r">26%</td></tr>
     <tr><td>Groceries</td><td class="r">$572.44</td><td class="r">11%</td></tr>
     <tr><td>Utilities</td><td class="r">$476.62</td><td class="r">9%</td></tr>
     <tr><td>Shopping</td><td class="r">$475.87</td><td class="r">9%</td></tr>
-    <tr><td>Car loan</td><td class="r">$419.00</td><td class="r">8%</td></tr>
+    <tr><td>Debt payments (car loan)</td><td class="r">$419.00</td><td class="r">8%</td></tr>
     <tr><td>Dining out</td><td class="r">$312.48</td><td class="r">6%</td></tr>
     <tr><td>Gas</td><td class="r">$190.20</td><td class="r">4%</td></tr>
     <tr><td>Insurance</td><td class="r">$186.40</td><td class="r">3%</td></tr>
@@ -689,10 +718,13 @@ pre.prompt { margin-bottom: 2mm !important; white-space: pre-wrap; font-family: 
     <tr><td>Everything else (11 categories)</td><td class="r">$1,214.95</td><td class="r">22%</td></tr>
     <tr><td><b>Total</b></td><td class="r"><b>$5,407.16</b></td><td class="r"><b>100%</b></td></tr>
   </table>
+  <p class="small">Shares are rounded, so they may not add to exactly 100%.</p>
 </section>
 
 <section class="ch cont">
-  <h3>4. Subscriptions</h3>
+  <h3>5. Trends</h3>
+  <p>September was the most expensive month ($5,926.51): a $312.40 flight, a $284.70 car repair and a $145 vet bill. Dining out rose 34% from August to September, then fell back in October.</p>
+  <h3>6. Subscriptions</h3>
   <table class="t">
     <tr><th>Charge</th><th class="r">Monthly</th><th class="r">Yearly</th><th>Flag</th></tr>
     <tr><td>Netflix</td><td class="r">$17.99</td><td class="r">$215.88</td><td>Price rose from $15.49</td></tr>
@@ -702,15 +734,15 @@ pre.prompt { margin-bottom: 2mm !important; white-space: pre-wrap; font-family: 
     <tr><td>Spotify Family</td><td class="r">$19.99</td><td class="r">$239.88</td><td>Overlaps Apple Music</td></tr>
     <tr><td>Apple Music</td><td class="r">$10.99</td><td class="r">$131.88</td><td>Overlaps Spotify</td></tr>
     <tr><td>iCloud+</td><td class="r">$2.99</td><td class="r">$35.88</td><td></td></tr>
-    <tr><td>Planet Fitness</td><td class="r">$24.99</td><td class="r">$299.88</td><td>Plus $49 annual fee</td></tr>
+    <tr><td>Planet Fitness</td><td class="r">$24.99</td><td class="r">$299.88</td><td>Plus a $49 annual fee: $348.88 a year in all</td></tr>
     <tr><td>SQ *JMK LLC</td><td class="r">$45.00</td><td class="r">$540.00</td><td>Unknown merchant</td></tr>
   </table>
-  <h3>5. Fees and interest: $522.59 in three months</h3>
+  <h3>7. Fees and interest: $522.59 in three months</h3>
   <p>Visa interest (about $122 a month at 22.99%), a $95 card annual fee, a $29 late fee, a new $12 monthly checking fee, out-of-network ATM fees and a foreign transaction fee.</p>
-  <h3>6. Debt and net worth</h3>
+  <h3>8 and 9. Debt and net worth</h3>
   <p>Avalanche order: Discover (27.24%), Visa (22.99%), car loan (6.9%), family loan. With $300 extra a month and a one-time payment from idle cash: debt-free in 23 months instead of 62, about $5,500 less interest. Net worth $162,554; liquid net worth $154.</p>
-  <h3>7. Their choices</h3>
-  <p>They cancelled Hulu and Apple Music: $29.98 a month, $359.76 a year. The report noted that this was $270 short of their $300 goal, and that the biggest remaining lever was using the idle checking cash against the Visa.</p>
+  <h3>Their choices</h3>
+  <p>Their goal was to free up about $300 a month. They cancelled Hulu and Apple Music: $29.98 a month, $359.76 a year. The report noted that this was $270 short of the goal, and that the biggest remaining lever was using the idle checking cash against the Visa.</p>
 </section>
 
 <section class="ch" data-id="c20">

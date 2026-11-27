@@ -25,7 +25,9 @@ Answers to follow-up questions, if the auditor asks about them (only if asked):
 - If asked about the Discover balance and rate: "About $2,140, 27.24% APR, minimum $65."
 - Which method, after seeing both: "Avalanche. I want to pay the least interest."
 - Keep paying Discover $175 instead of the $65 minimum? "No, put that toward the plan like everything else."
-- Net worth, if asked: "Our house is worth about $340,000; the mortgage balance is $248,000. The Toyota is worth about $18,500 (loan $14,600 as I said). Our second car is paid off, worth maybe $6,000. My 401(k) has $42,000 and my spouse's 403(b) has $18,500. No student loans or medical bills."
+- Net worth, if asked: "Our house is worth about $340,000; the mortgage balance is $248,000. The Toyota is worth about $18,500 (loan $14,600 at 6.9%). Our second car is paid off, worth maybe $6,000. My 401(k) has $42,000 and my spouse's 403(b) has $18,500. No student loans or medical bills."
+- If asked for the Visa APR or minimum payment: "22.99%, minimum $195."
+- If asked about a savings goal: "I want to free up about $300 a month."
 - Anything else: "I'm not sure. Use your best judgment and mark it for review."
 
 Answer to "Is there money that never shows up on these statements?" (Step 3B), if asked:
@@ -40,7 +42,7 @@ Recovery plan choices, if asked which items to change: cancel Hulu, cancel Apple
 - First message: the customer uploads all six files in uploads/ at once and types "done".
 - Whenever asked to reply "go": "go".
 - The question list after the report: answer each item from the "Answers to follow-up questions" and "Step 3B" sections above; anything not covered gets "ok".
-- The menu: "1, 2, 3 and 4."
+- The menu: "1, 2, 3, 4 and 5."
 - For 1 (cut costs): cancel Hulu and Apple Music (keep Spotify), and look into the SQ *JMK LLC charge.
 - For 2 (debt): use the "Debt plan" answer above; method: avalanche.
 - For 3 (net worth): use the "Net worth" answer above, plus savings $3,200 and jar $400; Toyota loan $14,600 at 6.9%; Mom $450.

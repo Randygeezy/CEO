@@ -56,3 +56,14 @@ What a no-code free plan can't give: total interest, the debt-free date, and the
 | `v3-free` | No code, by hand, one account per message | Every balance $0.00, every monthly total exact, cash and net worth exact. Exported accounts 69/69 (grade.py --only PASS). It took 7 "go" replies, so no-code mode now does two accounts per message and sends the report in two parts. |
 
 Fixes after these runs: no-code mode depends on tool access, not on guessing the plan; other people's names become initials; memberships go in Subscriptions; a rule for guessing a card's minimum payment; up to 8 grouped questions; mortgage left out of the payoff order; month 1 = the month after the latest statement; a warning when a card takes more new spending than it gets paid; blank categories for payments and transfers. These were not rerun.
+
+# Complete guide: cold reads and end-to-end tests (2026-11-27)
+
+| Run | Result |
+|---|---|
+| Beginner cold read | Main problems: screenshot placeholder in chapter 4, screenshots from an older prompt, menu/Notion/PDF never explained, clipped captions, sparse pages. |
+| Editor cold read | Verdict "not ready to sell" before fixes: 37 findings. All numbers that repeat, chapter references, contents pages and sample arithmetic checked out; problems were the placeholder, a clipped appendix line, bank names visible in screenshots, overclaims about the $0.00 Check and testing, sample report details. |
+| Test A (code tool, guide + prompt) | grade.py PASS (219/219, totals and cash exact), all balances $0.00, net worth exact, 6-page PDF created. |
+| Test B (no code, guide + prompt) | Exported accounts 69/69 PASS, all balances $0.00, totals and net worth exact. 7 "go" replies. |
+
+All findings were fixed in the prompt and the guide afterwards (not re-run): one save block after the report and one at the end; method and exact APR asked in the same debt message; spreadsheet export (Notion, Google Sheets or Excel) instead of "dashboard"; PDF fallback without resending; statements = three monthly or one 3-month download; screenshot placeholder replaced by illustrated steps; bank names blacked out; menu explained; softer $0.00 and testing claims; Gemini marked untested; sample report fixed.

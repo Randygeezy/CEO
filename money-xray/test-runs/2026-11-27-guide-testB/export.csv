@@ -1,0 +1,86 @@
+txn_id,date,account_alias,merchant,description_raw,category,amount,direction,type,counts_as_spending,recurring,verification,confidence,source_file,source_row,import_batch,notes
+MC-2026-08-07-14.99-1,2026-08-07,Mastercard (Citi),Amazon Prime,AMAZON PRIME*RT4K2,Subscriptions,14.99,Outflow,Expense,Yes,Yes,Verified,High,mastercard_cashback.csv,1,2026-08_to_2026-10,
+MC-2026-08-09-2.99-2,2026-08-09,Mastercard (Citi),Apple,APPLE.COM/BILL,Subscriptions,2.99,Outflow,Expense,Yes,Yes,Verified,Medium,mastercard_cashback.csv,2,2026-08_to_2026-10,my guess: iCloud storage
+MC-2026-08-10-84.21-3,2026-08-10,Mastercard (Citi),Target,TARGET 00012,Shopping,84.21,Outflow,Expense,Yes,No,Verified,Medium,mastercard_cashback.csv,3,2026-08_to_2026-10,
+MC-2026-08-14-96.33-4,2026-08-14,Mastercard (Citi),Old Navy,OLD NAVY #6621,Shopping,96.33,Outflow,Expense,Yes,No,Verified,High,mastercard_cashback.csv,4,2026-08_to_2026-10,
+MC-2026-08-15-450.00-5,2026-08-15,Mastercard (Citi),Card payment,AUTOPAY PAYMENT - THANK YOU,,450.00,Inflow,Card Payment,No,Yes,Verified,High,mastercard_cashback.csv,5,2026-08_to_2026-10,From Joint checking (CITI AUTOPAY 08-14)
+MC-2026-08-17-10.99-6,2026-08-17,Mastercard (Citi),Apple Music,APPLE.COM/BILL,Subscriptions,10.99,Outflow,Expense,Yes,Yes,Verified,Medium,mastercard_cashback.csv,6,2026-08_to_2026-10,my guess: Apple Music; cancelling
+MC-2026-08-20-27.33-7,2026-08-20,Mastercard (Citi),Walgreens,WALGREENS #4410,Health,27.33,Outflow,Expense,Yes,No,Verified,Medium,mastercard_cashback.csv,7,2026-08_to_2026-10,
+MC-2026-08-24-61.40-8,2026-08-24,Mastercard (Citi),Target,TARGET 00012,Shopping,61.40,Outflow,Expense,Yes,No,Verified,Medium,mastercard_cashback.csv,8,2026-08_to_2026-10,
+MC-2026-08-30-142.18-9,2026-08-30,Mastercard (Citi),The Home Depot,THE HOME DEPOT #3612,Shopping,142.18,Outflow,Expense,Yes,No,Verified,High,mastercard_cashback.csv,9,2026-08_to_2026-10,
+MC-2026-09-01-95.00-10,2026-09-01,Mastercard (Citi),Annual membership fee,ANNUAL MEMBERSHIP FEE,Fees & Interest,95.00,Outflow,Expense,Yes,Yes,Verified,High,mastercard_cashback.csv,10,2026-08_to_2026-10,Annual card fee
+MC-2026-09-07-14.99-11,2026-09-07,Mastercard (Citi),Amazon Prime,AMAZON PRIME*RT4K2,Subscriptions,14.99,Outflow,Expense,Yes,Yes,Verified,High,mastercard_cashback.csv,11,2026-08_to_2026-10,
+MC-2026-09-07-88.40-12,2026-09-07,Mastercard (Citi),Target,TARGET 00012,Shopping,88.40,Outflow,Expense,Yes,No,Verified,Medium,mastercard_cashback.csv,12,2026-08_to_2026-10,
+MC-2026-09-09-2.99-13,2026-09-09,Mastercard (Citi),Apple,APPLE.COM/BILL,Subscriptions,2.99,Outflow,Expense,Yes,Yes,Verified,Medium,mastercard_cashback.csv,13,2026-08_to_2026-10,my guess: iCloud storage
+MC-2026-09-12-34.50-14,2026-09-12,Mastercard (Citi),DoorDash,DOORDASH*THAI BASIL,Dining Out,34.50,Outflow,Expense,Yes,No,Verified,High,mastercard_cashback.csv,14,2026-08_to_2026-10,
+MC-2026-09-12-34.50-15,2026-09-12,Mastercard (Citi),DoorDash,DOORDASH*THAI BASIL,Dining Out,34.50,Outflow,Expense,Yes,No,Needs Review,High,mastercard_cashback.csv,15,2026-08_to_2026-10,Double charge of row 14 (customer ordered once); ask Citi for refund
+MC-2026-09-13-74.10-16,2026-09-13,Mastercard (Citi),Old Navy,OLD NAVY #6621,Shopping,74.10,Outflow,Expense,Yes,No,Verified,High,mastercard_cashback.csv,16,2026-08_to_2026-10,
+MC-2026-09-15-875.00-17,2026-09-15,Mastercard (Citi),Card payment,AUTOPAY PAYMENT - THANK YOU,,875.00,Inflow,Card Payment,No,Yes,Verified,High,mastercard_cashback.csv,17,2026-08_to_2026-10,From Joint checking (CITI AUTOPAY 09-14)
+MC-2026-09-17-10.99-18,2026-09-17,Mastercard (Citi),Apple Music,APPLE.COM/BILL,Subscriptions,10.99,Outflow,Expense,Yes,Yes,Verified,Medium,mastercard_cashback.csv,18,2026-08_to_2026-10,my guess: Apple Music; cancelling
+MC-2026-09-18-284.70-19,2026-09-18,Mastercard (Citi),Firestone,FIRESTONE AUTO #0219,Transportation,284.70,Outflow,Expense,Yes,No,Verified,High,mastercard_cashback.csv,19,2026-08_to_2026-10,Car repair
+MC-2026-09-21-52.95-20,2026-09-21,Mastercard (Citi),Target,TARGET 00012,Shopping,52.95,Outflow,Expense,Yes,No,Verified,Medium,mastercard_cashback.csv,20,2026-08_to_2026-10,
+MC-2026-09-27-189.00-21,2026-09-27,Mastercard (Citi),Wayfair,WAYFAIR*FURNITURE,Shopping,189.00,Outflow,Expense,Yes,No,Verified,High,mastercard_cashback.csv,21,2026-08_to_2026-10,
+MC-2026-10-04-112.46-22,2026-10-04,Mastercard (Citi),Kohl's,KOHLS #0712,Shopping,112.46,Outflow,Expense,Yes,No,Verified,High,mastercard_cashback.csv,22,2026-08_to_2026-10,
+MC-2026-10-07-14.99-23,2026-10-07,Mastercard (Citi),Amazon Prime,AMAZON PRIME*RT4K2,Subscriptions,14.99,Outflow,Expense,Yes,Yes,Verified,High,mastercard_cashback.csv,23,2026-08_to_2026-10,
+MC-2026-10-09-2.99-24,2026-10-09,Mastercard (Citi),Apple,APPLE.COM/BILL,Subscriptions,2.99,Outflow,Expense,Yes,Yes,Verified,Medium,mastercard_cashback.csv,24,2026-08_to_2026-10,my guess: iCloud storage
+MC-2026-10-12-61.77-25,2026-10-12,Mastercard (Citi),Target,TARGET 00012,Shopping,61.77,Outflow,Expense,Yes,No,Verified,Medium,mastercard_cashback.csv,25,2026-08_to_2026-10,
+MC-2026-10-15-450.00-26,2026-10-15,Mastercard (Citi),Card payment,AUTOPAY PAYMENT - THANK YOU,,450.00,Inflow,Card Payment,No,Yes,Verified,High,mastercard_cashback.csv,26,2026-08_to_2026-10,From Joint checking (CITI AUTOPAY 10-14)
+MC-2026-10-17-10.99-27,2026-10-17,Mastercard (Citi),Apple Music,APPLE.COM/BILL,Subscriptions,10.99,Outflow,Expense,Yes,Yes,Verified,Medium,mastercard_cashback.csv,27,2026-08_to_2026-10,my guess: Apple Music; cancelling
+MC-2026-10-19-68.90-28,2026-10-19,Mastercard (Citi),The Home Depot,THE HOME DEPOT #3612,Shopping,68.90,Outflow,Expense,Yes,No,Verified,High,mastercard_cashback.csv,28,2026-08_to_2026-10,
+MC-2026-10-26-93.28-29,2026-10-26,Mastercard (Citi),Target,TARGET 00012,Shopping,93.28,Outflow,Expense,Yes,No,Verified,Medium,mastercard_cashback.csv,29,2026-08_to_2026-10,
+MC-2026-10-29-79.99-30,2026-10-29,Mastercard (Citi),Jiffy Lube,JIFFY LUBE #1877,Transportation,79.99,Outflow,Expense,Yes,No,Verified,High,mastercard_cashback.csv,30,2026-08_to_2026-10,Car maintenance
+AMEX-2026-08-02-6.45-1,2026-08-02,Amex Blue,Starbucks,STARBUCKS STORE 08812,Dining Out,6.45,Outflow,Expense,Yes,No,Verified,High,amex_blue.csv,1,2026-08_to_2026-10,
+AMEX-2026-08-03-18.99-2,2026-08-03,Amex Blue,Hulu,HULU 877-8244858,Subscriptions,18.99,Outflow,Expense,Yes,Yes,Verified,High,amex_blue.csv,2,2026-08_to_2026-10,cancelling
+AMEX-2026-08-03-15.99-3,2026-08-03,Amex Blue,Disney+,DISNEY PLUS,Subscriptions,15.99,Outflow,Expense,Yes,Yes,Verified,High,amex_blue.csv,3,2026-08_to_2026-10,
+AMEX-2026-08-06-42.00-4,2026-08-06,Amex Blue,Great Clips,GREAT CLIPS #4471,Personal Care,42.00,Outflow,Expense,Yes,Yes,Verified,High,amex_blue.csv,4,2026-08_to_2026-10,
+AMEX-2026-08-09-64.20-5,2026-08-09,Amex Blue,Petco,PETCO 1288,Pets,64.20,Outflow,Expense,Yes,No,Verified,High,amex_blue.csv,5,2026-08_to_2026-10,
+AMEX-2026-08-12-7.10-6,2026-08-12,Amex Blue,Starbucks,STARBUCKS STORE 08812,Dining Out,7.10,Outflow,Expense,Yes,No,Verified,High,amex_blue.csv,6,2026-08_to_2026-10,
+AMEX-2026-08-15-54.80-7,2026-08-15,Amex Blue,AMC Theatres,AMC THEATRES 2210,Entertainment,54.80,Outflow,Expense,Yes,No,Verified,High,amex_blue.csv,7,2026-08_to_2026-10,
+AMEX-2026-08-19-45.00-8,2026-08-19,Amex Blue,SQ *JMK LLC,SQ *JMK LLC,Uncategorized,45.00,Outflow,Expense,Yes,Yes,Needs Review,Low,amex_blue.csv,8,2026-08_to_2026-10,Unknown merchant; customer doesn't recognize; ask Amex
+AMEX-2026-08-20-250.00-9,2026-08-20,Amex Blue,Card payment,ONLINE PAYMENT - THANK YOU,,250.00,Inflow,Card Payment,No,Yes,Verified,High,amex_blue.csv,9,2026-08_to_2026-10,From Everyday checking (AMEX EPAYMENT 08-18)
+AMEX-2026-08-26-6.45-10,2026-08-26,Amex Blue,Starbucks,STARBUCKS STORE 08812,Dining Out,6.45,Outflow,Expense,Yes,No,Verified,High,amex_blue.csv,10,2026-08_to_2026-10,
+AMEX-2026-09-02-312.40-11,2026-09-02,Amex Blue,Delta Air Lines,DELTA AIR (ticket number removed),Travel,312.40,Outflow,Expense,Yes,No,Verified,High,amex_blue.csv,11,2026-08_to_2026-10,
+AMEX-2026-09-03-18.99-12,2026-09-03,Amex Blue,Hulu,HULU 877-8244858,Subscriptions,18.99,Outflow,Expense,Yes,Yes,Verified,High,amex_blue.csv,12,2026-08_to_2026-10,cancelling
+AMEX-2026-09-03-15.99-13,2026-09-03,Amex Blue,Disney+,DISNEY PLUS,Subscriptions,15.99,Outflow,Expense,Yes,Yes,Verified,High,amex_blue.csv,13,2026-08_to_2026-10,
+AMEX-2026-09-04-6.95-14,2026-09-04,Amex Blue,Starbucks,STARBUCKS STORE 08812,Dining Out,6.95,Outflow,Expense,Yes,No,Verified,High,amex_blue.csv,14,2026-08_to_2026-10,
+AMEX-2026-09-08-42.00-15,2026-09-08,Amex Blue,Great Clips,GREAT CLIPS #4471,Personal Care,42.00,Outflow,Expense,Yes,Yes,Verified,High,amex_blue.csv,15,2026-08_to_2026-10,
+AMEX-2026-09-10-58.75-16,2026-09-10,Amex Blue,Petco,PETCO 1288,Pets,58.75,Outflow,Expense,Yes,No,Verified,High,amex_blue.csv,16,2026-08_to_2026-10,
+AMEX-2026-09-11-7.25-17,2026-09-11,Amex Blue,Starbucks,STARBUCKS STORE 08812,Dining Out,7.25,Outflow,Expense,Yes,No,Verified,High,amex_blue.csv,17,2026-08_to_2026-10,
+AMEX-2026-09-14-145.00-18,2026-09-14,Amex Blue,Banfield Pet Hospital,BANFIELD PET HOSP,Pets,145.00,Outflow,Expense,Yes,No,Verified,High,amex_blue.csv,18,2026-08_to_2026-10,
+AMEX-2026-09-18-6.95-19,2026-09-18,Amex Blue,Starbucks,STARBUCKS STORE 08812,Dining Out,6.95,Outflow,Expense,Yes,No,Verified,High,amex_blue.csv,19,2026-08_to_2026-10,
+AMEX-2026-09-19-45.00-20,2026-09-19,Amex Blue,SQ *JMK LLC,SQ *JMK LLC,Uncategorized,45.00,Outflow,Expense,Yes,Yes,Needs Review,Low,amex_blue.csv,20,2026-08_to_2026-10,Unknown merchant; customer doesn't recognize; ask Amex
+AMEX-2026-09-20-118.00-21,2026-09-20,Amex Blue,Ticketmaster,TICKETMASTER*NC STATE,Entertainment,118.00,Outflow,Expense,Yes,No,Verified,High,amex_blue.csv,21,2026-08_to_2026-10,
+AMEX-2026-09-20-825.00-22,2026-09-20,Amex Blue,Card payment,ONLINE PAYMENT - THANK YOU,,825.00,Inflow,Card Payment,No,Yes,Verified,High,amex_blue.csv,22,2026-08_to_2026-10,From Everyday checking (AMEX EPAYMENT 09-18)
+AMEX-2026-09-26-29.00-23,2026-09-26,Amex Blue,Late fee,LATE FEE,Fees & Interest,29.00,Outflow,Expense,Yes,No,Verified,High,amex_blue.csv,23,2026-08_to_2026-10,Avoid with autopay
+AMEX-2026-09-27-8.10-24,2026-09-27,Amex Blue,Starbucks,STARBUCKS STORE 08812,Dining Out,8.10,Outflow,Expense,Yes,No,Verified,High,amex_blue.csv,24,2026-08_to_2026-10,
+AMEX-2026-10-01-7.25-25,2026-10-01,Amex Blue,Starbucks,STARBUCKS STORE 08812,Dining Out,7.25,Outflow,Expense,Yes,No,Verified,High,amex_blue.csv,25,2026-08_to_2026-10,
+AMEX-2026-10-03-18.99-26,2026-10-03,Amex Blue,Hulu,HULU 877-8244858,Subscriptions,18.99,Outflow,Expense,Yes,Yes,Verified,High,amex_blue.csv,26,2026-08_to_2026-10,cancelling
+AMEX-2026-10-03-15.99-27,2026-10-03,Amex Blue,Disney+,DISNEY PLUS,Subscriptions,15.99,Outflow,Expense,Yes,Yes,Verified,High,amex_blue.csv,27,2026-08_to_2026-10,
+AMEX-2026-10-07-7.25-28,2026-10-07,Amex Blue,Starbucks,STARBUCKS STORE 08812,Dining Out,7.25,Outflow,Expense,Yes,No,Verified,High,amex_blue.csv,28,2026-08_to_2026-10,
+AMEX-2026-10-08-62.00-29,2026-10-08,Amex Blue,Etsy,ETSY.COM*CRAFTHAUS,Shopping,62.00,Outflow,Expense,Yes,No,Verified,High,amex_blue.csv,29,2026-08_to_2026-10,
+AMEX-2026-10-08-1.86-30,2026-10-08,Amex Blue,Foreign transaction fee,FOREIGN TRANSACTION FEE,Fees & Interest,1.86,Outflow,Expense,Yes,No,Verified,High,amex_blue.csv,30,2026-08_to_2026-10,With the Etsy order
+AMEX-2026-10-09-42.00-31,2026-10-09,Amex Blue,Great Clips,GREAT CLIPS #4471,Personal Care,42.00,Outflow,Expense,Yes,Yes,Verified,High,amex_blue.csv,31,2026-08_to_2026-10,
+AMEX-2026-10-11-61.30-32,2026-10-11,Amex Blue,Petco,PETCO 1288,Pets,61.30,Outflow,Expense,Yes,No,Verified,High,amex_blue.csv,32,2026-08_to_2026-10,
+AMEX-2026-10-13-8.40-33,2026-10-13,Amex Blue,Starbucks,STARBUCKS STORE 08812,Dining Out,8.40,Outflow,Expense,Yes,No,Verified,High,amex_blue.csv,33,2026-08_to_2026-10,
+AMEX-2026-10-14-48.50-34,2026-10-14,Amex Blue,Sephora,SEPHORA #0331,Personal Care,48.50,Outflow,Expense,Yes,No,Verified,High,amex_blue.csv,34,2026-08_to_2026-10,
+AMEX-2026-10-19-45.00-35,2026-10-19,Amex Blue,SQ *JMK LLC,SQ *JMK LLC,Uncategorized,45.00,Outflow,Expense,Yes,Yes,Needs Review,Low,amex_blue.csv,35,2026-08_to_2026-10,Unknown merchant; customer doesn't recognize; ask Amex
+AMEX-2026-10-20-400.00-36,2026-10-20,Amex Blue,Card payment,ONLINE PAYMENT - THANK YOU,,400.00,Inflow,Card Payment,No,Yes,Verified,High,amex_blue.csv,36,2026-08_to_2026-10,From Everyday checking (AMEX EPAYMENT 10-18)
+AMEX-2026-10-21-6.95-37,2026-10-21,Amex Blue,Starbucks,STARBUCKS STORE 08812,Dining Out,6.95,Outflow,Expense,Yes,No,Verified,High,amex_blue.csv,37,2026-08_to_2026-10,
+AMEX-2026-10-24-72.00-38,2026-10-24,Amex Blue,Sky Zone,SKY ZONE RALEIGH,Entertainment,72.00,Outflow,Expense,Yes,No,Verified,High,amex_blue.csv,38,2026-08_to_2026-10,
+AMEX-2026-10-29-7.80-39,2026-10-29,Amex Blue,Starbucks,STARBUCKS STORE 08812,Dining Out,7.80,Outflow,Expense,Yes,No,Verified,High,amex_blue.csv,39,2026-08_to_2026-10,
+CASH-2026-08-22-60.00-m1,2026-08-22,Cash / manual,Babysitter,Cash from ATM withdrawal 2026-08-22,Childcare,60.00,Outflow,Expense,Yes,No,Customer-reported,Medium,manual,,2026-08_to_2026-10,From $100 ATM cash (Everyday checking)
+CASH-2026-08-22-40.00-m2,2026-08-22,Cash / manual,Farmers market,Cash from ATM withdrawal 2026-08-22,Groceries,40.00,Outflow,Expense,Yes,No,Customer-reported,Medium,manual,,2026-08_to_2026-10,From $100 ATM cash (Everyday checking)
+CASH-2026-10-22-60.00-m3,2026-10-22,Cash / manual,Halloween costumes and candy,Cash from ATM withdrawal 2026-10-22,Shopping,60.00,Outflow,Expense,Yes,No,Customer-reported,Medium,manual,,2026-08_to_2026-10,From $100 ATM cash (Everyday checking)
+CASH-2026-10-22-40.00-m4,2026-10-22,Cash / manual,Pizza night,Cash from ATM withdrawal 2026-10-22,Dining Out,40.00,Outflow,Expense,Yes,No,Customer-reported,Medium,manual,,2026-08_to_2026-10,From $100 ATM cash (Everyday checking)
+CASH-2026-08-31-346.67-m5,2026-08-31,Cash / manual,Lawn mowing,Cash income (not deposited),,346.67,Inflow,Income,No,Yes,Customer-reported,Medium,manual,,2026-08_to_2026-10,$80/week x 52 / 12
+CASH-2026-09-30-346.67-m6,2026-09-30,Cash / manual,Lawn mowing,Cash income (not deposited),,346.67,Inflow,Income,No,Yes,Customer-reported,Medium,manual,,2026-08_to_2026-10,$80/week x 52 / 12
+CASH-2026-10-31-346.67-m7,2026-10-31,Cash / manual,Lawn mowing,Cash income (not deposited),,346.67,Inflow,Income,No,Yes,Customer-reported,Medium,manual,,2026-08_to_2026-10,$80/week x 52 / 12
+CASH-2026-08-31-173.33-m8,2026-08-31,Cash / manual,Lunch out,Cash lunches,Dining Out,173.33,Outflow,Expense,Yes,Yes,Customer-reported,Medium,manual,,2026-08_to_2026-10,$40/week x 52 / 12
+CASH-2026-09-30-173.33-m9,2026-09-30,Cash / manual,Lunch out,Cash lunches,Dining Out,173.33,Outflow,Expense,Yes,Yes,Customer-reported,Medium,manual,,2026-08_to_2026-10,$40/week x 52 / 12
+CASH-2026-10-31-173.33-m10,2026-10-31,Cash / manual,Lunch out,Cash lunches,Dining Out,173.33,Outflow,Expense,Yes,Yes,Customer-reported,Medium,manual,,2026-08_to_2026-10,$40/week x 52 / 12
+CASH-2026-08-31-50.00-m11,2026-08-31,Cash / manual,Mom (loan repayment),Cash repayment of family loan,Debt Payments,50.00,Outflow,Expense,Yes,Yes,Customer-reported,High,manual,,2026-08_to_2026-10,0% family loan
+CASH-2026-09-30-50.00-m12,2026-09-30,Cash / manual,Mom (loan repayment),Cash repayment of family loan,Debt Payments,50.00,Outflow,Expense,Yes,Yes,Customer-reported,High,manual,,2026-08_to_2026-10,0% family loan
+CASH-2026-10-31-50.00-m13,2026-10-31,Cash / manual,Mom (loan repayment),Cash repayment of family loan,Debt Payments,50.00,Outflow,Expense,Yes,Yes,Customer-reported,High,manual,,2026-08_to_2026-10,0% family loan
+CASH-2026-08-31-123.34-m14,2026-08-31,Cash / manual,Cash jar,Leftover cash to jar at home,,123.34,Outflow,Transfer,No,Yes,Customer-reported,Medium,manual,,2026-08_to_2026-10,Saving; $346.67 - $173.33 - $50.00
+CASH-2026-09-30-123.34-m15,2026-09-30,Cash / manual,Cash jar,Leftover cash to jar at home,,123.34,Outflow,Transfer,No,Yes,Customer-reported,Medium,manual,,2026-08_to_2026-10,Saving; $346.67 - $173.33 - $50.00
+CASH-2026-10-31-123.34-m16,2026-10-31,Cash / manual,Cash jar,Leftover cash to jar at home,,123.34,Outflow,Transfer,No,Yes,Customer-reported,Medium,manual,,2026-08_to_2026-10,Saving; $346.67 - $173.33 - $50.00
