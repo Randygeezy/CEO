@@ -76,3 +76,6 @@ docs/throughput-*.json
 ios-qa/scripts/gen-accessors-tool/.build/
 ios-qa/scripts/gen-accessors-tool/Package.resolved
 .gstack/
+money-xray/kit/kit.html
+money-xray/kit/kit_layout.pdf
+money-xray/kit/fields.json
