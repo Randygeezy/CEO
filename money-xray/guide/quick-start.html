@@ -1,0 +1,179 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Money X-Ray Quick-Start Guide</title>
+<style>
+  @page { size: 6in 10.5in; margin: 0.45in 0.45in 0.55in; }
+  :root { --ink:#16181d; --muted:#5b616e; --accent:#1f6f5c; --soft:#eef6f3; --line:#d9dee5; }
+  body { font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; color: var(--ink); font-size: 11.5pt; line-height: 1.5; margin: 0; background: #fff; }
+  h1 { font-size: 30pt; line-height: 1.1; margin: 0 0 8pt; }
+  h2 { font-size: 17pt; margin: 0 0 6pt; color: var(--accent); }
+  h3 { font-size: 12.5pt; margin: 12pt 0 4pt; }
+  p { margin: 0 0 8pt; }
+  ul, ol { margin: 0 0 8pt; padding-left: 18pt; }
+  li { margin: 3pt 0; }
+  .page { page-break-after: always; }
+  .page:last-child { page-break-after: auto; }
+  .cover { display: flex; flex-direction: column; justify-content: center; min-height: 9in; }
+  .tag { color: var(--muted); font-size: 13pt; margin-bottom: 24pt; }
+  .box { background: var(--soft); border-radius: 10pt; padding: 10pt 12pt; margin: 8pt 0 10pt; }
+  .step { font-size: 10pt; font-weight: bold; letter-spacing: .08em; text-transform: uppercase; color: var(--muted); margin-bottom: 2pt; }
+  .shots { display: flex; gap: 10pt; justify-content: center; margin: 8pt 0; }
+  .shots figure { margin: 0; flex: 1; text-align: center; }
+  .shots img { width: 100%; max-height: 5.3in; object-fit: contain; border-radius: 12pt; border: 1px solid var(--line); background: #000; }
+  .shots.one img { max-height: 6.1in; width: auto; max-width: 100%; }
+  figcaption { font-size: 9pt; color: var(--muted); margin-top: 4pt; }
+  .placeholder { border: 2px dashed var(--line); border-radius: 12pt; padding: 26pt 12pt; text-align: center; color: var(--muted); font-size: 10pt; }
+  .small { font-size: 9.5pt; color: var(--muted); }
+  table { border-collapse: collapse; width: 100%; font-size: 10.5pt; margin: 4pt 0 10pt; }
+  td, th { border-bottom: 1px solid var(--line); padding: 5pt 4pt; text-align: left; vertical-align: top; }
+  th { font-size: 9.5pt; color: var(--muted); }
+  code { font-family: Menlo, monospace; font-size: 10pt; background: #f2f3f5; padding: 1pt 4pt; border-radius: 4pt; }
+</style>
+</head>
+<body>
+
+<section class="page cover">
+  <h1>Money X-Ray</h1>
+  <div class="tag">Quick-start guide: find out where your money really goes.</div>
+  <div class="box">
+    <b>What you'll need</b>
+    <ul>
+      <li>Your phone or computer, and ChatGPT, Claude or Gemini (free plans work).</li>
+      <li>The Money X-Ray prompt (the PDF or text file that came with this guide).</li>
+      <li>3 months of statements for every checking account, savings account and credit card you use. That's 3 statements per account, one for each month.</li>
+      <li>About 20 minutes.</li>
+    </ul>
+  </div>
+  <p class="small">Money X-Ray is an educational self-analysis, not financial advice. The screenshots in this guide come from a real run on ChatGPT's paid plan, with every personal detail and dollar amount blacked out. Free plans work too; they take a few more steps (see "On a free plan" near the end).</p>
+</section>
+
+<section class="page">
+  <div class="step">Step 1</div>
+  <h2>Get your statements</h2>
+  <p>Your statements are already waiting for you in three places:</p>
+  <ul>
+    <li><b>Your bank or card app:</b> look for "Statements", "Documents" or "Account services".</li>
+    <li><b>Your email:</b> many banks send one every month. Search your inbox for "statement".</li>
+    <li><b>Your bank's website:</b> same statements, plus a "Download" or "Export" button for CSV files.</li>
+  </ul>
+  <div class="box">
+    <b>CSV or PDF?</b> CSV files work best and usually have no account number, name or address in them. PDFs work too if they're real statements, not photos or scans.
+  </div>
+  <div class="placeholder">[Screenshots coming: finding and downloading statements in a banking app and on the bank's website]</div>
+  <h3>Which accounts?</h3>
+  <p>Every checking, savings and credit card account money goes in or out of. Add Venmo, Cash App or PayPal if you spend from them. Retirement, investment and loan statements are optional, for your net worth.</p>
+</section>
+
+<section class="page">
+  <div class="step">Step 2</div>
+  <h2>Start a new chat and add the prompt</h2>
+  <p>Open a new chat. Either paste the whole prompt, or attach the prompt PDF with the <b>+</b> button. Then send it with a short message such as "Start".</p>
+  <div class="shots">
+    <figure><img src="screenshots/01_new-chat.png"><figcaption>A fresh, empty chat.</figcaption></figure>
+    <figure><img src="screenshots/02_attach-prompt.png"><figcaption>The prompt attached and ready to send.</figcaption></figure>
+  </div>
+</section>
+
+<section class="page">
+  <div class="step">Step 3</div>
+  <h2>It asks for your statements, and nothing else</h2>
+  <p>No long questionnaire. It tells you what to upload and waits.</p>
+  <div class="shots">
+    <figure><img src="screenshots/03_tell-me-what-you-need.png"><figcaption>One short reply.</figcaption></figure>
+    <figure><img src="screenshots/04_asks-for-statements.png"><figcaption>The list of what to upload.</figcaption></figure>
+  </div>
+</section>
+
+<section class="page">
+  <div class="step">Step 4</div>
+  <h2>Upload everything, then type "done"</h2>
+  <p>Select all your statement files at once. If the app won't take them all, send a few at a time with a note like "More coming". When the last ones are in, type <b>done</b>.</p>
+  <div class="shots">
+    <figure><img src="screenshots/05_pick-statements.png"><figcaption>Selecting statements on the phone.</figcaption></figure>
+    <figure><img src="screenshots/06_more-coming.png"><figcaption>Sending in batches works fine.</figcaption></figure>
+  </div>
+  <p class="small">Uploads blocked or used up? Open the CSV file, copy the rows and paste them into the chat.</p>
+</section>
+
+<section class="page">
+  <div class="step">Step 5</div>
+  <h2>Read your report</h2>
+  <p>It checks every account first. The money in and out of each statement has to add up to the statement's balance, to the cent. Then it shows where the money goes, your subscriptions, fees and interest, your debt and your net worth.</p>
+  <div class="shots">
+    <figure><img src="screenshots/11_balance-check.png"><figcaption>The $0.00 Check: every account balanced.</figcaption></figure>
+    <figure><img src="screenshots/10_where-money-goes.png"><figcaption>Where the money goes.</figcaption></figure>
+  </div>
+  <p class="small">The layout depends on the AI app. Some, like ChatGPT here, draw charts and calculators; others use tables.</p>
+</section>
+
+<section class="page">
+  <div class="step">Step 6</div>
+  <h2>Answer a few questions, or just say "ok"</h2>
+  <p>After the report, it asks only about things it couldn't work out on its own, like a merchant name it doesn't recognize or a payment to an account you didn't upload. Each question comes with its best guess. Reply <b>ok</b> to keep the guesses.</p>
+  <div class="shots one">
+    <figure><img src="screenshots/08_questions-form.png"><figcaption>ChatGPT turned the questions into a form.</figcaption></figure>
+  </div>
+</section>
+
+<section class="page">
+  <div class="step">Step 7</div>
+  <h2>Pick what you want next</h2>
+  <table>
+    <tr><th>Option</th><th>What you get</th></tr>
+    <tr><td>Cut costs</td><td>Pick what to cancel or cut, and see the monthly and yearly savings.</td></tr>
+    <tr><td>Debt-free date</td><td>Your debts ordered two ways (highest interest first, or smallest balance first), with a payoff date.</td></tr>
+    <tr><td>Full net worth</td><td>Add your home, car and retirement values.</td></tr>
+    <tr><td>PDF report</td><td>Everything in one file to keep or print.</td></tr>
+    <tr><td>Notion export</td><td>Your transactions for the Money X-Ray dashboard.</td></tr>
+  </table>
+  <div class="shots">
+    <figure><img src="screenshots/09_subscription-calculator.png"><figcaption>Checking off subscriptions to cancel.</figcaption></figure>
+    <figure><img src="screenshots/13_debt-simulator.png"><figcaption>Comparing debt payoff plans.</figcaption></figure>
+  </div>
+</section>
+
+<section class="page">
+  <div class="step">Step 8</div>
+  <h2>Save your save block</h2>
+  <p>At the end it gives you a short block of text that starts with <code>SAVE | Money X-Ray</code>. Copy it into your notes app. It's your progress and your starting point next month.</p>
+  <div class="shots one">
+    <figure><img src="screenshots/15_save-block.png"><figcaption>Saved in the Notes app.</figcaption></figure>
+  </div>
+</section>
+
+<section class="page">
+  <h2>On a free plan</h2>
+  <ul>
+    <li>It works through two accounts at a time. Type <b>go</b> when it asks.</li>
+    <li>The report comes in two parts. Type <b>go</b> for the second.</li>
+    <li>If the chat hits its limit, open a new chat, paste the prompt and your save block, and type <b>continue</b>.</li>
+    <li>If uploads run out for the day, paste the CSV rows instead.</li>
+  </ul>
+  <h2>Next month</h2>
+  <p>Paste the prompt and your save block into a new chat, type <b>monthly checkup</b>, and upload last month's statements. It shows what changed: new charges, price increases, debt paid down, and your net worth.</p>
+  <h2>Your privacy</h2>
+  <ul>
+    <li>Money X-Ray never asks for passwords, logins or Social Security numbers, and never connects to your bank.</li>
+    <li>Your statements go only to the AI app you choose, under that company's privacy policy. We never see them.</li>
+    <li>CSV files usually contain no account number, name or address. The AI is told never to repeat account numbers or personal details.</li>
+  </ul>
+</section>
+
+<section class="page">
+  <h2>If something goes wrong</h2>
+  <table>
+    <tr><th>What happened</th><th>Try this</th></tr>
+    <tr><td>A file won't upload</td><td>Try the CSV version, or send fewer files at a time. For a long file, paste one month at a time.</td></tr>
+    <tr><td>It stopped partway</td><td>Type <b>go</b>. It picks up where it left off.</td></tr>
+    <tr><td>An account doesn't balance to $0.00</td><td>Check that you sent every month, with no missing or repeated statements. It will tell you which days look off.</td></tr>
+    <tr><td>It missed a subscription</td><td>Tell it the merchant name and it adds it.</td></tr>
+    <tr><td>The chat ran out</td><td>New chat, paste the prompt and your save block, type <b>continue</b>.</td></tr>
+    <tr><td>It mentions an account you didn't upload</td><td>That's a payment going to an account it can't see. Upload that statement, or tell it the balance.</td></tr>
+  </table>
+  <p class="small">Educational self-analysis, not financial advice. AI can make mistakes: check anything important against your statements before acting on it.</p>
+</section>
+
+</body>
+</html>
