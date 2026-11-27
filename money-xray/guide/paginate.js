@@ -137,6 +137,11 @@
   // renumber footers (pages may have been rebuilt) and fill the contents page
   [...book.children].forEach((pg, i) => { const f = pg.querySelector('.foot span:nth-child(2)'); if (f) f.textContent = i + 1; });
   document.querySelectorAll('[data-pg]').forEach(e => e.textContent = pageOf[e.dataset.pg] || '?');
+  // clickable contents: each chapter's first block gets an anchor, each contents row links to it
+  book.querySelectorAll('[data-first]').forEach(e => { if (!e.id) e.id = 'go-' + e.dataset.first; });
+  book.querySelectorAll('section[data-id]').forEach(e => { if (!e.id) e.id = 'go-' + e.dataset.id; });
+  document.querySelectorAll('[data-pg]').forEach(e => { const tr = e.closest('tr'); if (!tr) return;
+    const t = tr.querySelector('td:nth-child(2)'); if (t && !t.querySelector('a')) t.innerHTML = '<a href="#go-' + e.dataset.pg + '">' + t.innerHTML + '</a>'; });
   const fills = [...book.children].map((pg, i) => ({ page: i + 1, fill: Math.round(fill(pg.querySelector('.content')) * 100) })).filter(p => p.fill && p.fill < 40);
   window.__result = { pages: book.children.length, pageOf, warn, lowFill: fills };
 })();

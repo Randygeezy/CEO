@@ -13,7 +13,7 @@ const tmp = path.join(here, '.build.html'), out = path.join(here, 'Money_XRay_Co
   await p.goto('file://' + tmp, { waitUntil: 'load' });
   await p.waitForFunction(() => window.__result, null, { timeout: 180000 });
   const r = await p.evaluate(() => window.__result);
-  await p.pdf({ path: out, width: '210mm', height: '297mm', printBackground: true, margin: { top: 0, right: 0, bottom: 0, left: 0 } });
+  await p.pdf({ path: out, width: '210mm', height: '297mm', printBackground: true, margin: { top: 0, right: 0, bottom: 0, left: 0 }, tagged: true, outline: true });
   await b.close(); fs.unlinkSync(tmp);
   console.log('pages:', r.pages); console.log('chapters:', JSON.stringify(r.pageOf)); console.log('pages under 40% full:', JSON.stringify(r.lowFill));
   if (r.warn.length) console.log('WARN:\n' + r.warn.join('\n'));
