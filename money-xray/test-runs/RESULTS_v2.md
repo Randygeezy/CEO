@@ -80,3 +80,13 @@ All findings were fixed in the prompt and the guide afterwards (not re-run): one
 Fixed afterwards (not rerun): card CSVs lack balances, so cards use PDFs; files without balances are marked "not balance-checked"; Budget added as menu option 4 (7 options); Cut costs asks for a savings goal; the save block keeps a "Cancelled or cut" line that the checkup checks; the guide names the privacy settings, marks Gemini untested, softens time and question-count claims, fixes the sample report, uses larger text, and blurs bank product names and file names in screenshots. The paginator now waits for fonts and images before measuring, so the guide has no near-empty pages (46 pages).
 
 Still open: support and refund contact for the guide; a recording on the latest prompt; real Gemini run.
+
+# Round 3: retest after the round-2 fixes (2026-11-27)
+
+| Run | Result |
+|---|---|
+| Code tool, 15 PDF statements (`r3-code-pdf`) | grade.py PASS 219/219, all totals and cash exact; every account $0.00; debt plan 23 months, $2,007.48 interest (snowball $2,061.33, minimums 62 months, $7,503.15), all exact; net worth $162,554.08, liquid $154.08. 4 customer messages. |
+| Free plan, no code (`r3-free`) | grade.py PASS 219/219 by hand, all totals and cash exact; every account $0.00; net worth exact; rough debt timeline as designed. 13 customer messages (9 of them "go", 6 from the export). |
+| Guide cold read (`r3-guide-review`) | Not ready: statement thumbnails inside screenshots were readable at full zoom. Fixed: all thumbnails pixelated, plus about ten wording fixes, a full budget example, and an appendix that flows page to page (45 pages, none under 40% full). |
+
+Prompt fixes from these runs (not rerun): payment tie-break by date, stricter "probably paid in full", save block and questions in the same reply, budget covers every category, income category and jar rules in the export, initials and last-4 in `description_raw`, APR estimate for multi-month downloads, "Reply go" between export parts, ask what they pay now in the debt option, first message up to 200 words.
