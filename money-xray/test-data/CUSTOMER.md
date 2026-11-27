@@ -11,7 +11,7 @@ Interview answers, in order:
 7. We make decent money but never seem to get ahead. I want to know where it goes and find about $300 a month to free up.
 8. Yes, I want to use the Notion dashboard.
 
-Statements: the six files in uploads/ are everything Sam has. Sam confirms the account map as summarized.
+Statements: the files in uploads/ are everything Sam has. Sam confirms the account map as summarized.
 
 Answers to follow-up questions, if the auditor asks about them (only if asked):
 - DISCOVER payments: "Oh right, I forgot. We have a Discover card. I don't have that statement handy, go ahead without it."
@@ -39,7 +39,7 @@ Answer to "Is there money that never shows up on these statements?" (Step 3B), i
 Recovery plan choices, if asked which items to change: cancel Hulu, cancel Apple Music (keep Spotify), and look into the unknown SQ *JMK LLC charge. Keep everything else for now.
 
 ## Replies for the v3 flow (statements first)
-- First message: the customer uploads all six files in uploads/ at once and types "done".
+- First message: the customer uploads all the files in uploads/ at once and types "done".
 - Whenever asked to reply "go": "go".
 - The question list after the report: answer each item from the "Answers to follow-up questions" and "Step 3B" sections above; anything not covered gets "ok".
 - The menu: "1, 2, 3, 4 and 5", with the details for each in the same reply:
