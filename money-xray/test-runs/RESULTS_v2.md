@@ -67,3 +67,16 @@ Fixes after these runs: no-code mode depends on tool access, not on guessing the
 | Test B (no code, guide + prompt) | Exported accounts 69/69 PASS, all balances $0.00, totals and net worth exact. 7 "go" replies. |
 
 All findings were fixed in the prompt and the guide afterwards (not re-run): one save block after the report and one at the end; method and exact APR asked in the same debt message; spreadsheet export (Notion, Google Sheets or Excel) instead of "dashboard"; PDF fallback without resending; statements = three monthly or one 3-month download; screenshot placeholder replaced by illustrated steps; bank names blacked out; menu explained; softer $0.00 and testing claims; Gemini marked untested; sample report fixed.
+
+# Round 2: three cold reads and three tests (2026-11-27)
+
+| Run | Result |
+|---|---|
+| Test 1: CSV statements, code tool | grade.py PASS, 219/219; debt plan matches the reference to the cent (23 months) |
+| Test 2: free plan, no code | Exported accounts 69/69 PASS; every balance $0.00 |
+| Test 3: 15 fictional PDF statements (`test-data/make_pdf_statements.cjs`) | grade.py PASS, 219/219; all 15 statements $0.00 |
+| Cold reads (beginner, editor, retiree) | "Not ready to sell" until the text and layout fixes below |
+
+Fixed afterwards (not rerun): card CSVs lack balances, so cards use PDFs; files without balances are marked "not balance-checked"; Budget added as menu option 4 (7 options); Cut costs asks for a savings goal; the save block keeps a "Cancelled or cut" line that the checkup checks; the guide names the privacy settings, marks Gemini untested, softens time and question-count claims, fixes the sample report, uses larger text, and blurs bank product names and file names in screenshots. The paginator now waits for fonts and images before measuring, so the guide has no near-empty pages (46 pages).
+
+Still open: support and refund contact for the guide; a recording on the latest prompt; real Gemini run.
