@@ -24,7 +24,7 @@ h1 em{font-style:italic;font-weight:700;color:#8b735f}
 .chip{position:absolute;display:flex;align-items:center;gap:14px;background:#fff;border-radius:16px;padding:16px 22px;box-shadow:0 10px 26px rgba(60,40,20,.12);font-weight:600;font-size:22px;line-height:1.2}
 .ic{width:46px;height:46px;border-radius:50%;background:#161514;color:#fff;display:flex;align-items:center;justify-content:center;font-size:22px;flex:none}
 .pill{position:absolute;left:50%;transform:translateX(-50%);background:#161514;color:#fff;border-radius:40px;padding:16px 34px;font-weight:600;font-size:26px;white-space:nowrap}
-.pill b{color:#ff4b4b}
+.pill b{color:#7fd1a8}
 .phone{position:absolute;width:330px;height:660px;border-radius:46px;background:#161514;padding:14px;box-shadow:0 24px 60px rgba(0,0,0,.28)}
 .screen{width:100%;height:100%;border-radius:34px;background:#fff;overflow:hidden;padding:30px 22px;font-size:15px;line-height:1.4}
 .screen h4{font-family:PF;font-size:22px;margin:0 0 8px}
@@ -73,7 +73,7 @@ const slides = {
 </div>
 <div class="phone" style="left:735px;top:200px;width:340px;height:680px">${reportScreen}</div>
 <div class="pill" style="left:25%;bottom:60px;background:#fff;color:#161514;font-size:20px">BEFORE</div>
-<div class="pill" style="left:75%;bottom:60px;background:#ff0000;font-size:20px">AFTER</div>`),
+<div class="pill" style="left:75%;bottom:60px;background:#fff;color:#1f7a5a;font-size:20px">AFTER</div>`),
 
   'mx-c3-benefits': wrap(`
 <h1>What you'll see <em>in one report</em></h1>
@@ -88,11 +88,11 @@ ${[['$','Where every dollar goes','left:60px;top:300px'],['✂','Subscriptions a
 <div class="card" style="position:absolute;left:50px;top:380px;width:330px;height:480px;padding:26px;font-family:monospace;font-size:17px;line-height:1.5">
  <div style="font-family:PP;font-size:14px;letter-spacing:.12em;color:#8b735f;font-weight:600;margin-bottom:12px">THE PROMPT</div>
  You are <b>Money X-Ray</b>, a personal financial investigator. You help one person find out where their money actually goes, using statements they download from their own bank and card accounts…</div>
-<div style="position:absolute;left:392px;top:590px;font-size:44px;color:#ff0000">→</div>
+<div style="position:absolute;left:392px;top:590px;font-size:44px;color:#1f7a5a">→</div>
 <div class="card" style="position:absolute;left:440px;top:380px;width:320px;height:480px;padding:26px">
  <div style="font-size:14px;letter-spacing:.12em;color:#8b735f;font-weight:600;margin-bottom:16px">YOUR STATEMENTS</div>
  ${['Checking · Aug','Checking · Sep','Checking · Oct','Visa · Aug','Visa · Sep','Visa · Oct','Mastercard · Oct'].map(n=>`<div style="display:flex;gap:12px;align-items:center;margin-bottom:14px;font-size:19px"><span style="width:30px;height:38px;border:2px solid #161514;border-radius:4px;flex:none;font-size:9px;display:flex;align-items:flex-end;justify-content:center;padding-bottom:2px">PDF</span>${n}</div>`).join('')}</div>
-<div style="position:absolute;left:772px;top:590px;font-size:44px;color:#ff0000">→</div>
+<div style="position:absolute;left:772px;top:590px;font-size:44px;color:#1f7a5a">→</div>
 <div class="phone" style="left:830px;top:340px;width:300px;height:580px">${reportScreen}</div>
 ${[['1 · Paste the prompt',215],['2 · Upload statements',600],['3 · Read your report',980]].map(([t,x])=>`<div style="position:absolute;left:${x-160}px;width:320px;top:950px;text-align:center;font-weight:600;font-size:24px">${t}</div>`).join('')}
 <div class="note" style="bottom:70px">Works in ChatGPT or Claude. Free plans work; paid plans are faster.</div>`),
@@ -112,7 +112,7 @@ ${[['Everyday checking',53,'$1,680.50'],['Joint checking',45,'$5,699.99'],['Visa
 <h1>The usual way vs <em>Money X-Ray</em></h1>
 <div class="card" style="position:absolute;left:70px;right:70px;top:300px;padding:40px 44px">
 <table style="font-size:22px">
-<tr style="font-size:15px;letter-spacing:.1em;text-align:left"><th style="padding-bottom:16px">TO SEE WHERE YOUR MONEY GOES</th><th>BUDGETING APP</th><th>MONEY PLANNER</th><th style="color:#ff0000">MONEY X-RAY</th></tr>
+<tr style="font-size:15px;letter-spacing:.1em;text-align:left"><th style="padding-bottom:16px">TO SEE WHERE YOUR MONEY GOES</th><th>BUDGETING APP</th><th>MONEY PLANNER</th><th style="color:#1f7a5a">MONEY X-RAY</th></tr>
 ${[['Bank login','Usually','Paperwork','✓ Not needed'],['What it costs','Every month','Per session','✓ $27 once'],['Checks the math to $0.00','Rarely','Varies','✓ Every account'],['Finds forgotten subscriptions','Some','Sometimes','✓ On purpose'],['Debt payoff order','Some','Yes','✓ Two ways'],['Works from your own statements','No','Yes','✓ Yes']].map(([a,b,c,d])=>`<tr style="border-top:1px solid #e5ddd2"><td style="padding:27px 0;font-weight:600">${a}</td><td style="font-family:monospace;font-size:20px;color:#5f5951">${b}</td><td style="font-family:monospace;font-size:20px;color:#5f5951">${c}</td><td style="font-weight:700">${d}</td></tr>`).join('')}
 </table></div>
 <div class="note" style="bottom:70px">A general comparison of methods, not of any named product. Plus your AI plan (free plans work).</div>`),
@@ -144,8 +144,8 @@ const sections = {
   'mx-s1-problem': wrap(`
 <h1 style="font-size:62px;margin-top:150px">Apps charge monthly.<br><em>Audits cost hundreds.</em></h1>
 ${[['Budgeting app','$5–15','every month, plus your bank login','left:90px'],['Money planner','$150+','per session, plus paperwork','left:450px'],['Money X-Ray','$27','once, from statements you download','left:810px']].map(([t,p,s,pos],k)=>`
-<div class="card" style="position:absolute;${pos};top:470px;width:300px;height:460px;padding:34px;text-align:center;${k==2?'outline:4px solid #ff0000':''}">
-<div style="font-weight:600;font-size:24px">${t}</div><div style="font-family:PF;font-weight:900;font-size:80px;margin:40px 0 14px;color:${k==2?'#ff0000':'#161514'}">${p}</div><div style="font-size:21px;color:#4a453f">${s}</div></div>`).join('')}
+<div class="card" style="position:absolute;${pos};top:470px;width:300px;height:460px;padding:34px;text-align:center;${k==2?'outline:4px solid #1f7a5a':''}">
+<div style="font-weight:600;font-size:24px">${t}</div><div style="font-family:PF;font-weight:900;font-size:80px;margin:40px 0 14px;color:${k==2?'#1f7a5a':'#161514'}">${p}</div><div style="font-size:21px;color:#4a453f">${s}</div></div>`).join('')}
 <div class="note" style="bottom:110px">General prices for comparison, not any named product.</div>`),
   'mx-s2-report': wrap(`
 <img class="book" src="${img('g33-33.png')}" style="left:110px;top:120px;width:640px;transform:rotate(-3deg)">
